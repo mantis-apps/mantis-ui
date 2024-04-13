@@ -5,6 +5,7 @@ const config: StorybookConfig = {
   addons: [
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
+    '@storybook/addon-themes',
     'storybook-addon-data-theme-switcher'
   ],
   framework: {
