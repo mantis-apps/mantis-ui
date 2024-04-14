@@ -15,7 +15,9 @@ const meta: Meta<StoryArgs> = {
   ],
   argTypes: {
     variant: { control: { type: 'select' }, name: 'Button Variant', options: ['secondary', 'destructive', 'outline', 'ghost', 'link', 'default'] },
+    size: { control: { type: 'select' }, name: 'Button Size', options: ['default', 'sm', 'lg', 'icon'] },
   },
+
   parameters: {
     docs: {
       source: {
@@ -35,6 +37,7 @@ export const Default: Story = {
   args: {
     label: 'Button works!',
     variant: 'default',
+    size: 'lg',
   }
 };
 
