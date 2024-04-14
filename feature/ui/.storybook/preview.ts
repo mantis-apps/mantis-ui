@@ -31,7 +31,7 @@ const preview: Preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Atoms', 'Molecules', 'Organisms', 'Pages', 'Others', '*'],
+        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],
       },
     },
     layout: 'fullscreen',
