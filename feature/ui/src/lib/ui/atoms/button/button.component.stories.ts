@@ -13,6 +13,9 @@ const meta: Meta<StoryArgs> = {
   decorators: [
     componentWrapperDecorator(ButtonComponent, ({ args }) => args),
   ],
+  argTypes: {
+    variant: { control: { type: 'select' }, name: 'Button Variant', options: ['secondary', 'destructive', 'outline', 'ghost', 'link', 'default'] },
+  },
   parameters: {
     docs: {
       source: {
@@ -26,21 +29,50 @@ const meta: Meta<StoryArgs> = {
   render: (args: StoryArgs) => ({ props: args, template: `${args.label}` }),
 };
 export default meta;
-type Story = StoryObj<ButtonComponent>;
+type Story = StoryObj<StoryArgs>;
 
-export const Primary: Story = {
+export const Default: Story = {
   args: {
     label: 'Button works!',
+    variant: 'default',
   }
-
 };
 
-export const Heading: Story = {
+export const Secondary: Story = {
   args: {
     label: 'Heading works!',
+    variant: 'secondary',
   },
   play: async ({ canvasElement }) => {
     const canvas = within(canvasElement);
     expect(canvas.getByText(/button works!/gi)).toBeTruthy();
+  },
+};
+
+export const Destructive: Story = {
+  args: {
+    label: 'Destructive works!',
+    variant: 'destructive',
+  },
+};
+
+export const Outline: Story = {
+  args: {
+    label: 'Outline works!',
+    variant: 'outline',
+  },
+};
+
+export const Ghost: Story = {
+  args: {
+    label: 'Ghost works!',
+    variant: 'ghost',
+  },
+};
+
+export const Link: Story = {
+  args: {
+    label: 'Link works!',
+    variant: 'link',
   },
 };
