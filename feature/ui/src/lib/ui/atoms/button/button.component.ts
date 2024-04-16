@@ -6,7 +6,8 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
   selector: 'mantis-button',
   standalone: true,
   imports: [HlmButtonDirective],
-  template: ` <button hlmBtn [variant]="variant" [size]="size">
+  template: `
+  <button hlmBtn [variant]="variant" [size]="size">
     <ng-content></ng-content>
   </button> `,
 })

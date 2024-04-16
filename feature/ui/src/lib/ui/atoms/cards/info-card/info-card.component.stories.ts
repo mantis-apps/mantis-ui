@@ -1,10 +1,15 @@
+
 import { InfoCardComponent } from './info-card.component';
 import { Meta, StoryObj } from '@storybook/angular';
 
 export default {
-  title: 'Atoms/Cards/InfoCard',
+  title: 'Molecules/Cards/InfoCard',
   component: InfoCardComponent,
-  tags: ['autodocs']
+  tags: ['autodocs'],
+  argTypes: {
+    title: { control: { type: 'text' }, name: 'Card Title' },
+    description: { control: { type: 'text' }, name: 'Card Description' },
+  },
 } as Meta;
 
 type Story = StoryObj<InfoCardComponent>;

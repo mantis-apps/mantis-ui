@@ -1,5 +1,6 @@
 import { type Meta, type StoryObj, componentWrapperDecorator } from '@storybook/angular';
 import { ButtonComponent } from './button.component';
+import { IconComponent } from '../icon/icon.component';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
@@ -79,3 +80,4 @@ export const Link: Story = {
     variant: 'link',
   },
 };
+
