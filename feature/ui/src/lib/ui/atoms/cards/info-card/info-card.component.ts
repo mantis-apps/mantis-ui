@@ -61,6 +61,10 @@ import { ClassValue } from 'clsx';
 export class InfoCardComponent {
   @Input({ required: true }) title!: string;
   @Input({ required: true }) description!: string;
+  /**
+   * Use Tailwind classes to specify your own rules for the card container.
+   * e.g. `sm:col-span-2` will span the card across 2 columns on small screens.
+   */
   @Input() class = '';
   @Input() headerClass = '';
   @Input() titleClass = '';
