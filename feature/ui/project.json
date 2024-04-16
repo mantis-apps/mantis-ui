@@ -43,7 +43,13 @@
         "port": 4400,
         "configDir": "feature/ui/.storybook",
         "browserTarget": "ui:build-storybook",
-        "compodoc": false,
+        "compodoc": true,
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "feature/ui/docs"
+        ],
         "styles": [
           "feature/ui/src/styles.css"
         ]
@@ -63,7 +69,13 @@
         "outputDir": "dist/storybook/ui",
         "configDir": "feature/ui/.storybook",
         "browserTarget": "ui:build-storybook",
-        "compodoc": false
+        "compodoc": true,
+        "compodocArgs": [
+          "-e",
+          "json",
+          "-d",
+          "feature/ui/docs"
+        ]
       },
       "configurations": {
         "ci": {

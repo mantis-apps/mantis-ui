@@ -1,7 +1,9 @@
 import type { ThemeConfig } from 'storybook-addon-data-theme-switcher';
-
+import { setCompodocJson } from '@storybook/addon-docs/angular';
 import { Preview, moduleMetadata, componentWrapperDecorator } from '@storybook/angular';
 import { withThemeByClassName, withThemeByDataAttribute } from '@storybook/addon-themes'
+import docJson from '../docs/documentation.json';
+setCompodocJson(docJson);
 
 
 const preview: Preview = {
