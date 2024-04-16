@@ -6,6 +6,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
+    'storybook-dark-mode',
     'storybook-addon-data-theme-switcher'
   ],
   framework: {

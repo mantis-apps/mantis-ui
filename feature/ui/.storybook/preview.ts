@@ -1,13 +1,10 @@
 import type { ThemeConfig } from 'storybook-addon-data-theme-switcher';
 
 import { Preview, moduleMetadata, componentWrapperDecorator } from '@storybook/angular';
-import { initialize, mswLoader } from 'msw-storybook-addon';
 import { withThemeByClassName, withThemeByDataAttribute } from '@storybook/addon-themes'
 
-//initialize();
 
 const preview: Preview = {
-
   decorators: [
     withThemeByClassName({
       themes: {
@@ -31,7 +28,7 @@ const preview: Preview = {
   parameters: {
     options: {
       storySort: {
-        order: ['Atoms', 'Molecules', 'Organisms', 'Pages', 'Others', '*'],
+        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],
       },
     },
     layout: 'fullscreen',
@@ -51,7 +48,7 @@ export const globalTypes = {
       dataAttribute: "data-theme",            // optional (default: "data-theme")
       clearable: true,                        // optional (default: true)
       toolbar: {
-        title: "Change data-theme attribute", // optional
+        title: "Change Theme", // optional
         icon: "paintbrush",                   // optional
       },
     } satisfies ThemeConfig,
