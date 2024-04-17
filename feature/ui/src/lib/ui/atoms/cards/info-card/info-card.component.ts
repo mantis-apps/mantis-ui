@@ -9,6 +9,7 @@ import {
 import { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';
 
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { ClassValue } from 'clsx';
 
 @Component({
   selector: 'mantis-info-card',
@@ -40,10 +41,10 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
         <span *ngIf="badgeText" hlmBadge [variant]="badgeVariant">{{ badgeText }}</span>
       </p>
     </section> -->
-    <section hlmCard class="max-w-lg">
-      <div hlmCardHeader>
-        <h3 hlmCardTitle>{{title}}</h3>
-        <p hlmCardDescription class="text-sm max-w-lg leading-relaxed text-balance">
+    <section hlmCard [class]="this.class">
+      <div hlmCardHeader [class]="this.headerClass" >
+        <h3 hlmCardTitle [class]="this.titleClass" >{{title}}</h3>
+        <p hlmCardDescription [class]="this.descriptionClass">
           {{description}}
         </p>
       </div>
@@ -60,4 +61,13 @@ import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 export class InfoCardComponent {
   @Input({ required: true }) title!: string;
   @Input({ required: true }) description!: string;
+  /**
+   * Use Tailwind classes to specify your own rules for the card container.
+   * e.g. `sm:col-span-2` will span the card across 2 columns on small screens.
+   */
+  @Input() class = '';
+  @Input() headerClass = '';
+  @Input() titleClass = '';
+  @Input() descriptionClass = '';
+  @Input() footerClass = '';
 }

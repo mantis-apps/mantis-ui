@@ -9,6 +9,11 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
+  "paths": {
+    "@spartan-ng/ui-icon-helm": [
+      "feature/spartanui/ui-icon-helm/src/index.ts"
+    ]
+  },
   "files": [],
   "include": [],
   "references": [

@@ -6,12 +6,17 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
+    'storybook-dark-mode',
     'storybook-addon-data-theme-switcher'
   ],
   framework: {
     name: '@storybook/angular',
     options: {},
   },
+  docs: {
+    autodocs: true,
+    defaultName: 'Docs',
+  }
 };
 
 export default config;
