@@ -570,8 +570,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<IconListComponent>",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
+                "rawtype": "StoryObj<InfoCardComponent>",
+                "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -581,8 +581,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<InfoCardComponent>",
-                "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                "rawtype": "StoryObj<IconListComponent>",
+                "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -825,19 +825,6 @@
                     "kind": 183
                 }
             ],
-            "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<IconListComponent>",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts": [
                 {
                     "name": "Story",
@@ -845,6 +832,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<InfoCardComponent>",
                     "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<IconListComponent>",
+                    "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
