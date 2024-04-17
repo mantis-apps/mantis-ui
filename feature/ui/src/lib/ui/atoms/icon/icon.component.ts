@@ -2,7 +2,7 @@
 import { Component, Input, inject } from '@angular/core';
 import { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
-import { lucideMail, lucideUser2 } from '@ng-icons/lucide';
+import { lucideMail, lucideUser2, lucideActivity, lucideTruck, lucideTrain } from '@ng-icons/lucide';
 import { ICONS } from './icon.token';
 
 @Component({
@@ -19,7 +19,10 @@ import { ICONS } from './icon.token';
     },
     provideIcons({
       lucideMail,
-      lucideUser2
+      lucideUser2,
+      lucideActivity,
+      lucideTruck,
+      lucideTrain,
     }),
   ],
   template: `

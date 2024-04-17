@@ -1,0 +1,53 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { IconComponent } from './icon.component';
+import { IconListComponent } from './icon-list/icon-list.component';
+
+<Meta title="Atoms/Primitives/Icon Docs" component={IconComponent} />
+
+# Icon Component
+
+The `IconComponent` is a reusable component that displays an icon. It uses the `@ng-icons/lucide` package to provide a variety of icons.
+
+## Props
+
+<ArgsTable of={IconComponent} />
+
+## Usage
+
+Here's an example of how you can use the `IconComponent`:
+
+```typescript
+<mantis-icon [name]="'lucideMail'" size="sm" class="flex" />
+```
+
+<Canvas>
+  <Story name="Multiple Icons">
+    {{
+      template: `
+        <div style="display: flex; gap: 1em;">
+          <mantis-icon [name]="'lucideMail'" size="sm" class="flex" />
+          <mantis-icon [name]="'lucideUser2'" size="sm" class="flex" />
+          <mantis-icon [name]="'lucideActivity'" size="sm" class="flex" />
+          <mantis-icon [name]="'lucideTruck'" size="sm" class="flex" />
+          <mantis-icon [name]="'lucideTrain'" size="sm" class="flex" />
+        </div>
+      `
+    }}
+  </Story>
+</Canvas>
+
+# Icon List Component
+
+The `IconListComponent` is a reusable component that displays a list of icons. It uses the `@ng-icons/lucide` package to provide a variety of icons.
+
+## Props
+
+## Usage
+
+Here's an example of how you can use the `IconListComponent`:
+
+```typescript
+<mantis-icon-list [icons]="['lucideMail', 'lucideMail', 'lucideMail']" size="sm" class="flex" />
+```
+
+
