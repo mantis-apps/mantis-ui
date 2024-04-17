@@ -75,6 +75,9 @@
           "json",
           "-d",
           "feature/ui/docs"
+        ],
+        "styles": [
+          "feature/ui/src/styles.css"
         ]
       },
       "configurations": {
