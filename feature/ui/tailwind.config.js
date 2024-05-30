@@ -10,7 +10,11 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      margin: {
+        '6': '1.5rem',
+      }
+    },
   },
   plugins: [],
   variants: {

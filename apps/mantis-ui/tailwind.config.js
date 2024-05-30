@@ -10,7 +10,16 @@ module.exports = {
     ...createGlobPatternsForDependencies(__dirname),
   ],
   theme: {
-    extend: {},
+    extend: {
+      screens: {
+        'xs': '320px'
+      }
+    },
   },
   plugins: [],
+  variants: {
+    extend: {
+      borderColor: ['dark'],
+    }
+  }
 };

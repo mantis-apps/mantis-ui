@@ -67,8 +67,227 @@
             "extends": []
         },
         {
+            "name": "CardComponent",
+            "id": "component-CardComponent-c1a4ecb9f2bdd23dd4d5e46aa3f221513f631ca0189df9b6429c4e6256241fa6ce5086ebaa4a1de2783fde1a3574760e68b5ff29a142a96d714f07608632637f",
+            "file": "feature/ui/src/lib/ui/molecules/cards/card.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "mantis-card",
+            "styleUrls": [],
+            "styles": [
+                ""
+            ],
+            "template": "<section hlmCard [class]=\"this._containerClass() + ' relative '\">\n  <div class=\"absolute top-6 right-12 text-sm\">\n    <ng-content select=\"[CardBadge]\"></ng-content>\n  </div>\n  <div hlmCardHeader [class]=\"this.headerClass\">\n    <h3 hlmCardTitle [class]=\"this.titleClass\">\n      <ng-content select=\"[CardTitle]\"></ng-content>\n    </h3>\n    <p hlmCardDescription [class]=\"this.descriptionClass\">\n      <ng-content select=\"[CardDescription]\"></ng-content>\n    </p>\n  </div>\n  <div hlmCardContent [class]=\"this.contentClass\" >\n    <ng-content select=\"[CardContent]\"></ng-content>\n  </div>\n  <div hlmCardFooter [class]=\"this.footerClass\">\n    <ng-content select=\"[CardFooter]\"></ng-content>\n  </div>\n</section>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "containerClass",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 52,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "contentClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 58,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "descriptionClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 57,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "footerClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 59,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "headerClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 55,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "titleClass",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 56,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "_containerClass",
+                    "defaultValue": "signal<string>('')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "WritableSignal<string>",
+                    "optional": false,
+                    "description": "",
+                    "line": 49,
+                    "modifierKind": [
+                        124
+                    ]
+                }
+            ],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "HlmCardDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCardHeaderDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCardTitleDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCardDescriptionDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCardContentDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCardFooterDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, WritableSignal, input, signal } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport {\n  HlmCardDirective,\n  HlmCardHeaderDirective,\n  HlmCardTitleDirective,\n  HlmCardDescriptionDirective,\n  HlmCardContentDirective,\n  HlmCardFooterDirective,\n} from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'mantis-card',\n  standalone: true,\n  imports: [\n    CommonModule,\n    HlmCardDirective,\n    HlmCardHeaderDirective,\n    HlmCardTitleDirective,\n    HlmCardDescriptionDirective,\n    HlmCardContentDirective,\n    HlmCardFooterDirective,\n  ],\n  template: `\n    <section hlmCard [class]=\"this._containerClass() + ' relative '\">\n      <div class=\"absolute top-6 right-12 text-sm\">\n        <ng-content select=\"[CardBadge]\"></ng-content>\n      </div>\n      <div hlmCardHeader [class]=\"this.headerClass\">\n        <h3 hlmCardTitle [class]=\"this.titleClass\">\n          <ng-content select=\"[CardTitle]\"></ng-content>\n        </h3>\n        <p hlmCardDescription [class]=\"this.descriptionClass\">\n          <ng-content select=\"[CardDescription]\"></ng-content>\n        </p>\n      </div>\n      <div hlmCardContent [class]=\"this.contentClass\" >\n        <ng-content select=\"[CardContent]\"></ng-content>\n      </div>\n      <div hlmCardFooter [class]=\"this.footerClass\">\n        <ng-content select=\"[CardFooter]\"></ng-content>\n      </div>\n    </section>\n  `,\n  styles: ``,\n})\nexport class CardComponent {\n  protected _containerClass: WritableSignal<string> = signal<string>('');\n\n  @Input()\n  set containerClass(value: string) {\n    this._containerClass = signal(value);\n  }\n  @Input() headerClass = '';\n  @Input() titleClass = '';\n  @Input() descriptionClass = '';\n  @Input() contentClass = '';\n  @Input() footerClass = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n",
+            "extends": [],
+            "accessors": {
+                "containerClass": {
+                    "name": "containerClass",
+                    "setSignature": {
+                        "name": "containerClass",
+                        "type": "void",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "args": [
+                            {
+                                "name": "value",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": ""
+                            }
+                        ],
+                        "returnType": "void",
+                        "line": 52,
+                        "jsdoctags": [
+                            {
+                                "name": "value",
+                                "type": "string",
+                                "deprecated": false,
+                                "deprecationMessage": "",
+                                "tagName": {
+                                    "text": "param"
+                                }
+                            }
+                        ]
+                    }
+                }
+            }
+        },
+        {
+            "name": "CloudoorButtonComponent",
+            "id": "component-CloudoorButtonComponent-c3075ac9249a1610cf315a318e352038265104e93dbdac9b6bd5a6cf0f9962645e6d043da2344a10cae6a79e90597953d04d7b42a4d139910f4022c60397a9b0",
+            "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "mantis-cloudoor-button",
+            "styleUrls": [],
+            "styles": [
+                "\n    .cloudoor-button {\n      background: var(--main-gradient, linear-gradient(90deg, #145BF0 0%, #1DC66D 100%));\n    }\n  "
+            ],
+            "template": "<button class=\"cloudoor-button flex h-[40px] p-2 px-4 justify-center items-center gap-[8px] rounded-[40px]\">\n  <span class=\"text-white text-sm\">{{this.buttonLabel}}</span>\n</button>",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "buttonLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\n@Component({\n  selector: 'mantis-cloudoor-button',\n  standalone: true,\n  imports: [CommonModule],\n  template: `\n  <button class=\"cloudoor-button flex h-[40px] p-2 px-4 justify-center items-center gap-[8px] rounded-[40px]\">\n    <span class=\"text-white text-sm\">{{this.buttonLabel}}</span>\n  </button>`,\n  styles: `\n    .cloudoor-button {\n      background: var(--main-gradient, linear-gradient(90deg, #145BF0 0%, #1DC66D 100%));\n    }\n  `,\n})\nexport class CloudoorButtonComponent {\n  @Input({ required: true }) buttonLabel!: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n    .cloudoor-button {\n      background: var(--main-gradient, linear-gradient(90deg, #145BF0 0%, #1DC66D 100%));\n    }\n  \n",
+            "extends": []
+        },
+        {
             "name": "IconComponent",
-            "id": "component-IconComponent-54b7c3d0ff35e5532838f7a963975cadeab6db33643eea879f6044d072037e2f865cce69b7e93b070dc798a95c5982b6880b8f47d12692b6dc0dbaad3763aa05",
+            "id": "component-IconComponent-e573e6bc2aaba49162021f8242bfc4ab133ca79b4414ba42f71a0ce6f1d685e86d21f00b84441f1c6ce0a887b620a9ce849f2bb4f72c0fce90e2ec00f0d2c581",
             "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -76,10 +295,10 @@
             "outputs": [],
             "providers": [
                 {
-                    "name": "{\n    provide: ICONS, useValue: {\n        lucideMail: , lucideUser2: ,\n    }\n}"
+                    "name": "{\n    provide: ICONS, useValue: {\n        lucideMail: , lucideUser2: , lucideUsers2: ,\n    }\n}"
                 },
                 {
-                    "name": "provideIcons({\n    lucideMail, lucideUser2\n})"
+                    "name": "provideIcons({\n    lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, lucideTrain,\n})"
                 }
             ],
             "selector": "mantis-icon",
@@ -94,7 +313,7 @@
                     "name": "class",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 40,
+                    "line": 45,
                     "type": "string",
                     "decorators": []
                 },
@@ -102,7 +321,7 @@
                     "name": "color",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 38,
+                    "line": 43,
                     "type": "string",
                     "decorators": []
                 },
@@ -112,7 +331,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 36,
+                    "line": 41,
                     "type": "IconName",
                     "decorators": []
                 },
@@ -121,7 +340,7 @@
                     "defaultValue": "'none'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 37,
+                    "line": 42,
                     "type": "IconSize",
                     "decorators": []
                 },
@@ -129,7 +348,7 @@
                     "name": "strokeWidth",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 39,
+                    "line": 44,
                     "type": "string | number",
                     "decorators": []
                 }
@@ -144,7 +363,7 @@
                     "type": "Record<string | IconName>",
                     "optional": false,
                     "description": "",
-                    "line": 35,
+                    "line": 40,
                     "modifierKind": [
                         123
                     ]
@@ -165,7 +384,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideMail, lucideUser2 } from '@ng-icons/lucide';\nimport { ICONS } from './icon.token';\n\n@Component({\n  selector: 'mantis-icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    {\n      provide: ICONS,\n      useValue: {\n        lucideMail: 'lucideMail',\n        lucideUser2: 'lucideUser2',\n      }\n    },\n    provideIcons({\n      lucideMail,\n      lucideUser2\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  private icons: Record<string, IconName> = inject(ICONS);\n  @Input({ required: true }) name!: IconName; // Required\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth?: string | number;\n  @Input() class?: string;\n}\n\n// import { Component, Input, OnInit } from '@angular/core';\n// import { CommonModule } from '@angular/common';\n// import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n// import { provideIcons, IconName } from '@ng-icons/core';\n// import * as lucideIcons from '@ng-icons/lucide';\n\n// @Component({\n//   selector: 'mantis-icon',\n//   standalone: true,\n//   imports: [CommonModule, HlmIconComponent],\n//   template: `\n//     <hlm-icon\n//       *ngIf=\"icon\"\n//       [size]=\"size\"\n//       [color]=\"color\"\n//       [strokeWidth]=\"strokeWidth\"\n//       [name]=\"iconName\"\n//     >\n//     </hlm-icon>\n//   `,\n// })\n// export class IconComponent implements OnInit {\n//   @Input() iconName!: string;\n//   @Input() size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'none' = 'base';\n//   @Input() color: string | undefined = undefined;\n//   @Input() strokeWidth: string | number | undefined = undefined;\n\n//   icon: typeof lucideIcons[keyof typeof lucideIcons] | undefined;\n\n//   async ngOnInit() {\n//     if (this.iconName) {\n//       this.icon = lucideIcons[this.iconName as keyof typeof lucideIcons];\n//       provideIcons({ [this.iconName]: this.icon });\n//     }\n//   }\n// }\n",
+            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, lucideTrain } from '@ng-icons/lucide';\nimport { ICONS } from './icon.token';\n\n@Component({\n  selector: 'mantis-icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    {\n      provide: ICONS,\n      useValue: {\n        lucideMail: 'lucideMail',\n        lucideUser2: 'lucideUser2',\n        lucideUsers2: 'lucideUsers2',\n      }\n    },\n    provideIcons({\n      lucideMail,\n      lucideUser2,\n      lucideUsers2,\n      lucideActivity,\n      lucideTruck,\n      lucideTrain,\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  private icons: Record<string, IconName> = inject(ICONS);\n  @Input({ required: true }) name!: IconName; // Required\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth?: string | number;\n  @Input() class?: string;\n}\n\n// import { Component, Input, OnInit } from '@angular/core';\n// import { CommonModule } from '@angular/common';\n// import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n// import { provideIcons, IconName } from '@ng-icons/core';\n// import * as lucideIcons from '@ng-icons/lucide';\n\n// @Component({\n//   selector: 'mantis-icon',\n//   standalone: true,\n//   imports: [CommonModule, HlmIconComponent],\n//   template: `\n//     <hlm-icon\n//       *ngIf=\"icon\"\n//       [size]=\"size\"\n//       [color]=\"color\"\n//       [strokeWidth]=\"strokeWidth\"\n//       [name]=\"iconName\"\n//     >\n//     </hlm-icon>\n//   `,\n// })\n// export class IconComponent implements OnInit {\n//   @Input() iconName!: string;\n//   @Input() size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'none' = 'base';\n//   @Input() color: string | undefined = undefined;\n//   @Input() strokeWidth: string | number | undefined = undefined;\n\n//   icon: typeof lucideIcons[keyof typeof lucideIcons] | undefined;\n\n//   async ngOnInit() {\n//     if (this.iconName) {\n//       this.icon = lucideIcons[this.iconName as keyof typeof lucideIcons];\n//       provideIcons({ [this.iconName]: this.icon });\n//     }\n//   }\n// }\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -236,8 +455,8 @@
         },
         {
             "name": "InfoCardComponent",
-            "id": "component-InfoCardComponent-57b2c773002620daa18428147aec7a1fe314bfdf4c9b2bf3eacbebc8f4276bb4d89495ca713d34b954d3db090bba212bc2d7a4fc87628ff42a93052a02f328ff",
-            "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.ts",
+            "id": "component-InfoCardComponent-79dd80e4275a7ae7b010149be3e0f7817232aecf8271e025e7322c06c3c5b7fb816aa2e97004087ecaf8de658966697533e9ca130df1841cb103608dc0c41777",
+            "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -260,7 +479,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nUse Tailwind classes to specify your own rules for the card container.\ne.g. `sm:col-span-2` will span the card across 2 columns on small screens.\n",
                     "description": "<p>Use Tailwind classes to specify your own rules for the card container.\ne.g. <code>sm:col-span-2</code> will span the card across 2 columns on small screens.</p>\n",
-                    "line": 68,
+                    "line": 67,
                     "type": "string",
                     "decorators": []
                 },
@@ -270,7 +489,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 63,
+                    "line": 62,
                     "type": "string",
                     "decorators": []
                 },
@@ -279,7 +498,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 71,
+                    "line": 70,
                     "type": "string",
                     "decorators": []
                 },
@@ -288,7 +507,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 72,
+                    "line": 71,
                     "type": "string",
                     "decorators": []
                 },
@@ -297,7 +516,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 69,
+                    "line": 68,
                     "type": "string",
                     "decorators": []
                 },
@@ -307,7 +526,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 62,
+                    "line": 61,
                     "type": "string",
                     "decorators": []
                 },
@@ -316,7 +535,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 70,
+                    "line": 69,
                     "type": "string",
                     "decorators": []
                 }
@@ -361,7 +580,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport {\n  HlmCardDirective,\n  HlmCardHeaderDirective,\n  HlmCardTitleDirective,\n  HlmCardDescriptionDirective,\n} from '@spartan-ng/ui-card-helm';\nimport { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';\n\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport { ClassValue } from 'clsx';\n\n@Component({\n  selector: 'mantis-info-card',\n  standalone: true,\n  imports: [\n    NgIf,\n    HlmCardDirective,\n    HlmCardHeaderDirective,\n    HlmCardTitleDirective,\n    HlmCardDescriptionDirective,\n    HlmBadgeDirective,\n    HlmButtonDirective,\n  ],\n  styles: [\n    `\n      :host {\n        display: contents;\n      }\n    `\n  ],\n  template: `\n    <!-- <section hlmCard class=\"p-4\">\n      <div hlmCardHeader class=\"pb-2\">\n        <h3 hlmCardTitle>{{ title }}</h3>\n        <p *ngIf=\"description\" hlmCardDescription>{{ description }}</p>\n      </div>\n      <p hlmCardContent>\n        {{ value }}\n        <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n      </p>\n    </section> -->\n    <section hlmCard [class]=\"this.class\">\n      <div hlmCardHeader [class]=\"this.headerClass\" >\n        <h3 hlmCardTitle [class]=\"this.titleClass\" >{{title}}</h3>\n        <p hlmCardDescription [class]=\"this.descriptionClass\">\n          {{description}}\n        </p>\n      </div>\n      <!-- <div hlmCardContent class=\"px-6 flex\">\n        <h2 hlmCardTitle class=\"text-4xl mr-2\">{{ value }}</h2>\n        <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n      </div> -->\n      <div hlmCardFooter>\n        <ng-content></ng-content>\n      </div>\n    </section>\n  `,\n})\nexport class InfoCardComponent {\n  @Input({ required: true }) title!: string;\n  @Input({ required: true }) description!: string;\n  /**\n   * Use Tailwind classes to specify your own rules for the card container.\n   * e.g. `sm:col-span-2` will span the card across 2 columns on small screens.\n   */\n  @Input() class = '';\n  @Input() headerClass = '';\n  @Input() titleClass = '';\n  @Input() descriptionClass = '';\n  @Input() footerClass = '';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport {\n  HlmCardDirective,\n  HlmCardHeaderDirective,\n  HlmCardTitleDirective,\n  HlmCardDescriptionDirective,\n} from '@spartan-ng/ui-card-helm';\nimport { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';\n\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\n\n@Component({\n  selector: 'mantis-info-card',\n  standalone: true,\n  imports: [\n    NgIf,\n    HlmCardDirective,\n    HlmCardHeaderDirective,\n    HlmCardTitleDirective,\n    HlmCardDescriptionDirective,\n    HlmBadgeDirective,\n    HlmButtonDirective,\n  ],\n  styles: [\n    `\n      :host {\n        display: contents;\n      }\n    `\n  ],\n  template: `\n    <!-- <section hlmCard class=\"p-4\">\n      <div hlmCardHeader class=\"pb-2\">\n        <h3 hlmCardTitle>{{ title }}</h3>\n        <p *ngIf=\"description\" hlmCardDescription>{{ description }}</p>\n      </div>\n      <p hlmCardContent>\n        {{ value }}\n        <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n      </p>\n    </section> -->\n    <section hlmCard [class]=\"this.class\">\n      <div hlmCardHeader [class]=\"this.headerClass\" >\n        <h3 hlmCardTitle [class]=\"this.titleClass\" >{{title}}</h3>\n        <p hlmCardDescription [class]=\"this.descriptionClass\">\n          {{description}}\n        </p>\n      </div>\n      <!-- <div hlmCardContent class=\"px-6 flex\">\n        <h2 hlmCardTitle class=\"text-4xl mr-2\">{{ value }}</h2>\n        <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n      </div> -->\n      <div hlmCardFooter>\n        <ng-content></ng-content>\n      </div>\n    </section>\n  `,\n})\nexport class InfoCardComponent {\n  @Input({ required: true }) title!: string;\n  @Input({ required: true }) description!: string;\n  /**\n   * Use Tailwind classes to specify your own rules for the card container.\n   * e.g. `sm:col-span-2` will span the card across 2 columns on small screens.\n   */\n  @Input() class = '';\n  @Input() headerClass = '';\n  @Input() titleClass = '';\n  @Input() descriptionClass = '';\n  @Input() footerClass = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n      :host {\n        display: contents;\n      }\n    \n",
@@ -372,6 +591,36 @@
     "miscellaneous": {
         "variables": [
             {
+                "name": "CardDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    buttonLabel: \"Start Free\"\n  },\n}"
+            },
+            {
+                "name": "CardDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    containerClass: 'text-card-foreground shadow',\n    headerClass: 'px-6 pt-6 pb-0',\n    titleClass: 'text-xs font-medium',\n    descriptionClass: 'text-4xl text-foreground font-bold p-0',\n    contentClass: 'text-muted-foreground text-xs -mt-6',\n    footerClass: 'h-0 p-0 m-0',\n  },\n}"
+            },
+            {
+                "name": "CardDefault",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    titleClass: 'text-4xl',\n  },\n}"
+            },
+            {
                 "name": "config",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -380,6 +629,16 @@
                 "deprecationMessage": "",
                 "type": "StorybookConfig",
                 "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  }\n}"
+            },
+            {
+                "name": "CTA",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    buttonLabel: \"Sign Up Today\"\n  },\n}"
             },
             {
                 "name": "Default",
@@ -465,6 +724,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CloudoorButtonStory>",
+                "defaultValue": "{\n  component: CloudoorButtonComponent,\n  title: 'Atoms/Primitives/Button/Cloudoor Button',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n     <mantis-cloudoor-button ${argsToTemplate(args)}></mantis-cloudoor-button>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -480,6 +749,26 @@
                 "deprecationMessage": "",
                 "type": "Meta<IconListComponent>",
                 "defaultValue": "{\n  title: 'Atoms/Primitives/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CardStory>",
+                "defaultValue": "{\n  component: CardComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent, IconComponent],\n      providers: [\n        {\n          provide: 'lucideIcons',\n          useValue: {\n            lucideUsers2,\n          },\n        },\n        provideIcons({\n          lucideUsers2,\n        }),\n      ],\n    }),\n  ],\n  title: 'Molecules/Cards/Card with CTA',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)} [class]=\"'text-card-foreground shadow'\">\n        <ng-container CardBadge >\n            <mantis-icon [name]=\"'lucideUsers2'\" size=\"sm\" class=\"text-muted\"/>\n        </ng-container>\n        <ng-container CardTitle >Subscriptions</ng-container>\n        <ng-container CardDescription>\n          +2350\n        </ng-container>\n        <ng-container CardContent>\n          +180.1% from last month\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CardStory>",
+                "defaultValue": "{\n  component: CardComponent,\n  title: 'Molecules/Cards/Card Default',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)}>\n        <ng-container CardBadge >100+</ng-container>\n        <ng-container CardTitle >Down the Rabbit Hole</ng-container>\n        <ng-container CardDescription>\n          Alice in Wonderland <small>— Lewis Carroll</small>\n        </ng-container>\n        <ng-container CardContent>\n          Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice\n          she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,\n          ” thought Alice, “without pictures or conversations?”\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
             },
             {
                 "name": "Outline",
@@ -515,7 +804,7 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -535,7 +824,7 @@
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -545,11 +834,55 @@
         "functions": [],
         "typealiases": [
             {
+                "name": "CardStory",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "CardComponent",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "CardStory",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "CardComponent",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "CloudoorButtonStory",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "CloudoorButtonComponent",
+                "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CloudoorButtonStory>",
+                "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -570,8 +903,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<InfoCardComponent>",
-                "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                "rawtype": "StoryObj<IconListComponent>",
+                "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -581,8 +914,30 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<IconListComponent>",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
+                "rawtype": "StoryObj<CardStory>",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CardStory>",
+                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<InfoCardComponent>",
+                "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -602,6 +957,82 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts": [
+                {
+                    "name": "CardDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    buttonLabel: \"Start Free\"\n  },\n}"
+                },
+                {
+                    "name": "CTA",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    buttonLabel: \"Sign Up Today\"\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CloudoorButtonStory>",
+                    "defaultValue": "{\n  component: CloudoorButtonComponent,\n  title: 'Atoms/Primitives/Button/Cloudoor Button',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n     <mantis-cloudoor-button ${argsToTemplate(args)}></mantis-cloudoor-button>\n    `,\n  }),\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts": [
+                {
+                    "name": "CardDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    containerClass: 'text-card-foreground shadow',\n    headerClass: 'px-6 pt-6 pb-0',\n    titleClass: 'text-xs font-medium',\n    descriptionClass: 'text-4xl text-foreground font-bold p-0',\n    contentClass: 'text-muted-foreground text-xs -mt-6',\n    footerClass: 'h-0 p-0 m-0',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CardStory>",
+                    "defaultValue": "{\n  component: CardComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent, IconComponent],\n      providers: [\n        {\n          provide: 'lucideIcons',\n          useValue: {\n            lucideUsers2,\n          },\n        },\n        provideIcons({\n          lucideUsers2,\n        }),\n      ],\n    }),\n  ],\n  title: 'Molecules/Cards/Card with CTA',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)} [class]=\"'text-card-foreground shadow'\">\n        <ng-container CardBadge >\n            <mantis-icon [name]=\"'lucideUsers2'\" size=\"sm\" class=\"text-muted\"/>\n        </ng-container>\n        <ng-container CardTitle >Subscriptions</ng-container>\n        <ng-container CardDescription>\n          +2350\n        </ng-container>\n        <ng-container CardContent>\n          +180.1% from last month\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts": [
+                {
+                    "name": "CardDefault",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    titleClass: 'text-4xl',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CardStory>",
+                    "defaultValue": "{\n  component: CardComponent,\n  title: 'Molecules/Cards/Card Default',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)}>\n        <ng-container CardBadge >100+</ng-container>\n        <ng-container CardTitle >Down the Rabbit Hole</ng-container>\n        <ng-container CardDescription>\n          Alice in Wonderland <small>— Lewis Carroll</small>\n        </ng-container>\n        <ng-container CardContent>\n          Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice\n          she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,\n          ” thought Alice, “without pictures or conversations?”\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
+                }
+            ],
             "feature/ui/.storybook/main.ts": [
                 {
                     "name": "config",
@@ -762,12 +1193,12 @@
                     "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts": [
+            "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts": [
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -777,7 +1208,7 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -788,6 +1219,78 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts": [
+                {
+                    "name": "CardStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "CardComponent",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CardStory>",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts": [
+                {
+                    "name": "CardStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "CardComponent",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CardStory>",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts": [
+                {
+                    "name": "CloudoorButtonStory",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "CloudoorButtonComponent",
+                    "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CloudoorButtonStory>",
+                    "file": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts": [
                 {
                     "name": "Story",
@@ -825,19 +1328,6 @@
                     "kind": 183
                 }
             ],
-            "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<InfoCardComponent>",
-                    "file": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts": [
                 {
                     "name": "Story",
@@ -845,6 +1335,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<IconListComponent>",
                     "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<InfoCardComponent>",
+                    "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -968,32 +1471,42 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "CardDefault",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Secondary",
+                "name": "CTA",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/cards/info-card/info-card.component.ts",
+                "filePath": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/atoms/button/cloudoor-button.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "InfoCardComponent",
-                "coveragePercent": 12,
-                "coverageCount": "1/8",
+                "name": "CloudoorButtonComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
@@ -1062,6 +1575,84 @@
                 "name": "IconComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CardDefault",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CardDefault",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CardComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Secondary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "InfoCardComponent",
+                "coveragePercent": 12,
+                "coverageCount": "1/8",
                 "status": "low"
             }
         ]

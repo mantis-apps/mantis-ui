@@ -9,7 +9,6 @@ import {
 import { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';
 
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
-import { ClassValue } from 'clsx';
 
 @Component({
   selector: 'mantis-info-card',

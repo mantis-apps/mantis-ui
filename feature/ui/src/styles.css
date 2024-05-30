@@ -43,6 +43,7 @@
     --input: 240 5.9% 90%;
     --ring: 240 5.9% 10%;
     --radius: 0.5rem;
+    --main-gradient: linear-gradient(90deg, hsl(240 5.9% 10%) 0%, hsl(240 4.8% 95.9%) 100%);
   }
 
   .dark, [data-mode='dark'], .theme-zinc > .dark, [data-theme='theme-zinc'] > .dark {

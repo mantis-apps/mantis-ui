@@ -1,0 +1,51 @@
+import {  Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { CardComponent } from './card.component';
+
+<Meta title="Molecules/Cards/Card Docs" component={CardComponent} />
+
+# Card Component
+
+The `CardComponent` is a reusable component that displays a card.
+
+## Props
+
+<ArgsTable of={CardComponent} />
+
+## Usage
+
+Here's an example of how you can use the `CardComponent`:
+
+```typescript
+  <mantis-card [class]="'p-2'" [titleClass]="'text-4xl'">
+    <ng-container CardTitle>Example de cartes</ng-container>
+    <ng-container CardDescription> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </ng-container>
+    <ng-container CardContent> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </ng-container>
+    <ng-container CardFooter> Lorem ipsum dolor sit amet, consectetur adipiscing elit. </ng-container>
+  </mantis-card>
+```
+
+<Canvas>
+  <Story name="Card Block">
+    {{
+      template: `
+        <mantis-card
+          [class]="'p-2'"
+          [titleClass]="'text-4xl'"
+        >
+          <ng-container CardTitle>Down the Rabbit Hole</ng-container>
+          <ng-container CardDescription> Alice in Wonderland </ng-container>
+          <ng-container CardContent>
+            Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice
+            she had peeped into the book her sister was reading, but it had no pictures or conversations in it, and what is the use of a book,
+            thought Alice without pictures or conversations?
+          </ng-container>
+          <ng-container CardFooter>
+            <small> -- by Lewis Carroll </small>
+          </ng-container>
+        </mantis-card>
+      `
+    }}
+  </Story>
+</Canvas>
+
+
