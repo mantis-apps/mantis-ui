@@ -6,6 +6,7 @@ type CardStory = CardComponent;
 
 const meta: Meta<CardStory> = {
   component: CardComponent,
+  tags: ['autodocs'],
   title: 'Molecules/Cards/Card Default',
   render: ({ ...args }) => ({
     props: args,

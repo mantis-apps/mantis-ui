@@ -23,7 +23,7 @@
           "tsConfig": "feature/ui/tsconfig.lib.json"
         }
       },
-      "defaultConfiguration": "production"
+      "defaultConfiguration": "development"
     },
     "test": {
       "executor": "@nx/jest:jest",

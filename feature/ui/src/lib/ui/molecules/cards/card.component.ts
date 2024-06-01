@@ -27,18 +27,18 @@ import {
       <div class="absolute top-6 right-12 text-sm">
         <ng-content select="[CardBadge]"></ng-content>
       </div>
-      <div hlmCardHeader [class]="this.headerClass">
-        <h3 hlmCardTitle [class]="this.titleClass">
+      <div hlmCardHeader [class]="headerClass">
+        <h3 hlmCardTitle [class]="titleClass">
           <ng-content select="[CardTitle]"></ng-content>
         </h3>
-        <p hlmCardDescription [class]="this.descriptionClass">
+        <p hlmCardDescription [class]="descriptionClass">
           <ng-content select="[CardDescription]"></ng-content>
         </p>
       </div>
-      <div hlmCardContent [class]="this.contentClass" >
+      <div hlmCardContent [class]="contentClass" >
         <ng-content select="[CardContent]"></ng-content>
       </div>
-      <div hlmCardFooter [class]="this.footerClass">
+      <div hlmCardFooter [class]="footerClass">
         <ng-content select="[CardFooter]"></ng-content>
       </div>
     </section>
