@@ -33,3 +33,11 @@ export const CardComponentImports = [
   exports: [...CardComponentImports],
 })
 export class CardModule {}
+
+export * from './lib/ui/components/accordion/partials/accordion.component';
+
+export * from './lib/ui/components/accordion/partials/accordion-item.component';
+
+export * from './lib/ui/components/accordion/partials/accordion-content.component';
+
+export * from './lib/ui/components/accordion/partials/accordion-trigger.component';
