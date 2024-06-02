@@ -42,7 +42,7 @@ import {
 } from '@ng-icons/lucide';
 
 @Component({
-  selector: 'mantis-icon-list',
+  selector: 'IconList',
   standalone: true,
   imports: [CommonModule, ButtonComponent, IconComponent],
   providers: [
@@ -86,10 +86,10 @@ import {
   ],
   template: `
     <div class="grid grid-cols-7 gap-4 max-w-lg mx-auto mb-4">
-      <mantis-button *ngFor="let icon of icons" variant="outline" class="flex justify-center items-center" size="icon">
-        <mantis-icon [name]="icon" size="sm" class="flex" />
+      <Button *ngFor="let icon of icons" variant="outline" class="flex justify-center items-center" size="icon">
+        <Icon [name]="icon" size="sm" class="flex" />
         <span class="sr-only">{{ icon }}</span>
-      </mantis-button>
+      </Button>
     </div>
   `,
   styles: []

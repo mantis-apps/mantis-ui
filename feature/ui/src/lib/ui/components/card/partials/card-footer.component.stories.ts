@@ -1,6 +1,6 @@
 import { type Meta, type StoryObj, argsToTemplate, moduleMetadata } from '@storybook/angular';
 import { CardFooterComponent } from './card-footer.component';
-import { ButtonComponent } from '../../../atoms/button/button.component';
+import { ButtonComponent } from '../../button/button.component';
 type StoryArgs = CardFooterComponent & {footerFooter: string};
 
 const meta: Meta<StoryArgs> = {
@@ -29,7 +29,7 @@ const meta: Meta<StoryArgs> = {
     props: args,
     template: `
       <CardFooter ${argsToTemplate(args)}>
-        <mantis-button size="lg">Add to bookmarks</mantis-button>
+        <Button size="lg">Add to bookmarks</Button>
       </CardFooter>
     `
   }),

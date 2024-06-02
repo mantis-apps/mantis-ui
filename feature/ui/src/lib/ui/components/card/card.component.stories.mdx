@@ -1,5 +1,5 @@
 import {  Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
-import { ButtonComponent } from '../../atoms/button/button.component';
+import { ButtonComponent } from '../button/button.component';
 import { CardComponent } from './partials/card.component';
 import { CardHeaderComponent } from './partials/card-header.component';
 import { CardTitleComponent } from './partials/card-title.component';
@@ -36,9 +36,9 @@ Here's an example of how you can use the `CardComponent`:
   <Story name="Card Example">
     {{
       template: `
-        <Card [cardClass]="'p-4 w-[400px]'">
+        <Card [class]="'p-8 w-[400px]'">
           <CardHeader>
-            <CardTitle [titleClass]="'text-4xl'">Down the Rabbit Hole</CardTitle>
+            <CardTitle [class]="'text-4xl'">Down the Rabbit Hole</CardTitle>
             <CardDescription>
               Alice in Wonderland
               <small>— Lewis Carroll</small>
@@ -53,7 +53,7 @@ Here's an example of how you can use the `CardComponent`:
             </p>
           </CardContent>
           <CardFooter>
-            <mantis-button size="lg">Add to bookmarks</mantis-button>
+            <Button size="lg">Add to bookmarks</Button>
           </CardFooter>
         </Card>
       `

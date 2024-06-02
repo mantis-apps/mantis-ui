@@ -7,7 +7,7 @@ import { expect } from '@storybook/jest';
 
 const meta: Meta<IconComponent> = {
   component: IconComponent,
-  title: 'Atoms/Primitives/Icon',
+  title: 'Components/Icon',
   tags: ['autodocs'],
 };
 export default meta;

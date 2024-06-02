@@ -1,24 +1,26 @@
 <div
-  class="hidden items-start justify-center gap-6 rounded-lg p-8 md:grid lg:grid-cols-2 xl:grid-cols-3  ">
+  class="items-start justify-center hidden gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
   <!-- first column -->
-  <div class="col-span-2 grid items-start gap-6 lg:col-span-1">
+  <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
     <!-- First row -->
     <div class="flex items-center justify-center [&>div]:w-full">
 
-      <mantis-card
-        titleClass="text-xl xs:text-lg sm:text-2xl md:text-3xl font-bold text-balance">
-        <ng-container CardBadge>
+      <Card
+        class="text-xl font-bold text-balance">
+        <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
-        </ng-container>
-        <ng-container CardTitle>
-          Down the Rabbit Hole
-        </ng-container>
-        <ng-container CardDescription>
-          Alice in Wonderland <small> -- by Lewis Carroll </small>
-        </ng-container>
-        <ng-container CardContent>
-          <div class="overflow-hidden rounded-xl drop-shadow max-w-xl">
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle>
+            Down the Rabbit Hole
+          </CardTitle>
+          <CardDescription>
+            Alice in Wonderland <small> -- by Lewis Carroll </small>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="max-w-xl overflow-hidden rounded-xl drop-shadow">
             <div [hlmAspectRatio]="16 / 9">
               <img alt="Alice in Wonderland - Down the Rabbit Hole"
                 src="https://s3.amazonaws.com/media.harvardartmuseums.org/production/uploaded_files/tour_builder/o_1eir21noaq43t8i7j7dqn1p8pc.jpg?height=675" />
@@ -35,95 +37,83 @@
               book,thought Alice without pictures or conversations?
             </p>
           </div>
-        </ng-container>
-        <ng-container CardFooter>
-          <mantis-button variant="default" size="lg"
-            class="flex justify-start content-center pl-0 pb-4">
-            <mantis-icon [name]="'lucideMail'" size="sm"
+        </CardContent>
+        <CardFooter>
+          <Button variant="default" size="lg"
+            class="flex content-center justify-start pb-4 pl-0">
+            <Icon [name]="'lucideMail'" size="sm"
               class="flex mr-1" />
             <p>Subscribe <span class="xs:hidden sm:inline">to
                 Newsletter</span></p>
-          </mantis-button>
-        </ng-container>
-      </mantis-card>
+          </Button>
+        </CardFooter>
+      </Card>
 
     </div>
 
     <!-- Second row -->
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
-        <mantis-card
-          titleClass="text-xl xs:text-lg sm:text-2xl md:text-3xl font-bold text-balance">
-          <ng-container CardTitle>
-            Thousands of Lucide Icons
-          </ng-container>
-          <ng-container CardDescription>
-            There is a Lucide Icon for every occasion
-          </ng-container>
-          <ng-container CardContent>
-            <mantis-icon-list />
-          </ng-container>
-          <!-- <ng-container CardFooter>
-          <mantis-button variant="default" size="lg"
-            class="flex justify-start content-center pl-0 pb-4">
-            <mantis-icon [name]="'lucideMail'" size="sm"
-              class="flex mr-1" />
-            <p>Subscribe <span class="xs:hidden sm:inline">to
-                Newsletter</span></p>
-          </mantis-button>
-        </ng-container> -->
-        </mantis-card>
+        <Card
+          class="text-xl font-bold text-balance">
+          <CardHeader>
+            <CardTitle>
+              Thousands of Lucide Icons
+            </CardTitle>
+            <CardDescription>
+              There is a Lucide Icon for every occasion
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <IconList />
+          </CardContent>
+        </Card>
       </div>
     </div>
     <!-- End rows container-->
   </div>
 
   <!-- second column -->
-  <div class="col-span-2 grid items-start gap-6 lg:col-span-1">
+  <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
     <!-- First row -->
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
-        <mantis-card
-          titleClass="text-xl xs:text-lg sm:text-2xl md:text-3xl font-bold text-balance">
-          <ng-container CardTitle>
-            Thousands of Lucide Icons
-          </ng-container>
-          <ng-container CardDescription>
-            There is a Lucide Icon for every occasion
-          </ng-container>
-          <ng-container CardContent>
-            <mantis-icon-list />
-          </ng-container>
-          <!-- <ng-container CardFooter>
-          <mantis-button variant="default" size="lg"
-            class="flex justify-start content-center pl-0 pb-4">
-            <mantis-icon [name]="'lucideMail'" size="sm"
-              class="flex mr-1" />
-            <p>Subscribe <span class="xs:hidden sm:inline">to
-                Newsletter</span></p>
-          </mantis-button>
-        </ng-container> -->
-        </mantis-card>
+        <Card
+          class="text-xl font-bold text-balance">
+          <CardHeader>
+            <CardTitle>
+              Thousands of Lucide Icons
+            </CardTitle>
+            <CardDescription>
+              There is a Lucide Icon for every occasion
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <IconList />
+          </CardContent>
+        </Card>
       </div>
     </div>
 
     <!-- Second row -->
     <div class="flex items-center justify-center [&>div]:w-full">
 
-      <mantis-card
-        titleClass="text-xl xs:text-lg sm:text-2xl md:text-3xl font-bold text-balance">
-        <ng-container CardBadge>
+      <Card
+        class="text-xl font-bold text-balance">
+        <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
-        </ng-container>
-        <ng-container CardTitle>
-          Down the Rabbit Hole
-        </ng-container>
-        <ng-container CardDescription>
-          Alice in Wonderland <small> -- by Lewis Carroll </small>
-        </ng-container>
-        <ng-container CardContent>
-          <div class="overflow-hidden rounded-xl drop-shadow max-w-xl">
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle>
+            Down the Rabbit Hole
+          </CardTitle>
+          <CardDescription>
+            Alice in Wonderland <small> -- by Lewis Carroll </small>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="max-w-xl overflow-hidden rounded-xl drop-shadow">
             <div [hlmAspectRatio]="16 / 9">
               <img alt="Alice in Wonderland - Down the Rabbit Hole"
                 src="https://s3.amazonaws.com/media.harvardartmuseums.org/production/uploaded_files/tour_builder/o_1eir21noaq43t8i7j7dqn1p8pc.jpg?height=675" />
@@ -140,17 +130,17 @@
               book,thought Alice without pictures or conversations?
             </p>
           </div>
-        </ng-container>
-        <ng-container CardFooter>
-          <mantis-button variant="default" size="lg"
-            class="flex justify-start content-center pl-0 pb-4">
-            <mantis-icon [name]="'lucideMail'" size="sm"
+        </CardContent>
+        <CardFooter>
+          <Button variant="default" size="lg"
+            class="flex content-center justify-start pb-4 pl-0">
+            <Icon [name]="'lucideMail'" size="sm"
               class="flex mr-1" />
             <p>Subscribe <span class="xs:hidden sm:inline">to
                 Newsletter</span></p>
-          </mantis-button>
-        </ng-container>
-      </mantis-card>
+          </Button>
+        </CardFooter>
+      </Card>
 
     </div>
 
@@ -160,24 +150,26 @@
 
   <!-- third column -->
   <div
-    class="col-span-2 grid items-start gap-6 lg:col-span-2 lg:grid-cols-2 xl:col-span-1 xl:grid-cols-1">
+    class="grid items-start col-span-2 gap-6 lg:col-span-2 lg:grid-cols-2 xl:col-span-1 xl:grid-cols-1">
     <!-- Cards rows container-->
     <!-- First row -->
     <div class="flex items-center justify-center [&>div]:w-full">
 
-      <mantis-card
-        titleClass="text-xl xs:text-lg sm:text-2xl md:text-3xl font-bold text-balance">
-        <ng-container CardBadge>
+      <Card
+        class="text-xl font-bold text-balance">
+        <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
-        </ng-container>
-        <ng-container CardTitle>
-          Down the Rabbit Hole
-        </ng-container>
-        <ng-container CardDescription>
-          Alice in Wonderland <small> -- by Lewis Carroll </small>
-        </ng-container>
-        <ng-container CardContent>
-          <div class="overflow-hidden rounded-xl drop-shadow max-w-xl">
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle>
+            Down the Rabbit Hole
+          </CardTitle>
+          <CardDescription>
+            Alice in Wonderland <small> -- by Lewis Carroll </small>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="max-w-xl overflow-hidden rounded-xl drop-shadow">
             <div [hlmAspectRatio]="16 / 9">
               <img alt="Alice in Wonderland - Down the Rabbit Hole"
                 src="https://s3.amazonaws.com/media.harvardartmuseums.org/production/uploaded_files/tour_builder/o_1eir21noaq43t8i7j7dqn1p8pc.jpg?height=675" />
@@ -194,44 +186,65 @@
               book,thought Alice without pictures or conversations?
             </p>
           </div>
-        </ng-container>
-        <ng-container CardFooter>
-          <mantis-button variant="default" size="lg"
-            class="flex justify-start content-center pl-0 pb-4">
-            <mantis-icon [name]="'lucideMail'" size="sm"
+        </CardContent>
+        <CardFooter>
+          <Button variant="default" size="lg"
+            class="flex content-center justify-start pb-4 pl-0">
+            <Icon [name]="'lucideMail'" size="sm"
               class="flex mr-1" />
             <p>Subscribe <span class="xs:hidden sm:inline">to
                 Newsletter</span></p>
-          </mantis-button>
-        </ng-container>
-      </mantis-card>
+          </Button>
+        </CardFooter>
+      </Card>
 
     </div>
 
     <!-- Second row -->
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
-        <mantis-card
-          titleClass="text-xl xs:text-lg sm:text-2xl md:text-3xl font-bold text-balance">
-          <ng-container CardTitle>
-            Thousands of Lucide Icons
-          </ng-container>
-          <ng-container CardDescription>
-            There is a Lucide Icon for every occasion
-          </ng-container>
-          <ng-container CardContent>
-            <mantis-icon-list />
-          </ng-container>
-          <!-- <ng-container CardFooter>
-          <mantis-button variant="default" size="lg"
-            class="flex justify-start content-center pl-0 pb-4">
-            <mantis-icon [name]="'lucideMail'" size="sm"
+        <Card
+        class="text-xl font-bold text-balance">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle>
+            Down the Rabbit Hole
+          </CardTitle>
+          <CardDescription>
+            Alice in Wonderland <small> -- by Lewis Carroll </small>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <div class="max-w-xl overflow-hidden rounded-xl drop-shadow">
+            <div [hlmAspectRatio]="16 / 9">
+              <img alt="Alice in Wonderland - Down the Rabbit Hole"
+                src="https://s3.amazonaws.com/media.harvardartmuseums.org/production/uploaded_files/tour_builder/o_1eir21noaq43t8i7j7dqn1p8pc.jpg?height=675" />
+            </div>
+          </div>
+          <div class="mt-4">
+            <p>
+              Alice was beginning to get very tired of sitting by her
+              sister on the bank, and of having nothing to do: once or
+              twice
+              she had peeped into the book her sister was reading, but it
+              had no pictures or conversations in it, and what is the use
+              of a
+              book,thought Alice without pictures or conversations?
+            </p>
+          </div>
+        </CardContent>
+        <CardFooter>
+          <Button variant="default" size="lg"
+            class="flex content-center justify-start pb-4 pl-0">
+            <Icon [name]="'lucideMail'" size="sm"
               class="flex mr-1" />
             <p>Subscribe <span class="xs:hidden sm:inline">to
                 Newsletter</span></p>
-          </mantis-button>
-        </ng-container> -->
-        </mantis-card>
+          </Button>
+        </CardFooter>
+      </Card>
       </div>
     </div>
 

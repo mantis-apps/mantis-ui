@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { type Meta, type StoryObj, argsToTemplate } from '@storybook/angular';
 import { CardComponent } from './card.component';
 type StoryArgs = CardComponent & {titleContent: string};
@@ -7,7 +8,7 @@ const meta: Meta<StoryArgs> = {
   component: CardComponent,
   title: 'Components/Card/Partials/Card',
   argTypes: {
-    cardClass: { control: { type: 'text' }, name: ' Class' },
+    class: { control: { type: 'text' }, name: 'Card Class' },
   },
   parameters: {
     docs: {
@@ -35,6 +36,6 @@ type Story = StoryObj<StoryArgs>;
 
 export const Default: Story = {
   args: {
-    cardClass: ''
+    class: 'w-[500px]'
   }
 };

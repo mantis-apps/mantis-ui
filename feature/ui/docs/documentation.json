@@ -9,14 +9,14 @@
     "components": [
         {
             "name": "ButtonComponent",
-            "id": "component-ButtonComponent-a0e3740c176360d0be4e0c67194cc66033c7cb072d0bb42aabf22b2c476fd7a38252e2fcfb735bcf44535dd0d056bbd4d5edf7a04aef3efb4278f93a73026ec9",
-            "file": "feature/ui/src/lib/ui/atoms/button/button.component.ts",
+            "id": "component-ButtonComponent-9a3da8885728b96dc0caa85e58800abbc9fa3f6f753842e7d3167cbbdb081ccbf980620e083960c4de27408bae7d597e15a4d262c972603a1600965a42ad9d15",
+            "file": "feature/ui/src/lib/ui/components/button/button.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "mantis-button",
+            "selector": "Button",
             "styleUrls": [],
             "styles": [],
             "template": "<button hlmBtn [variant]=\"variant\" [size]=\"size\">\n  <ng-content></ng-content>\n</button>",
@@ -60,7 +60,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\n\n@Component({\n  selector: 'mantis-button',\n  standalone: true,\n  imports: [HlmButtonDirective],\n  template: `\n  <button hlmBtn [variant]=\"variant\" [size]=\"size\">\n    <ng-content></ng-content>\n  </button> `,\n})\nexport class ButtonComponent {\n  @Input() variant: 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link' | 'default' = 'default';\n  @Input() size: 'default' | 'sm' | 'lg' | 'icon' = 'default';\n\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\n\n@Component({\n  selector: 'Button',\n  standalone: true,\n  imports: [HlmButtonDirective],\n  template: `\n  <button hlmBtn [variant]=\"variant\" [size]=\"size\">\n    <ng-content></ng-content>\n  </button> `,\n})\nexport class ButtonComponent {\n  @Input() variant: 'secondary' | 'destructive' | 'outline' | 'ghost' | 'link' | 'default' = 'default';\n  @Input() size: 'default' | 'sm' | 'lg' | 'icon' = 'default';\n\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -68,173 +68,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-ce6f8a07c7e3960fe4aa27df7f7bccc335fc8575ef148ff94666f90f49868e842f72762ce76e5f41e5ac715f0f00a3167f97db9bb3ff65b238e9e4a0ca9e3931",
-            "file": "feature/ui/src/lib/ui/molecules/cards/card.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "mantis-card",
-            "styleUrls": [],
-            "styles": [
-                ""
-            ],
-            "template": "<section hlmCard [class]=\"this._containerClass() + ' relative '\">\n  <div class=\"absolute top-6 right-12 text-sm\">\n    <ng-content select=\"[CardBadge]\"></ng-content>\n  </div>\n  <div hlmCardHeader [class]=\"headerClass\">\n    <h3 hlmCardTitle [class]=\"titleClass\">\n      <ng-content select=\"[CardTitle]\"></ng-content>\n    </h3>\n    <p hlmCardDescription [class]=\"descriptionClass\">\n      <ng-content select=\"[CardDescription]\"></ng-content>\n    </p>\n  </div>\n  <div hlmCardContent [class]=\"contentClass\" >\n    <ng-content select=\"[CardContent]\"></ng-content>\n  </div>\n  <div hlmCardFooter [class]=\"footerClass\">\n    <ng-content select=\"[CardFooter]\"></ng-content>\n  </div>\n</section>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "containerClass",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 52,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "contentClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 58,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "descriptionClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 57,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "footerClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 59,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "headerClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 55,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "titleClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 56,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "_containerClass",
-                    "defaultValue": "signal<string>('')",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "WritableSignal<string>",
-                    "optional": false,
-                    "description": "",
-                    "line": 49,
-                    "modifierKind": [
-                        124
-                    ]
-                }
-            ],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "CommonModule",
-                    "type": "module"
-                },
-                {
-                    "name": "HlmCardDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardHeaderDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardTitleDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardDescriptionDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardContentDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardFooterDirective",
-                    "type": "directive"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input, WritableSignal, input, signal } from '@angular/core';\nimport { CommonModule } from '@angular/common';\n\nimport {\n  HlmCardDirective,\n  HlmCardHeaderDirective,\n  HlmCardTitleDirective,\n  HlmCardDescriptionDirective,\n  HlmCardContentDirective,\n  HlmCardFooterDirective,\n} from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'mantis-card',\n  standalone: true,\n  imports: [\n    CommonModule,\n    HlmCardDirective,\n    HlmCardHeaderDirective,\n    HlmCardTitleDirective,\n    HlmCardDescriptionDirective,\n    HlmCardContentDirective,\n    HlmCardFooterDirective,\n  ],\n  template: `\n    <section hlmCard [class]=\"this._containerClass() + ' relative '\">\n      <div class=\"absolute top-6 right-12 text-sm\">\n        <ng-content select=\"[CardBadge]\"></ng-content>\n      </div>\n      <div hlmCardHeader [class]=\"headerClass\">\n        <h3 hlmCardTitle [class]=\"titleClass\">\n          <ng-content select=\"[CardTitle]\"></ng-content>\n        </h3>\n        <p hlmCardDescription [class]=\"descriptionClass\">\n          <ng-content select=\"[CardDescription]\"></ng-content>\n        </p>\n      </div>\n      <div hlmCardContent [class]=\"contentClass\" >\n        <ng-content select=\"[CardContent]\"></ng-content>\n      </div>\n      <div hlmCardFooter [class]=\"footerClass\">\n        <ng-content select=\"[CardFooter]\"></ng-content>\n      </div>\n    </section>\n  `,\n  styles: ``,\n})\nexport class CardComponent {\n  protected _containerClass: WritableSignal<string> = signal<string>('');\n\n  @Input()\n  set containerClass(value: string) {\n    this._containerClass = signal(value);\n  }\n  @Input() headerClass = '';\n  @Input() titleClass = '';\n  @Input() descriptionClass = '';\n  @Input() contentClass = '';\n  @Input() footerClass = '';\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "\n",
-            "extends": [],
-            "accessors": {
-                "containerClass": {
-                    "name": "containerClass",
-                    "setSignature": {
-                        "name": "containerClass",
-                        "type": "void",
-                        "deprecated": false,
-                        "deprecationMessage": "",
-                        "args": [
-                            {
-                                "name": "value",
-                                "type": "string",
-                                "deprecated": false,
-                                "deprecationMessage": ""
-                            }
-                        ],
-                        "returnType": "void",
-                        "line": 52,
-                        "jsdoctags": [
-                            {
-                                "name": "value",
-                                "type": "string",
-                                "deprecated": false,
-                                "deprecationMessage": "",
-                                "tagName": {
-                                    "text": "param"
-                                }
-                            }
-                        ]
-                    }
-                }
-            }
-        },
-        {
-            "name": "CardComponent",
-            "id": "component-CardComponent-04ccfd9f535155c5f3f1cca3d1af470d43f81ec52fdb54c548dfed4509bc418df16e84b159be5ee81969717f4c6f10593be74fae5ddbeb2046ae7cbcb4db3719-1",
+            "id": "component-CardComponent-132a32816fbebd88f91a04b4396fc2993d986f610501e954b3c39d8fcc917628e389c0ad76c8e02f7dda4660839ef7b4f8a4ba31d27932bdc40fff2c7299c166",
             "file": "feature/ui/src/lib/ui/components/card/partials/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -243,22 +77,20 @@
             "providers": [],
             "selector": "Card",
             "styleUrls": [],
-            "styles": [
-                "\n    :host {\n      display: contents;\n    }\n  "
-            ],
-            "template": "<div hlmCard [class]=\"cardClass\">\n  <ng-content />\n</div>\n",
+            "styles": [],
+            "template": "<div hlmCard [class]=\"class\">\n  <ng-content />\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "cardClass",
-                    "defaultValue": "'w-full'",
+                    "name": "class",
+                    "defaultValue": "'w-[420px]'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nadd tailwind classes to override defaults (e.g. 'text-2xl p-2')\n",
                     "description": "<p>add tailwind classes to override defaults (e.g. &#39;text-2xl p-2&#39;)</p>\n",
-                    "line": 23,
+                    "line": 18,
                     "type": "string",
                     "decorators": []
                 }
@@ -280,14 +112,11 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmCardDirective } from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'Card',\n  standalone: true,\n  imports: [HlmCardDirective],\n  template: `\n    <div hlmCard [class]=\"cardClass\">\n      <ng-content />\n    </div>\n  `,\n  styles: `\n    :host {\n      display: contents;\n    }\n  `\n})\nexport class CardComponent {\n  /**\n   * add tailwind classes to override defaults (e.g. 'text-2xl p-2')\n   */\n  @Input() cardClass = 'w-full';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmCardDirective } from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'Card',\n  standalone: true,\n  imports: [HlmCardDirective],\n  template: `\n    <div hlmCard [class]=\"class\">\n      <ng-content />\n    </div>\n  `,\n})\nexport class CardComponent {\n  /**\n   * add tailwind classes to override defaults (e.g. 'text-2xl p-2')\n   */\n  @Input() class = 'w-[420px]';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n    :host {\n      display: contents;\n    }\n  \n",
-            "extends": [],
-            "isDuplicate": true,
-            "duplicateId": 1,
-            "duplicateName": "CardComponent-1"
+            "stylesData": "",
+            "extends": []
         },
         {
             "name": "CardContentComponent",
@@ -497,7 +326,7 @@
         },
         {
             "name": "CardTitleComponent",
-            "id": "component-CardTitleComponent-f4c8b4feb8bc8684e8e569b8e8d2f199d0b699e1488933ed6f4b569094dbd7ff1575a513f21c5bf9b1cb48983d058bd0107fc6775b88afd8b2769e4f8fa39d34",
+            "id": "component-CardTitleComponent-eeed95fe8b59a4497c656932bda255273c4f5814365f699fbd303b90960c3379208b1ade892cb12b5bc72056979b030ca72ae7ab4f6483e8ca813e92cb7904b6",
             "file": "feature/ui/src/lib/ui/components/card/partials/card-title.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -507,14 +336,14 @@
             "selector": "CardTitle",
             "styleUrls": [],
             "styles": [],
-            "template": "<h3 hlmCardTitle [class]=\"titleClass\">\n  <ng-content />\n</h3>\n",
+            "template": "<h3 hlmCardTitle [class]=\"class\">\n  <ng-content />\n</h3>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
             "inputsClass": [
                 {
-                    "name": "titleClass",
-                    "defaultValue": "''",
+                    "name": "class",
+                    "defaultValue": "'text-4xl'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nadd tailwind classes to override defaults (e.g. 'text-2xl p-2')\n",
@@ -541,7 +370,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmCardTitleDirective } from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'CardTitle',\n  standalone: true,\n  imports: [HlmCardTitleDirective],\n  template: `\n    <h3 hlmCardTitle [class]=\"titleClass\">\n      <ng-content />\n    </h3>\n  `\n})\nexport class CardTitleComponent {\n  /**\n   * add tailwind classes to override defaults (e.g. 'text-2xl p-2')\n   */\n  @Input() titleClass = '';\n}\n",
+            "sourceCode": "import { Component, Input, model } from '@angular/core';\nimport { HlmCardTitleDirective } from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'CardTitle',\n  standalone: true,\n  imports: [HlmCardTitleDirective],\n  template: `\n    <h3 hlmCardTitle [class]=\"class\">\n      <ng-content />\n    </h3>\n  `\n})\nexport class CardTitleComponent {\n  /**\n   * add tailwind classes to override defaults (e.g. 'text-2xl p-2')\n   */\n  @Input() class = 'text-4xl';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -549,8 +378,8 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-e573e6bc2aaba49162021f8242bfc4ab133ca79b4414ba42f71a0ce6f1d685e86d21f00b84441f1c6ce0a887b620a9ce849f2bb4f72c0fce90e2ec00f0d2c581",
-            "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.ts",
+            "id": "component-IconComponent-bf3abd6d0427e9afde48126d089012b97a3f4e8303fb618aadb1b6ae39c5a7272e1861ad3a4ab773e5bc5188ebfb602695bf4e7e88660960106e65f9f7dba9be",
+            "file": "feature/ui/src/lib/ui/components/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -563,7 +392,7 @@
                     "name": "provideIcons({\n    lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, lucideTrain,\n})"
                 }
             ],
-            "selector": "mantis-icon",
+            "selector": "Icon",
             "styleUrls": [],
             "styles": [],
             "template": "<hlm-icon\n  [name]=\"name\"\n  [size]=\"size\"\n  [color]=\"color\"\n  [strokeWidth]=\"strokeWidth\"\n  [class]=\"class\"></hlm-icon>\n",
@@ -646,7 +475,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, lucideTrain } from '@ng-icons/lucide';\nimport { ICONS } from './icon.token';\n\n@Component({\n  selector: 'mantis-icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    {\n      provide: ICONS,\n      useValue: {\n        lucideMail: 'lucideMail',\n        lucideUser2: 'lucideUser2',\n        lucideUsers2: 'lucideUsers2',\n      }\n    },\n    provideIcons({\n      lucideMail,\n      lucideUser2,\n      lucideUsers2,\n      lucideActivity,\n      lucideTruck,\n      lucideTrain,\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  private icons: Record<string, IconName> = inject(ICONS);\n  @Input({ required: true }) name!: IconName; // Required\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth?: string | number;\n  @Input() class?: string;\n}\n\n// import { Component, Input, OnInit } from '@angular/core';\n// import { CommonModule } from '@angular/common';\n// import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n// import { provideIcons, IconName } from '@ng-icons/core';\n// import * as lucideIcons from '@ng-icons/lucide';\n\n// @Component({\n//   selector: 'mantis-icon',\n//   standalone: true,\n//   imports: [CommonModule, HlmIconComponent],\n//   template: `\n//     <hlm-icon\n//       *ngIf=\"icon\"\n//       [size]=\"size\"\n//       [color]=\"color\"\n//       [strokeWidth]=\"strokeWidth\"\n//       [name]=\"iconName\"\n//     >\n//     </hlm-icon>\n//   `,\n// })\n// export class IconComponent implements OnInit {\n//   @Input() iconName!: string;\n//   @Input() size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'none' = 'base';\n//   @Input() color: string | undefined = undefined;\n//   @Input() strokeWidth: string | number | undefined = undefined;\n\n//   icon: typeof lucideIcons[keyof typeof lucideIcons] | undefined;\n\n//   async ngOnInit() {\n//     if (this.iconName) {\n//       this.icon = lucideIcons[this.iconName as keyof typeof lucideIcons];\n//       provideIcons({ [this.iconName]: this.icon });\n//     }\n//   }\n// }\n",
+            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, lucideTrain } from '@ng-icons/lucide';\nimport { ICONS } from './icon.token';\n\n@Component({\n  selector: 'Icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    {\n      provide: ICONS,\n      useValue: {\n        lucideMail: 'lucideMail',\n        lucideUser2: 'lucideUser2',\n        lucideUsers2: 'lucideUsers2',\n      }\n    },\n    provideIcons({\n      lucideMail,\n      lucideUser2,\n      lucideUsers2,\n      lucideActivity,\n      lucideTruck,\n      lucideTrain,\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  private icons: Record<string, IconName> = inject(ICONS);\n  @Input({ required: true }) name!: IconName; // Required\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth?: string | number;\n  @Input() class?: string;\n}\n\n// import { Component, Input, OnInit } from '@angular/core';\n// import { CommonModule } from '@angular/common';\n// import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n// import { provideIcons, IconName } from '@ng-icons/core';\n// import * as lucideIcons from '@ng-icons/lucide';\n\n// @Component({\n//   selector: 'mantis-icon',\n//   standalone: true,\n//   imports: [CommonModule, HlmIconComponent],\n//   template: `\n//     <hlm-icon\n//       *ngIf=\"icon\"\n//       [size]=\"size\"\n//       [color]=\"color\"\n//       [strokeWidth]=\"strokeWidth\"\n//       [name]=\"iconName\"\n//     >\n//     </hlm-icon>\n//   `,\n// })\n// export class IconComponent implements OnInit {\n//   @Input() iconName!: string;\n//   @Input() size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'none' = 'base';\n//   @Input() color: string | undefined = undefined;\n//   @Input() strokeWidth: string | number | undefined = undefined;\n\n//   icon: typeof lucideIcons[keyof typeof lucideIcons] | undefined;\n\n//   async ngOnInit() {\n//     if (this.iconName) {\n//       this.icon = lucideIcons[this.iconName as keyof typeof lucideIcons];\n//       provideIcons({ [this.iconName]: this.icon });\n//     }\n//   }\n// }\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -654,8 +483,8 @@
         },
         {
             "name": "IconListComponent",
-            "id": "component-IconListComponent-325f0d3d4393dfdf4b87e65aacc2b4fd589632d0990701a1599e9d001d38f63ef881ded9a8ec31fc88ba2f019dbfb10150c81b6423f4834199850ff1e8090e5a",
-            "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.ts",
+            "id": "component-IconListComponent-83c55d881270963a7b2d0594b4050a8b90c8ef529c66d734ef498d25c585949fc019f2358442597568e3ec6aad1d304608f2ead88e1f9209e1c94814c831a5c8",
+            "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
@@ -665,10 +494,10 @@
                     "name": "provideIcons({\n    lucideMail, lucideUser2, lucideActivity, lucideAccessibility, lucideBackpack, lucideApple, lucideAlarmCheck, lucideAlarmClock, lucideTrain, lucideTrash, lucideTornado, lucideTruck, lucideTv, lucideTrophy, lucidePlane, lucideShield, lucideShip, lucideShoppingCart, lucideShoppingBag, lucideSettings, lucideSearch, lucideScissors, lucideBarChart, lucideBattery, lucideDatabase, lucideCloud, lucideCamera, lucideCalendar, lucideBook, lucideBell, lucideLasso, lucideTicket, lucideThumbsUp, lucideTrees, lucideWrench\n})"
                 }
             ],
-            "selector": "mantis-icon-list",
+            "selector": "IconList",
             "styleUrls": [],
             "styles": [],
-            "template": "<div class=\"grid grid-cols-7 gap-4 max-w-lg mx-auto mb-4\">\n  <mantis-button *ngFor=\"let icon of icons\" variant=\"outline\" class=\"flex justify-center items-center\" size=\"icon\">\n    <mantis-icon [name]=\"icon\" size=\"sm\" class=\"flex\" />\n    <span class=\"sr-only\">{{ icon }}</span>\n  </mantis-button>\n</div>\n",
+            "template": "<div class=\"grid grid-cols-7 gap-4 max-w-lg mx-auto mb-4\">\n  <Button *ngFor=\"let icon of icons\" variant=\"outline\" class=\"flex justify-center items-center\" size=\"icon\">\n    <Icon [name]=\"icon\" size=\"sm\" class=\"flex\" />\n    <span class=\"sr-only\">{{ icon }}</span>\n  </Button>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -709,169 +538,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IconComponent } from '../icon.component';\nimport { ButtonComponent } from '../../button/button.component';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport {\n  lucideMail,\n  lucideUser2,\n  lucideActivity,\n  lucideAccessibility,\n  lucideBackpack,\n  lucideApple,\n  lucideAlarmCheck,\n  lucideAlarmClock,\n  lucideTrain,\n  lucideTrash,\n  lucideTornado,\n  lucideTruck,\n  lucideTv,\n  lucideTrophy,\n  lucidePlane,\n  lucideShield,\n  lucideShip,\n  lucideShoppingCart,\n  lucideShoppingBag,\n  lucideSettings,\n  lucideSearch,\n  lucideScissors,\n  lucideBarChart,\n  lucideBattery,\n  lucideDatabase,\n  lucideCloud,\n  lucideCamera,\n  lucideCalendar,\n  lucideBook,\n  lucideBell,\n  lucideLasso,\n  lucideTicket,\n  lucideThumbsUp,\n  lucideTrees,\n  lucideWrench\n} from '@ng-icons/lucide';\n\n@Component({\n  selector: 'mantis-icon-list',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent, IconComponent],\n  providers: [\n    provideIcons({\n      lucideMail,\n      lucideUser2,\n      lucideActivity,\n      lucideAccessibility,\n      lucideBackpack,\n      lucideApple,\n      lucideAlarmCheck,\n      lucideAlarmClock,\n      lucideTrain,\n      lucideTrash,\n      lucideTornado,\n      lucideTruck,\n      lucideTv,\n      lucideTrophy,\n      lucidePlane,\n      lucideShield,\n      lucideShip,\n      lucideShoppingCart,\n      lucideShoppingBag,\n      lucideSettings,\n      lucideSearch,\n      lucideScissors,\n      lucideBarChart,\n      lucideBattery,\n      lucideDatabase,\n      lucideCloud,\n      lucideCamera,\n      lucideCalendar,\n      lucideBook,\n      lucideBell,\n      lucideLasso,\n      lucideTicket,\n      lucideThumbsUp,\n      lucideTrees,\n      lucideWrench\n    }),\n  ],\n  template: `\n    <div class=\"grid grid-cols-7 gap-4 max-w-lg mx-auto mb-4\">\n      <mantis-button *ngFor=\"let icon of icons\" variant=\"outline\" class=\"flex justify-center items-center\" size=\"icon\">\n        <mantis-icon [name]=\"icon\" size=\"sm\" class=\"flex\" />\n        <span class=\"sr-only\">{{ icon }}</span>\n      </mantis-button>\n    </div>\n  `,\n  styles: []\n})\nexport class IconListComponent {\n  icons: IconName[] = [\n    'lucideMail',\n    'lucideUser2',\n    'lucideActivity',\n    'lucideAccessibility',\n    'lucideBackpack',\n    'lucideApple',\n    'lucideAlarmCheck',\n    'lucideAlarmClock',\n    'lucideTrain',\n    'lucideTrash',\n    'lucideTornado',\n    'lucideTruck',\n    'lucideTv',\n    'lucideTrophy',\n    'lucidePlane',\n    'lucideShield',\n    'lucideShip',\n    'lucideShoppingCart',\n    'lucideShoppingBag',\n    'lucideSettings',\n    'lucideSearch',\n    'lucideScissors',\n    'lucideBarChart',\n    'lucideBattery',\n    'lucideDatabase',\n    'lucideCloud',\n    'lucideCamera',\n    'lucideCalendar',\n    'lucideBook',\n    'lucideBell',\n    'lucideLasso',\n    'lucideTicket',\n    'lucideThumbsUp',\n    'lucideTrees',\n    'lucideWrench'\n  ];\n}\n",
+            "sourceCode": "import { Component } from '@angular/core';\nimport { CommonModule } from '@angular/common';\nimport { IconComponent } from '../icon.component';\nimport { ButtonComponent } from '../../button/button.component';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport {\n  lucideMail,\n  lucideUser2,\n  lucideActivity,\n  lucideAccessibility,\n  lucideBackpack,\n  lucideApple,\n  lucideAlarmCheck,\n  lucideAlarmClock,\n  lucideTrain,\n  lucideTrash,\n  lucideTornado,\n  lucideTruck,\n  lucideTv,\n  lucideTrophy,\n  lucidePlane,\n  lucideShield,\n  lucideShip,\n  lucideShoppingCart,\n  lucideShoppingBag,\n  lucideSettings,\n  lucideSearch,\n  lucideScissors,\n  lucideBarChart,\n  lucideBattery,\n  lucideDatabase,\n  lucideCloud,\n  lucideCamera,\n  lucideCalendar,\n  lucideBook,\n  lucideBell,\n  lucideLasso,\n  lucideTicket,\n  lucideThumbsUp,\n  lucideTrees,\n  lucideWrench\n} from '@ng-icons/lucide';\n\n@Component({\n  selector: 'IconList',\n  standalone: true,\n  imports: [CommonModule, ButtonComponent, IconComponent],\n  providers: [\n    provideIcons({\n      lucideMail,\n      lucideUser2,\n      lucideActivity,\n      lucideAccessibility,\n      lucideBackpack,\n      lucideApple,\n      lucideAlarmCheck,\n      lucideAlarmClock,\n      lucideTrain,\n      lucideTrash,\n      lucideTornado,\n      lucideTruck,\n      lucideTv,\n      lucideTrophy,\n      lucidePlane,\n      lucideShield,\n      lucideShip,\n      lucideShoppingCart,\n      lucideShoppingBag,\n      lucideSettings,\n      lucideSearch,\n      lucideScissors,\n      lucideBarChart,\n      lucideBattery,\n      lucideDatabase,\n      lucideCloud,\n      lucideCamera,\n      lucideCalendar,\n      lucideBook,\n      lucideBell,\n      lucideLasso,\n      lucideTicket,\n      lucideThumbsUp,\n      lucideTrees,\n      lucideWrench\n    }),\n  ],\n  template: `\n    <div class=\"grid grid-cols-7 gap-4 max-w-lg mx-auto mb-4\">\n      <Button *ngFor=\"let icon of icons\" variant=\"outline\" class=\"flex justify-center items-center\" size=\"icon\">\n        <Icon [name]=\"icon\" size=\"sm\" class=\"flex\" />\n        <span class=\"sr-only\">{{ icon }}</span>\n      </Button>\n    </div>\n  `,\n  styles: []\n})\nexport class IconListComponent {\n  icons: IconName[] = [\n    'lucideMail',\n    'lucideUser2',\n    'lucideActivity',\n    'lucideAccessibility',\n    'lucideBackpack',\n    'lucideApple',\n    'lucideAlarmCheck',\n    'lucideAlarmClock',\n    'lucideTrain',\n    'lucideTrash',\n    'lucideTornado',\n    'lucideTruck',\n    'lucideTv',\n    'lucideTrophy',\n    'lucidePlane',\n    'lucideShield',\n    'lucideShip',\n    'lucideShoppingCart',\n    'lucideShoppingBag',\n    'lucideSettings',\n    'lucideSearch',\n    'lucideScissors',\n    'lucideBarChart',\n    'lucideBattery',\n    'lucideDatabase',\n    'lucideCloud',\n    'lucideCamera',\n    'lucideCalendar',\n    'lucideBook',\n    'lucideBell',\n    'lucideLasso',\n    'lucideTicket',\n    'lucideThumbsUp',\n    'lucideTrees',\n    'lucideWrench'\n  ];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
-            "extends": []
-        },
-        {
-            "name": "InfoCardComponent",
-            "id": "component-InfoCardComponent-79dd80e4275a7ae7b010149be3e0f7817232aecf8271e025e7322c06c3c5b7fb816aa2e97004087ecaf8de658966697533e9ca130df1841cb103608dc0c41777",
-            "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.ts",
-            "encapsulation": [],
-            "entryComponents": [],
-            "inputs": [],
-            "outputs": [],
-            "providers": [],
-            "selector": "mantis-info-card",
-            "styleUrls": [],
-            "styles": [
-                "\n      :host {\n        display: contents;\n      }\n    "
-            ],
-            "template": "<!-- <section hlmCard class=\"p-4\">\n  <div hlmCardHeader class=\"pb-2\">\n    <h3 hlmCardTitle>{{ title }}</h3>\n    <p *ngIf=\"description\" hlmCardDescription>{{ description }}</p>\n  </div>\n  <p hlmCardContent>\n    {{ value }}\n    <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n  </p>\n</section> -->\n<section hlmCard [class]=\"this.class\">\n  <div hlmCardHeader [class]=\"this.headerClass\" >\n    <h3 hlmCardTitle [class]=\"this.titleClass\" >{{title}}</h3>\n    <p hlmCardDescription [class]=\"this.descriptionClass\">\n      {{description}}\n    </p>\n  </div>\n  <!-- <div hlmCardContent class=\"px-6 flex\">\n    <h2 hlmCardTitle class=\"text-4xl mr-2\">{{ value }}</h2>\n    <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n  </div> -->\n  <div hlmCardFooter>\n    <ng-content></ng-content>\n  </div>\n</section>\n",
-            "templateUrl": [],
-            "viewProviders": [],
-            "hostDirectives": [],
-            "inputsClass": [
-                {
-                    "name": "class",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "rawdescription": "\n\nUse Tailwind classes to specify your own rules for the card container.\ne.g. `sm:col-span-2` will span the card across 2 columns on small screens.\n",
-                    "description": "<p>Use Tailwind classes to specify your own rules for the card container.\ne.g. <code>sm:col-span-2</code> will span the card across 2 columns on small screens.</p>\n",
-                    "line": 67,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "required": true,
-                    "name": "description",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "optional": false,
-                    "line": 62,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "descriptionClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 70,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "footerClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 71,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "headerClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 68,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "required": true,
-                    "name": "title",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "optional": false,
-                    "line": 61,
-                    "type": "string",
-                    "decorators": []
-                },
-                {
-                    "name": "titleClass",
-                    "defaultValue": "''",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "line": 69,
-                    "type": "string",
-                    "decorators": []
-                }
-            ],
-            "outputsClass": [],
-            "propertiesClass": [],
-            "methodsClass": [],
-            "deprecated": false,
-            "deprecationMessage": "",
-            "hostBindings": [],
-            "hostListeners": [],
-            "standalone": true,
-            "imports": [
-                {
-                    "name": "NgIf"
-                },
-                {
-                    "name": "HlmCardDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardHeaderDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardTitleDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmCardDescriptionDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmBadgeDirective",
-                    "type": "directive"
-                },
-                {
-                    "name": "HlmButtonDirective",
-                    "type": "directive"
-                }
-            ],
-            "description": "",
-            "rawdescription": "\n",
-            "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport {\n  HlmCardDirective,\n  HlmCardHeaderDirective,\n  HlmCardTitleDirective,\n  HlmCardDescriptionDirective,\n} from '@spartan-ng/ui-card-helm';\nimport { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';\n\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\n\n@Component({\n  selector: 'mantis-info-card',\n  standalone: true,\n  imports: [\n    NgIf,\n    HlmCardDirective,\n    HlmCardHeaderDirective,\n    HlmCardTitleDirective,\n    HlmCardDescriptionDirective,\n    HlmBadgeDirective,\n    HlmButtonDirective,\n  ],\n  styles: [\n    `\n      :host {\n        display: contents;\n      }\n    `\n  ],\n  template: `\n    <!-- <section hlmCard class=\"p-4\">\n      <div hlmCardHeader class=\"pb-2\">\n        <h3 hlmCardTitle>{{ title }}</h3>\n        <p *ngIf=\"description\" hlmCardDescription>{{ description }}</p>\n      </div>\n      <p hlmCardContent>\n        {{ value }}\n        <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n      </p>\n    </section> -->\n    <section hlmCard [class]=\"this.class\">\n      <div hlmCardHeader [class]=\"this.headerClass\" >\n        <h3 hlmCardTitle [class]=\"this.titleClass\" >{{title}}</h3>\n        <p hlmCardDescription [class]=\"this.descriptionClass\">\n          {{description}}\n        </p>\n      </div>\n      <!-- <div hlmCardContent class=\"px-6 flex\">\n        <h2 hlmCardTitle class=\"text-4xl mr-2\">{{ value }}</h2>\n        <span *ngIf=\"badgeText\" hlmBadge [variant]=\"badgeVariant\">{{ badgeText }}</span>\n      </div> -->\n      <div hlmCardFooter>\n        <ng-content></ng-content>\n      </div>\n    </section>\n  `,\n})\nexport class InfoCardComponent {\n  @Input({ required: true }) title!: string;\n  @Input({ required: true }) description!: string;\n  /**\n   * Use Tailwind classes to specify your own rules for the card container.\n   * e.g. `sm:col-span-2` will span the card across 2 columns on small screens.\n   */\n  @Input() class = '';\n  @Input() headerClass = '';\n  @Input() titleClass = '';\n  @Input() descriptionClass = '';\n  @Input() footerClass = '';\n}\n",
-            "assetsDirs": [],
-            "styleUrlsData": "",
-            "stylesData": "\n      :host {\n        display: contents;\n      }\n    \n",
             "extends": []
         }
     ],
     "modules": [],
     "miscellaneous": {
         "variables": [
-            {
-                "name": "CardDefault",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    containerClass: 'text-card-foreground shadow',\n    headerClass: 'px-6 pt-6 pb-0',\n    titleClass: 'text-xs font-medium',\n    descriptionClass: 'text-4xl text-foreground font-bold p-0',\n    contentClass: 'text-muted-foreground text-xs -mt-6',\n    footerClass: 'h-0 p-0 m-0',\n  },\n}"
-            },
-            {
-                "name": "CardDefault",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    titleClass: 'text-4xl',\n  },\n}"
-            },
             {
                 "name": "config",
                 "ctype": "miscellaneous",
@@ -886,21 +562,11 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Button works!',\n    variant: 'default',\n    size: 'lg',\n  }\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
             },
             {
                 "name": "Default",
@@ -950,7 +616,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    titleClass: ''\n  }\n}"
+                "defaultValue": "{\n  args: {\n    class: 'text-3xl'\n  }\n}"
             },
             {
                 "name": "Default",
@@ -960,13 +626,23 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    cardClass: ''\n  }\n}"
+                "defaultValue": "{\n  args: {\n    class: 'w-[500px]'\n  }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
             },
             {
                 "name": "Destructive",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -976,7 +652,7 @@
                 "name": "Ghost",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -996,7 +672,7 @@
                 "name": "Heading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1006,7 +682,7 @@
                 "name": "Link",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1016,51 +692,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<StoryArgs>",
-                "defaultValue": "{\n  tags: ['autodocs'],\n  component: ButtonComponent,\n  title: 'Atoms/Primitives/Button',\n  decorators: [\n    componentWrapperDecorator(ButtonComponent, ({ args }) => args),\n  ],\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Button Variant', options: ['secondary', 'destructive', 'outline', 'ghost', 'link', 'default'] },\n    size: { control: { type: 'select' }, name: 'Button Size', options: ['default', 'sm', 'lg', 'icon'] },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({ props: args, template: `${args.label}` }),\n}"
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: ButtonComponent,\n  title: 'Components/Button/Button',\n  decorators: [\n    componentWrapperDecorator(ButtonComponent, ({ args }) => args),\n  ],\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Button Variant', options: ['secondary', 'destructive', 'outline', 'ghost', 'link', 'default'] },\n    size: { control: { type: 'select' }, name: 'Button Size', options: ['default', 'sm', 'lg', 'icon'] },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({ props: args, template: `${args.label}` }),\n}"
             },
             {
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<IconComponent>",
-                "defaultValue": "{\n  component: IconComponent,\n  title: 'Atoms/Primitives/Icon',\n  tags: ['autodocs'],\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<CardStory>",
-                "defaultValue": "{\n  component: CardComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent, IconComponent],\n      providers: [\n        {\n          provide: 'lucideIcons',\n          useValue: {\n            lucideUsers2,\n          },\n        },\n        provideIcons({\n          lucideUsers2,\n        }),\n      ],\n    }),\n  ],\n  title: 'Molecules/Cards/Card with CTA',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)} [class]=\"'text-card-foreground shadow'\">\n        <ng-container CardBadge >\n            <mantis-icon [name]=\"'lucideUsers2'\" size=\"sm\" class=\"text-muted\"/>\n        </ng-container>\n        <ng-container CardTitle >Subscriptions</ng-container>\n        <ng-container CardDescription>\n          +2350\n        </ng-container>\n        <ng-container CardContent>\n          +180.1% from last month\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<CardStory>",
-                "defaultValue": "{\n  component: CardComponent,\n  tags: ['autodocs'],\n  title: 'Molecules/Cards/Card Default',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)}>\n        <ng-container CardBadge >100+</ng-container>\n        <ng-container CardTitle >Down the Rabbit Hole</ng-container>\n        <ng-container CardDescription>\n          Alice in Wonderland <small>— Lewis Carroll</small>\n        </ng-container>\n        <ng-container CardContent>\n          Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice\n          she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,\n          ” thought Alice, “without pictures or conversations?”\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<IconListComponent>",
-                "defaultValue": "{\n  title: 'Atoms/Primitives/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                "defaultValue": "{\n  component: IconComponent,\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n}"
             },
             {
                 "name": "meta",
@@ -1090,7 +736,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<StoryArgs>",
-                "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardFooterComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent]\n    })\n  ],\n  title: 'Components/Card/Partials/CardFooter',\n  argTypes: {\n    footerClass: { control: { type: 'text' }, name: 'Footer Class', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardFooter ${argsToTemplate(args)}>\n        <mantis-button size=\"lg\">Add to bookmarks</mantis-button>\n      </CardFooter>\n    `\n  }),\n}"
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardFooterComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent]\n    })\n  ],\n  title: 'Components/Card/Partials/CardFooter',\n  argTypes: {\n    footerClass: { control: { type: 'text' }, name: 'Footer Class', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardFooter ${argsToTemplate(args)}>\n        <Button size=\"lg\">Add to bookmarks</Button>\n      </CardFooter>\n    `\n  }),\n}"
             },
             {
                 "name": "meta",
@@ -1110,7 +756,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<StoryArgs>",
-                "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardTitleComponent,\n  title: 'Components/Card/Partials/CardTitle',\n  argTypes: {\n    titleClass: { control: { type: 'text' }, name: 'Title Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardTitle ${argsToTemplate(args)}>\n        Down the Rabbit Hole\n      </CardTitle>\n    `\n  }),\n}"
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardTitleComponent,\n  title: 'Components/Card/Partials/CardTitle',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Title Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardTitle ${argsToTemplate(args)}>\n        Down the Rabbit Hole\n      </CardTitle>\n    `\n  }),\n}"
             },
             {
                 "name": "meta",
@@ -1120,13 +766,23 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<StoryArgs>",
-                "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    cardClass: { control: { type: 'text' }, name: ' Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<IconListComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
             },
             {
                 "name": "Outline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -1146,73 +802,31 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
             },
             {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    title: 'Total Revenue',\n    description: `Introducing Our Dynamic Orders Dashboard for Seamless Management\n    and Insightful Analysis.`\n  },\n}"
-            },
-            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Heading works!',\n    variant: 'secondary',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/button works!/gi)).toBeTruthy();\n  },\n}"
-            },
-            {
-                "name": "Secondary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    title: 'Subscriptions',\n    description: 'This month'\n  },\n}"
             }
         ],
         "functions": [],
         "typealiases": [
             {
-                "name": "CardStory",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "CardComponent",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "CardStory",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "CardComponent",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1223,51 +837,7 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<IconComponent>",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<CardStory>",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<CardStory>",
-                "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<IconListComponent>",
-                "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<InfoCardComponent>",
-                "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1340,11 +910,22 @@
                 "kind": 183
             },
             {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<IconListComponent>",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
                 "name": "StoryArgs",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "",
-                "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1419,50 +1000,6 @@
         ],
         "enumerations": [],
         "groupedVariables": {
-            "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts": [
-                {
-                    "name": "CardDefault",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    containerClass: 'text-card-foreground shadow',\n    headerClass: 'px-6 pt-6 pb-0',\n    titleClass: 'text-xs font-medium',\n    descriptionClass: 'text-4xl text-foreground font-bold p-0',\n    contentClass: 'text-muted-foreground text-xs -mt-6',\n    footerClass: 'h-0 p-0 m-0',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<CardStory>",
-                    "defaultValue": "{\n  component: CardComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent, IconComponent],\n      providers: [\n        {\n          provide: 'lucideIcons',\n          useValue: {\n            lucideUsers2,\n          },\n        },\n        provideIcons({\n          lucideUsers2,\n        }),\n      ],\n    }),\n  ],\n  title: 'Molecules/Cards/Card with CTA',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)} [class]=\"'text-card-foreground shadow'\">\n        <ng-container CardBadge >\n            <mantis-icon [name]=\"'lucideUsers2'\" size=\"sm\" class=\"text-muted\"/>\n        </ng-container>\n        <ng-container CardTitle >Subscriptions</ng-container>\n        <ng-container CardDescription>\n          +2350\n        </ng-container>\n        <ng-container CardContent>\n          +180.1% from last month\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
-                }
-            ],
-            "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts": [
-                {
-                    "name": "CardDefault",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    titleClass: 'text-4xl',\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<CardStory>",
-                    "defaultValue": "{\n  component: CardComponent,\n  tags: ['autodocs'],\n  title: 'Molecules/Cards/Card Default',\n  render: ({ ...args }) => ({\n    props: args,\n    template: `\n      <mantis-card ${argsToTemplate(args)}>\n        <ng-container CardBadge >100+</ng-container>\n        <ng-container CardTitle >Down the Rabbit Hole</ng-container>\n        <ng-container CardDescription>\n          Alice in Wonderland <small>— Lewis Carroll</small>\n        </ng-container>\n        <ng-container CardContent>\n          Alice was beginning to get very tired of sitting by her sister on the bank, and of having nothing to do: once or twice\n          she had peeped into the book her sister was reading, but it had no pictures or conversations in it, “and what is the use of a book,\n          ” thought Alice, “without pictures or conversations?”\n        </ng-container>\n      </mantis-card>\n    `,\n  }),\n}"
-                }
-            ],
             "feature/ui/.storybook/main.ts": [
                 {
                     "name": "config",
@@ -1475,12 +1012,12 @@
                     "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  }\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/button/button.component.stories.ts": [
                 {
                     "name": "Default",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1490,7 +1027,7 @@
                     "name": "Destructive",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1500,7 +1037,7 @@
                     "name": "Ghost",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1510,7 +1047,7 @@
                     "name": "Link",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1520,17 +1057,17 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<StoryArgs>",
-                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: ButtonComponent,\n  title: 'Atoms/Primitives/Button',\n  decorators: [\n    componentWrapperDecorator(ButtonComponent, ({ args }) => args),\n  ],\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Button Variant', options: ['secondary', 'destructive', 'outline', 'ghost', 'link', 'default'] },\n    size: { control: { type: 'select' }, name: 'Button Size', options: ['default', 'sm', 'lg', 'icon'] },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({ props: args, template: `${args.label}` }),\n}"
+                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: ButtonComponent,\n  title: 'Components/Button/Button',\n  decorators: [\n    componentWrapperDecorator(ButtonComponent, ({ args }) => args),\n  ],\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Button Variant', options: ['secondary', 'destructive', 'outline', 'ghost', 'link', 'default'] },\n    size: { control: { type: 'select' }, name: 'Button Size', options: ['default', 'sm', 'lg', 'icon'] },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({ props: args, template: `${args.label}` }),\n}"
                 },
                 {
                     "name": "Outline",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1540,33 +1077,11 @@
                     "name": "Secondary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'Heading works!',\n    variant: 'secondary',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/button works!/gi)).toBeTruthy();\n  },\n}"
-                }
-            ],
-            "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<IconListComponent>",
-                    "defaultValue": "{\n  title: 'Atoms/Primitives/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts": [
@@ -1632,7 +1147,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<StoryArgs>",
-                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardFooterComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent]\n    })\n  ],\n  title: 'Components/Card/Partials/CardFooter',\n  argTypes: {\n    footerClass: { control: { type: 'text' }, name: 'Footer Class', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardFooter ${argsToTemplate(args)}>\n        <mantis-button size=\"lg\">Add to bookmarks</mantis-button>\n      </CardFooter>\n    `\n  }),\n}"
+                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardFooterComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [ButtonComponent]\n    })\n  ],\n  title: 'Components/Card/Partials/CardFooter',\n  argTypes: {\n    footerClass: { control: { type: 'text' }, name: 'Footer Class', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardFooter ${argsToTemplate(args)}>\n        <Button size=\"lg\">Add to bookmarks</Button>\n      </CardFooter>\n    `\n  }),\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/card/partials/card-header.component.stories.ts": [
@@ -1666,7 +1181,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    titleClass: ''\n  }\n}"
+                    "defaultValue": "{\n  args: {\n    class: 'text-3xl'\n  }\n}"
                 },
                 {
                     "name": "meta",
@@ -1676,7 +1191,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<StoryArgs>",
-                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardTitleComponent,\n  title: 'Components/Card/Partials/CardTitle',\n  argTypes: {\n    titleClass: { control: { type: 'text' }, name: 'Title Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardTitle ${argsToTemplate(args)}>\n        Down the Rabbit Hole\n      </CardTitle>\n    `\n  }),\n}"
+                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardTitleComponent,\n  title: 'Components/Card/Partials/CardTitle',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Title Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <CardTitle ${argsToTemplate(args)}>\n        Down the Rabbit Hole\n      </CardTitle>\n    `\n  }),\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/card/partials/card.component.stories.ts": [
@@ -1688,7 +1203,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    cardClass: ''\n  }\n}"
+                    "defaultValue": "{\n  args: {\n    class: 'w-[500px]'\n  }\n}"
                 },
                 {
                     "name": "meta",
@@ -1698,7 +1213,29 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<StoryArgs>",
-                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    cardClass: { control: { type: 'text' }, name: ' Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
+                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconListComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
                 }
             ],
             "feature/ui/.storybook/preview.ts": [
@@ -1723,12 +1260,12 @@
                     "defaultValue": "{\n  decorators: [\n    withThemeByClassName({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-mode',\n    }),\n    componentWrapperDecorator(\n      (story) => {\n        return `<div class=\"bg-background m-4 p-8\" style=\"margin: 0; padding: 2rem;\">${story}</div>`\n      },\n    )\n  ],\n  parameters: {\n    docs: {\n      inlineStories: false,\n      iframeHeight: 500,\n      excludeDecorators: true,\n    },\n    options: {\n      storySort: {\n        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],\n      },\n    },\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
                 {
                     "name": "Heading",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
@@ -1738,104 +1275,34 @@
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<IconComponent>",
-                    "defaultValue": "{\n  component: IconComponent,\n  title: 'Atoms/Primitives/Icon',\n  tags: ['autodocs'],\n}"
+                    "defaultValue": "{\n  component: IconComponent,\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n}"
                 },
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
-                }
-            ],
-            "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts": [
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    title: 'Total Revenue',\n    description: `Introducing Our Dynamic Orders Dashboard for Seamless Management\n    and Insightful Analysis.`\n  },\n}"
-                },
-                {
-                    "name": "Secondary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    title: 'Subscriptions',\n    description: 'This month'\n  },\n}"
                 }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
-            "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts": [
-                {
-                    "name": "CardStory",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "CardComponent",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                },
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<CardStory>",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts": [
-                {
-                    "name": "CardStory",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "CardComponent",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                },
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<CardStory>",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/button/button.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<StoryArgs>",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1846,46 +1313,20 @@
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "",
-                    "file": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 193
                 }
             ],
-            "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
                     "rawtype": "StoryObj<IconComponent>",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<IconListComponent>",
-                    "file": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<InfoCardComponent>",
-                    "file": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2035,12 +1476,25 @@
                     "description": "",
                     "kind": 193
                 }
+            ],
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<IconListComponent>",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
             ]
         }
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -2074,7 +1528,7 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2084,7 +1538,7 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2094,7 +1548,7 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2104,7 +1558,7 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2114,7 +1568,7 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2124,7 +1578,7 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2134,7 +1588,7 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2144,80 +1598,12 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/atoms/button/button.component.ts",
+                "filePath": "feature/ui/src/lib/ui/components/button/button.component.ts",
                 "type": "component",
                 "linktype": "component",
                 "name": "ButtonComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Default",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/atoms/icon/icon-list/icon-list.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconListComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/2",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Heading",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/atoms/icon/icon.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/atoms/icon/icon.component.ts",
-                "type": "component",
-                "linktype": "component",
-                "name": "IconComponent",
-                "coveragePercent": 0,
-                "coverageCount": "0/7",
                 "status": "low"
             },
             {
@@ -2395,37 +1781,17 @@
                 "status": "medium"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "CardDefault",
+                "name": "Default",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component-cta.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "CardDefault",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2435,16 +1801,36 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/card.component.ts",
+                "filePath": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "CardComponent",
+                "name": "IconListComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/8",
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
+                "filePath": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -2454,22 +1840,12 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Secondary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/molecules/cards/info-card/info-card.component.ts",
+                "filePath": "feature/ui/src/lib/ui/components/icon/icon.component.ts",
                 "type": "component",
                 "linktype": "component",
-                "name": "InfoCardComponent",
-                "coveragePercent": 12,
-                "coverageCount": "1/8",
+                "name": "IconComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             }
         ]

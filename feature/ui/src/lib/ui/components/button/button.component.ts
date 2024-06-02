@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 
 @Component({
-  selector: 'mantis-button',
+  selector: 'Button',
   standalone: true,
   imports: [HlmButtonDirective],
   template: `

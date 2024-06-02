@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IconComponent, ButtonComponent, InfoCardComponent, IconListComponent, CardComponent } from '@mantistech/ui';
+import { IconComponent, ButtonComponent, IconListComponent, CardModule } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
 
@@ -11,11 +11,10 @@ import { provideIcons, IconName } from '@ng-icons/core';
   standalone: true,
   imports: [
     CommonModule,
-    IconComponent,
     ButtonComponent,
-    InfoCardComponent,
+    IconComponent,
     IconListComponent,
-    CardComponent,
+    CardModule,
     HlmAspectRatioDirective,
   ],
   templateUrl: './dashboard.page.html',

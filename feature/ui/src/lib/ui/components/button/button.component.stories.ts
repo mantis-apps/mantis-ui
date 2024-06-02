@@ -10,7 +10,7 @@ type StoryArgs = ButtonComponent & { label: string };
 const meta: Meta<StoryArgs> = {
   tags: ['autodocs'],
   component: ButtonComponent,
-  title: 'Atoms/Primitives/Button',
+  title: 'Components/Button/Button',
   decorators: [
     componentWrapperDecorator(ButtonComponent, ({ args }) => args),
   ],

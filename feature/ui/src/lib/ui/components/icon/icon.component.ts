@@ -6,7 +6,7 @@ import { lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, luc
 import { ICONS } from './icon.token';
 
 @Component({
-  selector: 'mantis-icon',
+  selector: 'Icon',
   standalone: true,
   imports: [HlmIconComponent],
   providers: [

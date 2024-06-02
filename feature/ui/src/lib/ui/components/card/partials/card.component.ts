@@ -6,19 +6,14 @@ import { HlmCardDirective } from '@spartan-ng/ui-card-helm';
   standalone: true,
   imports: [HlmCardDirective],
   template: `
-    <div hlmCard [class]="cardClass">
+    <div hlmCard [class]="class">
       <ng-content />
     </div>
   `,
-  styles: `
-    :host {
-      display: contents;
-    }
-  `
 })
 export class CardComponent {
   /**
    * add tailwind classes to override defaults (e.g. 'text-2xl p-2')
    */
-  @Input() cardClass = 'w-full';
+  @Input() class = 'w-[420px]';
 }

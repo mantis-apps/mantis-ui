@@ -5,7 +5,7 @@ import { CommonModule } from '@angular/common';
 type Story = StoryObj<IconListComponent>;
 
 const meta: Meta<IconListComponent> = {
-  title: 'Atoms/Primitives/Icons List',
+  title: 'Components/Icon/Icons List',
   tags: ['autodocs'],
   component: IconListComponent,
   decorators: [

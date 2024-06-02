@@ -7,7 +7,7 @@ const meta: Meta<StoryArgs> = {
   component: CardTitleComponent,
   title: 'Components/Card/Partials/CardTitle',
   argTypes: {
-    titleClass: { control: { type: 'text' }, name: 'Title Class' },
+    class: { control: { type: 'text' }, name: 'Title Class' },
   },
   parameters: {
     docs: {
@@ -33,6 +33,6 @@ type Story = StoryObj<StoryArgs>;
 
 export const Default: Story = {
   args: {
-    titleClass: ''
+    class: 'text-3xl'
   }
 };
