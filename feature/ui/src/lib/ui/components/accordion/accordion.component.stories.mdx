@@ -1,0 +1,83 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/addon-docs/blocks';
+import { moduleMetadata } from '@storybook/angular';
+
+import { AccordionComponent } from './partials/accordion.component';
+import { AccordionItemComponent } from './partials/accordion-item.component';
+import { AccordionContentComponent } from './partials/accordion-content.component';
+import { BrnAccordionDirective, BrnAccordionItemDirective, BrnAccordionContentDirective, BrnAccordionTriggerDirective } from '@spartan-ng/ui-accordion-brain';
+
+import { IconComponent } from '../icon/icon.component';
+
+
+import { BrnAccordionContentComponent } from '@spartan-ng/ui-accordion-brain';
+import {
+  HlmAccordionContentDirective,
+  HlmAccordionDirective,
+  HlmAccordionIconDirective,
+  HlmAccordionItemDirective,
+  HlmAccordionTriggerDirective,
+} from '@spartan-ng/ui-accordion-helm';
+import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
+
+
+
+<Meta title="Components/Accordion/Accordion Component" component={AccordionComponent} decorators={[
+  moduleMetadata({
+    imports: [
+      HlmIconComponent,
+      HlmAccordionIconDirective,
+      HlmAccordionDirective,
+      HlmAccordionItemDirective,
+      HlmAccordionContentDirective,
+      HlmAccordionTriggerDirective,
+      AccordionComponent,
+      AccordionItemComponent,
+      AccordionContentComponent,
+      BrnAccordionContentComponent,
+    ],
+    providers: [BrnAccordionDirective, BrnAccordionItemDirective, BrnAccordionContentDirective, BrnAccordionTriggerDirective],
+  }),
+
+]} />
+
+# Accordion Component
+
+The `AccordionComponent` is a reusable component that displays an accordion.
+
+## Usage
+
+Here's an example of how you can use the `AccordionComponent`:
+
+<Canvas>
+  <Story name="Accordion Example">
+    {{
+      template: `
+
+        <Accordion class="mb-4 ">
+          <AccordionItem>
+            <AccordionContent headerLabel="Accordion Item 1">
+              <p>Content 1</p>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionContent headerLabel="Accordion Item 2">
+              <p>Content 2</p>
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem>
+            <AccordionContent headerLabel="Accordion Item 3">
+              <p>Content 3</p>
+            </AccordionContent>
+          </AccordionItem>
+        </Accordion>
+
+      `
+    }}
+  </Story>
+
+
+</Canvas>
+
+## Props
+
+<ArgsTable of={AccordionComponent} />

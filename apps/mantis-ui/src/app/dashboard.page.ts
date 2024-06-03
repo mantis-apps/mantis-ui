@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IconComponent, ButtonComponent, IconListComponent, CardModule } from '@mantistech/ui';
+import { IconComponent, ButtonComponent, IconListComponent, CardModule, AccordionModule } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
 
@@ -15,7 +15,8 @@ import { provideIcons, IconName } from '@ng-icons/core';
     IconComponent,
     IconListComponent,
     CardModule,
-    HlmAspectRatioDirective,
+    AccordionModule,
+    HlmAspectRatioDirective
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,

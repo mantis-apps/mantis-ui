@@ -20,23 +20,23 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <div class="max-w-xl overflow-hidden rounded-xl drop-shadow">
-            <div [hlmAspectRatio]="16 / 9">
-              <img alt="Alice in Wonderland - Down the Rabbit Hole"
-                src="https://s3.amazonaws.com/media.harvardartmuseums.org/production/uploaded_files/tour_builder/o_1eir21noaq43t8i7j7dqn1p8pc.jpg?height=675" />
-            </div>
-          </div>
-          <div class="mt-4">
-            <p>
-              Alice was beginning to get very tired of sitting by her
-              sister on the bank, and of having nothing to do: once or
-              twice
-              she had peeped into the book her sister was reading, but it
-              had no pictures or conversations in it, and what is the use
-              of a
-              book,thought Alice without pictures or conversations?
-            </p>
-          </div>
+          <Accordion class="mb-4 ">
+            <AccordionItem>
+              <AccordionContent headerLabel="Accordion Item 1">
+                <p>Content 1</p>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionContent headerLabel="Accordion Item 2">
+                <p>Content 2</p>
+              </AccordionContent>
+            </AccordionItem>
+            <AccordionItem>
+              <AccordionContent headerLabel="Accordion Item 3">
+                <p>Content 3</p>
+              </AccordionContent>
+            </AccordionItem>
+          </Accordion>
         </CardContent>
         <CardFooter>
           <Button variant="default" size="lg"

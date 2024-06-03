@@ -8,6 +8,328 @@
     "directives": [],
     "components": [
         {
+            "name": "AccordionComponent",
+            "id": "component-AccordionComponent-3810bf00b8ede58d60a197d29f899d3efbdb969600c158ef7b8106dbf3f2030513eb78bd4281791e8cf9beae1390f23c2c6467f1df39f58d1f8c1664e372b4dc",
+            "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "Accordion",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div hlmAccordion [class]=\"class\">\n  <ng-content />\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmAccordionDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {\n  HlmAccordionDirective,\n} from '@spartan-ng/ui-accordion-helm';\n\n@Component({\n  selector: 'Accordion',\n  standalone: true,\n  imports: [HlmAccordionDirective,],\n  template: `\n    <div hlmAccordion [class]=\"class\">\n      <ng-content />\n    </div>\n  `,\n})\nexport class AccordionComponent {\n  @Input() class = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "AccordionContentComponent",
+            "id": "component-AccordionContentComponent-9d0302aa05adb7cd360c546c1950afeba29e632fa49f3d92d7a0d11da5304aaf3fa68e29f8496e2c719d2d306bc5ffcc747edf10d598b1569dd5295c0e92dc36",
+            "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "BrnAccordionItemDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnAccordionDirective",
+                    "type": "directive"
+                }
+            ],
+            "selector": "AccordionContent",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div hlmAccordionItem [class]=\"class\">\n  <button hlmAccordionTrigger>\n      <h2>{{headerLabel}}</h2>\n      <hlm-icon hlmAccIcon />\n  </button>\n  <brn-accordion-content hlm>\n      <ng-content />\n  </brn-accordion-content>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "headerLabel",
+                    "defaultValue": "'Accordion Item Header'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 38,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAccordionItemDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAccordionContentDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnAccordionContentComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAccordionTriggerDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAccordionIconDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ChangeDetectionStrategy } from '@angular/core';\nimport { HlmAccordionContentDirective, HlmAccordionIconDirective, HlmAccordionItemDirective, HlmAccordionTriggerDirective } from '@spartan-ng/ui-accordion-helm';\nimport { BrnAccordionContentComponent, BrnAccordionDirective, BrnAccordionItemDirective } from '@spartan-ng/ui-accordion-brain';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { ButtonComponent } from '../../button/button.component';\n\n@Component({\n  selector: 'AccordionContent',\n  standalone: true,\n  imports: [\n    ButtonComponent,\n    HlmAccordionItemDirective,\n    HlmAccordionContentDirective,\n    BrnAccordionContentComponent,\n    HlmAccordionTriggerDirective,\n    HlmIconComponent,\n    HlmAccordionIconDirective\n  ],\n  providers: [\n    BrnAccordionItemDirective,\n    BrnAccordionDirective\n  ],\n  template: `\n    <div hlmAccordionItem [class]=\"class\">\n      <button hlmAccordionTrigger>\n          <h2>{{headerLabel}}</h2>\n          <hlm-icon hlmAccIcon />\n      </button>\n      <brn-accordion-content hlm>\n          <ng-content />\n      </brn-accordion-content>\n    </div>\n  `,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class AccordionContentComponent {\n  @Input() class = '';\n  @Input({ required: true}) headerLabel = 'Accordion Item Header';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "AccordionItemComponent",
+            "id": "component-AccordionItemComponent-fdd2a20c91de23d9a860a3945a573f3c59b0fcf62e5b52b57868c754216001bf2b663cb3131a5c9411fd29206ec86d8b055f8959489e7f75e5275dcf726f2f8a",
+            "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "BrnAccordionDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnAccordionItemDirective",
+                    "type": "directive"
+                }
+            ],
+            "selector": "[AccordionItem]",
+            "styleUrls": [],
+            "styles": [
+                "\n    :host {\n      display: contents;\n    }\n  "
+            ],
+            "template": "<div hlmAccordionItem [class]=\"class\">\n  <button hlmAccordionTrigger>\n    {{headerLabel}}\n    <hlm-icon hlmAccIcon />\n  </button>\n  <brn-accordion-content hlm>\n      <ng-content />\n  </brn-accordion-content>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 29,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "headerLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 30,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmAccordionItemDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnAccordionContentComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAccordionTriggerDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAccordionIconDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { Component, Input, ChangeDetectionStrategy } from '@angular/core';\nimport { BrnAccordionContentComponent, BrnAccordionDirective, BrnAccordionItemDirective } from '@spartan-ng/ui-accordion-brain';\nimport { HlmAccordionIconDirective, HlmAccordionItemDirective, HlmAccordionTriggerDirective } from '@spartan-ng/ui-accordion-helm';\n\n@Component({\n  selector: '[AccordionItem]',\n  standalone: true,\n  imports: [HlmAccordionItemDirective, BrnAccordionContentComponent, HlmIconComponent, HlmAccordionTriggerDirective, HlmAccordionIconDirective],\n  providers: [BrnAccordionDirective, BrnAccordionItemDirective],\n  template: `\n    <div hlmAccordionItem [class]=\"class\">\n      <button hlmAccordionTrigger>\n        {{headerLabel}}\n        <hlm-icon hlmAccIcon />\n      </button>\n      <brn-accordion-content hlm>\n          <ng-content />\n      </brn-accordion-content>\n    </div>\n  `,\n  styles: `\n    :host {\n      display: contents;\n    }\n  `,\n})\nexport class AccordionItemComponent {\n  @Input() class = '';\n  @Input({required: true}) headerLabel = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n    :host {\n      display: contents;\n    }\n  \n",
+            "extends": []
+        },
+        {
+            "name": "AccordionTriggerComponent",
+            "id": "component-AccordionTriggerComponent-71fcfa06214ea5d34bac9b0d0e38e5f4ad2deef97214b4f4cedc63dd0dc9526244a4a2c5935ed88c3ba7af296fbc13c22e6424fcd9713184259db3d4dbb0df7a",
+            "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.ts",
+            "changeDetection": "ChangeDetectionStrategy.OnPush",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "BrnAccordionDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnAccordionItemDirective",
+                    "type": "directive"
+                }
+            ],
+            "selector": "[AccordionTrigger]",
+            "styleUrls": [],
+            "styles": [
+                ""
+            ],
+            "template": "<button hlmAccordionTrigger [class]=\"class\">\n  {{headerLabel}}\n  <hlm-icon hlmAccIcon />\n</button>\n<brn-accordion-content hlm>\n      <ng-content />\n  </brn-accordion-content>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 35,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "headerLabel",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmAccordionTriggerDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAccordionIconDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnAccordionContentComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ChangeDetectionStrategy } from '@angular/core';\nimport { HlmAccordionTriggerDirective } from '@spartan-ng/ui-accordion-helm';\nimport { ButtonComponent } from '../../button/button.component';\nimport { BrnAccordionContentComponent, BrnAccordionDirective, BrnAccordionItemDirective } from '@spartan-ng/ui-accordion-brain';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { HlmAccordionIconDirective } from '@spartan-ng/ui-accordion-helm';\n\n@Component({\n  selector: '[AccordionTrigger]',\n  standalone: true,\n  imports: [\n    HlmAccordionTriggerDirective,\n    ButtonComponent,\n    HlmIconComponent,\n    HlmAccordionIconDirective,\n    BrnAccordionContentComponent\n  ],\n  providers: [\n    BrnAccordionDirective,\n    BrnAccordionItemDirective\n  ],\n  template: `\n    <button hlmAccordionTrigger [class]=\"class\">\n      {{headerLabel}}\n      <hlm-icon hlmAccIcon />\n    </button>\n    <brn-accordion-content hlm>\n          <ng-content />\n      </brn-accordion-content>\n  `,\n  styles: ``,\n  changeDetection: ChangeDetectionStrategy.OnPush,\n})\nexport class AccordionTriggerComponent {\n  @Input() class = '';\n  @Input({required: true}) headerLabel = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n",
+            "extends": []
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-9a3da8885728b96dc0caa85e58800abbc9fa3f6f753842e7d3167cbbdb081ccbf980620e083960c4de27408bae7d597e15a4d262c972603a1600965a42ad9d15",
             "file": "feature/ui/src/lib/ui/components/button/button.component.ts",
@@ -679,6 +1001,36 @@
                 "defaultValue": "{\n  args: {\n    name: 'lucideUser2',\n    size: 'base',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/icon works!/gi)).toBeTruthy();\n  },\n}"
             },
             {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/accordion-content works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/accordion-item works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/accordion works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
                 "name": "Link",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -707,6 +1059,46 @@
                 "deprecationMessage": "",
                 "type": "Meta<IconComponent>",
                 "defaultValue": "{\n  component: IconComponent,\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionContentComponent>",
+                "defaultValue": "{\n  component: AccordionContentComponent,\n  title: 'AccordionContentComponent',\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <AccordionContent ${argsToTemplate(args)} data-state=\"open\">\n        AccordionContent works!\n      </AccordionContent>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionItemComponent>",
+                "defaultValue": "{\n  component: AccordionItemComponent,\n  title: 'AccordionItemComponent',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionTriggerComponent>",
+                "defaultValue": "{\n  component: AccordionTriggerComponent,\n  title: 'AccordionTriggerComponent',\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <AccordionTrigger ${argsToTemplate(args)}>\n        AccordionTrigger works!\n      </AccordionTrigger>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionComponent>",
+                "defaultValue": "{\n  component: AccordionComponent,\n  title: 'AccordionComponent',\n}"
             },
             {
                 "name": "meta",
@@ -809,6 +1201,46 @@
                 "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
             },
             {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+            },
+            {
                 "name": "Secondary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -838,6 +1270,50 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<IconComponent>",
                 "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AccordionContentComponent>",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AccordionItemComponent>",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AccordionTriggerComponent>",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AccordionComponent>",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -930,6 +1406,28 @@
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 193
+            },
+            {
+                "name": "StoryArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "AccordionContentComponent",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "StoryArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "AccordionTriggerComponent",
+                "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
             },
             {
                 "name": "StoryArgs",
@@ -1291,6 +1789,124 @@
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
                 }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/accordion-content works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AccordionContentComponent>",
+                    "defaultValue": "{\n  component: AccordionContentComponent,\n  title: 'AccordionContentComponent',\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <AccordionContent ${argsToTemplate(args)} data-state=\"open\">\n        AccordionContent works!\n      </AccordionContent>\n    `,\n  }),\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/accordion-item works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AccordionItemComponent>",
+                    "defaultValue": "{\n  component: AccordionItemComponent,\n  title: 'AccordionItemComponent',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/accordion works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AccordionComponent>",
+                    "defaultValue": "{\n  component: AccordionComponent,\n  title: 'AccordionComponent',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AccordionTriggerComponent>",
+                    "defaultValue": "{\n  component: AccordionTriggerComponent,\n  title: 'AccordionTriggerComponent',\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <AccordionTrigger ${argsToTemplate(args)}>\n        AccordionTrigger works!\n      </AccordionTrigger>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
+                }
             ]
         },
         "groupedFunctions": {},
@@ -1327,6 +1943,80 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<IconComponent>",
                     "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionContentComponent>",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "StoryArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "AccordionContentComponent",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionItemComponent>",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionTriggerComponent>",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "StoryArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "AccordionTriggerComponent",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionComponent>",
+                    "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -1494,7 +2184,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -1525,6 +2215,152 @@
                 "name": "preview",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionContentComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion-trigger.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionTriggerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AccordionComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {
