@@ -6,3 +6,5 @@ export * from './lib/ui/components/icon/icon-list/icon-list.component';
 export * from './card.module';
 // Accordion Module
 export * from './accordion.module';
+
+export * from './lib/ui/components/alert/alert.component';
