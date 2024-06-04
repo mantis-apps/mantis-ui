@@ -18,27 +18,40 @@ import {
   HlmAccordionTriggerDirective,
 } from '@spartan-ng/ui-accordion-helm';
 import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
+import { transform } from 'acorn';
 
 
-
-<Meta title="Components/Accordion/Accordion Component" component={AccordionComponent} decorators={[
-  moduleMetadata({
-    imports: [
-      HlmIconComponent,
-      HlmAccordionIconDirective,
-      HlmAccordionDirective,
-      HlmAccordionItemDirective,
-      HlmAccordionContentDirective,
-      HlmAccordionTriggerDirective,
-      AccordionComponent,
-      AccordionItemComponent,
-      AccordionContentComponent,
-      BrnAccordionContentComponent,
-    ],
-    providers: [BrnAccordionDirective, BrnAccordionItemDirective, BrnAccordionContentDirective, BrnAccordionTriggerDirective],
-  }),
-
-]} />
+<Meta
+  title="Components/Accordion/Accordion Component"
+  component={AccordionComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        HlmIconComponent,
+        HlmAccordionIconDirective,
+        HlmAccordionDirective,
+        HlmAccordionItemDirective,
+        HlmAccordionContentDirective,
+        HlmAccordionTriggerDirective,
+        AccordionComponent,
+        AccordionItemComponent,
+        AccordionContentComponent,
+        BrnAccordionContentComponent,
+      ],
+      providers: [BrnAccordionDirective, BrnAccordionItemDirective, BrnAccordionContentDirective, BrnAccordionTriggerDirective],
+    }),
+  ]}
+  parameters={{
+    docs: {
+      source: {
+        transform: (src) => {
+          const wrapperStriped = src.replace(/<div[^>]*>\s*([\s\S]*?)\s*<\/div>/gi, '$1');
+          return wrapperStriped
+        }
+      },
+    },
+  }}
+/>
 
 # Accordion Component
 
@@ -53,7 +66,7 @@ Here's an example of how you can use the `AccordionComponent`:
     {{
       template: `
 
-        <Accordion class="mb-4 ">
+        <div Accordion class="mb-4 ">
           <AccordionItem>
             <AccordionContent headerLabel="Accordion Item 1">
               <p>Content 1</p>
@@ -69,7 +82,7 @@ Here's an example of how you can use the `AccordionComponent`:
               <p>Content 3</p>
             </AccordionContent>
           </AccordionItem>
-        </Accordion>
+        </div>
 
       `
     }}

@@ -5,12 +5,13 @@ import {
 } from '@spartan-ng/ui-accordion-helm';
 
 @Component({
-  selector: 'Accordion',
+  selector: '[Accordion]',
   standalone: true,
   imports: [HlmAccordionDirective,],
   providers: [BrnAccordionDirective, BrnAccordionItemDirective, BrnAccordionTriggerDirective],
+  hostDirectives: [HlmAccordionDirective],
   template: `
-    <div hlmAccordion [class]="class">
+    <div [class]="class">
       <ng-content />
     </div>
   `,

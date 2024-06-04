@@ -9,19 +9,32 @@ import { CardFooterComponent } from './partials/card-footer.component';
 import { moduleMetadata } from '@storybook/angular';
 
 
-<Meta title="Components/Card/Card Component" component={CardComponent} decorators={[
-  moduleMetadata({
-    imports: [
-      ButtonComponent,
-      CardHeaderComponent,
-      CardTitleComponent,
-      CardDescriptionComponent,
-      CardContentComponent,
-      CardFooterComponent,
-    ],
-  }),
-
-]} />
+<Meta
+  title="Components/Card/Card Component"
+  component={CardComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        ButtonComponent,
+        CardHeaderComponent,
+        CardTitleComponent,
+        CardDescriptionComponent,
+        CardContentComponent,
+        CardFooterComponent,
+      ],
+    }),
+  ]}
+  parameters={{
+    docs: {
+      source: {
+        transform: (src) => {
+          const wrapperStriped = src.replace(/<div[^>]*>\s*([\s\S]*?)\s*<\/div>/gi, '$1');
+          return wrapperStriped
+        }
+      },
+    },
+  }}
+/>
 
 # Card Component
 
