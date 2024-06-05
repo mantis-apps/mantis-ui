@@ -246,7 +246,7 @@
         },
         {
             "name": "AlertComponent",
-            "id": "component-AlertComponent-e6e485291c360607bcfbc32ebca42ee31f340f99275cc394ed53722918573941c690a60c3eca2bba555aff4abd44de33e3c2b7138c25d7f0bd5f8fe959c11c59",
+            "id": "component-AlertComponent-a64771e2c2264dd81ffd6090c3e84cbfa1b3142646fc94e996508865d234ad281a0515c6a9186cd242027d46c103a665cffbaaaf71995c64877ac59d1962ef84",
             "file": "feature/ui/src/lib/ui/components/alert/alert.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -259,8 +259,10 @@
             ],
             "selector": "Alert",
             "styleUrls": [],
-            "styles": [],
-            "template": "<div hlmAlert [class]=\"'p4 flex ' + class\" [variant]=\"variant\">\n  <Icon [name]=\"alertIconName\" size=\"sm\" />\n  <div class=\"px-4\">\n    <h4 hlmAlertTitle>{{alertTitle}}</h4>\n    <ng-container hlmAlertDesc>\n      <ng-content />\n    </ng-container>\n  </div>\n</div>\n",
+            "styles": [
+                "\n    :host {\n      display: contents;\n    }\n  "
+            ],
+            "template": "<div hlmAlert [variant]=\"variant\" [class]=\"'p-4 flex ' + class\" >\n  <Icon [name]=\"alertIconName\" size=\"sm\" />\n  <div class=\"px-4\">\n    <h4 hlmAlertTitle>{{alertTitle}}</h4>\n    <div hlmAlertDescription>\n      <ng-content />\n    </div>\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -270,7 +272,7 @@
                     "defaultValue": "'lucideAlertTriangle'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 43,
+                    "line": 46,
                     "type": "IconName",
                     "decorators": []
                 },
@@ -280,7 +282,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 42,
+                    "line": 45,
                     "type": "string",
                     "decorators": []
                 },
@@ -289,7 +291,7 @@
                     "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 40,
+                    "line": 43,
                     "type": "string",
                     "decorators": []
                 },
@@ -298,7 +300,7 @@
                     "defaultValue": "'default'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 41,
+                    "line": 44,
                     "type": "\"default\" | \"destructive\"",
                     "decorators": []
                 }
@@ -329,10 +331,6 @@
                     "type": "directive"
                 },
                 {
-                    "name": "HlmIconComponent",
-                    "type": "component"
-                },
-                {
                     "name": "IconComponent",
                     "type": "component"
                 }
@@ -340,10 +338,10 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {\n  HlmAlertDescriptionDirective,\n  HlmAlertDirective,\n  HlmAlertIconDirective,\n  HlmAlertTitleDirective,\n} from '@spartan-ng/ui-alert-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { IconComponent } from \"../icon/icon.component\";\nimport { IconName, provideIcons } from '@ng-icons/core';\nimport { lucideAlertTriangle } from '@ng-icons/lucide';\n\n\n@Component({\n  selector: 'Alert',\n  standalone: true,\n  imports: [\n    HlmAlertDirective,\n    HlmAlertDescriptionDirective,\n    HlmAlertIconDirective,\n    HlmAlertTitleDirective,\n    HlmIconComponent,\n    IconComponent\n  ],\n  providers: [provideIcons({ lucideAlertTriangle })],\n  template: `\n    <div hlmAlert [class]=\"'p4 flex ' + class\" [variant]=\"variant\">\n      <Icon [name]=\"alertIconName\" size=\"sm\" />\n      <div class=\"px-4\">\n        <h4 hlmAlertTitle>{{alertTitle}}</h4>\n        <ng-container hlmAlertDesc>\n          <ng-content />\n        </ng-container>\n      </div>\n    </div>\n  `,\n})\nexport class AlertComponent {\n  @Input() class = '';\n  @Input() variant: 'default' | 'destructive' = 'default';\n  @Input({required: true}) alertTitle!: string;\n  @Input() alertIconName: IconName = 'lucideAlertTriangle';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {\n  HlmAlertDescriptionDirective,\n  HlmAlertDirective,\n  HlmAlertIconDirective,\n  HlmAlertTitleDirective,\n} from '@spartan-ng/ui-alert-helm';\nimport { IconComponent } from \"../icon/icon.component\";\nimport { IconName, provideIcons } from '@ng-icons/core';\nimport { lucideAlertTriangle } from '@ng-icons/lucide';\n\n\n@Component({\n  selector: 'Alert',\n  standalone: true,\n  imports: [\n    HlmAlertDirective,\n    HlmAlertDescriptionDirective,\n    HlmAlertIconDirective,\n    HlmAlertTitleDirective,\n    IconComponent\n  ],\n  providers: [provideIcons({ lucideAlertTriangle })],\n  styles: [`\n    :host {\n      display: contents;\n    }\n  `],\n  template: `\n    <div hlmAlert [variant]=\"variant\" [class]=\"'p-4 flex ' + class\" >\n      <Icon [name]=\"alertIconName\" size=\"sm\" />\n      <div class=\"px-4\">\n        <h4 hlmAlertTitle>{{alertTitle}}</h4>\n        <div hlmAlertDescription>\n          <ng-content />\n        </div>\n      </div>\n    </div>\n  `,\n})\nexport class AlertComponent {\n  @Input() class = '';\n  @Input() variant: 'default' | 'destructive' = 'default';\n  @Input({required: true}) alertTitle!: string;\n  @Input() alertIconName: IconName = 'lucideAlertTriangle';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "",
+            "stylesData": "\n    :host {\n      display: contents;\n    }\n  \n",
             "extends": []
         },
         {
@@ -717,7 +715,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-bf3abd6d0427e9afde48126d089012b97a3f4e8303fb618aadb1b6ae39c5a7272e1861ad3a4ab773e5bc5188ebfb602695bf4e7e88660960106e65f9f7dba9be",
+            "id": "component-IconComponent-0b2c99860159c7ef85ea31caae1ea63adffd4180c72ee038af4ccbda14821f8fa070ba9ea7c561946d37778be0901c0e0d4f641206910c7367bf4c42ff33de3e",
             "file": "feature/ui/src/lib/ui/components/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -725,10 +723,7 @@
             "outputs": [],
             "providers": [
                 {
-                    "name": "{\n    provide: ICONS, useValue: {\n        lucideMail: , lucideUser2: , lucideUsers2: ,\n    }\n}"
-                },
-                {
-                    "name": "provideIcons({\n    lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, lucideTrain,\n})"
+                    "name": "provideIcons({\n    lucideShieldQuestion\n})"
                 }
             ],
             "selector": "Icon",
@@ -743,7 +738,7 @@
                     "name": "class",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 45,
+                    "line": 30,
                     "type": "string",
                     "decorators": []
                 },
@@ -751,17 +746,18 @@
                     "name": "color",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 43,
+                    "line": 28,
                     "type": "string",
                     "decorators": []
                 },
                 {
                     "required": true,
                     "name": "name",
+                    "defaultValue": "'lucideShieldQuestion'",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 41,
+                    "line": 26,
                     "type": "IconName",
                     "decorators": []
                 },
@@ -770,7 +766,7 @@
                     "defaultValue": "'none'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 42,
+                    "line": 27,
                     "type": "IconSize",
                     "decorators": []
                 },
@@ -778,27 +774,13 @@
                     "name": "strokeWidth",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 44,
+                    "line": 29,
                     "type": "string | number",
                     "decorators": []
                 }
             ],
             "outputsClass": [],
-            "propertiesClass": [
-                {
-                    "name": "icons",
-                    "defaultValue": "inject(ICONS)",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Record<string | IconName>",
-                    "optional": false,
-                    "description": "",
-                    "line": 40,
-                    "modifierKind": [
-                        123
-                    ]
-                }
-            ],
+            "propertiesClass": [],
             "methodsClass": [],
             "deprecated": false,
             "deprecationMessage": "",
@@ -814,7 +796,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, inject } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideMail, lucideUser2, lucideUsers2, lucideActivity, lucideTruck, lucideTrain } from '@ng-icons/lucide';\nimport { ICONS } from './icon.token';\n\n@Component({\n  selector: 'Icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    {\n      provide: ICONS,\n      useValue: {\n        lucideMail: 'lucideMail',\n        lucideUser2: 'lucideUser2',\n        lucideUsers2: 'lucideUsers2',\n      }\n    },\n    provideIcons({\n      lucideMail,\n      lucideUser2,\n      lucideUsers2,\n      lucideActivity,\n      lucideTruck,\n      lucideTrain,\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  private icons: Record<string, IconName> = inject(ICONS);\n  @Input({ required: true }) name!: IconName; // Required\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth?: string | number;\n  @Input() class?: string;\n}\n\n// import { Component, Input, OnInit } from '@angular/core';\n// import { CommonModule } from '@angular/common';\n// import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n// import { provideIcons, IconName } from '@ng-icons/core';\n// import * as lucideIcons from '@ng-icons/lucide';\n\n// @Component({\n//   selector: 'mantis-icon',\n//   standalone: true,\n//   imports: [CommonModule, HlmIconComponent],\n//   template: `\n//     <hlm-icon\n//       *ngIf=\"icon\"\n//       [size]=\"size\"\n//       [color]=\"color\"\n//       [strokeWidth]=\"strokeWidth\"\n//       [name]=\"iconName\"\n//     >\n//     </hlm-icon>\n//   `,\n// })\n// export class IconComponent implements OnInit {\n//   @Input() iconName!: string;\n//   @Input() size: 'xs' | 'sm' | 'base' | 'lg' | 'xl' | 'none' = 'base';\n//   @Input() color: string | undefined = undefined;\n//   @Input() strokeWidth: string | number | undefined = undefined;\n\n//   icon: typeof lucideIcons[keyof typeof lucideIcons] | undefined;\n\n//   async ngOnInit() {\n//     if (this.iconName) {\n//       this.icon = lucideIcons[this.iconName as keyof typeof lucideIcons];\n//       provideIcons({ [this.iconName]: this.icon });\n//     }\n//   }\n// }\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideShieldQuestion } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'Icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    provideIcons({\n      lucideShieldQuestion\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  @Input({ required: true }) name: IconName = 'lucideShieldQuestion';\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth?: string | number;\n  @Input() class?: string;\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -901,6 +883,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    alertTitle: 'Alert works!',\n    variant: 'default',\n  }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -981,6 +973,16 @@
                 "name": "Destructive",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    alertTitle: 'Destructive works!',\n    variant: 'destructive'\n  },\n}"
+            },
+            {
+                "name": "Destructive",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1006,16 +1008,6 @@
                 "deprecationMessage": "",
                 "type": "object",
                 "defaultValue": "{\n  dataThemes: {\n    defaultValue: {\n      list: [\n        { name: \"Zinc\", dataTheme: \"theme-default\", color: \"#212121\" },\n        { name: \"Red\", dataTheme: \"theme-red\", color: \"#ff1744\" },\n        { name: \"Green\", dataTheme: \"theme-green\", color: \"#32CD32\" },\n        { name: \"Orange\", dataTheme: \"theme-orange\", color: \"#ef6c00\" },\n        { name: \"Blue\", dataTheme: \"theme-blue\", color: \"#6A5ACD\" },\n      ],\n      dataAttribute: \"data-theme\",            // optional (default: \"data-theme\")\n      clearable: true,                        // optional (default: true)\n      toolbar: {\n        title: \"Change Theme\", // optional\n        icon: \"paintbrush\",                   // optional\n      },\n    } satisfies ThemeConfig,\n  },\n}"
-            },
-            {
-                "name": "Heading",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'lucideUser2',\n    size: 'base',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/icon works!/gi)).toBeTruthy();\n  },\n}"
             },
             {
                 "name": "Heading",
@@ -1061,6 +1053,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<StoryArgs>",
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1075,7 +1077,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<IconComponent>",
-                "defaultValue": "{\n  component: IconComponent,\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n}"
+                "defaultValue": "{\n  component: IconComponent,\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMail,\n          lucideUser2,\n          lucideUsers2,\n          lucideActivity,\n          lucideTruck,\n          lucideTrain,\n        }),\n      ],\n    }),\n  ],\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n  argTypes: {\n    name: { control: { type: 'select' }, name: 'Icon Name', options: ['lucideMail', 'lucideUser2', 'lucideUsers2', 'lucideActivity', 'lucideTruck', 'lucideTrain' ] },\n    size: { control: { type: 'select' }, name: 'Icon Size', options: ['sm', 'base', 'lg', 'xl'] },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -1255,6 +1257,17 @@
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1386,6 +1399,17 @@
                 "name": "StoryArgs",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "AlertComponent",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "StoryArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
@@ -1483,6 +1507,38 @@
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
                     "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  }\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    alertTitle: 'Alert works!',\n    variant: 'default',\n  }\n}"
+                },
+                {
+                    "name": "Destructive",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    alertTitle: 'Destructive works!',\n    variant: 'destructive'\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<StoryArgs>",
+                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/button/button.component.stories.ts": [
@@ -1733,38 +1789,6 @@
                     "defaultValue": "{\n  decorators: [\n    withThemeByClassName({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-mode',\n    }),\n    componentWrapperDecorator(\n      (story) => {\n        return `<div class=\"bg-background m-4 p-8\" style=\"margin: 0; padding: 2rem;\">${story}</div>`\n      },\n    )\n  ],\n  parameters: {\n    docs: {\n      inlineStories: false,\n      iframeHeight: 500,\n      excludeDecorators: true,\n    },\n    options: {\n      storySort: {\n        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],\n      },\n    },\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
-                {
-                    "name": "Heading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    name: 'lucideUser2',\n    size: 'base',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/icon works!/gi)).toBeTruthy();\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<IconComponent>",
-                    "defaultValue": "{\n  component: IconComponent,\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
-                }
-            ],
             "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts": [
                 {
                     "name": "Heading",
@@ -1860,11 +1884,57 @@
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
                 }
+            ],
+            "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconComponent>",
+                    "defaultValue": "{\n  component: IconComponent,\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMail,\n          lucideUser2,\n          lucideUsers2,\n          lucideActivity,\n          lucideTruck,\n          lucideTrain,\n        }),\n      ],\n    }),\n  ],\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n  argTypes: {\n    name: { control: { type: 'select' }, name: 'Icon Name', options: ['lucideMail', 'lucideUser2', 'lucideUsers2', 'lucideActivity', 'lucideTruck', 'lucideTrain' ] },\n    size: { control: { type: 'select' }, name: 'Icon Size', options: ['sm', 'base', 'lg', 'xl'] },\n  },\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
+                }
             ]
         },
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<StoryArgs>",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "StoryArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "AlertComponent",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "feature/ui/src/lib/ui/components/button/button.component.stories.ts": [
                 {
                     "name": "Story",
@@ -2113,7 +2183,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -2261,6 +2331,36 @@
                 "name": "AccordionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Destructive",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -2559,16 +2659,6 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Heading",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
                 "name": "meta",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -2590,7 +2680,7 @@
                 "linktype": "component",
                 "name": "IconComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             }
         ]
