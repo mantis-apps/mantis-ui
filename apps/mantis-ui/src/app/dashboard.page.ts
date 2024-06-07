@@ -2,7 +2,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IconComponent, ButtonComponent, IconListComponent, CardModule, AccordionModule } from '@mantistech/ui';
+import { IconComponent, ButtonComponent, IconListComponent, CardModule, AccordionModule, AlertDialogComponent, AlertComponent } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
 
@@ -16,9 +16,15 @@ import { provideIcons, IconName } from '@ng-icons/core';
     IconListComponent,
     CardModule,
     AccordionModule,
-    HlmAspectRatioDirective
+    HlmAspectRatioDirective,
+    AlertComponent,
+    AlertDialogComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
 })
-export class DashboardPage { }
+export class DashboardPage {
+  showAlert(event: {value: string}) {
+    alert(event.value);
+  }
+}

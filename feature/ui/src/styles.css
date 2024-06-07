@@ -16,7 +16,24 @@
   background-position: 50%;
   }
 
+  .cdk-overlay-backdrop {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    inset: 0px;
+    transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+}
 
+.backdrop-blur-sm {
+  --tw-backdrop-blur: blur(4px);
+  backdrop-filter: var(--tw-backdrop-blur) var(--tw-backdrop-brightness) var(--tw-backdrop-contrast) var(--tw-backdrop-grayscale) var(--tw-backdrop-hue-rotate) var(--tw-backdrop-invert) var(--tw-backdrop-opacity) var(--tw-backdrop-saturate) var(--tw-backdrop-sepia);
+}
+
+.bg-background\/80 {
+  background-color: hsl(var(--background) / .8);
+}
 
   :root {
   --font-sans: ''

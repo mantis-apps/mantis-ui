@@ -345,6 +345,185 @@
             "extends": []
         },
         {
+            "name": "AlertDialogComponent",
+            "id": "component-AlertDialogComponent-48bac3f2f597c067b5496dbf41688fbc6fccfab792c7b97cd9ee2ffd5abb4eb93740fef40af61d515ce0d4b15e449c89ba3d8ef36a4f6f97f1dbb33441c19df3",
+            "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "AlertDialog",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<hlm-alert-dialog>\n  <button id=\"edit-profile\" variant=\"outline\" brnAlertDialogTrigger hlmBtn>Delete Account</button>\n  <hlm-alert-dialog-content *brnAlertDialogContent=\"let ctx\">\n    <hlm-alert-dialog-header>\n      <h3 hlmAlertDialogTitle>{{title}}</h3>\n      <p hlmAlertDialogDescription>\n        <ng-content />\n      </p>\n    </hlm-alert-dialog-header>\n    <hlm-alert-dialog-footer>\n      <button hlmAlertDialogCancel (click)=\"emitEvent(ctx, 'cancel') \">{{cancelLabel}}</button>\n      <button hlmAlertDialogAction (click)=\"emitEvent(ctx, 'confirm') \">{{confirmLabel}}</button>\n    </hlm-alert-dialog-footer>\n  </hlm-alert-dialog-content>\n</hlm-alert-dialog>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "cancelLabel",
+                    "defaultValue": "'Cancel'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 59,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "confirmLabel",
+                    "defaultValue": "'Delete Account'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 60,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "title",
+                    "defaultValue": "'Are you absolutely sure?'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 58,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "cancel",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 62,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "confirm",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 61,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "emitEvent",
+                    "args": [
+                        {
+                            "name": "ctx",
+                            "type": "literal type",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "event",
+                            "type": "\"confirm\" | \"cancel\"",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "ctx",
+                            "type": "literal type",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "event",
+                            "type": "\"confirm\" | \"cancel\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnAlertDialogTriggerDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnAlertDialogContentDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAlertDialogComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAlertDialogOverlayDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAlertDialogHeaderComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAlertDialogFooterComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAlertDialogTitleDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAlertDialogDescriptionDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAlertDialogCancelButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAlertDialogActionButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAlertDialogContentComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmButtonDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport {\n  BrnAlertDialogContentDirective,\n  BrnAlertDialogTriggerDirective,\n} from '@spartan-ng/ui-alertdialog-brain';\nimport {\n  HlmAlertDialogActionButtonDirective,\n  HlmAlertDialogCancelButtonDirective,\n  HlmAlertDialogComponent,\n  HlmAlertDialogContentComponent,\n  HlmAlertDialogDescriptionDirective,\n  HlmAlertDialogFooterComponent,\n  HlmAlertDialogHeaderComponent,\n  HlmAlertDialogOverlayDirective,\n  HlmAlertDialogTitleDirective,\n} from '@spartan-ng/ui-alertdialog-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\n\n@Component({\n  selector: 'AlertDialog',\n  standalone: true,\n  imports: [\n    BrnAlertDialogTriggerDirective,\n    BrnAlertDialogContentDirective,\n\n    HlmAlertDialogComponent,\n    HlmAlertDialogOverlayDirective,\n    HlmAlertDialogHeaderComponent,\n    HlmAlertDialogFooterComponent,\n    HlmAlertDialogTitleDirective,\n    HlmAlertDialogDescriptionDirective,\n    HlmAlertDialogCancelButtonDirective,\n    HlmAlertDialogActionButtonDirective,\n    HlmAlertDialogContentComponent,\n\n    HlmButtonDirective,\n  ],\n  template: `\n    <hlm-alert-dialog>\n      <button id=\"edit-profile\" variant=\"outline\" brnAlertDialogTrigger hlmBtn>Delete Account</button>\n      <hlm-alert-dialog-content *brnAlertDialogContent=\"let ctx\">\n        <hlm-alert-dialog-header>\n          <h3 hlmAlertDialogTitle>{{title}}</h3>\n          <p hlmAlertDialogDescription>\n            <ng-content />\n          </p>\n        </hlm-alert-dialog-header>\n        <hlm-alert-dialog-footer>\n          <button hlmAlertDialogCancel (click)=\"emitEvent(ctx, 'cancel') \">{{cancelLabel}}</button>\n          <button hlmAlertDialogAction (click)=\"emitEvent(ctx, 'confirm') \">{{confirmLabel}}</button>\n        </hlm-alert-dialog-footer>\n      </hlm-alert-dialog-content>\n    </hlm-alert-dialog>\n  `,\n})\nexport class AlertDialogComponent {\n  @Input({ required: true}) title = 'Are you absolutely sure?';\n  @Input({ required: true}) cancelLabel = 'Cancel';\n  @Input({ required: true}) confirmLabel = 'Delete Account';\n  @Output() confirm = new EventEmitter();\n  @Output() cancel = new EventEmitter();\n\n  emitEvent(ctx: { close: () => void; }, event: 'confirm' | 'cancel') {\n    const eventString = (event as 'confirm' | 'cancel').toUpperCase();\n    this[event].emit({value: `ALERTDIALOG-${eventString}-CLICKED`});\n    ctx.close();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "ButtonComponent",
             "id": "component-ButtonComponent-9a3da8885728b96dc0caa85e58800abbc9fa3f6f753842e7d3167cbbdb081ccbf980620e083960c4de27408bae7d597e15a4d262c972603a1600965a42ad9d15",
             "file": "feature/ui/src/lib/ui/components/button/button.component.ts",
@@ -715,7 +894,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-0b2c99860159c7ef85ea31caae1ea63adffd4180c72ee038af4ccbda14821f8fa070ba9ea7c561946d37778be0901c0e0d4f641206910c7367bf4c42ff33de3e",
+            "id": "component-IconComponent-2c848db3d3597c7140e45a28a463b7b3529de33b7ca05681c1b3d3c98d4545447041101edb6510ef607370792b6381964079c164e0b5a16d6f34ed531423c430",
             "file": "feature/ui/src/lib/ui/components/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -729,7 +908,7 @@
             "selector": "Icon",
             "styleUrls": [],
             "styles": [],
-            "template": "<hlm-icon\n  [name]=\"name\"\n  [size]=\"size\"\n  [color]=\"color\"\n  [strokeWidth]=\"strokeWidth\"\n  [class]=\"class\"></hlm-icon>\n",
+            "template": "<hlm-icon\n  [name]=\"name\"\n  [size]=\"size\"\n  [color]=\"color\"\n  [strokeWidth]=\"strokeWidth ? strokeWidth() : undefined\"\n  [class]=\"class\"></hlm-icon>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -772,10 +951,11 @@
                 },
                 {
                     "name": "strokeWidth",
+                    "defaultValue": "signal<string| number | undefined >(undefined)",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 29,
-                    "type": "string | number",
+                    "type": "any",
                     "decorators": []
                 }
             ],
@@ -796,7 +976,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideShieldQuestion } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'Icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    provideIcons({\n      lucideShieldQuestion\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  @Input({ required: true }) name: IconName = 'lucideShieldQuestion';\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth?: string | number;\n  @Input() class?: string;\n}\n\n",
+            "sourceCode": "import { Component, Input, signal } from '@angular/core';\nimport { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideShieldQuestion } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'Icon',\n  standalone: true,\n  imports: [HlmIconComponent],\n  providers: [\n    provideIcons({\n      lucideShieldQuestion\n    }),\n  ],\n  template: `\n    <hlm-icon\n      [name]=\"name\"\n      [size]=\"size\"\n      [color]=\"color\"\n      [strokeWidth]=\"strokeWidth ? strokeWidth() : undefined\"\n      [class]=\"class\"></hlm-icon>\n  `,\n})\nexport class IconComponent {\n  @Input({ required: true }) name: IconName = 'lucideShieldQuestion';\n  @Input() size: IconSize = 'none';\n  @Input() color?: string;\n  @Input() strokeWidth? = signal<string| number | undefined >(undefined);\n  @Input() class?: string;\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -893,11 +1073,31 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    title: 'Alert Dialog',\n    cancelLabel: 'Cancel',\n    confirmLabel: 'Close Account',\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Button works!',\n    variant: 'default',\n    size: 'lg',\n  }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
             },
             {
                 "name": "Default",
@@ -958,16 +1158,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    class: 'w-[500px]'\n  }\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
             },
             {
                 "name": "Destructive",
@@ -1063,6 +1253,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AlertDialogComponent>",
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1077,7 +1277,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<IconComponent>",
-                "defaultValue": "{\n  component: IconComponent,\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMail,\n          lucideUser2,\n          lucideUsers2,\n          lucideActivity,\n          lucideTruck,\n          lucideTrain,\n        }),\n      ],\n    }),\n  ],\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n  argTypes: {\n    name: { control: { type: 'select' }, name: 'Icon Name', options: ['lucideMail', 'lucideUser2', 'lucideUsers2', 'lucideActivity', 'lucideTruck', 'lucideTrain' ] },\n    size: { control: { type: 'select' }, name: 'Icon Size', options: ['sm', 'base', 'lg', 'xl'] },\n  },\n}"
+                "defaultValue": "{\n  component: IconComponent,\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMail,\n          lucideUser2,\n          lucideUsers2,\n          lucideActivity,\n          lucideTruck,\n          lucideTrain,\n        }),\n      ],\n    }),\n  ],\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n  argTypes: {\n    name: { control: { type: 'select' }, name: 'Icon Name', options: ['lucideMail', 'lucideUser2', 'lucideUsers2', 'lucideActivity', 'lucideTruck', 'lucideTrain', 'lucideShieldQuestion' ] },\n    size: { control: { type: 'select' }, name: 'Icon Size', options: ['sm', 'base', 'lg', 'xl'] },\n  },\n}"
             },
             {
                 "name": "meta",
@@ -1108,6 +1308,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<AccordionComponent>",
                 "defaultValue": "{\n  component: AccordionComponent,\n  title: 'Components/Accordion/Partials/Accordion',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<IconListComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1170,16 +1380,6 @@
                 "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
             },
             {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<IconListComponent>",
-                "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
-            },
-            {
                 "name": "Outline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1207,7 +1407,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    size: 'base',\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -1258,6 +1458,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AlertDialogComponent>",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1322,6 +1533,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<IconListComponent>",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts",
                 "deprecated": false,
@@ -1379,17 +1601,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/components/card/partials/card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<IconListComponent>",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1541,6 +1752,28 @@
                     "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    title: 'Alert Dialog',\n    cancelLabel: 'Cancel',\n    confirmLabel: 'Close Account',\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AlertDialogComponent>",
+                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/button/button.component.stories.ts": [
                 {
                     "name": "Default",
@@ -1611,6 +1844,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'Heading works!',\n    variant: 'secondary',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/button works!/gi)).toBeTruthy();\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconListComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts": [
@@ -1745,28 +2000,6 @@
                     "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<IconListComponent>",
-                    "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
-                }
-            ],
             "feature/ui/.storybook/preview.ts": [
                 {
                     "name": "globalTypes",
@@ -1894,7 +2127,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<IconComponent>",
-                    "defaultValue": "{\n  component: IconComponent,\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMail,\n          lucideUser2,\n          lucideUsers2,\n          lucideActivity,\n          lucideTruck,\n          lucideTrain,\n        }),\n      ],\n    }),\n  ],\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n  argTypes: {\n    name: { control: { type: 'select' }, name: 'Icon Name', options: ['lucideMail', 'lucideUser2', 'lucideUsers2', 'lucideActivity', 'lucideTruck', 'lucideTrain' ] },\n    size: { control: { type: 'select' }, name: 'Icon Size', options: ['sm', 'base', 'lg', 'xl'] },\n  },\n}"
+                    "defaultValue": "{\n  component: IconComponent,\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMail,\n          lucideUser2,\n          lucideUsers2,\n          lucideActivity,\n          lucideTruck,\n          lucideTrain,\n        }),\n      ],\n    }),\n  ],\n  title: 'Components/Icon',\n  tags: ['autodocs'],\n  argTypes: {\n    name: { control: { type: 'select' }, name: 'Icon Name', options: ['lucideMail', 'lucideUser2', 'lucideUsers2', 'lucideActivity', 'lucideTruck', 'lucideTrain', 'lucideShieldQuestion' ] },\n    size: { control: { type: 'select' }, name: 'Icon Size', options: ['sm', 'base', 'lg', 'xl'] },\n  },\n}"
                 },
                 {
                     "name": "Primary",
@@ -1904,7 +2137,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    name: 'lucideMail',\n    size: 'base',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    size: 'base',\n  },\n}"
                 }
             ]
         },
@@ -1929,6 +2162,19 @@
                     "subtype": "typealias",
                     "rawtype": "AlertComponent",
                     "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AlertDialogComponent>",
+                    "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2016,6 +2262,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AccordionComponent>",
                     "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<IconListComponent>",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2164,19 +2423,6 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 193
-                }
-            ],
-            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<IconListComponent>",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
                 }
             ]
         }
@@ -2331,6 +2577,35 @@
                 "name": "AccordionComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AlertDialogComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
                 "status": "low"
             },
             {

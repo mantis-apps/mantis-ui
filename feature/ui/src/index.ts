@@ -8,3 +8,5 @@ export * from './card.module';
 export * from './accordion.module';
 
 export * from './lib/ui/components/alert/alert.component';
+
+export * from './lib/ui/components/alert-dialog/alert-dialog.component';

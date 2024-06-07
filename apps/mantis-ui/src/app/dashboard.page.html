@@ -7,7 +7,7 @@
     <div class="flex items-center justify-center [&>div]:w-full">
 
       <Card
-        class="text-xl font-bold text-balance">
+        class="text-balance">
         <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
         </ng-container> -->
@@ -19,24 +19,15 @@
             Alice in Wonderland <small> -- by Lewis Carroll </small>
           </CardDescription>
         </CardHeader>
-        <CardContent>
-          <!-- <Accordion class="mb-4 ">
-            <AccordionItem>
-              <AccordionContent headerLabel="Accordion Item 1">
-                <p>Content 1</p>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem>
-              <AccordionContent headerLabel="Accordion Item 2">
-                <p>Content 2</p>
-              </AccordionContent>
-            </AccordionItem>
-            <AccordionItem>
-              <AccordionContent headerLabel="Accordion Item 3">
-                <p>Content 3</p>
-              </AccordionContent>
-            </AccordionItem>
-          </Accordion> -->
+        <CardContent contentClass="px-4">
+          <Alert
+            alertTitle="Check memory levels"
+            class="flex-1"
+          >
+            <p>
+              Your computer is consumming high levels of memory. Please shut any background running process that are not mission critical
+            </p>
+          </Alert>
         </CardContent>
         <CardFooter>
           <Button variant="default" size="lg"
@@ -67,6 +58,17 @@
           <CardContent>
             <IconList />
           </CardContent>
+          <CardFooter>
+            <AlertDialog
+              cancelLabel="Cancel"
+              confirmLabel="Confirm"
+              title="Are you sure?"
+              (confirm)="showAlert($event)"
+              (cancel)="showAlert($event)"
+            >
+              This is an irreversible action. Press on the 'Confirm' button only if you are absolutely sure. Otherwise, press on the 'Cancel' button.
+            </AlertDialog>
+          </CardFooter>
         </Card>
       </div>
     </div>
