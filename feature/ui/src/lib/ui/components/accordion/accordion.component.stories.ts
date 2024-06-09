@@ -6,7 +6,7 @@ import { expect } from '@storybook/jest';
 
 const meta: Meta<AccordionComponent> = {
   component: AccordionComponent,
-  title: 'AccordionComponent',
+  title: 'Components/Accordion/Accordion',
 };
 export default meta;
 type Story = StoryObj<AccordionComponent>;
