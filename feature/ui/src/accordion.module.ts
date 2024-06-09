@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 
-import { AccordionComponent } from './lib/ui/components/accordion/partials/accordion.component';
+import { AccordionComponent } from './lib/ui/components/accordion/accordion.component';
 import { AccordionItemComponent } from './lib/ui/components/accordion/partials/accordion-item.component';
 import { AccordionContentComponent } from './lib/ui/components/accordion/partials/accordion-content.component';
 
-export * from './lib/ui/components/accordion/partials/accordion.component';
+export * from './lib/ui/components/accordion/accordion.component';
 export * from './lib/ui/components/accordion/partials/accordion-item.component';
 export * from './lib/ui/components/accordion/partials/accordion-content.component';
 
