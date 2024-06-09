@@ -346,7 +346,7 @@
         },
         {
             "name": "AlertDialogComponent",
-            "id": "component-AlertDialogComponent-48bac3f2f597c067b5496dbf41688fbc6fccfab792c7b97cd9ee2ffd5abb4eb93740fef40af61d515ce0d4b15e449c89ba3d8ef36a4f6f97f1dbb33441c19df3",
+            "id": "component-AlertDialogComponent-9feaa49186dd621a5bd9e848268306bc5f357bd56319beae8f5e448f718b04ed63e0f10bd03da94714e332b364b8368ed7ad2672034a90dbc505dde074fe04a8",
             "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -355,8 +355,10 @@
             "providers": [],
             "selector": "AlertDialog",
             "styleUrls": [],
-            "styles": [],
-            "template": "<hlm-alert-dialog>\n  <button id=\"edit-profile\" variant=\"outline\" brnAlertDialogTrigger hlmBtn>Delete Account</button>\n  <hlm-alert-dialog-content *brnAlertDialogContent=\"let ctx\">\n    <hlm-alert-dialog-header>\n      <h3 hlmAlertDialogTitle>{{title}}</h3>\n      <p hlmAlertDialogDescription>\n        <ng-content />\n      </p>\n    </hlm-alert-dialog-header>\n    <hlm-alert-dialog-footer>\n      <button hlmAlertDialogCancel (click)=\"emitEvent(ctx, 'cancel') \">{{cancelLabel}}</button>\n      <button hlmAlertDialogAction (click)=\"emitEvent(ctx, 'confirm') \">{{confirmLabel}}</button>\n    </hlm-alert-dialog-footer>\n  </hlm-alert-dialog-content>\n</hlm-alert-dialog>\n",
+            "styles": [
+                "\n    :host {\n      display: contents;\n    }\n\n  "
+            ],
+            "template": "<hlm-alert-dialog [class]=\"class\">\n  <button id=\"edit-profile\" variant=\"outline\" brnAlertDialogTrigger hlmBtn>Delete Account</button>\n  <hlm-alert-dialog-content *brnAlertDialogContent=\"let ctx\">\n    <hlm-alert-dialog-header>\n      <h3 hlmAlertDialogTitle>{{title}}</h3>\n      <p hlmAlertDialogDescription>\n        <ng-content />\n      </p>\n    </hlm-alert-dialog-header>\n    <hlm-alert-dialog-footer>\n      <button class=\"mr-2\" hlmAlertDialogCancel (click)=\"emitEvent(ctx, 'cancel') \">{{cancelLabel}}</button>\n      <button hlmAlertDialogAction (click)=\"emitEvent(ctx, 'confirm') \">{{confirmLabel}}</button>\n    </hlm-alert-dialog-footer>\n  </hlm-alert-dialog-content>\n</hlm-alert-dialog>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -368,7 +370,16 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 59,
+                    "line": 66,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 64,
                     "type": "string",
                     "decorators": []
                 },
@@ -379,7 +390,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 60,
+                    "line": 67,
                     "type": "string",
                     "decorators": []
                 },
@@ -390,7 +401,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 58,
+                    "line": 65,
                     "type": "string",
                     "decorators": []
                 }
@@ -401,7 +412,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 62,
+                    "line": 69,
                     "type": "EventEmitter"
                 },
                 {
@@ -409,7 +420,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 61,
+                    "line": 68,
                     "type": "EventEmitter"
                 }
             ],
@@ -434,7 +445,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 64,
+                    "line": 71,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -517,7 +528,59 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport {\n  BrnAlertDialogContentDirective,\n  BrnAlertDialogTriggerDirective,\n} from '@spartan-ng/ui-alertdialog-brain';\nimport {\n  HlmAlertDialogActionButtonDirective,\n  HlmAlertDialogCancelButtonDirective,\n  HlmAlertDialogComponent,\n  HlmAlertDialogContentComponent,\n  HlmAlertDialogDescriptionDirective,\n  HlmAlertDialogFooterComponent,\n  HlmAlertDialogHeaderComponent,\n  HlmAlertDialogOverlayDirective,\n  HlmAlertDialogTitleDirective,\n} from '@spartan-ng/ui-alertdialog-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\n\n@Component({\n  selector: 'AlertDialog',\n  standalone: true,\n  imports: [\n    BrnAlertDialogTriggerDirective,\n    BrnAlertDialogContentDirective,\n\n    HlmAlertDialogComponent,\n    HlmAlertDialogOverlayDirective,\n    HlmAlertDialogHeaderComponent,\n    HlmAlertDialogFooterComponent,\n    HlmAlertDialogTitleDirective,\n    HlmAlertDialogDescriptionDirective,\n    HlmAlertDialogCancelButtonDirective,\n    HlmAlertDialogActionButtonDirective,\n    HlmAlertDialogContentComponent,\n\n    HlmButtonDirective,\n  ],\n  template: `\n    <hlm-alert-dialog>\n      <button id=\"edit-profile\" variant=\"outline\" brnAlertDialogTrigger hlmBtn>Delete Account</button>\n      <hlm-alert-dialog-content *brnAlertDialogContent=\"let ctx\">\n        <hlm-alert-dialog-header>\n          <h3 hlmAlertDialogTitle>{{title}}</h3>\n          <p hlmAlertDialogDescription>\n            <ng-content />\n          </p>\n        </hlm-alert-dialog-header>\n        <hlm-alert-dialog-footer>\n          <button hlmAlertDialogCancel (click)=\"emitEvent(ctx, 'cancel') \">{{cancelLabel}}</button>\n          <button hlmAlertDialogAction (click)=\"emitEvent(ctx, 'confirm') \">{{confirmLabel}}</button>\n        </hlm-alert-dialog-footer>\n      </hlm-alert-dialog-content>\n    </hlm-alert-dialog>\n  `,\n})\nexport class AlertDialogComponent {\n  @Input({ required: true}) title = 'Are you absolutely sure?';\n  @Input({ required: true}) cancelLabel = 'Cancel';\n  @Input({ required: true}) confirmLabel = 'Delete Account';\n  @Output() confirm = new EventEmitter();\n  @Output() cancel = new EventEmitter();\n\n  emitEvent(ctx: { close: () => void; }, event: 'confirm' | 'cancel') {\n    const eventString = (event as 'confirm' | 'cancel').toUpperCase();\n    this[event].emit({value: `ALERTDIALOG-${eventString}-CLICKED`});\n    ctx.close();\n  }\n}\n",
+            "sourceCode": "import { Component, Input, Output, EventEmitter } from '@angular/core';\nimport {\n  BrnAlertDialogContentDirective,\n  BrnAlertDialogTriggerDirective,\n} from '@spartan-ng/ui-alertdialog-brain';\nimport {\n  HlmAlertDialogActionButtonDirective,\n  HlmAlertDialogCancelButtonDirective,\n  HlmAlertDialogComponent,\n  HlmAlertDialogContentComponent,\n  HlmAlertDialogDescriptionDirective,\n  HlmAlertDialogFooterComponent,\n  HlmAlertDialogHeaderComponent,\n  HlmAlertDialogOverlayDirective,\n  HlmAlertDialogTitleDirective,\n} from '@spartan-ng/ui-alertdialog-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\n\n@Component({\n  selector: 'AlertDialog',\n  standalone: true,\n  imports: [\n    BrnAlertDialogTriggerDirective,\n    BrnAlertDialogContentDirective,\n\n    HlmAlertDialogComponent,\n    HlmAlertDialogOverlayDirective,\n    HlmAlertDialogHeaderComponent,\n    HlmAlertDialogFooterComponent,\n    HlmAlertDialogTitleDirective,\n    HlmAlertDialogDescriptionDirective,\n    HlmAlertDialogCancelButtonDirective,\n    HlmAlertDialogActionButtonDirective,\n    HlmAlertDialogContentComponent,\n\n    HlmButtonDirective,\n  ],\n  template: `\n    <hlm-alert-dialog [class]=\"class\">\n      <button id=\"edit-profile\" variant=\"outline\" brnAlertDialogTrigger hlmBtn>Delete Account</button>\n      <hlm-alert-dialog-content *brnAlertDialogContent=\"let ctx\">\n        <hlm-alert-dialog-header>\n          <h3 hlmAlertDialogTitle>{{title}}</h3>\n          <p hlmAlertDialogDescription>\n            <ng-content />\n          </p>\n        </hlm-alert-dialog-header>\n        <hlm-alert-dialog-footer>\n          <button class=\"mr-2\" hlmAlertDialogCancel (click)=\"emitEvent(ctx, 'cancel') \">{{cancelLabel}}</button>\n          <button hlmAlertDialogAction (click)=\"emitEvent(ctx, 'confirm') \">{{confirmLabel}}</button>\n        </hlm-alert-dialog-footer>\n      </hlm-alert-dialog-content>\n    </hlm-alert-dialog>\n  `,\n  styles: `\n    :host {\n      display: contents;\n    }\n\n  `,\n})\nexport class AlertDialogComponent {\n  @Input() class = '';\n  @Input({ required: true}) title = 'Are you absolutely sure?';\n  @Input({ required: true}) cancelLabel = 'Cancel';\n  @Input({ required: true}) confirmLabel = 'Delete Account';\n  @Output() confirm = new EventEmitter();\n  @Output() cancel = new EventEmitter();\n\n  emitEvent(ctx: { close: () => void; }, event: 'confirm' | 'cancel') {\n    const eventString = (event as 'confirm' | 'cancel').toUpperCase();\n    this[event].emit({value: `ALERTDIALOG-${eventString}-CLICKED`});\n    ctx.close();\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n    :host {\n      display: contents;\n    }\n\n  \n",
+            "extends": []
+        },
+        {
+            "name": "AspectRatioComponent",
+            "id": "component-AspectRatioComponent-b84a601c533e1501fbc901e86f9033ec25fc87d732350edd92f8e2b0440968ae27329053c0d18c1faf5db77ee56f4a08206b55e64b8bdbb401e85442b8ec3d93",
+            "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "AspectRatio",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"max-w-xl overflow-hidden rounded-xl drop-shadow\">\n  <div [hlmAspectRatio]=\"ratio\">\n    <ng-content />\n  </div>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "ratio",
+                    "defaultValue": "\"1 / 1\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 22,
+                    "type": "square | portrait | landscape",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmAspectRatioDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';\n\nexport type square = \"1 / 1\";\nexport type portrait = \"9 / 16\";\nexport type landscape = \"16 / 9\";\n\n@Component({\n  selector: 'AspectRatio',\n  standalone: true,\n  imports: [HlmAspectRatioDirective],\n  template: `\n    <div class=\"max-w-xl overflow-hidden rounded-xl drop-shadow\">\n      <div [hlmAspectRatio]=\"ratio\">\n        <ng-content />\n      </div>\n    </div>\n  `,\n})\nexport class AspectRatioComponent {\n  @Input({required: true}) ratio: square | portrait | landscape = \"1 / 1\"\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -584,7 +647,7 @@
         },
         {
             "name": "CardComponent",
-            "id": "component-CardComponent-132a32816fbebd88f91a04b4396fc2993d986f610501e954b3c39d8fcc917628e389c0ad76c8e02f7dda4660839ef7b4f8a4ba31d27932bdc40fff2c7299c166",
+            "id": "component-CardComponent-2bf4a8838fb8af06fc05e00b41be74b6fd68a90d7d3fe95f74fa4ef72cd3f1f5490c2c1e1a0b7bd620ba1f7ef5e85fc8042bd5d114fee3d537ddd2ce03d0b807",
             "file": "feature/ui/src/lib/ui/components/card/partials/card.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -601,7 +664,7 @@
             "inputsClass": [
                 {
                     "name": "class",
-                    "defaultValue": "'w-[420px]'",
+                    "defaultValue": "''",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "rawdescription": "\n\nadd tailwind classes to override defaults (e.g. 'text-2xl p-2')\n",
@@ -628,7 +691,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmCardDirective } from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'Card',\n  standalone: true,\n  imports: [HlmCardDirective],\n  template: `\n    <div hlmCard [class]=\"class\">\n      <ng-content />\n    </div>\n  `,\n})\nexport class CardComponent {\n  /**\n   * add tailwind classes to override defaults (e.g. 'text-2xl p-2')\n   */\n  @Input() class = 'w-[420px]';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmCardDirective } from '@spartan-ng/ui-card-helm';\n\n@Component({\n  selector: 'Card',\n  standalone: true,\n  imports: [HlmCardDirective],\n  template: `\n    <div hlmCard [class]=\"class\">\n      <ng-content />\n    </div>\n  `,\n})\nexport class CardComponent {\n  /**\n   * add tailwind classes to override defaults (e.g. 'text-2xl p-2')\n   */\n  @Input() class = '';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1057,7 +1120,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "StorybookConfig",
-                "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  }\n}"
+                "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n  staticDirs: ['../src/assets'],\n}"
             },
             {
                 "name": "Default",
@@ -1088,16 +1151,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Button works!',\n    variant: 'default',\n    size: 'lg',\n  }\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
             },
             {
                 "name": "Default",
@@ -1158,6 +1211,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    class: 'w-[500px]'\n  }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
             },
             {
                 "name": "Destructive",
@@ -1230,6 +1293,16 @@
                 "defaultValue": "{\n  args: {\n    class: '',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/accordion works!/gi)).toBeTruthy();\n  },\n}"
             },
             {
+                "name": "Landscape",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ratio: '16 / 9',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/aspect-ratio works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
                 "name": "Link",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1258,6 +1331,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<AlertDialogComponent>",
                 "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AspectRatioComponent>",
+                "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    `\n  })\n}"
             },
             {
                 "name": "meta",
@@ -1308,16 +1391,6 @@
                 "deprecationMessage": "",
                 "type": "Meta<AccordionComponent>",
                 "defaultValue": "{\n  component: AccordionComponent,\n  title: 'Components/Accordion/Partials/Accordion',\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<IconListComponent>",
-                "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1378,6 +1451,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<StoryArgs>",
                 "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<IconListComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
             },
             {
                 "name": "Outline",
@@ -1448,10 +1531,53 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    label: 'Heading works!',\n    variant: 'secondary',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/button works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
+                "name": "Square",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ratio: '1 / 1',\n  },\n}"
             }
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "landscape",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 201
+            },
+            {
+                "name": "portrait",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 201
+            },
+            {
+                "name": "square",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 201
+            },
             {
                 "name": "Story",
                 "ctype": "miscellaneous",
@@ -1469,6 +1595,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<AlertDialogComponent>",
                 "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AspectRatioComponent>",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1524,17 +1661,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<AccordionComponent>",
                 "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<IconListComponent>",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1601,6 +1727,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/components/card/partials/card.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<IconListComponent>",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1717,7 +1854,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
-                    "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  }\n}"
+                    "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n  staticDirs: ['../src/assets'],\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
@@ -1844,28 +1981,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'Heading works!',\n    variant: 'secondary',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/button works!/gi)).toBeTruthy();\n  },\n}"
-                }
-            ],
-            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<IconListComponent>",
-                    "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts": [
@@ -2000,6 +2115,28 @@
                     "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconListComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                }
+            ],
             "feature/ui/.storybook/preview.ts": [
                 {
                     "name": "globalTypes",
@@ -2118,6 +2255,38 @@
                     "defaultValue": "{\n  args: {\n    class: '',\n  },\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
+                {
+                    "name": "Landscape",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ratio: '16 / 9',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/aspect-ratio works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AspectRatioComponent>",
+                    "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    `\n  })\n}"
+                },
+                {
+                    "name": "Square",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ratio: '1 / 1',\n  },\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
                 {
                     "name": "meta",
@@ -2144,6 +2313,41 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts": [
+                {
+                    "name": "landscape",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 201
+                },
+                {
+                    "name": "portrait",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 201
+                },
+                {
+                    "name": "square",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 201
+                }
+            ],
             "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
                 {
                     "name": "Story",
@@ -2175,6 +2379,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AlertDialogComponent>",
                     "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AspectRatioComponent>",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2262,19 +2479,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AccordionComponent>",
                     "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<IconListComponent>",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2423,6 +2627,19 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 193
+                }
+            ],
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<IconListComponent>",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
                 }
             ]
         }
@@ -2605,7 +2822,7 @@
                 "linktype": "component",
                 "name": "AlertDialogComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {
@@ -2645,6 +2862,45 @@
                 "name": "AlertComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Landscape",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Square",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AspectRatioComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
                 "status": "low"
             },
             {

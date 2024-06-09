@@ -31,9 +31,12 @@ const preview: Preview = {
   ],
   parameters: {
     docs: {
-      inlineStories: false,
-      iframeHeight: 500,
-      excludeDecorators: true,
+
+      story: {
+        inlineStories: false,
+        excludeDecorators: true,
+      },
+
     },
     options: {
       storySort: {

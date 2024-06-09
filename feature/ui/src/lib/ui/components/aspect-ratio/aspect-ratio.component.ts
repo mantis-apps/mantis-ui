@@ -11,12 +11,20 @@ export type landscape = "16 / 9";
   standalone: true,
   imports: [HlmAspectRatioDirective],
   template: `
-    <div class="max-w-xl overflow-hidden rounded-xl drop-shadow">
+    <div class="overflow-hidden rounded-xl drop-shadow">
       <div [hlmAspectRatio]="ratio">
         <ng-content />
       </div>
     </div>
   `,
+  styles: [
+    `
+    :host {
+      display: contents;
+    }
+    `
+
+  ]
 })
 export class AspectRatioComponent {
   @Input({required: true}) ratio: square | portrait | landscape = "1 / 1"

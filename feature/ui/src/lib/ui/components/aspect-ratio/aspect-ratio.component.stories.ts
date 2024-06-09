@@ -4,6 +4,7 @@ import { AspectRatioComponent } from './aspect-ratio.component';
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
 
+
 const meta: Meta<AspectRatioComponent> = {
   component: AspectRatioComponent,
   title: 'Components/AspectRatio/AspectRatio',
@@ -18,11 +19,17 @@ const meta: Meta<AspectRatioComponent> = {
     },
   },
   render: (args: AspectRatioComponent) => ({
-    props: args,
+    props: {
+      ...args,
+      src: "/1.jpg",
+      alt: "aspect-ratio works!",
+    },
     template: `
+    <div class="w-full h-full">
       <AspectRatio ${argsToTemplate(args)}>
-      <img src="./src/assets/1.jpg" />
+        <img src="{{src}}" alt="{{alt}}" />
       </AspectRatio>
+    </div>
     `
   })
 };
@@ -32,6 +39,12 @@ type Story = StoryObj<AspectRatioComponent>;
 export const Square: Story = {
   args: {
     ratio: '1 / 1',
+  },
+};
+
+export const Portrait: Story = {
+  args: {
+    ratio: '9 / 16',
   },
 };
 
