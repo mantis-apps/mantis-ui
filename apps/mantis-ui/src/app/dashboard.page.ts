@@ -2,7 +2,19 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { IconComponent, ButtonComponent, IconListComponent, CardModule, AccordionModule, AlertDialogComponent, AlertComponent, AspectRatioComponent } from '@mantistech/ui';
+import { HeaderComponent } from './header.component';
+
+import {
+  IconComponent,
+  ButtonComponent,
+  IconListComponent,
+  CardModule,
+  AccordionModule,
+  AlertDialogComponent,
+  AlertComponent,
+  AspectRatioComponent,
+  AvatarComponent
+} from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
 
@@ -11,6 +23,7 @@ import { provideIcons, IconName } from '@ng-icons/core';
   standalone: true,
   imports: [
     CommonModule,
+    HeaderComponent,
     ButtonComponent,
     IconComponent,
     IconListComponent,
@@ -19,7 +32,8 @@ import { provideIcons, IconName } from '@ng-icons/core';
     HlmAspectRatioDirective,
     AlertComponent,
     AlertDialogComponent,
-    AspectRatioComponent
+    AspectRatioComponent,
+    AvatarComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,

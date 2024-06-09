@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@mantis-ui/utils": ["utils/src/index.ts"],
       "@mantistech/ui": ["feature/ui/src/index.ts"],
       "@spartan-ng/ui-accordion-helm": [
         "feature/spartanui/ui-accordion-helm/src/index.ts"

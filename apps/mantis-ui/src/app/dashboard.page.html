@@ -1,4 +1,12 @@
-<div
+<main class="w-full min-h-screen p-0 bg-background text-foreground">
+  <div class="flex flex-col w-full h-full min-h-screen bg-muted/40">
+    <!-- <app-dashboard-sidebar></app-dashboard-sidebar> -->
+    <div class="flex flex-col h-full min-h-screen sm:gap-4 sm:py-4 sm:pl-14">
+      <AppHeader />
+      <main
+        class="items-start flex-1 p-4 sm:px-6 sm:py-0">
+
+        <div
   class="items-start justify-center hidden gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
   <!-- first column -->
   <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
@@ -7,19 +15,38 @@
     <div class="flex items-center justify-center [&>div]:w-full">
 
       <Card
-        class="text-balance">
+        class="">
         <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
         </ng-container> -->
         <CardHeader>
-          <CardTitle>
-            Down the Rabbit Hole
+          <CardTitle [class]="'text-3xl'">
+            Alert
           </CardTitle>
           <CardDescription>
-            Alice in Wonderland <small> -- by Lewis Carroll </small>
+            Displays a callout for user attention.
           </CardDescription>
         </CardHeader>
         <CardContent contentClass="px-4">
+          <Alert
+            alertTitle="Check memory levels"
+            class="flex-1 mb-4"
+          >
+            <p>
+              Your computer is consumming high levels of memory. Please shut any background running process that are not mission critical
+            </p>
+          </Alert>
+
+          <Alert
+            alertTitle="Check memory levels"
+            class="flex-1 mb-4"
+            variant="destructive"
+          >
+            <p>
+              Your computer is consumming high levels of memory. Please shut any background running process that are not mission critical
+            </p>
+          </Alert>
+
           <Alert
             alertTitle="Check memory levels"
             class="flex-1"
@@ -46,9 +73,9 @@
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
         <Card
-          class="text-xl font-bold text-balance">
+          class="">
           <CardHeader>
-            <CardTitle>
+            <CardTitle [class]="'text-3xl'">
               Thousands of Lucide Icons
             </CardTitle>
             <CardDescription>
@@ -82,9 +109,9 @@
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
         <Card
-          class="text-xl font-bold text-balance">
+          class="">
           <CardHeader>
-            <CardTitle>
+            <CardTitle [class]="'text-3xl'">
               Thousands of Lucide Icons
             </CardTitle>
             <CardDescription>
@@ -102,12 +129,12 @@
     <div class="flex items-center justify-center [&>div]:w-full">
 
       <Card
-        class="text-xl font-bold text-balance">
+        class="">
         <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
         </ng-container> -->
         <CardHeader>
-          <CardTitle>
+          <CardTitle [class]="'text-3xl'">
             Down the Hare Hole
           </CardTitle>
           <CardDescription>
@@ -156,12 +183,12 @@
     <div class="flex items-center justify-center [&>div]:w-full">
 
       <Card
-        class="text-xl font-bold text-balance">
+        class="">
         <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
         </ng-container> -->
         <CardHeader>
-          <CardTitle>
+          <CardTitle [class]="'text-3xl'">
             Down the Rabbit Hole
           </CardTitle>
           <CardDescription>
@@ -202,12 +229,12 @@
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
         <Card
-        class="text-xl font-bold text-balance">
+        class="">
         <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
         </ng-container> -->
         <CardHeader>
-          <CardTitle>
+          <CardTitle [class]="'text-3xl'">
             Down the Rabbit Hole
           </CardTitle>
           <CardDescription>
@@ -248,3 +275,13 @@
   </div>
 
 </div>
+
+
+      </main>
+    </div>
+  </div>
+  </main>
+
+
+
+

@@ -536,7 +536,7 @@
         },
         {
             "name": "AspectRatioComponent",
-            "id": "component-AspectRatioComponent-b84a601c533e1501fbc901e86f9033ec25fc87d732350edd92f8e2b0440968ae27329053c0d18c1faf5db77ee56f4a08206b55e64b8bdbb401e85442b8ec3d93",
+            "id": "component-AspectRatioComponent-f2b1f811d9960bc0e9d415da7fea28919c04755f92a1009ba7785b80ec02721c6ec5fd302626a68800649b011f213a1d9d0a9c5f94f2d7bbab26d12d87696b2f",
             "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -545,8 +545,10 @@
             "providers": [],
             "selector": "AspectRatio",
             "styleUrls": [],
-            "styles": [],
-            "template": "<div class=\"max-w-xl overflow-hidden rounded-xl drop-shadow\">\n  <div [hlmAspectRatio]=\"ratio\">\n    <ng-content />\n  </div>\n</div>\n",
+            "styles": [
+                "\n    :host {\n      display: contents;\n    }\n    "
+            ],
+            "template": "<div class=\"overflow-hidden rounded-xl drop-shadow\">\n  <div [hlmAspectRatio]=\"ratio\">\n    <ng-content />\n  </div>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -558,7 +560,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 22,
+                    "line": 30,
                     "type": "square | portrait | landscape",
                     "decorators": []
                 }
@@ -580,7 +582,103 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';\n\nexport type square = \"1 / 1\";\nexport type portrait = \"9 / 16\";\nexport type landscape = \"16 / 9\";\n\n@Component({\n  selector: 'AspectRatio',\n  standalone: true,\n  imports: [HlmAspectRatioDirective],\n  template: `\n    <div class=\"max-w-xl overflow-hidden rounded-xl drop-shadow\">\n      <div [hlmAspectRatio]=\"ratio\">\n        <ng-content />\n      </div>\n    </div>\n  `,\n})\nexport class AspectRatioComponent {\n  @Input({required: true}) ratio: square | portrait | landscape = \"1 / 1\"\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';\n\nexport type square = \"1 / 1\";\nexport type portrait = \"9 / 16\";\nexport type landscape = \"16 / 9\";\n\n@Component({\n  selector: 'AspectRatio',\n  standalone: true,\n  imports: [HlmAspectRatioDirective],\n  template: `\n    <div class=\"overflow-hidden rounded-xl drop-shadow\">\n      <div [hlmAspectRatio]=\"ratio\">\n        <ng-content />\n      </div>\n    </div>\n  `,\n  styles: [\n    `\n    :host {\n      display: contents;\n    }\n    `\n\n  ]\n})\nexport class AspectRatioComponent {\n  @Input({required: true}) ratio: square | portrait | landscape = \"1 / 1\"\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n    :host {\n      display: contents;\n    }\n    \n",
+            "extends": []
+        },
+        {
+            "name": "AvatarComponent",
+            "id": "component-AvatarComponent-f10f163bf797e43d87d7ddef13ffa793cd7048cc1d7c27ddd5236f6db9eb0a5c857434cd861cbb59578cb368031465535c8b5c0fcee68a73a440cf3e9b2f1377",
+            "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "Avatar",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<hlm-avatar [variant]=\"variant\">\n  <img src=\"{{imgSrc}}\" alt=\"{{imgAltText}}\" hlmAvatarImage />\n  <span class=\"bg-[{{fallbackBgColor}}] text-white\" hlmAvatarFallback>{{fallbackText}}</span>\n</hlm-avatar>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "fallbackBgColor",
+                    "defaultValue": "'#FD005B'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 21,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "fallbackText",
+                    "defaultValue": "'MU'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 20,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "imgAltText",
+                    "defaultValue": "'avatar image description'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "imgSrc",
+                    "defaultValue": "'/assets/avatar.png'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 18,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "variant",
+                    "defaultValue": "'small'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "\"small\" | \"medium\" | \"large\"",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmAvatarImageDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmAvatarComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmAvatarFallbackDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmAvatarComponent, HlmAvatarFallbackDirective, HlmAvatarImageDirective } from '@spartan-ng/ui-avatar-helm';\n\n@Component({\n  selector: 'Avatar',\n  standalone: true,\n  imports: [HlmAvatarImageDirective, HlmAvatarComponent, HlmAvatarFallbackDirective],\n  template: `\n    <hlm-avatar [variant]=\"variant\">\n      <img src=\"{{imgSrc}}\" alt=\"{{imgAltText}}\" hlmAvatarImage />\n      <span class=\"bg-[{{fallbackBgColor}}] text-white\" hlmAvatarFallback>{{fallbackText}}</span>\n    </hlm-avatar>\n  `,\n})\nexport class AvatarComponent {\n  @Input() variant: 'small' | 'medium' | 'large' = 'small';\n  @Input({required: true}) imgSrc = '/assets/avatar.png';\n  @Input() imgAltText = 'avatar image description'\n  @Input() fallbackText = 'MU';\n  @Input() fallbackBgColor = '#FD005B';\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1266,6 +1364,16 @@
                 "name": "Heading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/assets/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/avatar works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1340,7 +1448,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AspectRatioComponent>",
-                "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    `\n  })\n}"
+                "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AvatarComponent>",
+                "defaultValue": "{\n  component: AvatarComponent,\n  title: 'Components/Avatar/Avatar',\n}"
             },
             {
                 "name": "meta",
@@ -1473,6 +1591,16 @@
                 "defaultValue": "{\n  args: {\n    label: 'Outline works!',\n    variant: 'outline',\n  },\n}"
             },
             {
+                "name": "Portrait",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    ratio: '9 / 16',\n  },\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1480,7 +1608,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Preview",
-                "defaultValue": "{\n  decorators: [\n    withThemeByClassName({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-mode',\n    }),\n    componentWrapperDecorator(\n      (story) => {\n        return `<div class=\"bg-background m-4 p-8\" style=\"margin: 0; padding: 2rem;\">${story}</div>`\n      },\n    )\n  ],\n  parameters: {\n    docs: {\n      inlineStories: false,\n      iframeHeight: 500,\n      excludeDecorators: true,\n    },\n    options: {\n      storySort: {\n        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],\n      },\n    },\n    layout: 'fullscreen',\n  },\n}"
+                "defaultValue": "{\n  decorators: [\n    withThemeByClassName({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-mode',\n    }),\n    componentWrapperDecorator(\n      (story) => {\n        return `<div class=\"bg-background m-4 p-8\" style=\"margin: 0; padding: 2rem;\">${story}</div>`\n      },\n    )\n  ],\n  parameters: {\n    docs: {\n\n      story: {\n        inlineStories: false,\n        excludeDecorators: true,\n      },\n\n    },\n    options: {\n      storySort: {\n        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],\n      },\n    },\n    layout: 'fullscreen',\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/assets/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -1606,6 +1744,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<AspectRatioComponent>",
                 "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AvatarComponent>",
+                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2156,7 +2305,39 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Preview",
-                    "defaultValue": "{\n  decorators: [\n    withThemeByClassName({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-mode',\n    }),\n    componentWrapperDecorator(\n      (story) => {\n        return `<div class=\"bg-background m-4 p-8\" style=\"margin: 0; padding: 2rem;\">${story}</div>`\n      },\n    )\n  ],\n  parameters: {\n    docs: {\n      inlineStories: false,\n      iframeHeight: 500,\n      excludeDecorators: true,\n    },\n    options: {\n      storySort: {\n        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],\n      },\n    },\n    layout: 'fullscreen',\n  },\n}"
+                    "defaultValue": "{\n  decorators: [\n    withThemeByClassName({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-mode',\n    }),\n    componentWrapperDecorator(\n      (story) => {\n        return `<div class=\"bg-background m-4 p-8\" style=\"margin: 0; padding: 2rem;\">${story}</div>`\n      },\n    )\n  ],\n  parameters: {\n    docs: {\n\n      story: {\n        inlineStories: false,\n        excludeDecorators: true,\n      },\n\n    },\n    options: {\n      storySort: {\n        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],\n      },\n    },\n    layout: 'fullscreen',\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/assets/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/avatar works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<AvatarComponent>",
+                    "defaultValue": "{\n  component: AvatarComponent,\n  title: 'Components/Avatar/Avatar',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/assets/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/accordion/partials/accordion-content.component.stories.ts": [
@@ -2274,7 +2455,17 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<AspectRatioComponent>",
-                    "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    `\n  })\n}"
+                    "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
+                },
+                {
+                    "name": "Portrait",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    ratio: '9 / 16',\n  },\n}"
                 },
                 {
                     "name": "Square",
@@ -2392,6 +2583,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AspectRatioComponent>",
                     "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AvatarComponent>",
+                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2646,7 +2850,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -2889,6 +3093,16 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
+                "name": "Portrait",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
                 "name": "Square",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
@@ -2901,6 +3115,45 @@
                 "name": "AspectRatioComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "AvatarComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
