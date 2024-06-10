@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { AccordionComponent } from './accordion.component';
 
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
-
 const meta: Meta<AccordionComponent> = {
   component: AccordionComponent,
   title: 'Components/Accordion/Accordion',
