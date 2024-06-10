@@ -102,6 +102,32 @@
     </div>
 
     <!-- Second row -->
+
+    <div class="flex items-center justify-center [&>div]:w-full">
+      <div>
+        <Card
+          class="">
+          <CardHeader>
+            <CardTitle [class]="'text-3xl'">
+              Badge
+            </CardTitle>
+            <CardDescription>
+              Makes a component look like a badge.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class="grid grid-cols-3 gap-1 gap-y-4">
+                <Badge badgeText="This is default" />
+                <Badge badgeText="This is secondary" badgeVariant="secondary" />
+                <Badge badgeText="This is outline" badgeVariant="outline" />
+                <Badge badgeText="This is destructive" badgeVariant="destructive" />
+                <Badge badgeText="This is a link to mantistech.io" badgeLinkUrl="https://mantistech.io/" class="col-span-2" />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
         <Card
