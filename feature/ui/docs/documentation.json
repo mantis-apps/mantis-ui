@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "AccordionItem",
-            "id": "interface-AccordionItem-7125a2b759ae34f5a7d5adb06199b1ae34437c486e706a45c72606d2cf6b369a7a8f1785c902c5f472434f33123cdb559999d1cc7839fac6abf6d51d8bdd285a",
+            "id": "interface-AccordionItem-8a2112730f21610469561e7786c7997e62ab90d2eb1a98e04a2b65fb990e620923b4eb92e1b96bd5aae3d0765cfdaa757365d4920b0fac92179e31871b717f4a",
             "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "import { NgFor, NgIf } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { BrnAccordionContentComponent } from '@spartan-ng/ui-accordion-brain';\nimport {\n  HlmAccordionContentDirective,\n  HlmAccordionDirective,\n  HlmAccordionIconDirective,\n  HlmAccordionItemDirective,\n  HlmAccordionTriggerDirective,\n} from '@spartan-ng/ui-accordion-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n\nexport interface AccordionItem {\n  triggerText: string;\n  content: string;\n}\n\n@Component({\n\tselector: 'Accordion',\n\tstandalone: true,\n\timports: [\n\t\tBrnAccordionContentComponent,\n\t\tHlmAccordionDirective,\n\t\tHlmAccordionItemDirective,\n\t\tHlmAccordionTriggerDirective,\n\t\tHlmAccordionContentDirective,\n\t\tHlmAccordionIconDirective,\n\t\tHlmIconComponent,\n    NgIf,\n    NgFor,\n\t],\n\ttemplate: `\n    @if (items.length > 0) {\n\t\t<div hlmAccordion [class]=\"class\"]>\n      @for (item of items; track item.triggerText) {\n        <div hlmAccordionItem>\n          <button hlmAccordionTrigger>\n            {{ item.triggerText }}\n            <hlm-icon hlmAccIcon />\n          </button>\n          <brn-accordion-content hlm>\n            {{ item.content }}\n          </brn-accordion-content>\n        </div>\n      }\n\t\t</div>\n    } @else {\n      <p>Accordion has no items to display</p>\n    }\n\t`,\n})\nexport class AccordionComponent {\n  @Input() class = '';\n  @Input({required: true}) items: AccordionItem[] = [];\n}\n",
+            "sourceCode": "import { NgFor, NgIf } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { BrnAccordionContentComponent } from '@spartan-ng/ui-accordion-brain';\nimport {\n  HlmAccordionContentDirective,\n  HlmAccordionDirective,\n  HlmAccordionIconDirective,\n  HlmAccordionItemDirective,\n  HlmAccordionTriggerDirective,\n} from '@spartan-ng/ui-accordion-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n\nexport interface AccordionItem {\n  triggerText: string;\n  content: string;\n}\n\n@Component({\n\tselector: 'Accordion',\n\tstandalone: true,\n\timports: [\n\t\tBrnAccordionContentComponent,\n\t\tHlmAccordionDirective,\n\t\tHlmAccordionItemDirective,\n\t\tHlmAccordionTriggerDirective,\n\t\tHlmAccordionContentDirective,\n\t\tHlmAccordionIconDirective,\n\t\tHlmIconComponent,\n    NgIf,\n    NgFor,\n\t],\n\ttemplate: `\n    @if (items.length > 0) {\n\t\t<div hlmAccordion [class]=\"class\">\n      @for (item of items; track item.triggerText) {\n        <div hlmAccordionItem>\n          <button hlmAccordionTrigger>\n            {{ item.triggerText }}\n            <hlm-icon hlmAccIcon />\n          </button>\n          <brn-accordion-content hlm>\n            {{ item.content }}\n          </brn-accordion-content>\n        </div>\n      }\n\t\t</div>\n    } @else {\n      <p>Accordion has no items to display</p>\n    }\n\t`,\n})\nexport class AccordionComponent {\n  @Input() class = '';\n  @Input({required: true}) items!: AccordionItem[];\n}\n",
             "properties": [
                 {
                     "name": "content",
@@ -43,7 +43,7 @@
     "components": [
         {
             "name": "AccordionComponent",
-            "id": "component-AccordionComponent-7125a2b759ae34f5a7d5adb06199b1ae34437c486e706a45c72606d2cf6b369a7a8f1785c902c5f472434f33123cdb559999d1cc7839fac6abf6d51d8bdd285a",
+            "id": "component-AccordionComponent-8a2112730f21610469561e7786c7997e62ab90d2eb1a98e04a2b65fb990e620923b4eb92e1b96bd5aae3d0765cfdaa757365d4920b0fac92179e31871b717f4a",
             "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -53,7 +53,7 @@
             "selector": "Accordion",
             "styleUrls": [],
             "styles": [],
-            "template": "  @if (items.length > 0) {\n<div hlmAccordion [class]=\"class\"]>\n    @for (item of items; track item.triggerText) {\n      <div hlmAccordionItem>\n        <button hlmAccordionTrigger>\n          {{ item.triggerText }}\n          <hlm-icon hlmAccIcon />\n        </button>\n        <brn-accordion-content hlm>\n          {{ item.content }}\n        </brn-accordion-content>\n      </div>\n    }\n</div>\n  } @else {\n    <p>Accordion has no items to display</p>\n  }\n\t",
+            "template": "  @if (items.length > 0) {\n<div hlmAccordion [class]=\"class\">\n    @for (item of items; track item.triggerText) {\n      <div hlmAccordionItem>\n        <button hlmAccordionTrigger>\n          {{ item.triggerText }}\n          <hlm-icon hlmAccIcon />\n        </button>\n        <brn-accordion-content hlm>\n          {{ item.content }}\n        </brn-accordion-content>\n      </div>\n    }\n</div>\n  } @else {\n    <p>Accordion has no items to display</p>\n  }\n\t",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -70,7 +70,6 @@
                 {
                     "required": true,
                     "name": "items",
-                    "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
@@ -126,7 +125,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { NgFor, NgIf } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { BrnAccordionContentComponent } from '@spartan-ng/ui-accordion-brain';\nimport {\n  HlmAccordionContentDirective,\n  HlmAccordionDirective,\n  HlmAccordionIconDirective,\n  HlmAccordionItemDirective,\n  HlmAccordionTriggerDirective,\n} from '@spartan-ng/ui-accordion-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n\nexport interface AccordionItem {\n  triggerText: string;\n  content: string;\n}\n\n@Component({\n\tselector: 'Accordion',\n\tstandalone: true,\n\timports: [\n\t\tBrnAccordionContentComponent,\n\t\tHlmAccordionDirective,\n\t\tHlmAccordionItemDirective,\n\t\tHlmAccordionTriggerDirective,\n\t\tHlmAccordionContentDirective,\n\t\tHlmAccordionIconDirective,\n\t\tHlmIconComponent,\n    NgIf,\n    NgFor,\n\t],\n\ttemplate: `\n    @if (items.length > 0) {\n\t\t<div hlmAccordion [class]=\"class\"]>\n      @for (item of items; track item.triggerText) {\n        <div hlmAccordionItem>\n          <button hlmAccordionTrigger>\n            {{ item.triggerText }}\n            <hlm-icon hlmAccIcon />\n          </button>\n          <brn-accordion-content hlm>\n            {{ item.content }}\n          </brn-accordion-content>\n        </div>\n      }\n\t\t</div>\n    } @else {\n      <p>Accordion has no items to display</p>\n    }\n\t`,\n})\nexport class AccordionComponent {\n  @Input() class = '';\n  @Input({required: true}) items: AccordionItem[] = [];\n}\n",
+            "sourceCode": "import { NgFor, NgIf } from '@angular/common';\nimport { Component, Input } from '@angular/core';\nimport { BrnAccordionContentComponent } from '@spartan-ng/ui-accordion-brain';\nimport {\n  HlmAccordionContentDirective,\n  HlmAccordionDirective,\n  HlmAccordionIconDirective,\n  HlmAccordionItemDirective,\n  HlmAccordionTriggerDirective,\n} from '@spartan-ng/ui-accordion-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\n\nexport interface AccordionItem {\n  triggerText: string;\n  content: string;\n}\n\n@Component({\n\tselector: 'Accordion',\n\tstandalone: true,\n\timports: [\n\t\tBrnAccordionContentComponent,\n\t\tHlmAccordionDirective,\n\t\tHlmAccordionItemDirective,\n\t\tHlmAccordionTriggerDirective,\n\t\tHlmAccordionContentDirective,\n\t\tHlmAccordionIconDirective,\n\t\tHlmIconComponent,\n    NgIf,\n    NgFor,\n\t],\n\ttemplate: `\n    @if (items.length > 0) {\n\t\t<div hlmAccordion [class]=\"class\">\n      @for (item of items; track item.triggerText) {\n        <div hlmAccordionItem>\n          <button hlmAccordionTrigger>\n            {{ item.triggerText }}\n            <hlm-icon hlmAccIcon />\n          </button>\n          <brn-accordion-content hlm>\n            {{ item.content }}\n          </brn-accordion-content>\n        </div>\n      }\n\t\t</div>\n    } @else {\n      <p>Accordion has no items to display</p>\n    }\n\t`,\n})\nexport class AccordionComponent {\n  @Input() class = '';\n  @Input({required: true}) items!: AccordionItem[];\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1142,6 +1141,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1197,16 +1206,6 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    class: 'w-[500px]'\n  }\n}"
-            },
-            {
-                "name": "Default",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
             },
             {
                 "name": "Destructive",
@@ -1282,6 +1281,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionComponent>",
+                "defaultValue": "{\n  component: AccordionComponent,\n  title: 'Components/Accordion/Accordion',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1312,11 +1321,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\n  component: AccordionComponent,\n  title: 'AccordionComponent',\n}"
+                "type": "Meta<AvatarComponent>",
+                "defaultValue": "{\n  component: AvatarComponent,\n  title: 'Components/Avatar/Avatar',\n}"
             },
             {
                 "name": "meta",
@@ -1342,11 +1351,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<AvatarComponent>",
-                "defaultValue": "{\n  component: AvatarComponent,\n  title: 'Components/Avatar/Avatar',\n}"
+                "type": "Meta<IconListComponent>",
+                "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1409,16 +1418,6 @@
                 "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
             },
             {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<IconListComponent>",
-                "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
-            },
-            {
                 "name": "Outline",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1456,17 +1455,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: 'Yes, it is!',\n      },\n      {\n        triggerText: 'Is it responsive?',\n        content: 'Yes, it is!',\n      },\n      {\n        triggerText: 'Is it customizable?',\n        content: 'Yes, it is!',\n      },\n    ],\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    size: 'base',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: `Yes. It adheres to the WAI-ARIA design pattern.`,\n      },\n      {\n        triggerText: 'Is it styled?',\n        content: `Yes. It comes with default styles that match the other components' aesthetics.`,\n      },\n      {\n        triggerText: 'Is it animated?',\n        content: `Yes. It's animated by default, but you can disable it if you prefer.`,\n      },\n    ],\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -1477,6 +1466,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    size: 'base',\n  },\n}"
             },
             {
                 "name": "Secondary",
@@ -1538,6 +1537,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<AccordionComponent>",
+                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
                 "deprecated": false,
@@ -1571,8 +1581,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AccordionComponent>",
-                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                "rawtype": "StoryObj<AvatarComponent>",
+                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1604,8 +1614,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AvatarComponent>",
-                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "rawtype": "StoryObj<IconListComponent>",
+                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1672,17 +1682,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<StoryArgs>",
                 "file": "feature/ui/src/lib/ui/components/card/partials/card.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<IconListComponent>",
-                "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1917,6 +1916,28 @@
                     "defaultValue": "{\n  args: {\n    label: 'Heading works!',\n    variant: 'secondary',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/button works!/gi)).toBeTruthy();\n  },\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<IconListComponent>",
+                    "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts": [
                 {
                     "name": "Default",
@@ -2049,28 +2070,6 @@
                     "defaultValue": "{\n  tags: ['autodocs'],\n  component: CardComponent,\n  title: 'Components/Card/Partials/Card',\n  argTypes: {\n    class: { control: { type: 'text' }, name: 'Card Class' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n      <Card ${argsToTemplate(args)}>\n        <!--\n        // add CardHeader, CardDescription, etc. here\n        -->\n      </Card>\n    `\n  }),\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    icons: [\n      'lucideMail',\n      'lucideUser2',\n      'lucideActivity',\n      'lucideAccessibility',\n      'lucideBackpack',\n      'lucideApple',\n      'lucideAlarmCheck',\n      'lucideAlarmClock',\n      'lucideTrain',\n      'lucideTrash',\n      'lucideTornado',\n      'lucideTruck',\n      'lucideTv',\n      'lucideTrophy',\n      'lucidePlane',\n      'lucideShield',\n      'lucideShip',\n      'lucideShoppingCart',\n      'lucideShoppingBag',\n      'lucideSettings',\n      'lucideSearch',\n      'lucideScissors',\n      'lucideBarChart',\n      'lucideBattery',\n      'lucideDatabase',\n      'lucideCloud',\n      'lucideCamera',\n      'lucideCalendar',\n      'lucideBook',\n      'lucideBell',\n      'lucideLasso',\n      'lucideTicket',\n      'lucideThumbsUp',\n      'lucideTrees',\n      'lucideWrench'\n    ]\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<IconListComponent>",
-                    "defaultValue": "{\n  title: 'Components/Icon/Icons List',\n  tags: ['autodocs'],\n  component: IconListComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [CommonModule],\n    }),\n  ],\n}"
-                }
-            ],
             "feature/ui/.storybook/preview.ts": [
                 {
                     "name": "globalTypes",
@@ -2176,7 +2175,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<AccordionComponent>",
-                    "defaultValue": "{\n  component: AccordionComponent,\n  title: 'AccordionComponent',\n}"
+                    "defaultValue": "{\n  component: AccordionComponent,\n  title: 'Components/Accordion/Accordion',\n}"
                 },
                 {
                     "name": "Primary",
@@ -2186,7 +2185,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: 'Yes, it is!',\n      },\n      {\n        triggerText: 'Is it responsive?',\n        content: 'Yes, it is!',\n      },\n      {\n        triggerText: 'Is it customizable?',\n        content: 'Yes, it is!',\n      },\n    ],\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: `Yes. It adheres to the WAI-ARIA design pattern.`,\n      },\n      {\n        triggerText: 'Is it styled?',\n        content: `Yes. It comes with default styles that match the other components' aesthetics.`,\n      },\n      {\n        triggerText: 'Is it animated?',\n        content: `Yes. It's animated by default, but you can disable it if you prefer.`,\n      },\n    ],\n  },\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
@@ -2250,6 +2249,19 @@
                     "kind": 201
                 }
             ],
+            "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionComponent>",
+                    "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
                 {
                     "name": "Story",
@@ -2300,13 +2312,13 @@
                     "kind": 183
                 }
             ],
-            "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<AccordionComponent>",
-                    "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                    "rawtype": "StoryObj<AvatarComponent>",
+                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2350,13 +2362,13 @@
                     "kind": 183
                 }
             ],
-            "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<AvatarComponent>",
-                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                    "rawtype": "StoryObj<IconListComponent>",
+                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2505,19 +2517,6 @@
                     "deprecationMessage": "",
                     "description": "",
                     "kind": 193
-                }
-            ],
-            "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<IconListComponent>",
-                    "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
                 }
             ]
         }
