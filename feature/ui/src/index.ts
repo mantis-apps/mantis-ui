@@ -17,3 +17,5 @@ export * from './lib/ui/components/avatar/avatar.component';
 export * from './lib/ui/components/accordion/accordion.component';
 
 export * from './lib/ui/components/badge/badge.component';
+
+export * from './lib/ui/components/carousel/carousel.component';

@@ -8,6 +8,8 @@ import {
   HlmCarouselNextComponent,
   HlmCarouselPreviousComponent
 } from '@spartan-ng/ui-carousel-helm';
+import { CardComponent } from '../card/partials/card.component';
+import { CardContentComponent } from '../card/partials/card-content.component';
 
 @Component({
   selector: 'Carousel',
@@ -17,7 +19,9 @@ import {
     HlmCarouselContentComponent,
     HlmCarouselItemComponent,
     HlmCarouselNextComponent,
-    HlmCarouselPreviousComponent
+    HlmCarouselPreviousComponent,
+    CardComponent,
+    CardContentComponent
   ],
   template: `
   <div class="flex items-center justify-center w-full p-4">
@@ -26,11 +30,11 @@ import {
       @for (item of items; track item) {
         <hlm-carousel-item>
           <div class="p-1">
-            <section hlmCard>
-              <div hlmCardContent [class]="carouselContentClass">
+            <Card>
+              <CardContent [class]="carouselContentClass">
                 <div [class]="carouselItemClass">{{ item }}</div>
-              </div>
-            </section>
+              </CardContent>
+            </Card>
           </div>
         </hlm-carousel-item>
       } @empty {
