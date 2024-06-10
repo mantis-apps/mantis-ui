@@ -573,7 +573,7 @@
         },
         {
             "name": "BadgeComponent",
-            "id": "component-BadgeComponent-cf439b107b3ead9679f04ecbd640efddc05f901b79fad6a4f94e516b5ac366510c6667de28d893e756cb0bd188ee915ed0ffa20cbf5df337de9117f630167992",
+            "id": "component-BadgeComponent-2cb3fe3482f08b55b64e4c050d5dcd17ba18f69cbbbc58c70ed73a07d2c2ac249587b7d2f83e453de979092d90cbd843e9c3531db8f32480a1dc93008770b16a",
             "file": "feature/ui/src/lib/ui/components/badge/badge.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -583,7 +583,7 @@
             "selector": "Badge",
             "styleUrls": [],
             "styles": [],
-            "template": "<div hlmBadge [variant]=\"badgeVariant\" [size]=\"badgeSize\">\n  @if( badgeRouterLinkUrl && !badgeLinkUrl) {\n    <a [routerLink]=\"badgeLinkUrl\">{{badgeText}}</a>\n  }\n  @if( badgeLinkUrl && !badgeRouterLinkUrl) {\n    <a href=\"{{badgeLinkUrl}}\" target=\"{{badgeLinkTarget}}\">{{badgeText}}</a>\n  }\n  @if( !badgeLinkUrl && !badgeRouterLinkUrl) {\n    <span>{{badgeText}}</span>\n  }\n</div>\n",
+            "template": "<div hlmBadge [variant]=\"badgeVariant\" [size]=\"badgeSize\">\n  @if( badgeRouterLinkUrl && !badgeLinkUrl) {\n    <a routerLink=\"{{badgeRouterLinkUrl}}\">{{badgeText}}</a>\n  }\n  @if( badgeLinkUrl && !badgeRouterLinkUrl) {\n    <a href=\"{{badgeLinkUrl}}\" target=\"{{badgeLinkTarget}}\">{{badgeText}}</a>\n  }\n  @if( !badgeLinkUrl && !badgeRouterLinkUrl) {\n    <span>{{badgeText}}</span>\n  }\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -677,7 +677,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';\nimport { NgIf } from '@angular/common';\nimport { RouterLink } from '@angular/router';\n\n@Component({\n  selector: 'Badge',\n  standalone: true,\n  imports: [HlmBadgeDirective, NgIf, RouterLink],\n  template: `\n    <div hlmBadge [variant]=\"badgeVariant\" [size]=\"badgeSize\">\n      @if( badgeRouterLinkUrl && !badgeLinkUrl) {\n        <a [routerLink]=\"badgeLinkUrl\">{{badgeText}}</a>\n      }\n      @if( badgeLinkUrl && !badgeRouterLinkUrl) {\n        <a href=\"{{badgeLinkUrl}}\" target=\"{{badgeLinkTarget}}\">{{badgeText}}</a>\n      }\n      @if( !badgeLinkUrl && !badgeRouterLinkUrl) {\n        <span>{{badgeText}}</span>\n      }\n    </div>\n  `,\n})\nexport class BadgeComponent {\n  /**\n   * text to be displayed in the badge\n   */\n  @Input({required: true}) badgeText! : string;\n  /**\n   * variant of the badge\n   */\n  @Input() badgeVariant: 'default' | 'secondary' | 'outline' | 'destructive' = 'default';\n  /**\n   * size for the badge\n   */\n  @Input() badgeSize: 'default' | 'lg' = 'default';\n  /**\n   * html link to navigate to - great for external links\n   */\n  @Input() badgeLinkUrl! : string;\n  /**\n   * link if wanting to use angular router\n   */\n  @Input() badgeRouterLinkUrl! : string;\n  /**\n   * target attribute value for the badgeLinkUrl\n   */\n  @Input() badgeLinkTarget : '_blank' | '_self' | '_parent' | '_top' = '_blank';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';\nimport { NgIf } from '@angular/common';\nimport { RouterLink } from '@angular/router';\n\n@Component({\n  selector: 'Badge',\n  standalone: true,\n  imports: [HlmBadgeDirective, NgIf, RouterLink],\n  template: `\n    <div hlmBadge [variant]=\"badgeVariant\" [size]=\"badgeSize\">\n      @if( badgeRouterLinkUrl && !badgeLinkUrl) {\n        <a routerLink=\"{{badgeRouterLinkUrl}}\">{{badgeText}}</a>\n      }\n      @if( badgeLinkUrl && !badgeRouterLinkUrl) {\n        <a href=\"{{badgeLinkUrl}}\" target=\"{{badgeLinkTarget}}\">{{badgeText}}</a>\n      }\n      @if( !badgeLinkUrl && !badgeRouterLinkUrl) {\n        <span>{{badgeText}}</span>\n      }\n    </div>\n  `,\n})\nexport class BadgeComponent {\n  /**\n   * text to be displayed in the badge\n   */\n  @Input({required: true}) badgeText! : string;\n  /**\n   * variant of the badge\n   */\n  @Input() badgeVariant: 'default' | 'secondary' | 'outline' | 'destructive' = 'default';\n  /**\n   * size for the badge\n   */\n  @Input() badgeSize: 'default' | 'lg' = 'default';\n  /**\n   * html link to navigate to - great for external links\n   */\n  @Input() badgeLinkUrl! : string;\n  /**\n   * link if wanting to use angular router\n   */\n  @Input() badgeRouterLinkUrl! : string;\n  /**\n   * target attribute value for the badgeLinkUrl\n   */\n  @Input() badgeLinkTarget : '_blank' | '_self' | '_parent' | '_top' = '_blank';\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1053,6 +1053,107 @@
             "extends": []
         },
         {
+            "name": "CarouselComponent",
+            "id": "component-CarouselComponent-1f5842c677d41607e02690615edb436801dda934e214252819d3cf3e8c5d60adb4afb228fee8a8854024e54e2bd30ea0b068c48ad7113c3942cb4e58a2f8724d",
+            "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "Carousel",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<div class=\"flex items-center justify-center w-full p-4\">\n  <hlm-carousel [class]=\"'w-full ' + carouselMaxWidthClass\" >\n    <hlm-carousel-content>\n    @for (item of items; track item) {\n      <hlm-carousel-item>\n        <div class=\"p-1\">\n          <section hlmCard>\n            <div hlmCardContent [class]=\"carouselContentClass\">\n              <div [class]=\"carouselItemClass\">{{ item }}</div>\n            </div>\n          </section>\n        </div>\n      </hlm-carousel-item>\n    } @empty {\n      <p>No carousel items</p>\n    }\n    </hlm-carousel-content>\n    <button hlm-carousel-previous></button>\n    <button hlm-carousel-next></button>\n  </hlm-carousel>\n</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "carouselContentClass",
+                    "defaultValue": "'flex items-center justify-center p-6 aspect-square'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nTailwind CSS class to override the default carousel content class\n",
+                    "description": "<p>Tailwind CSS class to override the default carousel content class</p>\n",
+                    "line": 58,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "carouselItemClass",
+                    "defaultValue": "'text-4xl font-semibold'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nTailwind CSS class to override the default carousel item class\n",
+                    "description": "<p>Tailwind CSS class to override the default carousel item class</p>\n",
+                    "line": 62,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "carouselMaxWidthClass",
+                    "defaultValue": "'max-w-xs'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nTailwind CSS class to apply to the carousel max width\n",
+                    "description": "<p>Tailwind CSS class to apply to the carousel max width</p>\n",
+                    "line": 50,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "items",
+                    "defaultValue": "Array.from({ length: 5}, (_, i) => i + 1)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "rawdescription": "\n\nArray of items to display in the carousel\n",
+                    "description": "<p>Array of items to display in the carousel</p>\n",
+                    "line": 54,
+                    "type": "Array<>",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmCarouselComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmCarouselContentComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmCarouselItemComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmCarouselNextComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmCarouselPreviousComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgFor } from '@angular/common';\n\nimport {\n  HlmCarouselComponent,\n  HlmCarouselContentComponent,\n  HlmCarouselItemComponent,\n  HlmCarouselNextComponent,\n  HlmCarouselPreviousComponent\n} from '@spartan-ng/ui-carousel-helm';\n\n@Component({\n  selector: 'Carousel',\n  standalone: true,\n  imports: [\n    HlmCarouselComponent,\n    HlmCarouselContentComponent,\n    HlmCarouselItemComponent,\n    HlmCarouselNextComponent,\n    HlmCarouselPreviousComponent\n  ],\n  template: `\n  <div class=\"flex items-center justify-center w-full p-4\">\n    <hlm-carousel [class]=\"'w-full ' + carouselMaxWidthClass\" >\n      <hlm-carousel-content>\n      @for (item of items; track item) {\n        <hlm-carousel-item>\n          <div class=\"p-1\">\n            <section hlmCard>\n              <div hlmCardContent [class]=\"carouselContentClass\">\n                <div [class]=\"carouselItemClass\">{{ item }}</div>\n              </div>\n            </section>\n          </div>\n        </hlm-carousel-item>\n      } @empty {\n        <p>No carousel items</p>\n      }\n      </hlm-carousel-content>\n      <button hlm-carousel-previous></button>\n      <button hlm-carousel-next></button>\n    </hlm-carousel>\n  </div>\n  `,\n})\nexport class CarouselComponent {\n  /**\n   * Tailwind CSS class to apply to the carousel max width\n   */\n  @Input() carouselMaxWidthClass = 'max-w-xs';\n  /**\n   * Array of items to display in the carousel\n   */\n  @Input() items: Array<unknown> = Array.from({ length: 5}, (_, i) => i + 1);\n  /**\n   * Tailwind CSS class to override the default carousel content class\n   */\n  @Input() carouselContentClass = 'flex items-center justify-center p-6 aspect-square';\n  /**\n   * Tailwind CSS class to override the default carousel item class\n   */\n  @Input() carouselItemClass = 'text-4xl font-semibold';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "IconComponent",
             "id": "component-IconComponent-2c848db3d3597c7140e45a28a463b7b3529de33b7ca05681c1b3d3c98d4545447041101edb6510ef607370792b6381964079c164e0b5a16d6f34ed531423c430",
             "file": "feature/ui/src/lib/ui/components/icon/icon.component.ts",
@@ -1223,6 +1324,16 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    alertTitle: 'Alert works!',\n    variant: 'default',\n  }\n}"
+            },
+            {
+                "name": "Default",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1233,21 +1344,21 @@
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Button works!',\n    variant: 'default',\n    size: 'lg',\n  }\n}"
+                "defaultValue": "{\n  args: {\n    badgeText: 'This is coolness. This is MANTIS  ',\n    badgeVariant: 'default',\n    badgeSize: 'default',\n    badgeLinkUrl: '',\n    badgeRouterLinkUrl: '',\n    badgeLinkTarget: '_blank',\n  },\n}"
             },
             {
                 "name": "Default",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    alertTitle: 'Alert works!',\n    variant: 'default',\n  }\n}"
+                "defaultValue": "{\n  args: {\n    label: 'Button works!',\n    variant: 'default',\n    size: 'lg',\n  }\n}"
             },
             {
                 "name": "Default",
@@ -1323,21 +1434,21 @@
                 "name": "Destructive",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    label: 'Destructive works!',\n    variant: 'destructive',\n  },\n}"
-            },
-            {
-                "name": "Destructive",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    alertTitle: 'Destructive works!',\n    variant: 'destructive'\n  },\n}"
+            },
+            {
+                "name": "Destructive",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    label: 'Destructive works!',\n    variant: 'destructive',\n  },\n}"
             },
             {
                 "name": "Ghost",
@@ -1373,11 +1484,11 @@
                 "name": "Heading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    badgeText: '',\n    badgeVariant: 'default',\n    badgeSize: 'default',\n    badgeLinkUrl: '',\n    badgeRouterLinkUrl: '',\n    badgeLinkTarget: '_blank',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/badge works!/gi)).toBeTruthy();\n  },\n}"
+                "defaultValue": "{\n  args: {\n    carouselMaxWidthClass: 'max-w-xs',\n    items: Array.from({ length: 5 }, (_, i) => i + 1),\n    carouselContentClass: 'flex items-center justify-center p-6 aspect-square',\n    carouselItemClass: 'text-4xl font-semibold',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/carousel works!/gi)).toBeTruthy();\n  },\n}"
             },
             {
                 "name": "Landscape",
@@ -1393,6 +1504,16 @@
                 "name": "Link",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    badgeText: 'Time to build full stack Angular apps!',\n    badgeVariant: 'outline',\n    badgeLinkUrl: 'https://mantistech.io/',\n  }\n}"
+            },
+            {
+                "name": "Link",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1403,21 +1524,31 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AlertDialogComponent>",
-                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AccordionComponent>",
                 "defaultValue": "{\n  component: AccordionComponent,\n  title: 'Components/Accordion/Accordion',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<StoryArgs>",
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AlertDialogComponent>",
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
             },
             {
                 "name": "meta",
@@ -1447,7 +1578,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<BadgeComponent>",
-                "defaultValue": "{\n  component: BadgeComponent,\n  title: 'Components/BadgeComponent',\n}"
+                "defaultValue": "{\n  component: BadgeComponent,\n  title: 'Components/Badge',\n  decorators: [\n    moduleMetadata({\n      imports: [],\n      providers: [\n        {\n          provide: ActivatedRoute,\n          useValue: {},\n        }\n      ]\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1463,11 +1594,11 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
-                "type": "Meta<StoryArgs>",
-                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
+                "type": "Meta<CarouselComponent>",
+                "defaultValue": "{\n  component: CarouselComponent,\n  title: 'CarouselComponent',\n}"
             },
             {
                 "name": "meta",
@@ -1603,11 +1734,11 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    badgeText: 'This is coolness. This is MANTIS',\n    badgeVariant: 'default',\n    badgeSize: 'default',\n    badgeLinkUrl: '',\n    badgeRouterLinkUrl: '',\n    badgeLinkTarget: '_blank',\n  },\n}"
+                "defaultValue": "{\n  args: {\n    carouselMaxWidthClass: 'max-w-xs',\n    items: Array.from({ length: 5 }, (_, i) => i + 1),\n    carouselContentClass: 'flex items-center justify-center p-6 aspect-square',\n    carouselItemClass: 'text-4xl font-semibold',\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -1618,6 +1749,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    size: 'base',\n  },\n}"
+            },
+            {
+                "name": "RouterLink",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    badgeText: 'Navigate to Home',\n    badgeVariant: 'default',\n    badgeRouterLinkUrl: '/home',\n  }\n}"
             },
             {
                 "name": "Secondary",
@@ -1679,8 +1820,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AlertDialogComponent>",
-                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "rawtype": "StoryObj<AccordionComponent>",
+                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1690,8 +1831,19 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AccordionComponent>",
-                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                "rawtype": "StoryObj<StoryArgs>",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<AlertDialogComponent>",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1745,8 +1897,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<StoryArgs>",
-                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "rawtype": "StoryObj<CarouselComponent>",
+                "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1844,23 +1996,23 @@
                 "name": "StoryArgs",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "",
-                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 193
-            },
-            {
-                "name": "StoryArgs",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
                 "rawtype": "AlertComponent",
                 "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
                 "kind": 183
+            },
+            {
+                "name": "StoryArgs",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "",
+                "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 193
             },
             {
                 "name": "StoryArgs",
@@ -1943,6 +2095,38 @@
                     "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n  staticDirs: ['../src/assets'],\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    alertTitle: 'Alert works!',\n    variant: 'default',\n  }\n}"
+                },
+                {
+                    "name": "Destructive",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    alertTitle: 'Destructive works!',\n    variant: 'destructive'\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<StoryArgs>",
+                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
                 {
                     "name": "Default",
@@ -1963,6 +2147,48 @@
                     "deprecationMessage": "",
                     "type": "Meta<AlertDialogComponent>",
                     "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts": [
+                {
+                    "name": "Default",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    badgeText: 'This is coolness. This is MANTIS  ',\n    badgeVariant: 'default',\n    badgeSize: 'default',\n    badgeLinkUrl: '',\n    badgeRouterLinkUrl: '',\n    badgeLinkTarget: '_blank',\n  },\n}"
+                },
+                {
+                    "name": "Link",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    badgeText: 'Time to build full stack Angular apps!',\n    badgeVariant: 'outline',\n    badgeLinkUrl: 'https://mantistech.io/',\n  }\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<BadgeComponent>",
+                    "defaultValue": "{\n  component: BadgeComponent,\n  title: 'Components/Badge',\n  decorators: [\n    moduleMetadata({\n      imports: [],\n      providers: [\n        {\n          provide: ActivatedRoute,\n          useValue: {},\n        }\n      ]\n    }),\n  ],\n}"
+                },
+                {
+                    "name": "RouterLink",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    badgeText: 'Navigate to Home',\n    badgeVariant: 'default',\n    badgeRouterLinkUrl: '/home',\n  }\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/button/button.component.stories.ts": [
@@ -2035,38 +2261,6 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    label: 'Heading works!',\n    variant: 'secondary',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/button works!/gi)).toBeTruthy();\n  },\n}"
-                }
-            ],
-            "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
-                {
-                    "name": "Default",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    alertTitle: 'Alert works!',\n    variant: 'default',\n  }\n}"
-                },
-                {
-                    "name": "Destructive",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    alertTitle: 'Destructive works!',\n    variant: 'destructive'\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<StoryArgs>",
-                    "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts": [
@@ -2277,36 +2471,36 @@
                     "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts": [
                 {
                     "name": "Heading",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    badgeText: '',\n    badgeVariant: 'default',\n    badgeSize: 'default',\n    badgeLinkUrl: '',\n    badgeRouterLinkUrl: '',\n    badgeLinkTarget: '_blank',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/badge works!/gi)).toBeTruthy();\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    carouselMaxWidthClass: 'max-w-xs',\n    items: Array.from({ length: 5 }, (_, i) => i + 1),\n    carouselContentClass: 'flex items-center justify-center p-6 aspect-square',\n    carouselItemClass: 'text-4xl font-semibold',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/carousel works!/gi)).toBeTruthy();\n  },\n}"
                 },
                 {
                     "name": "meta",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "type": "Meta<BadgeComponent>",
-                    "defaultValue": "{\n  component: BadgeComponent,\n  title: 'Components/BadgeComponent',\n}"
+                    "type": "Meta<CarouselComponent>",
+                    "defaultValue": "{\n  component: CarouselComponent,\n  title: 'CarouselComponent',\n}"
                 },
                 {
                     "name": "Primary",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                    "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    badgeText: 'This is coolness. This is MANTIS',\n    badgeVariant: 'default',\n    badgeSize: 'default',\n    badgeLinkUrl: '',\n    badgeRouterLinkUrl: '',\n    badgeLinkTarget: '_blank',\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    carouselMaxWidthClass: 'max-w-xs',\n    items: Array.from({ length: 5 }, (_, i) => i + 1),\n    carouselContentClass: 'flex items-center justify-center p-6 aspect-square',\n    carouselItemClass: 'text-4xl font-semibold',\n  },\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
@@ -2434,19 +2628,6 @@
                     "kind": 201
                 }
             ],
-            "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AlertDialogComponent>",
-                    "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts": [
                 {
                     "name": "Story",
@@ -2454,6 +2635,43 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AccordionComponent>",
                     "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<StoryArgs>",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                },
+                {
+                    "name": "StoryArgs",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "AlertComponent",
+                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AlertDialogComponent>",
+                    "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2523,24 +2741,13 @@
                     "kind": 193
                 }
             ],
-            "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
+            "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts": [
                 {
                     "name": "Story",
                     "ctype": "miscellaneous",
                     "subtype": "typealias",
-                    "rawtype": "StoryObj<StoryArgs>",
-                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                },
-                {
-                    "name": "StoryArgs",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "AlertComponent",
-                    "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "rawtype": "StoryObj<CarouselComponent>",
+                    "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2721,7 +2928,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 6,
         "status": "low",
         "files": [
             {
@@ -2953,7 +3160,17 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Heading",
+                "name": "Default",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Link",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -2973,7 +3190,7 @@
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
-                "name": "Primary",
+                "name": "RouterLink",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
@@ -3239,6 +3456,45 @@
                 "coveragePercent": 50,
                 "coverageCount": "1/2",
                 "status": "medium"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/carousel/carousel.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CarouselComponent",
+                "coveragePercent": 80,
+                "coverageCount": "4/5",
+                "status": "very-good"
             },
             {
                 "filePath": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",

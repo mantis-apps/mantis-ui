@@ -14,7 +14,8 @@ import {
   AspectRatioComponent,
   AvatarComponent,
   AccordionComponent,
-  BadgeComponent
+  BadgeComponent,
+  CarouselComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
@@ -41,7 +42,8 @@ import { lucideMail } from '@ng-icons/lucide';
     AlertDialogComponent,
     AspectRatioComponent,
     AvatarComponent,
-    BadgeComponent
+    BadgeComponent,
+    CarouselComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
