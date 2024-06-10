@@ -13,14 +13,21 @@ import {
   AlertComponent,
   AspectRatioComponent,
   AvatarComponent,
-  AccordionComponent
+  AccordionComponent,
+  BadgeComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
+import { lucideMail } from '@ng-icons/lucide';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
+  providers: [
+    provideIcons({
+      lucideMail
+     })
+  ],
   imports: [
     CommonModule,
     HeaderComponent,
@@ -33,7 +40,8 @@ import { provideIcons, IconName } from '@ng-icons/core';
     AlertComponent,
     AlertDialogComponent,
     AspectRatioComponent,
-    AvatarComponent
+    AvatarComponent,
+    BadgeComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
