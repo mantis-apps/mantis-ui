@@ -1228,6 +1228,109 @@
             "extends": []
         },
         {
+            "name": "CollapsibleComponent",
+            "id": "component-CollapsibleComponent-704901cce426bf1c5b2fc3524056c10720290eb7739f1e8ea543bf3d94e38af610048e6e691bbf97bedaf9d4a1a5f4956dc5f37450f7c5e16171a76d028a0656",
+            "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "provideIcons({\n    lucideChevronsDownUp\n})"
+                }
+            ],
+            "selector": "Collapsible",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<brn-collapsible [class]=\"'flex flex-col w-[350px] space-y-2 ' + class\">\n  <div class=\"flex items-center justify-between px-4 space-x-4\">\n    <h4 class=\"text-sm font-semibold\">{{collapsibleTitle}}</h4>\n    <button brnCollapsibleTrigger hlmBtn variant=\"ghost\" size=\"sm\" class=\"p-0 w-9\">\n      <Icon name=\"lucideChevronsDownUp\" size=\"sm\" class=\"w-4 h-4\" />\n      <span class=\"sr-only\">Toggle</span>\n    </button>\n  </div>\n  <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">\n    {{collapsibleTriggerText}}\n  </div>\n  <brn-collapsible-content class=\"space-y-2\">\n    @for (c of collapsibleContent; track c.text){\n      <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">{{c.text}}</div>\n    }\n  </brn-collapsible-content>\n</brn-collapsible>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 51,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "collapsibleContent",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 54,
+                    "type": "literal type[]",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "collapsibleTitle",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 52,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "collapsibleTriggerText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 53,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgFor"
+                },
+                {
+                    "name": "BrnCollapsibleComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BrnCollapsibleTriggerDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnCollapsibleContentComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgFor } from '@angular/common';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport {\n  BrnCollapsibleComponent,\n  BrnCollapsibleContentComponent,\n  BrnCollapsibleTriggerDirective,\n} from '@spartan-ng/ui-collapsible-brain';\nimport { IconComponent } from '../icon/icon.component';\nimport { provideIcons } from '@ng-icons/core';\nimport { lucideChevronsDownUp } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'Collapsible',\n  standalone: true,\n  imports: [\n    NgFor,\n    BrnCollapsibleComponent,\n    BrnCollapsibleTriggerDirective,\n    HlmButtonDirective,\n    BrnCollapsibleContentComponent,\n    IconComponent,\n  ],\n  providers: [\n    provideIcons({\n      lucideChevronsDownUp\n    }),\n  ],\n  template: `\n    <brn-collapsible [class]=\"'flex flex-col w-[350px] space-y-2 ' + class\">\n      <div class=\"flex items-center justify-between px-4 space-x-4\">\n        <h4 class=\"text-sm font-semibold\">{{collapsibleTitle}}</h4>\n        <button brnCollapsibleTrigger hlmBtn variant=\"ghost\" size=\"sm\" class=\"p-0 w-9\">\n          <Icon name=\"lucideChevronsDownUp\" size=\"sm\" class=\"w-4 h-4\" />\n          <span class=\"sr-only\">Toggle</span>\n        </button>\n      </div>\n      <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">\n        {{collapsibleTriggerText}}\n      </div>\n      <brn-collapsible-content class=\"space-y-2\">\n        @for (c of collapsibleContent; track c.text){\n          <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">{{c.text}}</div>\n        }\n      </brn-collapsible-content>\n    </brn-collapsible>\n  `,\n})\nexport class CollapsibleComponent {\n  @Input() class = '';\n  @Input({ required: true}) collapsibleTitle!: string;\n  @Input({ required: true}) collapsibleTriggerText!: string;\n  @Input({ required: true}) collapsibleContent!: { text: string }[];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "IconComponent",
             "id": "component-IconComponent-2c848db3d3597c7140e45a28a463b7b3529de33b7ca05681c1b3d3c98d4545447041101edb6510ef607370792b6381964079c164e0b5a16d6f34ed531423c430",
             "file": "feature/ui/src/lib/ui/components/icon/icon.component.ts",
@@ -1628,21 +1731,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AspectRatioComponent>",
-                "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AlertDialogComponent>",
                 "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AspectRatioComponent>",
+                "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
             },
             {
                 "name": "meta",
@@ -1693,6 +1796,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<CheckboxComponent>",
                 "defaultValue": "{\n  component: CheckboxComponent,\n  title: 'Components/Checkbox',\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMoon,\n        }),\n      ],\n    }),\n  ],\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CollapsibleComponent>",
+                "defaultValue": "{\n  component: CollapsibleComponent,\n  title: 'Components/Collapsible',\n}"
             },
             {
                 "name": "meta",
@@ -1848,6 +1961,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n    collapsibleTitle: '&#64;peduarte starred 3 repositories',\n    collapsibleTriggerText: '&#64;radix-ui/primitives',\n    collapsibleContent: [\n      { text: '&#64;radix-ui/colors' },\n      { text: '&#64;stitches/react' }\n    ],\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1946,8 +2069,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AspectRatioComponent>",
-                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "rawtype": "StoryObj<AlertDialogComponent>",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1957,8 +2080,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AlertDialogComponent>",
-                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "rawtype": "StoryObj<AspectRatioComponent>",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2014,6 +2137,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CheckboxComponent>",
                 "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CollapsibleComponent>",
+                "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2714,6 +2848,28 @@
                     "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: `Yes. It adheres to the WAI-ARIA design pattern.`,\n      },\n      {\n        triggerText: 'Is it styled?',\n        content: `Yes. It comes with default styles that match the other components' aesthetics.`,\n      },\n      {\n        triggerText: 'Is it animated?',\n        content: `Yes. It's animated by default, but you can disable it if you prefer.`,\n      },\n    ],\n  },\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CollapsibleComponent>",
+                    "defaultValue": "{\n  component: CollapsibleComponent,\n  title: 'Components/Collapsible',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n    collapsibleTitle: '&#64;peduarte starred 3 repositories',\n    collapsibleTriggerText: '&#64;radix-ui/primitives',\n    collapsibleContent: [\n      { text: '&#64;radix-ui/colors' },\n      { text: '&#64;stitches/react' }\n    ],\n  },\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
                 {
                     "name": "meta",
@@ -2812,19 +2968,6 @@
                     "kind": 183
                 }
             ],
-            "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AspectRatioComponent>",
-                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
                 {
                     "name": "Story",
@@ -2832,6 +2975,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AlertDialogComponent>",
                     "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AspectRatioComponent>",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2908,6 +3064,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CheckboxComponent>",
                     "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CollapsibleComponent>",
+                    "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3088,7 +3257,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 6,
+        "count": 5,
         "status": "low",
         "files": [
             {
@@ -3693,6 +3862,35 @@
                 "name": "CheckboxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CollapsibleComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
                 "status": "low"
             },
             {
