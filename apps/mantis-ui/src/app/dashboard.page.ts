@@ -15,18 +15,20 @@ import {
   AvatarComponent,
   AccordionComponent,
   BadgeComponent,
-  CarouselComponent
+  CarouselComponent,
+  CheckboxComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
-import { lucideMail } from '@ng-icons/lucide';
+import { lucideMail, lucideMoon } from '@ng-icons/lucide';
 
 @Component({
   selector: 'app-dashboard',
   standalone: true,
   providers: [
     provideIcons({
-      lucideMail
+      lucideMail,
+      lucideMoon
      })
   ],
   imports: [
@@ -43,7 +45,8 @@ import { lucideMail } from '@ng-icons/lucide';
     AspectRatioComponent,
     AvatarComponent,
     BadgeComponent,
-    CarouselComponent
+    CarouselComponent,
+    CheckboxComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,

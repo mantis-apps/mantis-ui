@@ -19,3 +19,5 @@ export * from './lib/ui/components/accordion/accordion.component';
 export * from './lib/ui/components/badge/badge.component';
 
 export * from './lib/ui/components/carousel/carousel.component';
+
+export * from './lib/ui/components/checkbox/checkbox.component';
