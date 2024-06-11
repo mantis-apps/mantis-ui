@@ -258,38 +258,19 @@
         </ng-container> -->
         <CardHeader>
           <CardTitle [class]="'text-3xl'">
-            Down the Hare Hole
+            Collapsible
           </CardTitle>
           <CardDescription>
-            Alice in Superland <small> -- by Lewis Carroll </small>
+            An interactive component which expands/collapses a panel.
           </CardDescription>
         </CardHeader>
         <CardContent>
-            <AspectRatio ratio="9 / 16">
-              <img alt="Alice in Wonderland - Down the Rabbit Hole"
-                src="https://pad.mymovies.it/filmclub/2008/06/094/locandinapg3.jpg" />
-            </AspectRatio>
-          <div class="mt-4">
-            <p>
-              Alice was beginning to get very tired of sitting by her
-              sister on the bank, and of having nothing to do: once or
-              twice
-              she had peeped into the book her sister was reading, but it
-              had no pictures or conversations in it, and what is the use
-              of a
-              book,thought Alice without pictures or conversations?
-            </p>
-          </div>
+          <Collapsible
+          [collapsibleTitle]="'@peduarte starred 3 repositories'"
+          [collapsibleTriggerText]="'@radix-ui/primitives'"
+          [collapsibleContent]="[{text: '@radix-ui/colors'}, {text: '@stitches/react'}]"
+        ></Collapsible>
         </CardContent>
-        <CardFooter>
-          <Button variant="default" size="lg"
-            class="flex content-center justify-start pb-4 pl-0">
-            <Icon [name]="'lucideMail'" size="sm"
-              class="flex mr-1" />
-            <p>Subscribe <span class="xs:hidden sm:inline">to
-                Newsletter</span></p>
-          </Button>
-        </CardFooter>
       </Card>
 
     </div>

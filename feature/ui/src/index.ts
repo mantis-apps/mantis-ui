@@ -21,3 +21,5 @@ export * from './lib/ui/components/badge/badge.component';
 export * from './lib/ui/components/carousel/carousel.component';
 
 export * from './lib/ui/components/checkbox/checkbox.component';
+
+export * from './lib/ui/components/collapsible/collapsible.component';

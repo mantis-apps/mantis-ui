@@ -16,7 +16,8 @@ import {
   AccordionComponent,
   BadgeComponent,
   CarouselComponent,
-  CheckboxComponent
+  CheckboxComponent,
+  CollapsibleComponent,
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
@@ -46,7 +47,8 @@ import { lucideMail, lucideMoon } from '@ng-icons/lucide';
     AvatarComponent,
     BadgeComponent,
     CarouselComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    CollapsibleComponent,
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
