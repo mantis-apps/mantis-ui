@@ -1,5 +1,5 @@
 
-import { Component, Input } from '@angular/core';
+import { Component, ElementRef, Input} from '@angular/core';
 import { NgFor } from '@angular/common';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import {
@@ -28,7 +28,7 @@ import { lucideChevronsDownUp } from '@ng-icons/lucide';
     }),
   ],
   template: `
-    <brn-collapsible [class]="'flex flex-col w-[350px] space-y-2 ' + class">
+    <brn-collapsible [class]="'flex flex-col space-y-2 ' + class">
       <div class="flex items-center justify-between px-4 space-x-4">
         <h4 class="text-sm font-semibold">{{collapsibleTitle}}</h4>
         <button brnCollapsibleTrigger hlmBtn variant="ghost" size="sm" class="p-0 w-9">
