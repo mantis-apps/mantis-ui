@@ -225,14 +225,24 @@
           class="w-full">
           <CardHeader>
             <CardTitle [class]="'text-3xl'">
-              Thousands of Lucide Icons
+              Checkbox
             </CardTitle>
             <CardDescription>
-              There is a Lucide Icon for every occasion
+              A control that allows the user to toggle between checked and not checked.
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <IconList />
+            <Checkbox [checkboxLabel]="'Accept terms and conditions'"></Checkbox>
+            <div class="my-4">
+              <p>
+                You can also set a custom icom instead of the default checkbox. Be sure that the icon is provided. In the example
+                below we are adding the `lucideMoon` icon as the checkbox icon.
+              </p>
+            </div>
+            <Checkbox
+              [checkboxLabel]="'Accept terms and conditions'"
+              [iconName]="'lucideMoon'"
+            ></Checkbox>
           </CardContent>
         </Card>
       </div>
