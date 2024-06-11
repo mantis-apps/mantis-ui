@@ -1054,7 +1054,7 @@
         },
         {
             "name": "CarouselComponent",
-            "id": "component-CarouselComponent-1f5842c677d41607e02690615edb436801dda934e214252819d3cf3e8c5d60adb4afb228fee8a8854024e54e2bd30ea0b068c48ad7113c3942cb4e58a2f8724d",
+            "id": "component-CarouselComponent-fd2b9fd184d533139db57d84a7b75061a13f1db26bd603e2c76815690d81484c6eaba16c86f30f0c0e71d204e280e3e014b75539d75fd81ed58569f4bbcb7f0c",
             "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1064,7 +1064,7 @@
             "selector": "Carousel",
             "styleUrls": [],
             "styles": [],
-            "template": "<div class=\"flex items-center justify-center w-full p-4\">\n  <hlm-carousel [class]=\"'w-full ' + carouselMaxWidthClass\" >\n    <hlm-carousel-content>\n    @for (item of items; track item) {\n      <hlm-carousel-item>\n        <div class=\"p-1\">\n          <section hlmCard>\n            <div hlmCardContent [class]=\"carouselContentClass\">\n              <div [class]=\"carouselItemClass\">{{ item }}</div>\n            </div>\n          </section>\n        </div>\n      </hlm-carousel-item>\n    } @empty {\n      <p>No carousel items</p>\n    }\n    </hlm-carousel-content>\n    <button hlm-carousel-previous></button>\n    <button hlm-carousel-next></button>\n  </hlm-carousel>\n</div>\n",
+            "template": "<div class=\"flex items-center justify-center w-full p-4\">\n  <hlm-carousel [class]=\"'w-full ' + carouselMaxWidthClass\" >\n    <hlm-carousel-content>\n    @for (item of items; track item) {\n      <hlm-carousel-item>\n        <div class=\"p-1\">\n          <Card>\n            <CardContent [class]=\"carouselContentClass\">\n              <div [class]=\"carouselItemClass\">{{ item }}</div>\n            </CardContent>\n          </Card>\n        </div>\n      </hlm-carousel-item>\n    } @empty {\n      <p>No carousel items</p>\n    }\n    </hlm-carousel-content>\n    <button hlm-carousel-previous></button>\n    <button hlm-carousel-next></button>\n  </hlm-carousel>\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1076,7 +1076,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nTailwind CSS class to override the default carousel content class\n",
                     "description": "<p>Tailwind CSS class to override the default carousel content class</p>\n",
-                    "line": 58,
+                    "line": 62,
                     "type": "string",
                     "decorators": []
                 },
@@ -1087,7 +1087,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nTailwind CSS class to override the default carousel item class\n",
                     "description": "<p>Tailwind CSS class to override the default carousel item class</p>\n",
-                    "line": 62,
+                    "line": 66,
                     "type": "string",
                     "decorators": []
                 },
@@ -1098,7 +1098,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nTailwind CSS class to apply to the carousel max width\n",
                     "description": "<p>Tailwind CSS class to apply to the carousel max width</p>\n",
-                    "line": 50,
+                    "line": 54,
                     "type": "string",
                     "decorators": []
                 },
@@ -1109,7 +1109,7 @@
                     "deprecationMessage": "",
                     "rawdescription": "\n\nArray of items to display in the carousel\n",
                     "description": "<p>Array of items to display in the carousel</p>\n",
-                    "line": 54,
+                    "line": 58,
                     "type": "Array<>",
                     "decorators": []
                 }
@@ -1142,12 +1142,86 @@
                 {
                     "name": "HlmCarouselPreviousComponent",
                     "type": "component"
+                },
+                {
+                    "name": "CardComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CardContentComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgFor } from '@angular/common';\n\nimport {\n  HlmCarouselComponent,\n  HlmCarouselContentComponent,\n  HlmCarouselItemComponent,\n  HlmCarouselNextComponent,\n  HlmCarouselPreviousComponent\n} from '@spartan-ng/ui-carousel-helm';\n\n@Component({\n  selector: 'Carousel',\n  standalone: true,\n  imports: [\n    HlmCarouselComponent,\n    HlmCarouselContentComponent,\n    HlmCarouselItemComponent,\n    HlmCarouselNextComponent,\n    HlmCarouselPreviousComponent\n  ],\n  template: `\n  <div class=\"flex items-center justify-center w-full p-4\">\n    <hlm-carousel [class]=\"'w-full ' + carouselMaxWidthClass\" >\n      <hlm-carousel-content>\n      @for (item of items; track item) {\n        <hlm-carousel-item>\n          <div class=\"p-1\">\n            <section hlmCard>\n              <div hlmCardContent [class]=\"carouselContentClass\">\n                <div [class]=\"carouselItemClass\">{{ item }}</div>\n              </div>\n            </section>\n          </div>\n        </hlm-carousel-item>\n      } @empty {\n        <p>No carousel items</p>\n      }\n      </hlm-carousel-content>\n      <button hlm-carousel-previous></button>\n      <button hlm-carousel-next></button>\n    </hlm-carousel>\n  </div>\n  `,\n})\nexport class CarouselComponent {\n  /**\n   * Tailwind CSS class to apply to the carousel max width\n   */\n  @Input() carouselMaxWidthClass = 'max-w-xs';\n  /**\n   * Array of items to display in the carousel\n   */\n  @Input() items: Array<unknown> = Array.from({ length: 5}, (_, i) => i + 1);\n  /**\n   * Tailwind CSS class to override the default carousel content class\n   */\n  @Input() carouselContentClass = 'flex items-center justify-center p-6 aspect-square';\n  /**\n   * Tailwind CSS class to override the default carousel item class\n   */\n  @Input() carouselItemClass = 'text-4xl font-semibold';\n}\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgFor } from '@angular/common';\n\nimport {\n  HlmCarouselComponent,\n  HlmCarouselContentComponent,\n  HlmCarouselItemComponent,\n  HlmCarouselNextComponent,\n  HlmCarouselPreviousComponent\n} from '@spartan-ng/ui-carousel-helm';\nimport { CardComponent } from '../card/partials/card.component';\nimport { CardContentComponent } from '../card/partials/card-content.component';\n\n@Component({\n  selector: 'Carousel',\n  standalone: true,\n  imports: [\n    HlmCarouselComponent,\n    HlmCarouselContentComponent,\n    HlmCarouselItemComponent,\n    HlmCarouselNextComponent,\n    HlmCarouselPreviousComponent,\n    CardComponent,\n    CardContentComponent\n  ],\n  template: `\n  <div class=\"flex items-center justify-center w-full p-4\">\n    <hlm-carousel [class]=\"'w-full ' + carouselMaxWidthClass\" >\n      <hlm-carousel-content>\n      @for (item of items; track item) {\n        <hlm-carousel-item>\n          <div class=\"p-1\">\n            <Card>\n              <CardContent [class]=\"carouselContentClass\">\n                <div [class]=\"carouselItemClass\">{{ item }}</div>\n              </CardContent>\n            </Card>\n          </div>\n        </hlm-carousel-item>\n      } @empty {\n        <p>No carousel items</p>\n      }\n      </hlm-carousel-content>\n      <button hlm-carousel-previous></button>\n      <button hlm-carousel-next></button>\n    </hlm-carousel>\n  </div>\n  `,\n})\nexport class CarouselComponent {\n  /**\n   * Tailwind CSS class to apply to the carousel max width\n   */\n  @Input() carouselMaxWidthClass = 'max-w-xs';\n  /**\n   * Array of items to display in the carousel\n   */\n  @Input() items: Array<unknown> = Array.from({ length: 5}, (_, i) => i + 1);\n  /**\n   * Tailwind CSS class to override the default carousel content class\n   */\n  @Input() carouselContentClass = 'flex items-center justify-center p-6 aspect-square';\n  /**\n   * Tailwind CSS class to override the default carousel item class\n   */\n  @Input() carouselItemClass = 'text-4xl font-semibold';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "CheckboxComponent",
+            "id": "component-CheckboxComponent-ab00f961ad227e3d4e54780ac2bdbca8d1d9b16bdb70dd8254494110146189d591d3b4730bc465003cd17d4b5d552719f7991481bef1df41efdede74c24774bf",
+            "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "Checkbox",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<label class=\"flex items-center\" hlmLabel>\n    @if( iconName ){\n\t  <hlm-checkbox class=\"mr-2\" [checkIconName]=\"iconName\" />\n    } @else {\n      <hlm-checkbox class=\"mr-2\" />\n    }\n\t{{ checkboxLabel }}\n</label>\n\t",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "checkboxLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 23,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "iconName",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 24,
+                    "type": "IconName",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmLabelDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCheckboxComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NgIf"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport { IconName } from '@ng-icons/core';\nimport { HlmCheckboxComponent } from '@spartan-ng/ui-checkbox-helm';\nimport { HlmLabelDirective } from '@spartan-ng/ui-label-helm';\n@Component({\n\tselector: 'Checkbox',\n\tstandalone: true,\n\timports: [HlmLabelDirective, HlmCheckboxComponent, NgIf ],\n\ttemplate: `\n\t\t<label class=\"flex items-center\" hlmLabel>\n      @if( iconName ){\n\t\t\t  <hlm-checkbox class=\"mr-2\" [checkIconName]=\"iconName\" />\n      } @else {\n        <hlm-checkbox class=\"mr-2\" />\n      }\n\t\t\t{{ checkboxLabel }}\n\t\t</label>\n\t`,\n})\nexport class CheckboxComponent {\n  @Input({ required: true }) checkboxLabel!: string;\n  @Input() iconName!: IconName;\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1319,6 +1393,16 @@
                 "deprecationMessage": "",
                 "type": "StorybookConfig",
                 "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n  staticDirs: ['../src/assets'],\n}"
+            },
+            {
+                "name": "CustomIcon",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    checkboxLabel: 'Accept terms and conditions',\n    iconName: 'lucideMoon',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/checkbox works!/gi)).toBeTruthy();\n  },\n}"
             },
             {
                 "name": "Default",
@@ -1544,21 +1628,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AlertDialogComponent>",
-                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AspectRatioComponent>",
                 "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AlertDialogComponent>",
+                "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertDialogComponent,\n  decorators: [\n    moduleMetadata({\n      imports: [],\n    }),\n  ],\n  title: 'Components/Alert Dialog',\n  argTypes: {\n    title: { control: { type: 'text' }, name: 'Title', placeholder: 'Title' },\n    cancelLabel: { control: { type: 'text' }, name: 'Cancel Label', placeholder: 'Cancel' },\n    confirmLabel: { control: { type: 'text' }, name: 'Confirm Label', placeholder: 'add css classes' },\n  },\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AlertDialogComponent) => ({\n    props: args,\n    template: `\n      <AlertDialog ${argsToTemplate(args)} (ALERTDIALOG-CONFIRM-CLICKED)=\"alert('alert button clicked')\">\n      This action cannot be undone. This will permanently delete your account and remove your data from our\n      servers.\n      </AlertDialog>\n    `,\n  }),\n}"
             },
             {
                 "name": "meta",
@@ -1598,7 +1682,17 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<CarouselComponent>",
-                "defaultValue": "{\n  component: CarouselComponent,\n  title: 'CarouselComponent',\n}"
+                "defaultValue": "{\n  component: CarouselComponent,\n  title: 'Components/Carousel',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CheckboxComponent>",
+                "defaultValue": "{\n  component: CheckboxComponent,\n  title: 'Components/Checkbox',\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMoon,\n        }),\n      ],\n    }),\n  ],\n}"
             },
             {
                 "name": "meta",
@@ -1744,6 +1838,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    checkboxLabel: 'Accept terms and conditions',\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -1842,8 +1946,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AlertDialogComponent>",
-                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+                "rawtype": "StoryObj<AspectRatioComponent>",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1853,8 +1957,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AspectRatioComponent>",
-                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "rawtype": "StoryObj<AlertDialogComponent>",
+                "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -1899,6 +2003,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CarouselComponent>",
                 "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CheckboxComponent>",
+                "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2093,6 +2208,38 @@
                     "deprecationMessage": "",
                     "type": "StorybookConfig",
                     "defaultValue": "{\n  stories: ['../**/*.stories.@(js|jsx|ts|tsx|mdx)'],\n  addons: [\n    '@storybook/addon-essentials',\n    '@storybook/addon-interactions',\n    '@storybook/addon-themes',\n    'storybook-dark-mode',\n    'storybook-addon-data-theme-switcher'\n  ],\n  framework: {\n    name: '@storybook/angular',\n    options: {},\n  },\n  docs: {\n    autodocs: true,\n    defaultName: 'Docs',\n  },\n  staticDirs: ['../src/assets'],\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts": [
+                {
+                    "name": "CustomIcon",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    checkboxLabel: 'Accept terms and conditions',\n    iconName: 'lucideMoon',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/checkbox works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CheckboxComponent>",
+                    "defaultValue": "{\n  component: CheckboxComponent,\n  title: 'Components/Checkbox',\n  decorators: [\n    moduleMetadata({\n      providers: [\n        provideIcons({\n          lucideMoon,\n        }),\n      ],\n    }),\n  ],\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    checkboxLabel: 'Accept terms and conditions',\n  },\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
@@ -2490,7 +2637,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<CarouselComponent>",
-                    "defaultValue": "{\n  component: CarouselComponent,\n  title: 'CarouselComponent',\n}"
+                    "defaultValue": "{\n  component: CarouselComponent,\n  title: 'Components/Carousel',\n}"
                 },
                 {
                     "name": "Primary",
@@ -2665,19 +2812,6 @@
                     "kind": 183
                 }
             ],
-            "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AlertDialogComponent>",
-                    "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
                 {
                     "name": "Story",
@@ -2685,6 +2819,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AspectRatioComponent>",
                     "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AlertDialogComponent>",
+                    "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -2748,6 +2895,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CarouselComponent>",
                     "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CheckboxComponent>",
+                    "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -3495,6 +3655,45 @@
                 "coveragePercent": 80,
                 "coverageCount": "4/5",
                 "status": "very-good"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CustomIcon",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CheckboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
             },
             {
                 "filePath": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
