@@ -20,6 +20,7 @@ import {
 } from '@ng-icons/lucide';
 
 import { CommandInputComponent } from './partials/command-input/command-input.component';
+import { CommandListComponent } from './partials/command-input/command-list.component';
 
 @Component({
   selector: 'Command',
@@ -31,16 +32,17 @@ import { CommandInputComponent } from './partials/command-input/command-input.co
     IconComponent,
     HlmButtonDirective,
     ButtonComponent,
-    CommandInputComponent
+    CommandInputComponent,
+    CommandListComponent
   ],
   providers: [
     provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),
   ],
   template: `
-    <brn-cmd class="w-96" hlm>
+    <brn-cmd [class]="class" hlm>
       <CommandInput [commandInputPlaceholder]="'Filter commands'" />
       <div *brnCmdEmpty hlmCmdEmpty>{{commandEmptyText}}</div>
-      <brn-cmd-list hlm>
+      <CommandList>
         <brn-cmd-group hlm label="Suggestions">
           <button brnCmdItem hlm>
             <hlm-icon name="lucideCalendar" hlmCmdIcon />
@@ -73,7 +75,7 @@ import { CommandInputComponent } from './partials/command-input/command-input.co
             <hlm-cmd-shortcut>⌘S</hlm-cmd-shortcut>
           </button>
         </brn-cmd-group>
-      </brn-cmd-list>
+      </CommandList>
     </brn-cmd>
   `,
 })
@@ -90,5 +92,7 @@ export class CommandComponent {
   CommandShortcut,
 } from "@/components/ui/command"
    */
+
+  @Input() class = '';
   @Input() commandEmptyText = 'No results found';
 }
