@@ -1,5 +1,5 @@
 
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import {
   BrnCommandImports
 } from '@spartan-ng/ui-command-brain';
@@ -39,7 +39,7 @@ import { CommandInputComponent } from './partials/command-input/command-input.co
   template: `
     <brn-cmd class="w-96" hlm>
       <CommandInput [commandInputPlaceholder]="'Filter commands'" />
-      <div *brnCmdEmpty hlmCmdEmpty>No results found.</div>
+      <div *brnCmdEmpty hlmCmdEmpty>{{commandEmptyText}}</div>
       <brn-cmd-list hlm>
         <brn-cmd-group hlm label="Suggestions">
           <button brnCmdItem hlm>
@@ -90,4 +90,5 @@ export class CommandComponent {
   CommandShortcut,
 } from "@/components/ui/command"
    */
+  @Input() commandEmptyText = 'No results found';
 }
