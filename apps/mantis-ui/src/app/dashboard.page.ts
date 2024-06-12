@@ -18,6 +18,7 @@ import {
   CarouselComponent,
   CheckboxComponent,
   CollapsibleComponent,
+  CommandComponent,
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
@@ -49,6 +50,7 @@ import { lucideMail, lucideMoon } from '@ng-icons/lucide';
     CarouselComponent,
     CheckboxComponent,
     CollapsibleComponent,
+    CommandComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
