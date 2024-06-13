@@ -1,8 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/angular';
+import { moduleMetadata } from '@storybook/angular';
 import { CommandComponent, CommandData } from './command.component';
-
-import { within } from '@storybook/testing-library';
-import { expect } from '@storybook/jest';
+import { provideIcons } from '@ng-icons/core';
+import { lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 
 const CommandDataMock: CommandData = {
   commandInputPlaceholder: 'Type a command or search...',
@@ -51,6 +51,13 @@ const CommandDataMock: CommandData = {
 const meta: Meta<CommandComponent> = {
   component: CommandComponent,
   title: 'Components/Command',
+  decorators: [
+    moduleMetadata({
+      providers: [
+        provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),
+      ],
+    }),
+  ],
 };
 export default meta;
 type Story = StoryObj<CommandComponent>;

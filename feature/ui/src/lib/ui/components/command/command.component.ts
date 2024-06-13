@@ -12,13 +12,7 @@ import { IconComponent } from '../icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
 import { IconName, provideIcons } from '@ng-icons/core';
 import {
-  lucideCalendar,
-  lucideWallet,
-  lucideSmile,
-  lucideCog,
   lucideSearch,
-  lucideUser,
-  lucidePlus,
 } from '@ng-icons/lucide';
 
 import { CommandInputComponent } from './partials/command-input.component';
@@ -65,7 +59,7 @@ export interface CommandData {
     NgFor,
   ],
   providers: [
-    provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),
+    provideIcons({ lucideSearch }),
   ],
   template: `
     @if( commandData ) {
