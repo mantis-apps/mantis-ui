@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import  { BrnCommandInputDirective } from '@spartan-ng/ui-command-brain';
 import { HlmCommandInputDirective, HlmCommandInputWrapperComponent } from '@spartan-ng/ui-command-helm';
-import { IconComponent } from '../../../icon/icon.component';
+import { IconComponent } from '../../icon/icon.component';
 import { provideIcons } from '@ng-icons/core';
 import { lucideSearch } from '@ng-icons/lucide';
 

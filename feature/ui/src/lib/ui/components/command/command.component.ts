@@ -1,3 +1,4 @@
+import { CommandGroupComponent } from './partials/command-group.component';
 
 import { Component, Input } from '@angular/core';
 import {
@@ -19,8 +20,10 @@ import {
   lucidePlus,
 } from '@ng-icons/lucide';
 
-import { CommandInputComponent } from './partials/command-input/command-input.component';
-import { CommandListComponent } from './partials/command-input/command-list.component';
+import { CommandInputComponent } from './partials/command-input.component';
+import { CommandListComponent } from './partials/command-list.component';
+import { CommandItemComponent } from './partials/command-item.component';
+import { CommandSeparatorComponent } from './partials/command-separator.component';
 
 @Component({
   selector: 'Command',
@@ -33,7 +36,10 @@ import { CommandListComponent } from './partials/command-input/command-list.comp
     HlmButtonDirective,
     ButtonComponent,
     CommandInputComponent,
-    CommandListComponent
+    CommandListComponent,
+    CommandGroupComponent,
+    CommandItemComponent,
+    CommandSeparatorComponent
   ],
   providers: [
     provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),
@@ -43,56 +49,22 @@ import { CommandListComponent } from './partials/command-input/command-list.comp
       <CommandInput [commandInputPlaceholder]="'Filter commands'" />
       <div *brnCmdEmpty hlmCmdEmpty>{{commandEmptyText}}</div>
       <CommandList>
-        <brn-cmd-group hlm label="Suggestions">
-          <button brnCmdItem hlm>
-            <hlm-icon name="lucideCalendar" hlmCmdIcon />
-            Calendar
-          </button>
-          <button brnCmdItem hlm>
-            <hlm-icon name="lucideSmile" hlmCmdIcon />
-            Search Emoji
-          </button>
-          <button brnCmdItem hlm>
-            <hlm-icon name="lucidePlus" hlmCmdIcon />
-            Calculator
-          </button>
-        </brn-cmd-group>
-        <brn-cmd-separator hlm></brn-cmd-separator>
-        <brn-cmd-group hlm label="Settings">
-          <button brnCmdItem hlm>
-            <hlm-icon name="lucideUser" hlmCmdIcon />
-            Profile
-            <hlm-cmd-shortcut>⌘P</hlm-cmd-shortcut>
-          </button>
-          <button brnCmdItem hlm>
-            <hlm-icon name="lucideWallet" hlmCmdIcon />
-            Billing
-            <hlm-cmd-shortcut>⌘B</hlm-cmd-shortcut>
-          </button>
-          <button brnCmdItem hlm>
-            <hlm-icon name="lucideCog" hlmCmdIcon />
-            Settings
-            <hlm-cmd-shortcut>⌘S</hlm-cmd-shortcut>
-          </button>
-        </brn-cmd-group>
+        <CommandGroup commandGroupLabel="Applications">
+          <CommandItem commandItemLabel="Calendar" commandItemIcon="lucideCalendar" />
+          <CommandItem commandItemLabel="Search Emoji" commandItemIcon="lucideSmile" />
+          <CommandItem commandItemLabel="Calculator" commandItemIcon="lucidePlus" />
+        </CommandGroup>
+        <CommandSeparator />
+        <CommandGroup commandGroupLabel="Settings">
+          <CommandItem commandItemLabel="Profile" commandItemIcon="lucideUser" commandItemShortcut="⌘P" />
+          <CommandItem commandItemLabel="Billing" commandItemIcon="lucideWallet" commandItemShortcut="⌘B" />
+          <CommandItem commandItemLabel="Settings" commandItemIcon="lucideCog" commandItemShortcut="⌘S" />
+        </CommandGroup>
       </CommandList>
     </brn-cmd>
   `,
 })
 export class CommandComponent {
-  /**
-   * import {
-  Command,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandItem,
-  CommandList,
-  CommandSeparator,
-  CommandShortcut,
-} from "@/components/ui/command"
-   */
-
   @Input() class = '';
   @Input() commandEmptyText = 'No results found';
 }
