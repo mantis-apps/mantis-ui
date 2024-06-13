@@ -24,6 +24,7 @@ import { CommandInputComponent } from './partials/command-input.component';
 import { CommandListComponent } from './partials/command-list.component';
 import { CommandItemComponent } from './partials/command-item.component';
 import { CommandSeparatorComponent } from './partials/command-separator.component';
+import { CommandEmptyComponent } from './partials/command-empty.component';
 
 @Component({
   selector: 'Command',
@@ -39,16 +40,17 @@ import { CommandSeparatorComponent } from './partials/command-separator.componen
     CommandListComponent,
     CommandGroupComponent,
     CommandItemComponent,
-    CommandSeparatorComponent
+    CommandSeparatorComponent,
+    CommandEmptyComponent
   ],
   providers: [
     provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),
   ],
   template: `
     <brn-cmd [class]="class" hlm>
-      <CommandInput [commandInputPlaceholder]="'Filter commands'" />
-      <div *brnCmdEmpty hlmCmdEmpty>{{commandEmptyText}}</div>
-      <CommandList>
+      <div CommandInput [commandInputPlaceholder]="'Search commands'"></div>
+      <div CommandEmpty></div>
+      <div CommandList>
         <CommandGroup commandGroupLabel="Applications">
           <CommandItem commandItemLabel="Calendar" commandItemIcon="lucideCalendar" />
           <CommandItem commandItemLabel="Search Emoji" commandItemIcon="lucideSmile" />
@@ -60,7 +62,7 @@ import { CommandSeparatorComponent } from './partials/command-separator.componen
           <CommandItem commandItemLabel="Billing" commandItemIcon="lucideWallet" commandItemShortcut="⌘B" />
           <CommandItem commandItemLabel="Settings" commandItemIcon="lucideCog" commandItemShortcut="⌘S" />
         </CommandGroup>
-      </CommandList>
+      </div>
     </brn-cmd>
   `,
 })
