@@ -33,6 +33,132 @@
             "kind": 171,
             "methods": [],
             "extends": []
+        },
+        {
+            "name": "CommandData",
+            "id": "interface-CommandData-5cf1e3067079044a3eec34f74844f2d3af04b917f50f4b6fddcafbfe6b883b3eb3fbff8653640d254c45a0397fb38ae7a8b4a102d15178f838ddecbfb1efc9d7",
+            "file": "feature/ui/src/lib/ui/components/command/command.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { CommandGroupComponent } from './partials/command-group.component';\n\nimport { Component, Input } from '@angular/core';\nimport { NgIf, NgFor } from '@angular/common';\nimport {\n  BrnCommandImports\n} from '@spartan-ng/ui-command-brain';\nimport { HlmCommandImports } from '@spartan-ng/ui-command-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport { IconComponent } from '../icon/icon.component';\nimport { ButtonComponent } from '../button/button.component';\nimport { IconName, provideIcons } from '@ng-icons/core';\nimport {\n  lucideCalendar,\n  lucideWallet,\n  lucideSmile,\n  lucideCog,\n  lucideSearch,\n  lucideUser,\n  lucidePlus,\n} from '@ng-icons/lucide';\n\nimport { CommandInputComponent } from './partials/command-input.component';\nimport { CommandListComponent } from './partials/command-list.component';\nimport { CommandItemComponent } from './partials/command-item.component';\nimport { CommandSeparatorComponent } from './partials/command-separator.component';\nimport { CommandEmptyComponent } from './partials/command-empty.component';\n\nexport interface CommandItem {\n  commandItemLabel: string;\n  commandItemIcon: IconName;\n  commandItemShortcut?: string;\n}\n\nexport interface CommandGroup {\n  commandGroupLabel: string;\n  commandItems: CommandItem[];\n}\n\nexport interface CommandData {\n  commandInputPlaceholder: string;\n  commandEmptyText: string;\n  commandGroups?: CommandGroup[];\n  commandItems?: CommandItem[];\n}\n\n@Component({\n  selector: 'Command',\n  standalone: true,\n  imports: [\n    BrnCommandImports,\n    HlmCommandImports,\n    HlmIconComponent,\n    IconComponent,\n    HlmButtonDirective,\n    ButtonComponent,\n    CommandInputComponent,\n    CommandListComponent,\n    CommandGroupComponent,\n    CommandItemComponent,\n    CommandSeparatorComponent,\n    CommandEmptyComponent,\n    NgIf,\n    NgFor,\n  ],\n  providers: [\n    provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),\n  ],\n  template: `\n    @if( commandData ) {\n      <brn-cmd [class]=\"class\">\n        <!-- input wrapper -->\n        <hlm-cmd-input-wrapper>\n          <hlm-icon name=\"lucideSearch\" />\n          <input placeholder=\"{{ commandData.commandInputPlaceholder }}\" brnCmdInput hlm />\n        </hlm-cmd-input-wrapper>\n        <!-- command empty -->\n        <div *brnCmdEmpty hlmCmdEmpty>{{ commandData.commandEmptyText }}</div>\n        <!-- command list -->\n        <brn-cmd-list hlm>\n          <!-- command groups -->\n          @if( commandData.commandGroups ) {\n            @for (group of commandData.commandGroups; track group.commandGroupLabel; let last = $last) {\n              <brn-cmd-group hlm [label]=\"group.commandGroupLabel\" class=\"w-full\">\n                <!-- command items -->\n                @for (item of group.commandItems; track item.commandItemLabel) {\n                  <button brnCmdItem hlm class=\"w-full\">\n                    <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                    {{ item.commandItemLabel }}\n                    @if( item.commandItemShortcut ) {\n                      <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                    }\n                  </button>\n                }\n              </brn-cmd-group>\n              @if( !last || commandData.commandItems) {\n                <brn-cmd-separator hlm />\n              }\n\n            }\n          }\n          <!-- command items -->\n          @if( commandData.commandItems ) {\n            <div class=\"p-1\">\n            @for (item of commandData.commandItems; track item.commandItemLabel) {\n              <button brnCmdItem hlm class=\"w-full\">\n                <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                {{ item.commandItemLabel }}\n                @if( item.commandItemShortcut ) {\n                  <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                }\n              </button>\n            }\n            </div>\n          }\n        </brn-cmd-list>\n      </brn-cmd>\n    }\n  `,\n})\nexport class CommandComponent {\n  @Input() class = '';\n  @Input() commandEmptyText = 'No results found';\n\n  @Input({required: true}) commandData!: CommandData;\n\n}\n",
+            "properties": [
+                {
+                    "name": "commandEmptyText",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 43
+                },
+                {
+                    "name": "commandGroups",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CommandGroup[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 44
+                },
+                {
+                    "name": "commandInputPlaceholder",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 42
+                },
+                {
+                    "name": "commandItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CommandItem[]",
+                    "optional": true,
+                    "description": "",
+                    "line": 45
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "CommandGroup",
+            "id": "interface-CommandGroup-5cf1e3067079044a3eec34f74844f2d3af04b917f50f4b6fddcafbfe6b883b3eb3fbff8653640d254c45a0397fb38ae7a8b4a102d15178f838ddecbfb1efc9d7",
+            "file": "feature/ui/src/lib/ui/components/command/command.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { CommandGroupComponent } from './partials/command-group.component';\n\nimport { Component, Input } from '@angular/core';\nimport { NgIf, NgFor } from '@angular/common';\nimport {\n  BrnCommandImports\n} from '@spartan-ng/ui-command-brain';\nimport { HlmCommandImports } from '@spartan-ng/ui-command-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport { IconComponent } from '../icon/icon.component';\nimport { ButtonComponent } from '../button/button.component';\nimport { IconName, provideIcons } from '@ng-icons/core';\nimport {\n  lucideCalendar,\n  lucideWallet,\n  lucideSmile,\n  lucideCog,\n  lucideSearch,\n  lucideUser,\n  lucidePlus,\n} from '@ng-icons/lucide';\n\nimport { CommandInputComponent } from './partials/command-input.component';\nimport { CommandListComponent } from './partials/command-list.component';\nimport { CommandItemComponent } from './partials/command-item.component';\nimport { CommandSeparatorComponent } from './partials/command-separator.component';\nimport { CommandEmptyComponent } from './partials/command-empty.component';\n\nexport interface CommandItem {\n  commandItemLabel: string;\n  commandItemIcon: IconName;\n  commandItemShortcut?: string;\n}\n\nexport interface CommandGroup {\n  commandGroupLabel: string;\n  commandItems: CommandItem[];\n}\n\nexport interface CommandData {\n  commandInputPlaceholder: string;\n  commandEmptyText: string;\n  commandGroups?: CommandGroup[];\n  commandItems?: CommandItem[];\n}\n\n@Component({\n  selector: 'Command',\n  standalone: true,\n  imports: [\n    BrnCommandImports,\n    HlmCommandImports,\n    HlmIconComponent,\n    IconComponent,\n    HlmButtonDirective,\n    ButtonComponent,\n    CommandInputComponent,\n    CommandListComponent,\n    CommandGroupComponent,\n    CommandItemComponent,\n    CommandSeparatorComponent,\n    CommandEmptyComponent,\n    NgIf,\n    NgFor,\n  ],\n  providers: [\n    provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),\n  ],\n  template: `\n    @if( commandData ) {\n      <brn-cmd [class]=\"class\">\n        <!-- input wrapper -->\n        <hlm-cmd-input-wrapper>\n          <hlm-icon name=\"lucideSearch\" />\n          <input placeholder=\"{{ commandData.commandInputPlaceholder }}\" brnCmdInput hlm />\n        </hlm-cmd-input-wrapper>\n        <!-- command empty -->\n        <div *brnCmdEmpty hlmCmdEmpty>{{ commandData.commandEmptyText }}</div>\n        <!-- command list -->\n        <brn-cmd-list hlm>\n          <!-- command groups -->\n          @if( commandData.commandGroups ) {\n            @for (group of commandData.commandGroups; track group.commandGroupLabel; let last = $last) {\n              <brn-cmd-group hlm [label]=\"group.commandGroupLabel\" class=\"w-full\">\n                <!-- command items -->\n                @for (item of group.commandItems; track item.commandItemLabel) {\n                  <button brnCmdItem hlm class=\"w-full\">\n                    <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                    {{ item.commandItemLabel }}\n                    @if( item.commandItemShortcut ) {\n                      <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                    }\n                  </button>\n                }\n              </brn-cmd-group>\n              @if( !last || commandData.commandItems) {\n                <brn-cmd-separator hlm />\n              }\n\n            }\n          }\n          <!-- command items -->\n          @if( commandData.commandItems ) {\n            <div class=\"p-1\">\n            @for (item of commandData.commandItems; track item.commandItemLabel) {\n              <button brnCmdItem hlm class=\"w-full\">\n                <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                {{ item.commandItemLabel }}\n                @if( item.commandItemShortcut ) {\n                  <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                }\n              </button>\n            }\n            </div>\n          }\n        </brn-cmd-list>\n      </brn-cmd>\n    }\n  `,\n})\nexport class CommandComponent {\n  @Input() class = '';\n  @Input() commandEmptyText = 'No results found';\n\n  @Input({required: true}) commandData!: CommandData;\n\n}\n",
+            "properties": [
+                {
+                    "name": "commandGroupLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "commandItems",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CommandItem[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
+            "name": "CommandItem",
+            "id": "interface-CommandItem-5cf1e3067079044a3eec34f74844f2d3af04b917f50f4b6fddcafbfe6b883b3eb3fbff8653640d254c45a0397fb38ae7a8b4a102d15178f838ddecbfb1efc9d7",
+            "file": "feature/ui/src/lib/ui/components/command/command.component.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "import { CommandGroupComponent } from './partials/command-group.component';\n\nimport { Component, Input } from '@angular/core';\nimport { NgIf, NgFor } from '@angular/common';\nimport {\n  BrnCommandImports\n} from '@spartan-ng/ui-command-brain';\nimport { HlmCommandImports } from '@spartan-ng/ui-command-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport { IconComponent } from '../icon/icon.component';\nimport { ButtonComponent } from '../button/button.component';\nimport { IconName, provideIcons } from '@ng-icons/core';\nimport {\n  lucideCalendar,\n  lucideWallet,\n  lucideSmile,\n  lucideCog,\n  lucideSearch,\n  lucideUser,\n  lucidePlus,\n} from '@ng-icons/lucide';\n\nimport { CommandInputComponent } from './partials/command-input.component';\nimport { CommandListComponent } from './partials/command-list.component';\nimport { CommandItemComponent } from './partials/command-item.component';\nimport { CommandSeparatorComponent } from './partials/command-separator.component';\nimport { CommandEmptyComponent } from './partials/command-empty.component';\n\nexport interface CommandItem {\n  commandItemLabel: string;\n  commandItemIcon: IconName;\n  commandItemShortcut?: string;\n}\n\nexport interface CommandGroup {\n  commandGroupLabel: string;\n  commandItems: CommandItem[];\n}\n\nexport interface CommandData {\n  commandInputPlaceholder: string;\n  commandEmptyText: string;\n  commandGroups?: CommandGroup[];\n  commandItems?: CommandItem[];\n}\n\n@Component({\n  selector: 'Command',\n  standalone: true,\n  imports: [\n    BrnCommandImports,\n    HlmCommandImports,\n    HlmIconComponent,\n    IconComponent,\n    HlmButtonDirective,\n    ButtonComponent,\n    CommandInputComponent,\n    CommandListComponent,\n    CommandGroupComponent,\n    CommandItemComponent,\n    CommandSeparatorComponent,\n    CommandEmptyComponent,\n    NgIf,\n    NgFor,\n  ],\n  providers: [\n    provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),\n  ],\n  template: `\n    @if( commandData ) {\n      <brn-cmd [class]=\"class\">\n        <!-- input wrapper -->\n        <hlm-cmd-input-wrapper>\n          <hlm-icon name=\"lucideSearch\" />\n          <input placeholder=\"{{ commandData.commandInputPlaceholder }}\" brnCmdInput hlm />\n        </hlm-cmd-input-wrapper>\n        <!-- command empty -->\n        <div *brnCmdEmpty hlmCmdEmpty>{{ commandData.commandEmptyText }}</div>\n        <!-- command list -->\n        <brn-cmd-list hlm>\n          <!-- command groups -->\n          @if( commandData.commandGroups ) {\n            @for (group of commandData.commandGroups; track group.commandGroupLabel; let last = $last) {\n              <brn-cmd-group hlm [label]=\"group.commandGroupLabel\" class=\"w-full\">\n                <!-- command items -->\n                @for (item of group.commandItems; track item.commandItemLabel) {\n                  <button brnCmdItem hlm class=\"w-full\">\n                    <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                    {{ item.commandItemLabel }}\n                    @if( item.commandItemShortcut ) {\n                      <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                    }\n                  </button>\n                }\n              </brn-cmd-group>\n              @if( !last || commandData.commandItems) {\n                <brn-cmd-separator hlm />\n              }\n\n            }\n          }\n          <!-- command items -->\n          @if( commandData.commandItems ) {\n            <div class=\"p-1\">\n            @for (item of commandData.commandItems; track item.commandItemLabel) {\n              <button brnCmdItem hlm class=\"w-full\">\n                <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                {{ item.commandItemLabel }}\n                @if( item.commandItemShortcut ) {\n                  <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                }\n              </button>\n            }\n            </div>\n          }\n        </brn-cmd-list>\n      </brn-cmd>\n    }\n  `,\n})\nexport class CommandComponent {\n  @Input() class = '';\n  @Input() commandEmptyText = 'No results found';\n\n  @Input({required: true}) commandData!: CommandData;\n\n}\n",
+            "properties": [
+                {
+                    "name": "commandItemIcon",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "IconName",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "commandItemLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "commandItemShortcut",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 33
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
         }
     ],
     "injectables": [],
@@ -1229,7 +1355,7 @@
         },
         {
             "name": "CollapsibleComponent",
-            "id": "component-CollapsibleComponent-704901cce426bf1c5b2fc3524056c10720290eb7739f1e8ea543bf3d94e38af610048e6e691bbf97bedaf9d4a1a5f4956dc5f37450f7c5e16171a76d028a0656",
+            "id": "component-CollapsibleComponent-70e10d4aa057c3b2b284db2fb3e4d3ae3f93a4064868c37e33daa57b8012dbafa9077dbbb96a16261998a03a85750afc6e8bbcc9b80ea1d4369bdc641a4d5356",
             "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1243,7 +1369,7 @@
             "selector": "Collapsible",
             "styleUrls": [],
             "styles": [],
-            "template": "<brn-collapsible [class]=\"'flex flex-col w-[350px] space-y-2 ' + class\">\n  <div class=\"flex items-center justify-between px-4 space-x-4\">\n    <h4 class=\"text-sm font-semibold\">{{collapsibleTitle}}</h4>\n    <button brnCollapsibleTrigger hlmBtn variant=\"ghost\" size=\"sm\" class=\"p-0 w-9\">\n      <Icon name=\"lucideChevronsDownUp\" size=\"sm\" class=\"w-4 h-4\" />\n      <span class=\"sr-only\">Toggle</span>\n    </button>\n  </div>\n  <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">\n    {{collapsibleTriggerText}}\n  </div>\n  <brn-collapsible-content class=\"space-y-2\">\n    @for (c of collapsibleContent; track c.text){\n      <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">{{c.text}}</div>\n    }\n  </brn-collapsible-content>\n</brn-collapsible>\n",
+            "template": "<brn-collapsible [class]=\"'flex flex-col space-y-2 ' + class\">\n  <div class=\"flex items-center justify-between px-4 space-x-4\">\n    <h4 class=\"text-sm font-semibold\">{{collapsibleTitle}}</h4>\n    <button brnCollapsibleTrigger hlmBtn variant=\"ghost\" size=\"sm\" class=\"p-0 w-9\">\n      <Icon name=\"lucideChevronsDownUp\" size=\"sm\" class=\"w-4 h-4\" />\n      <span class=\"sr-only\">Toggle</span>\n    </button>\n  </div>\n  <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">\n    {{collapsibleTriggerText}}\n  </div>\n  <brn-collapsible-content class=\"space-y-2\">\n    @for (c of collapsibleContent; track c.text){\n      <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">{{c.text}}</div>\n    }\n  </brn-collapsible-content>\n</brn-collapsible>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -1324,7 +1450,699 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgFor } from '@angular/common';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport {\n  BrnCollapsibleComponent,\n  BrnCollapsibleContentComponent,\n  BrnCollapsibleTriggerDirective,\n} from '@spartan-ng/ui-collapsible-brain';\nimport { IconComponent } from '../icon/icon.component';\nimport { provideIcons } from '@ng-icons/core';\nimport { lucideChevronsDownUp } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'Collapsible',\n  standalone: true,\n  imports: [\n    NgFor,\n    BrnCollapsibleComponent,\n    BrnCollapsibleTriggerDirective,\n    HlmButtonDirective,\n    BrnCollapsibleContentComponent,\n    IconComponent,\n  ],\n  providers: [\n    provideIcons({\n      lucideChevronsDownUp\n    }),\n  ],\n  template: `\n    <brn-collapsible [class]=\"'flex flex-col w-[350px] space-y-2 ' + class\">\n      <div class=\"flex items-center justify-between px-4 space-x-4\">\n        <h4 class=\"text-sm font-semibold\">{{collapsibleTitle}}</h4>\n        <button brnCollapsibleTrigger hlmBtn variant=\"ghost\" size=\"sm\" class=\"p-0 w-9\">\n          <Icon name=\"lucideChevronsDownUp\" size=\"sm\" class=\"w-4 h-4\" />\n          <span class=\"sr-only\">Toggle</span>\n        </button>\n      </div>\n      <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">\n        {{collapsibleTriggerText}}\n      </div>\n      <brn-collapsible-content class=\"space-y-2\">\n        @for (c of collapsibleContent; track c.text){\n          <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">{{c.text}}</div>\n        }\n      </brn-collapsible-content>\n    </brn-collapsible>\n  `,\n})\nexport class CollapsibleComponent {\n  @Input() class = '';\n  @Input({ required: true}) collapsibleTitle!: string;\n  @Input({ required: true}) collapsibleTriggerText!: string;\n  @Input({ required: true}) collapsibleContent!: { text: string }[];\n}\n",
+            "sourceCode": "import { Component, ElementRef, Input} from '@angular/core';\nimport { NgFor } from '@angular/common';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport {\n  BrnCollapsibleComponent,\n  BrnCollapsibleContentComponent,\n  BrnCollapsibleTriggerDirective,\n} from '@spartan-ng/ui-collapsible-brain';\nimport { IconComponent } from '../icon/icon.component';\nimport { provideIcons } from '@ng-icons/core';\nimport { lucideChevronsDownUp } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'Collapsible',\n  standalone: true,\n  imports: [\n    NgFor,\n    BrnCollapsibleComponent,\n    BrnCollapsibleTriggerDirective,\n    HlmButtonDirective,\n    BrnCollapsibleContentComponent,\n    IconComponent,\n  ],\n  providers: [\n    provideIcons({\n      lucideChevronsDownUp\n    }),\n  ],\n  template: `\n    <brn-collapsible [class]=\"'flex flex-col space-y-2 ' + class\">\n      <div class=\"flex items-center justify-between px-4 space-x-4\">\n        <h4 class=\"text-sm font-semibold\">{{collapsibleTitle}}</h4>\n        <button brnCollapsibleTrigger hlmBtn variant=\"ghost\" size=\"sm\" class=\"p-0 w-9\">\n          <Icon name=\"lucideChevronsDownUp\" size=\"sm\" class=\"w-4 h-4\" />\n          <span class=\"sr-only\">Toggle</span>\n        </button>\n      </div>\n      <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">\n        {{collapsibleTriggerText}}\n      </div>\n      <brn-collapsible-content class=\"space-y-2\">\n        @for (c of collapsibleContent; track c.text){\n          <div class=\"px-4 py-3 font-mono text-sm border rounded-md border-border\">{{c.text}}</div>\n        }\n      </brn-collapsible-content>\n    </brn-collapsible>\n  `,\n})\nexport class CollapsibleComponent {\n  @Input() class = '';\n  @Input({ required: true}) collapsibleTitle!: string;\n  @Input({ required: true}) collapsibleTriggerText!: string;\n  @Input({ required: true}) collapsibleContent!: { text: string }[];\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "ComboboxComponent",
+            "id": "component-ComboboxComponent-db7543d9a0827ce497bf64384356ae0c8e3e6b65053f4225cf88382c9e7136512629d73969498681083f44b6d84778d56286da62c3fa0b1a49f40c102fb06ccf",
+            "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "provideIcons({ lucideChevronsUpDown, lucideSearch, lucideCheck })"
+                }
+            ],
+            "selector": "Combobox",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<brn-popover [state]=\"state()\" (stateChanged)=\"stateChanged($event)\" sideOffset=\"5\" closeDelay=\"100\">\n  <button class=\"w-[200px] justify-between\" id=\"edit-profile\" variant=\"outline\" brnPopoverTrigger hlmBtn>\n    {{ currentFramework() ? currentFramework().label : 'Select framework...' }}\n    <hlm-icon size=\"sm\" name=\"lucideChevronsUpDown\" />\n  </button>\n  <brn-cmd *brnPopoverContent=\"let ctx\" hlmPopoverContent hlm class=\"p-0 w-[200px]\">\n    <hlm-cmd-input-wrapper>\n      <hlm-icon name=\"lucideSearch\" />\n      <input placeholder=\"Search framework...\" brnCmdInput hlm />\n    </hlm-cmd-input-wrapper>\n    <div *brnCmdEmpty hlmCmdEmpty>No results found.</div>\n    <brn-cmd-list hlm>\n      <brn-cmd-group hlm>\n        <button\n          *ngFor=\"let framework of frameworks\"\n          brnCmdItem\n          [value]=\"framework.value\"\n          (selected)=\"commandSelected(framework)\"\n          hlm\n        >\n          <hlm-icon\n            [class.opacity-0]=\"currentFramework()?.value !== framework.value\"\n            name=\"lucideCheck\"\n            hlmCmdIcon\n          />\n          {{ framework.label }}\n        </button>\n      </brn-cmd-group>\n    </brn-cmd-list>\n  </brn-cmd>\n</brn-popover>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "currentFramework",
+                    "defaultValue": "signal<Framework | undefined>(undefined)",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 102,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "frameworks",
+                    "defaultValue": "[\n    {\n      label: 'AnalogJs',\n      value: 'analogjs',\n    },\n    {\n      label: 'Angular',\n      value: 'angular',\n    },\n    {\n      label: 'Vue',\n      value: 'vue',\n    },\n    {\n      label: 'Nuxt',\n      value: 'nuxt',\n    },\n    {\n      label: 'React',\n      value: 'react',\n    },\n    {\n      label: 'NextJs',\n      value: 'nextjs',\n    },\n  ]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 76,
+                    "modifierKind": [
+                        125
+                    ]
+                },
+                {
+                    "name": "state",
+                    "defaultValue": "signal<'closed' | 'open'>('closed')",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 103,
+                    "modifierKind": [
+                        125
+                    ]
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "commandSelected",
+                    "args": [
+                        {
+                            "name": "framework",
+                            "type": "Framework",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 109,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "framework",
+                            "type": "Framework",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "stateChanged",
+                    "args": [
+                        {
+                            "name": "state",
+                            "type": "\"open\" | \"closed\"",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 105,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "state",
+                            "type": "\"open\" | \"closed\"",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "HlmCommandImports"
+                },
+                {
+                    "name": "HlmIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnPopoverComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BrnPopoverTriggerDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmPopoverContentDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnPopoverContentDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "NgFor"
+                },
+                {
+                    "name": "BrnCommandComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BrnCommandEmptyDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnCommandGroupComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BrnCommandInputDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnCommandItemDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnCommandListComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "BrnCommandLoaderDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "BrnCommandSeparatorComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, signal } from '@angular/core';\nimport { BrnCommandComponent, BrnCommandEmptyDirective, BrnCommandGroupComponent, BrnCommandInputDirective, BrnCommandItemDirective, BrnCommandListComponent, BrnCommandLoaderDirective, BrnCommandSeparatorComponent } from '@spartan-ng/ui-command-brain';\nimport { HlmCommandImports } from '@spartan-ng/ui-command-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport {\n  BrnPopoverComponent,\n  BrnPopoverContentDirective,\n  BrnPopoverTriggerDirective,\n} from '@spartan-ng/ui-popover-brain';\nimport { HlmPopoverContentDirective } from '@spartan-ng/ui-popover-helm';\nimport { NgFor} from '@angular/common';\nimport { provideIcons } from '@ng-icons/core';\nimport { lucideChevronsUpDown, lucideCheck, lucideSearch } from '@ng-icons/lucide';\n\ntype Framework = { label: string; value: string };\n\n@Component({\n  selector: 'Combobox',\n  standalone: true,\n  imports: [\n    HlmCommandImports,\n    HlmIconComponent,\n    HlmButtonDirective,\n    BrnPopoverComponent,\n    BrnPopoverTriggerDirective,\n    HlmPopoverContentDirective,\n    BrnPopoverContentDirective,\n    NgFor,\n    BrnCommandComponent,\n    BrnCommandEmptyDirective,\n    BrnCommandGroupComponent,\n    BrnCommandInputDirective,\n    BrnCommandItemDirective,\n    BrnCommandListComponent,\n    BrnCommandLoaderDirective,\n    BrnCommandSeparatorComponent,\n  ],\n  providers: [provideIcons({ lucideChevronsUpDown, lucideSearch, lucideCheck })],\n  template: `\n    <brn-popover [state]=\"state()\" (stateChanged)=\"stateChanged($event)\" sideOffset=\"5\" closeDelay=\"100\">\n      <button class=\"w-[200px] justify-between\" id=\"edit-profile\" variant=\"outline\" brnPopoverTrigger hlmBtn>\n        {{ currentFramework() ? currentFramework().label : 'Select framework...' }}\n        <hlm-icon size=\"sm\" name=\"lucideChevronsUpDown\" />\n      </button>\n      <brn-cmd *brnPopoverContent=\"let ctx\" hlmPopoverContent hlm class=\"p-0 w-[200px]\">\n        <hlm-cmd-input-wrapper>\n          <hlm-icon name=\"lucideSearch\" />\n          <input placeholder=\"Search framework...\" brnCmdInput hlm />\n        </hlm-cmd-input-wrapper>\n        <div *brnCmdEmpty hlmCmdEmpty>No results found.</div>\n        <brn-cmd-list hlm>\n          <brn-cmd-group hlm>\n            <button\n              *ngFor=\"let framework of frameworks\"\n              brnCmdItem\n              [value]=\"framework.value\"\n              (selected)=\"commandSelected(framework)\"\n              hlm\n            >\n              <hlm-icon\n                [class.opacity-0]=\"currentFramework()?.value !== framework.value\"\n                name=\"lucideCheck\"\n                hlmCmdIcon\n              />\n              {{ framework.label }}\n            </button>\n          </brn-cmd-group>\n        </brn-cmd-list>\n      </brn-cmd>\n    </brn-popover>\n  `,\n})\nexport class ComboboxComponent {\n  public frameworks = [\n    {\n      label: 'AnalogJs',\n      value: 'analogjs',\n    },\n    {\n      label: 'Angular',\n      value: 'angular',\n    },\n    {\n      label: 'Vue',\n      value: 'vue',\n    },\n    {\n      label: 'Nuxt',\n      value: 'nuxt',\n    },\n    {\n      label: 'React',\n      value: 'react',\n    },\n    {\n      label: 'NextJs',\n      value: 'nextjs',\n    },\n  ];\n  public currentFramework = signal<Framework | undefined>(undefined);\n  public state = signal<'closed' | 'open'>('closed');\n\n  stateChanged(state: 'open' | 'closed') {\n    this.state.set(state);\n  }\n\n  commandSelected(framework: Framework) {\n    this.state.set('closed');\n    if (this.currentFramework()?.value === framework.value) {\n      this.currentFramework.set(undefined);\n    } else {\n      this.currentFramework.set(framework);\n    }\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "CommandComponent",
+            "id": "component-CommandComponent-5cf1e3067079044a3eec34f74844f2d3af04b917f50f4b6fddcafbfe6b883b3eb3fbff8653640d254c45a0397fb38ae7a8b4a102d15178f838ddecbfb1efc9d7",
+            "file": "feature/ui/src/lib/ui/components/command/command.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog })"
+                }
+            ],
+            "selector": "Command",
+            "styleUrls": [],
+            "styles": [],
+            "template": "@if( commandData ) {\n  <brn-cmd [class]=\"class\">\n    <!-- input wrapper -->\n    <hlm-cmd-input-wrapper>\n      <hlm-icon name=\"lucideSearch\" />\n      <input placeholder=\"{{ commandData.commandInputPlaceholder }}\" brnCmdInput hlm />\n    </hlm-cmd-input-wrapper>\n    <!-- command empty -->\n    <div *brnCmdEmpty hlmCmdEmpty>{{ commandData.commandEmptyText }}</div>\n    <!-- command list -->\n    <brn-cmd-list hlm>\n      <!-- command groups -->\n      @if( commandData.commandGroups ) {\n        @for (group of commandData.commandGroups; track group.commandGroupLabel; let last = $last) {\n          <brn-cmd-group hlm [label]=\"group.commandGroupLabel\" class=\"w-full\">\n            <!-- command items -->\n            @for (item of group.commandItems; track item.commandItemLabel) {\n              <button brnCmdItem hlm class=\"w-full\">\n                <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                {{ item.commandItemLabel }}\n                @if( item.commandItemShortcut ) {\n                  <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                }\n              </button>\n            }\n          </brn-cmd-group>\n          @if( !last || commandData.commandItems) {\n            <brn-cmd-separator hlm />\n          }\n\n        }\n      }\n      <!-- command items -->\n      @if( commandData.commandItems ) {\n        <div class=\"p-1\">\n        @for (item of commandData.commandItems; track item.commandItemLabel) {\n          <button brnCmdItem hlm class=\"w-full\">\n            <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n            {{ item.commandItemLabel }}\n            @if( item.commandItemShortcut ) {\n              <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n            }\n          </button>\n        }\n        </div>\n      }\n    </brn-cmd-list>\n  </brn-cmd>\n}\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 123,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "commandData",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 126,
+                    "type": "CommandData",
+                    "decorators": []
+                },
+                {
+                    "name": "commandEmptyText",
+                    "defaultValue": "'No results found'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 124,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnCommandImports"
+                },
+                {
+                    "name": "HlmCommandImports"
+                },
+                {
+                    "name": "HlmIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmButtonDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CommandInputComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CommandListComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CommandGroupComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CommandItemComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CommandSeparatorComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "CommandEmptyComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "NgIf"
+                },
+                {
+                    "name": "NgFor"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommandGroupComponent } from './partials/command-group.component';\n\nimport { Component, Input } from '@angular/core';\nimport { NgIf, NgFor } from '@angular/common';\nimport {\n  BrnCommandImports\n} from '@spartan-ng/ui-command-brain';\nimport { HlmCommandImports } from '@spartan-ng/ui-command-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { HlmButtonDirective } from '@spartan-ng/ui-button-helm';\nimport { IconComponent } from '../icon/icon.component';\nimport { ButtonComponent } from '../button/button.component';\nimport { IconName, provideIcons } from '@ng-icons/core';\nimport {\n  lucideCalendar,\n  lucideWallet,\n  lucideSmile,\n  lucideCog,\n  lucideSearch,\n  lucideUser,\n  lucidePlus,\n} from '@ng-icons/lucide';\n\nimport { CommandInputComponent } from './partials/command-input.component';\nimport { CommandListComponent } from './partials/command-list.component';\nimport { CommandItemComponent } from './partials/command-item.component';\nimport { CommandSeparatorComponent } from './partials/command-separator.component';\nimport { CommandEmptyComponent } from './partials/command-empty.component';\n\nexport interface CommandItem {\n  commandItemLabel: string;\n  commandItemIcon: IconName;\n  commandItemShortcut?: string;\n}\n\nexport interface CommandGroup {\n  commandGroupLabel: string;\n  commandItems: CommandItem[];\n}\n\nexport interface CommandData {\n  commandInputPlaceholder: string;\n  commandEmptyText: string;\n  commandGroups?: CommandGroup[];\n  commandItems?: CommandItem[];\n}\n\n@Component({\n  selector: 'Command',\n  standalone: true,\n  imports: [\n    BrnCommandImports,\n    HlmCommandImports,\n    HlmIconComponent,\n    IconComponent,\n    HlmButtonDirective,\n    ButtonComponent,\n    CommandInputComponent,\n    CommandListComponent,\n    CommandGroupComponent,\n    CommandItemComponent,\n    CommandSeparatorComponent,\n    CommandEmptyComponent,\n    NgIf,\n    NgFor,\n  ],\n  providers: [\n    provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),\n  ],\n  template: `\n    @if( commandData ) {\n      <brn-cmd [class]=\"class\">\n        <!-- input wrapper -->\n        <hlm-cmd-input-wrapper>\n          <hlm-icon name=\"lucideSearch\" />\n          <input placeholder=\"{{ commandData.commandInputPlaceholder }}\" brnCmdInput hlm />\n        </hlm-cmd-input-wrapper>\n        <!-- command empty -->\n        <div *brnCmdEmpty hlmCmdEmpty>{{ commandData.commandEmptyText }}</div>\n        <!-- command list -->\n        <brn-cmd-list hlm>\n          <!-- command groups -->\n          @if( commandData.commandGroups ) {\n            @for (group of commandData.commandGroups; track group.commandGroupLabel; let last = $last) {\n              <brn-cmd-group hlm [label]=\"group.commandGroupLabel\" class=\"w-full\">\n                <!-- command items -->\n                @for (item of group.commandItems; track item.commandItemLabel) {\n                  <button brnCmdItem hlm class=\"w-full\">\n                    <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                    {{ item.commandItemLabel }}\n                    @if( item.commandItemShortcut ) {\n                      <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                    }\n                  </button>\n                }\n              </brn-cmd-group>\n              @if( !last || commandData.commandItems) {\n                <brn-cmd-separator hlm />\n              }\n\n            }\n          }\n          <!-- command items -->\n          @if( commandData.commandItems ) {\n            <div class=\"p-1\">\n            @for (item of commandData.commandItems; track item.commandItemLabel) {\n              <button brnCmdItem hlm class=\"w-full\">\n                <hlm-icon [name]=\"item.commandItemIcon\" hlmCmdIcon />\n                {{ item.commandItemLabel }}\n                @if( item.commandItemShortcut ) {\n                  <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>\n                }\n              </button>\n            }\n            </div>\n          }\n        </brn-cmd-list>\n      </brn-cmd>\n    }\n  `,\n})\nexport class CommandComponent {\n  @Input() class = '';\n  @Input() commandEmptyText = 'No results found';\n\n  @Input({required: true}) commandData!: CommandData;\n\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "CommandEmptyComponent",
+            "id": "component-CommandEmptyComponent-26f87ccf75b4b2b7fa985d1258715b355d8e88092e5bcad5255305e9fdef8b8ffd25e5d1278252f9b993178cc2e441cb622e8c8914028ad14aa722aa2173d830",
+            "file": "feature/ui/src/lib/ui/components/command/partials/command-empty.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "CommandEmpty",
+            "styleUrls": [],
+            "styles": [
+                "\n      :host {\n        display: contents;\n      }\n    "
+            ],
+            "template": "<div *brnCmdEmpty hlmCmdEmpty>{{commandEmptyText}}</div>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "commandEmptyText",
+                    "defaultValue": "'No items found'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 26,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnCommandEmptyDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCommandEmptyDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\nimport  { BrnCommandEmptyDirective } from '@spartan-ng/ui-command-brain';\nimport { HlmCommandEmptyDirective } from '@spartan-ng/ui-command-helm';\n\n@Component({\n  selector: 'CommandEmpty',\n  standalone: true,\n  imports: [\n    BrnCommandEmptyDirective,\n    HlmCommandEmptyDirective,\n  ],\n  template: `\n    <div *brnCmdEmpty hlmCmdEmpty>{{commandEmptyText}}</div>\n  `,\n  encapsulation: ViewEncapsulation.None,\n  styles: [\n    `\n      :host {\n        display: contents;\n      }\n    `,\n  ]\n\n})\nexport class CommandEmptyComponent {\n  @Input() commandEmptyText = 'No items found';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      :host {\n        display: contents;\n      }\n    \n",
+            "extends": []
+        },
+        {
+            "name": "CommandGroupComponent",
+            "id": "component-CommandGroupComponent-00c027b5d696dd9839fcc4ceabd9e2a1b3008ee3d93952fc093674a2add3f05fe0ac7b2fa2001f1336248ec6d7ddde4ad754892d07a2c14a45376cf0d69dc1fe",
+            "file": "feature/ui/src/lib/ui/components/command/partials/command-group.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "CommandGroup",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<brn-cmd-group hlm [label]=\"commandGroupLabel\">\n  <ng-content />\n</brn-cmd-group>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "required": true,
+                    "name": "commandGroupLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnCommandGroupComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmCommandGroupDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport  { BrnCommandGroupComponent } from '@spartan-ng/ui-command-brain';\nimport { HlmCommandGroupDirective } from '@spartan-ng/ui-command-helm';\n\n@Component({\n  selector: 'CommandGroup',\n  standalone: true,\n  imports: [\n    BrnCommandGroupComponent,\n    HlmCommandGroupDirective,\n  ],\n  template: `\n    <brn-cmd-group hlm [label]=\"commandGroupLabel\">\n      <ng-content />\n    </brn-cmd-group>\n  `,\n})\nexport class CommandGroupComponent {\n  @Input({ required: true }) commandGroupLabel!: string;\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "CommandInputComponent",
+            "id": "component-CommandInputComponent-c3b4ec532c5a33ae904b14c9120ce4be5ec44c2c68331f4819d4f6e00582d3410d4bd1d5c3686ed10217ce96ce37ce51b078f16bd30cd9de21c9a25f90406e06",
+            "file": "feature/ui/src/lib/ui/components/command/partials/command-input.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "provideIcons({ lucideSearch })"
+                }
+            ],
+            "selector": "CommandInput, div[CommandInput]",
+            "styleUrls": [],
+            "styles": [
+                "\n      :host {\n        display: contents;\n      }\n    "
+            ],
+            "template": "<hlm-cmd-input-wrapper>\n  <Icon name=\"lucideSearch\" />\n  <input placeholder=\"{{commandInputPlaceholder}}\" brnCmdInput hlm />\n</hlm-cmd-input-wrapper>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "commandInputPlaceholder",
+                    "defaultValue": "'Type a command or search...'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 36,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnCommandInputDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCommandInputDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCommandInputWrapperComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, ViewEncapsulation } from '@angular/core';\nimport  { BrnCommandInputDirective } from '@spartan-ng/ui-command-brain';\nimport { HlmCommandInputDirective, HlmCommandInputWrapperComponent } from '@spartan-ng/ui-command-helm';\nimport { IconComponent } from '../../icon/icon.component';\nimport { provideIcons } from '@ng-icons/core';\nimport { lucideSearch } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'CommandInput, div[CommandInput]',\n  standalone: true,\n  imports: [\n    BrnCommandInputDirective,\n    HlmCommandInputDirective,\n    HlmCommandInputWrapperComponent,\n    IconComponent,\n  ],\n  providers: [\n    provideIcons({ lucideSearch }),\n  ],\n  styles: [\n    `\n      :host {\n        display: contents;\n      }\n    `,\n  ],\n  template: `\n    <hlm-cmd-input-wrapper>\n      <Icon name=\"lucideSearch\" />\n      <input placeholder=\"{{commandInputPlaceholder}}\" brnCmdInput hlm />\n    </hlm-cmd-input-wrapper>\n  `,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class CommandInputComponent {\n  @Input() commandInputPlaceholder = 'Type a command or search...';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      :host {\n        display: contents;\n      }\n    \n",
+            "extends": []
+        },
+        {
+            "name": "CommandItemComponent",
+            "id": "component-CommandItemComponent-31048445b8ed94faf3863e2015469c4e8bfb5e83184a92254141f57b994adbcfd6f0a7f0ee83da4cf2c6bd4556427a3cf50e569407936df88362a3cb174edcb8",
+            "file": "feature/ui/src/lib/ui/components/command/partials/command-item.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "provideIcons({\n    lucideTerminal\n})"
+                }
+            ],
+            "selector": "CommandItem",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<button brnCmdItem hlm class=\"flex w-full\">\n  <hlm-icon [name]=\"commandItemIcon\" hlmCmdIcon />\n  {{commandItemLabel}}\n  @if (commandItemShortcut){\n    <hlm-cmd-shortcut>{{commandItemShortcut}}</hlm-cmd-shortcut>\n  }\n</button>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "commandItemIcon",
+                    "defaultValue": "'lucideTerminal'",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "IconName",
+                    "decorators": []
+                },
+                {
+                    "required": true,
+                    "name": "commandItemLabel",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "optional": false,
+                    "line": 39,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "commandItemShortcut",
+                    "defaultValue": "''",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 41,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnCommandItemDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCommandItemDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCommandItemIconDirective",
+                    "type": "directive"
+                },
+                {
+                    "name": "HlmCommandShortcutComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmIconComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "ButtonComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "IconComponent",
+                    "type": "component"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { NgIf } from '@angular/common';\nimport { BrnCommandItemDirective } from '@spartan-ng/ui-command-brain';\nimport { HlmCommandItemDirective, HlmCommandShortcutComponent, HlmCommandItemIconDirective } from '@spartan-ng/ui-command-helm';\nimport { HlmIconComponent } from '@spartan-ng/ui-icon-helm';\nimport { ButtonComponent } from '../../button/button.component';\nimport { IconComponent } from '../../icon/icon.component';\nimport { provideIcons, IconName } from '@ng-icons/core';\nimport { lucideTerminal } from '@ng-icons/lucide';\n\n@Component({\n  selector: 'CommandItem',\n  standalone: true,\n  imports: [\n    BrnCommandItemDirective,\n    HlmCommandItemDirective,\n    HlmCommandItemIconDirective,\n    HlmCommandShortcutComponent,\n    HlmIconComponent,\n    ButtonComponent,\n    IconComponent,\n  ],\n  providers: [\n    provideIcons({\n      lucideTerminal\n    }),\n  ],\n  template: `\n    <button brnCmdItem hlm class=\"flex w-full\">\n      <hlm-icon [name]=\"commandItemIcon\" hlmCmdIcon />\n      {{commandItemLabel}}\n      @if (commandItemShortcut){\n        <hlm-cmd-shortcut>{{commandItemShortcut}}</hlm-cmd-shortcut>\n      }\n    </button>\n  `,\n})\nexport class CommandItemComponent {\n  @Input({ required: true }) commandItemLabel!: string;\n  @Input() commandItemIcon: IconName = 'lucideTerminal';\n  @Input() commandItemShortcut?: string = '';\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "CommandListComponent",
+            "id": "component-CommandListComponent-1c6a141f9399718edda85003e9237c09f77859cc66cc37c7a7a1fb6dd2f52c2b43b31f503169225f88d0b2141de4f4bb25e5a1c117f154b532bef5198bcaa1fb",
+            "file": "feature/ui/src/lib/ui/components/command/partials/command-list.component.ts",
+            "encapsulation": [
+                "ViewEncapsulation.None"
+            ],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "CommandList",
+            "styleUrls": [],
+            "styles": [
+                "\n      :host {\n        display: contents;\n      }\n    "
+            ],
+            "template": "<brn-cmd-list hlm>\n  <ng-content />\n</brn-cmd-list>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnCommandListComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmCommandListDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, ViewEncapsulation } from '@angular/core';\nimport  { BrnCommandListComponent } from '@spartan-ng/ui-command-brain';\nimport { HlmCommandListDirective } from '@spartan-ng/ui-command-helm';\n\n@Component({\n  selector: 'CommandList',\n  standalone: true,\n  imports: [\n    BrnCommandListComponent,\n    HlmCommandListDirective,\n  ],\n  styles: [\n    `\n      :host {\n        display: contents;\n      }\n    `,\n  ],\n  template: `\n    <brn-cmd-list hlm>\n      <ng-content />\n    </brn-cmd-list>\n  `,\n  encapsulation: ViewEncapsulation.None,\n})\nexport class CommandListComponent {}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "\n      :host {\n        display: contents;\n      }\n    \n",
+            "extends": []
+        },
+        {
+            "name": "CommandSeparatorComponent",
+            "id": "component-CommandSeparatorComponent-f31a3cf014d857b0d9d7e33d23a89da2d71dc22572efd3eb3cd9436b23db2ab993b9188a97255f85895aa679ed377d9492cdaa34dcef63d75e6c109ea03c25b4",
+            "file": "feature/ui/src/lib/ui/components/command/partials/command-separator.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "CommandSeparator",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<brn-cmd-separator hlm></brn-cmd-separator>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "BrnCommandSeparatorComponent",
+                    "type": "component"
+                },
+                {
+                    "name": "HlmCommandSeparatorDirective",
+                    "type": "directive"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component } from '@angular/core';\nimport  { BrnCommandSeparatorComponent } from '@spartan-ng/ui-command-brain';\nimport { HlmCommandSeparatorDirective } from '@spartan-ng/ui-command-helm';\n\n@Component({\n  selector: 'CommandSeparator',\n  standalone: true,\n  imports: [\n    BrnCommandSeparatorComponent,\n    HlmCommandSeparatorDirective,\n  ],\n  template: `\n    <brn-cmd-separator hlm></brn-cmd-separator>\n  `,\n})\nexport class CommandSeparatorComponent {}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1487,6 +2305,16 @@
     "modules": [],
     "miscellaneous": {
         "variables": [
+            {
+                "name": "CommandDataMock",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "CommandData",
+                "defaultValue": "{\n  commandInputPlaceholder: 'Type a command or search...',\n  commandEmptyText: 'No results found.',\n  commandGroups: [\n    {\n      commandGroupLabel: 'Suggestions',\n      commandItems: [\n        {\n          commandItemLabel: 'Calendar',\n          commandItemIcon: 'lucideCalendar',\n        },\n        {\n          commandItemLabel: 'Search Emoji',\n          commandItemIcon: 'lucideSmile',\n        },\n        {\n          commandItemLabel: 'Calculator',\n          commandItemIcon: 'lucidePlus',\n        },\n      ],\n    },\n    {\n      commandGroupLabel: 'Settings',\n      commandItems: [\n        {\n          commandItemLabel: 'Profile',\n          commandItemIcon: 'lucideUser',\n          commandItemShortcut: '⌘P',\n        },\n        {\n          commandItemLabel: 'Billing',\n          commandItemIcon: 'lucideWallet',\n          commandItemShortcut: '⌘B',\n        },\n        {\n          commandItemLabel: 'Settings',\n          commandItemIcon: 'lucideCog',\n          commandItemShortcut: '⌘S',\n        },\n      ],\n    },\n  ]\n}"
+            },
             {
                 "name": "config",
                 "ctype": "miscellaneous",
@@ -1678,6 +2506,16 @@
                 "defaultValue": "{\n  args: {\n    carouselMaxWidthClass: 'max-w-xs',\n    items: Array.from({ length: 5 }, (_, i) => i + 1),\n    carouselContentClass: 'flex items-center justify-center p-6 aspect-square',\n    carouselItemClass: 'text-4xl font-semibold',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/carousel works!/gi)).toBeTruthy();\n  },\n}"
             },
             {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/combobox works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
                 "name": "Landscape",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1806,6 +2644,26 @@
                 "deprecationMessage": "",
                 "type": "Meta<CollapsibleComponent>",
                 "defaultValue": "{\n  component: CollapsibleComponent,\n  title: 'Components/Collapsible',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<ComboboxComponent>",
+                "defaultValue": "{\n  component: ComboboxComponent,\n  title: 'ComboboxComponent',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CommandComponent>",
+                "defaultValue": "{\n  component: CommandComponent,\n  title: 'Components/Command',\n}"
             },
             {
                 "name": "meta",
@@ -1965,7 +2823,27 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    class: '',\n    collapsibleTitle: '&#64;peduarte starred 3 repositories',\n    collapsibleTriggerText: '&#64;radix-ui/primitives',\n    collapsibleContent: [\n      { text: '&#64;radix-ui/colors' },\n      { text: '&#64;stitches/react' }\n    ],\n  },\n}"
+                "defaultValue": "{\n  args: {\n    class: '',\n    collapsibleTitle: '@peduarte starred 3 repositories',\n    collapsibleTriggerText: '@radix-ui/primitives',\n    collapsibleContent: [\n      { text: '@radix-ui/colors' },\n      { text: '@stitches/react' }\n    ],\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    class: '',\n    commandEmptyText: 'No results found',\n    commandData: CommandDataMock,\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -2010,6 +2888,17 @@
         ],
         "functions": [],
         "typealiases": [
+            {
+                "name": "Framework",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "literal type",
+                "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 187
+            },
             {
                 "name": "landscape",
                 "ctype": "miscellaneous",
@@ -2148,6 +3037,28 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CollapsibleComponent>",
                 "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<ComboboxComponent>",
+                "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CommandComponent>",
+                "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2332,6 +3243,38 @@
         ],
         "enumerations": [],
         "groupedVariables": {
+            "feature/ui/src/lib/ui/components/command/command.component.stories.ts": [
+                {
+                    "name": "CommandDataMock",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "CommandData",
+                    "defaultValue": "{\n  commandInputPlaceholder: 'Type a command or search...',\n  commandEmptyText: 'No results found.',\n  commandGroups: [\n    {\n      commandGroupLabel: 'Suggestions',\n      commandItems: [\n        {\n          commandItemLabel: 'Calendar',\n          commandItemIcon: 'lucideCalendar',\n        },\n        {\n          commandItemLabel: 'Search Emoji',\n          commandItemIcon: 'lucideSmile',\n        },\n        {\n          commandItemLabel: 'Calculator',\n          commandItemIcon: 'lucidePlus',\n        },\n      ],\n    },\n    {\n      commandGroupLabel: 'Settings',\n      commandItems: [\n        {\n          commandItemLabel: 'Profile',\n          commandItemIcon: 'lucideUser',\n          commandItemShortcut: '⌘P',\n        },\n        {\n          commandItemLabel: 'Billing',\n          commandItemIcon: 'lucideWallet',\n          commandItemShortcut: '⌘B',\n        },\n        {\n          commandItemLabel: 'Settings',\n          commandItemIcon: 'lucideCog',\n          commandItemShortcut: '⌘S',\n        },\n      ],\n    },\n  ]\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CommandComponent>",
+                    "defaultValue": "{\n  component: CommandComponent,\n  title: 'Components/Command',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    class: '',\n    commandEmptyText: 'No results found',\n    commandData: CommandDataMock,\n  },\n}"
+                }
+            ],
             "feature/ui/.storybook/main.ts": [
                 {
                     "name": "config",
@@ -2784,6 +3727,38 @@
                     "defaultValue": "{\n  args: {\n    carouselMaxWidthClass: 'max-w-xs',\n    items: Array.from({ length: 5 }, (_, i) => i + 1),\n    carouselContentClass: 'flex items-center justify-center p-6 aspect-square',\n    carouselItemClass: 'text-4xl font-semibold',\n  },\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/combobox works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<ComboboxComponent>",
+                    "defaultValue": "{\n  component: ComboboxComponent,\n  title: 'ComboboxComponent',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
                 {
                     "name": "Landscape",
@@ -2867,7 +3842,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    class: '',\n    collapsibleTitle: '&#64;peduarte starred 3 repositories',\n    collapsibleTriggerText: '&#64;radix-ui/primitives',\n    collapsibleContent: [\n      { text: '&#64;radix-ui/colors' },\n      { text: '&#64;stitches/react' }\n    ],\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    class: '',\n    collapsibleTitle: '@peduarte starred 3 repositories',\n    collapsibleTriggerText: '@radix-ui/primitives',\n    collapsibleContent: [\n      { text: '@radix-ui/colors' },\n      { text: '@stitches/react' }\n    ],\n  },\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
@@ -2896,6 +3871,19 @@
         "groupedFunctions": {},
         "groupedEnumerations": {},
         "groupedTypeAliases": {
+            "feature/ui/src/lib/ui/components/combobox/combobox.component.ts": [
+                {
+                    "name": "Framework",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "literal type",
+                    "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 187
+                }
+            ],
             "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts": [
                 {
                     "name": "landscape",
@@ -3083,6 +4071,32 @@
                     "kind": 183
                 }
             ],
+            "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<ComboboxComponent>",
+                    "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/command/command.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CommandComponent>",
+                    "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts": [
                 {
                     "name": "Story",
@@ -3257,7 +4271,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -3891,6 +4905,165 @@
                 "name": "CollapsibleComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/combobox/combobox.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ComboboxComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "CommandDataMock",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommandComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CommandData",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CommandGroup",
+                "coveragePercent": 0,
+                "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command.component.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "CommandItem",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/partials/command-empty.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommandEmptyComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/partials/command-group.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommandGroupComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/partials/command-input.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommandInputComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/2",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/partials/command-item.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommandItemComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/partials/command-list.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommandListComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/partials/command-separator.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "CommandSeparatorComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
