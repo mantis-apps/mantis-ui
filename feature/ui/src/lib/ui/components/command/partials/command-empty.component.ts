@@ -3,7 +3,7 @@ import  { BrnCommandEmptyDirective } from '@spartan-ng/ui-command-brain';
 import { HlmCommandEmptyDirective } from '@spartan-ng/ui-command-helm';
 
 @Component({
-  selector: 'div[CommandEmpty]',
+  selector: 'CommandEmpty',
   standalone: true,
   imports: [
     BrnCommandEmptyDirective,

@@ -3,7 +3,7 @@ import  { BrnCommandListComponent } from '@spartan-ng/ui-command-brain';
 import { HlmCommandListDirective } from '@spartan-ng/ui-command-helm';
 
 @Component({
-  selector: '[CommandList]',
+  selector: 'CommandList',
   standalone: true,
   imports: [
     BrnCommandListComponent,

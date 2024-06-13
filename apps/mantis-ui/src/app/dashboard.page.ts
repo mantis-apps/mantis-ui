@@ -19,10 +19,11 @@ import {
   CheckboxComponent,
   CollapsibleComponent,
   CommandComponent,
+  CommandData
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
-import { lucideMail, lucideMoon } from '@ng-icons/lucide';
+import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 
 @Component({
   selector: 'app-dashboard',
@@ -30,7 +31,14 @@ import { lucideMail, lucideMoon } from '@ng-icons/lucide';
   providers: [
     provideIcons({
       lucideMail,
-      lucideMoon
+      lucideMoon,
+      lucideSearch,
+      lucideCalendar,
+      lucideSmile,
+      lucidePlus,
+      lucideUser,
+      lucideWallet,
+      lucideCog
      })
   ],
   imports: [
@@ -50,7 +58,7 @@ import { lucideMail, lucideMoon } from '@ng-icons/lucide';
     CarouselComponent,
     CheckboxComponent,
     CollapsibleComponent,
-    CommandComponent
+    CommandComponent,
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
@@ -71,6 +79,51 @@ export class DashboardPage {
       content: `Yes. It's animated by default, but you can disable it if you prefer.`,
     },
   ];
+
+  protected commandData: CommandData = {
+    commandInputPlaceholder: 'Type a command or search...',
+    commandEmptyText: 'No results found.',
+    commandGroups: [
+      {
+        commandGroupLabel: 'Suggestions',
+        commandItems: [
+          {
+            commandItemLabel: 'Calendar',
+            commandItemIcon: 'lucideCalendar',
+          },
+          {
+            commandItemLabel: 'Search Emoji',
+            commandItemIcon: 'lucideSmile',
+          },
+          {
+            commandItemLabel: 'Calculator',
+            commandItemIcon: 'lucidePlus',
+          },
+        ],
+      },
+      {
+        commandGroupLabel: 'Settings',
+        commandItems: [
+          {
+            commandItemLabel: 'Profile',
+            commandItemIcon: 'lucideUser',
+            commandItemShortcut: '⌘P',
+          },
+          {
+            commandItemLabel: 'Billing',
+            commandItemIcon: 'lucideWallet',
+            commandItemShortcut: '⌘B',
+          },
+          {
+            commandItemLabel: 'Settings',
+            commandItemIcon: 'lucideCog',
+            commandItemShortcut: '⌘S',
+          },
+        ],
+      },
+    ]
+  };
+
   showAlert(event: {value: string}) {
     alert(event.value);
   }
