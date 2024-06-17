@@ -3,6 +3,7 @@ import { CommandComponent, CommandData } from './command.component';
 
 import { within } from '@storybook/testing-library';
 import { expect } from '@storybook/jest';
+import { EventEmitter } from '@angular/core';
 
 const CommandDataMock: CommandData = {
   commandInputPlaceholder: 'Type a command or search...',
@@ -59,7 +60,7 @@ export const Primary: Story = {
   args: {
     class: '',
     commandEmptyText: 'No results found',
-    commandData: CommandDataMock,
+    commandData: CommandDataMock
   },
 };
 

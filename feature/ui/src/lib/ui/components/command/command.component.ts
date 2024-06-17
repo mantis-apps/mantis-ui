@@ -1,11 +1,24 @@
 import { CommandGroupComponent } from './partials/command-group.component';
 
-import { Component, Input } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import {
   BrnCommandImports
 } from '@spartan-ng/ui-command-brain';
 import { HlmCommandImports } from '@spartan-ng/ui-command-helm';
+
+// command dialog components and directives should
+// be imported dynamically in the future
+import {
+	BrnDialogCloseDirective,
+	BrnDialogComponent,
+	BrnDialogContentDirective,
+	BrnDialogOverlayComponent,
+	BrnDialogTriggerDirective,
+} from '@spartan-ng/ui-dialog-brain';
+import { HlmDialogOverlayDirective } from '@spartan-ng/ui-dialog-helm';
+// end of future dynamic imports
+
 import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { IconComponent } from '../icon/icon.component';
@@ -29,6 +42,7 @@ import { CommandEmptyComponent } from './partials/command-empty.component';
 
 export interface CommandItem {
   commandItemLabel: string;
+  commandItemSlug?: string;
   commandItemIcon: IconName;
   commandItemShortcut?: string;
 }
@@ -69,7 +83,7 @@ export interface CommandData {
   ],
   template: `
     @if( commandData ) {
-      <brn-cmd [class]="class">
+        <brn-cmd [class]="class">
         <!-- input wrapper -->
         <hlm-cmd-input-wrapper>
           <hlm-icon name="lucideSearch" />
@@ -85,7 +99,7 @@ export interface CommandData {
               <brn-cmd-group hlm [label]="group.commandGroupLabel" class="w-full">
                 <!-- command items -->
                 @for (item of group.commandItems; track item.commandItemLabel) {
-                  <button brnCmdItem hlm class="w-full">
+                  <button brnCmdItem hlm class="w-full" (selected)="commandItemClicked(item?.commandItemSlug || item.commandItemLabel)" >
                     <hlm-icon [name]="item.commandItemIcon" hlmCmdIcon />
                     {{ item.commandItemLabel }}
                     @if( item.commandItemShortcut ) {
@@ -104,7 +118,7 @@ export interface CommandData {
           @if( commandData.commandItems ) {
             <div class="p-1">
             @for (item of commandData.commandItems; track item.commandItemLabel) {
-              <button brnCmdItem hlm class="w-full">
+              <button brnCmdItem hlm class="w-full" (selected)="commandItemClicked(item?.commandItemSlug || item.commandItemLabel)">
                 <hlm-icon [name]="item.commandItemIcon" hlmCmdIcon />
                 {{ item.commandItemLabel }}
                 @if( item.commandItemShortcut ) {
@@ -120,9 +134,16 @@ export interface CommandData {
   `,
 })
 export class CommandComponent {
+  @Input() isInDialog = false;
   @Input() class = '';
   @Input() commandEmptyText = 'No results found';
 
   @Input({required: true}) commandData!: CommandData;
+
+  @Output() commandSelected = new EventEmitter<string>();
+
+  commandItemClicked(value: string) {
+    this.commandSelected.emit(value);
+  }
 
 }

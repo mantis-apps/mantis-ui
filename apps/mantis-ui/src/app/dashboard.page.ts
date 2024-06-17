@@ -19,6 +19,7 @@ import {
   CheckboxComponent,
   CollapsibleComponent,
   CommandComponent,
+  CommandDialogComponent,
   CommandData
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
@@ -59,6 +60,7 @@ import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, luci
     CheckboxComponent,
     CollapsibleComponent,
     CommandComponent,
+    CommandDialogComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
@@ -89,14 +91,17 @@ export class DashboardPage {
         commandItems: [
           {
             commandItemLabel: 'Calendar',
+            commandItemSlug: 'calendar',
             commandItemIcon: 'lucideCalendar',
           },
           {
             commandItemLabel: 'Search Emoji',
+            commandItemSlug: 'search-emoji',
             commandItemIcon: 'lucideSmile',
           },
           {
             commandItemLabel: 'Calculator',
+            commandItemSlug: 'calculator',
             commandItemIcon: 'lucidePlus',
           },
         ],
@@ -106,16 +111,19 @@ export class DashboardPage {
         commandItems: [
           {
             commandItemLabel: 'Profile',
+            commandItemSlug: 'profile',
             commandItemIcon: 'lucideUser',
             commandItemShortcut: '⌘P',
           },
           {
             commandItemLabel: 'Billing',
+            commandItemSlug: 'billing',
             commandItemIcon: 'lucideWallet',
             commandItemShortcut: '⌘B',
           },
           {
             commandItemLabel: 'Settings',
+            commandItemSlug: 'settings',
             commandItemIcon: 'lucideCog',
             commandItemShortcut: '⌘S',
           },
@@ -127,4 +135,9 @@ export class DashboardPage {
   showAlert(event: {value: string}) {
     alert(event.value);
   }
+
+  setCommand(event: string) {
+    alert(`Command selected: ${event}`);
+  }
+
 }
