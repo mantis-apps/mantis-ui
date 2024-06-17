@@ -1,8 +1,9 @@
 import { CommandGroupComponent } from './partials/command-group.component';
-
-import { Component, Input, Output, EventEmitter } from '@angular/core';
+import { CmdkService } from '@ngxpert/cmdk';
+import { Component, Input, Output, EventEmitter, ViewChild } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import {
+  BrnCommandComponent,
   BrnCommandImports
 } from '@spartan-ng/ui-command-brain';
 import { HlmCommandImports } from '@spartan-ng/ui-command-helm';
@@ -74,56 +75,13 @@ export interface CommandData {
   ],
   providers: [
     provideIcons({ lucideSearch }),
+    CmdkService
   ],
   template: `
     @if( commandData ) {
-        <brn-cmd [class]="class">
-        <!-- input wrapper -->
-        <hlm-cmd-input-wrapper>
-          <hlm-icon name="lucideSearch" />
-          <input placeholder="{{ commandData.commandInputPlaceholder }}" brnCmdInput hlm />
-        </hlm-cmd-input-wrapper>
-        <!-- command empty -->
-        <div *brnCmdEmpty hlmCmdEmpty>{{ commandData.commandEmptyText }}</div>
-        <!-- command list -->
-        <brn-cmd-list hlm>
-          <!-- command groups -->
-          @if( commandData.commandGroups ) {
-            @for (group of commandData.commandGroups; track group.commandGroupLabel; let last = $last) {
-              <brn-cmd-group hlm [label]="group.commandGroupLabel" class="w-full">
-                <!-- command items -->
-                @for (item of group.commandItems; track item.commandItemLabel) {
-                  <button brnCmdItem hlm class="w-full" (selected)="commandItemClicked(item?.commandItemSlug || item.commandItemLabel)" >
-                    <hlm-icon [name]="item.commandItemIcon" hlmCmdIcon />
-                    {{ item.commandItemLabel }}
-                    @if( item.commandItemShortcut ) {
-                      <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>
-                    }
-                  </button>
-                }
-              </brn-cmd-group>
-              @if( !last || commandData.commandItems) {
-                <brn-cmd-separator hlm />
-              }
 
-            }
-          }
-          <!-- command items -->
-          @if( commandData.commandItems ) {
-            <div class="p-1">
-            @for (item of commandData.commandItems; track item.commandItemLabel) {
-              <button brnCmdItem hlm class="w-full" (selected)="commandItemClicked(item?.commandItemSlug || item.commandItemLabel)">
-                <hlm-icon [name]="item.commandItemIcon" hlmCmdIcon />
-                {{ item.commandItemLabel }}
-                @if( item.commandItemShortcut ) {
-                  <hlm-cmd-shortcut>{{ item.commandItemShortcut }}</hlm-cmd-shortcut>
-                }
-              </button>
-            }
-            </div>
-          }
-        </brn-cmd-list>
-      </brn-cmd>
+        <ng-content></ng-content>
+
     }
   `,
 })
@@ -134,10 +92,5 @@ export class CommandComponent {
 
   @Input({required: true}) commandData!: CommandData;
 
-  @Output() commandSelected = new EventEmitter<string>();
-
-  commandItemClicked(value: string) {
-    this.commandSelected.emit(value);
-  }
 
 }

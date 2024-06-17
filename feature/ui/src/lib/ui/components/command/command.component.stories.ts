@@ -1,10 +1,12 @@
 import type { Meta, StoryObj } from '@storybook/angular';
-import { moduleMetadata } from '@storybook/angular';
+import { moduleMetadata, argsToTemplate } from '@storybook/angular';
 import { CommandComponent, CommandData } from './command.component';
+import { CommandListComponent } from './partials/command-list.component';
+import { CommandListData } from './command.models';
 import { provideIcons } from '@ng-icons/core';
 import { lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 
-const CommandDataMock: CommandData = {
+const CommandDataMock: CommandListData = {
   commandInputPlaceholder: 'Type a command or search...',
   commandEmptyText: 'No results found.',
   commandGroups: [
@@ -48,6 +50,8 @@ const CommandDataMock: CommandData = {
   ]
 }
 
+type StoryArgs =  CommandComponent;
+
 const meta: Meta<CommandComponent> = {
   component: CommandComponent,
   title: 'Components/Command',
@@ -56,8 +60,18 @@ const meta: Meta<CommandComponent> = {
       providers: [
         provideIcons({ lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog }),
       ],
+      imports: [ CommandListComponent],
     }),
   ],
+  render: (args: StoryArgs) => ({
+    props: args,
+    template: `
+    <Command ${argsToTemplate(args)}>
+        <CommandList [commandListData]="commandData"></CommandList>
+    </Command>
+    `
+  }),
+
 };
 export default meta;
 type Story = StoryObj<CommandComponent>;
