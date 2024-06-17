@@ -1,5 +1,5 @@
 
-import { Component, ElementRef, Input} from '@angular/core';
+import { Component, ElementRef, Input, signal} from '@angular/core';
 import { NgFor } from '@angular/common';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import {
@@ -52,4 +52,5 @@ export class CollapsibleComponent {
   @Input({ required: true}) collapsibleTitle!: string;
   @Input({ required: true}) collapsibleTriggerText!: string;
   @Input({ required: true}) collapsibleContent!: { text: string }[];
+  public state = signal<'closed' | 'open'>('closed');
 }

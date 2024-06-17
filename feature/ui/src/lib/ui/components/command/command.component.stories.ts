@@ -66,7 +66,7 @@ export const Primary: Story = {
   args: {
     class: '',
     commandEmptyText: 'No results found',
-    commandData: CommandDataMock,
+    commandData: CommandDataMock
   },
 };
 

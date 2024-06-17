@@ -27,3 +27,5 @@ export * from './lib/ui/components/collapsible/collapsible.component';
 // export * from './lib/ui/components/combobox/combobox.component';
 
 export * from './lib/ui/components/command/command.component';
+
+export * from './lib/ui/components/command/command-dialog.component';
