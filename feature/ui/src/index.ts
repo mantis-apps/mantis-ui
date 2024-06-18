@@ -30,4 +30,6 @@ export * from './lib/ui/components/command/command.component';
 
 export * from './lib/ui/components/command/command-dialog.component';
 
+export * from './lib/ui/components/command/command.models';
+
 export * from './lib/ui/components/hover-card/hover-card.component';

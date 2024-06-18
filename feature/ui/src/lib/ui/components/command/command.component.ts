@@ -34,24 +34,7 @@ import { CommandItemComponent } from './partials/command-item.component';
 import { CommandSeparatorComponent } from './partials/command-separator.component';
 import { CommandEmptyComponent } from './partials/command-empty.component';
 
-export interface CommandItem {
-  commandItemLabel: string;
-  commandItemSlug?: string;
-  commandItemIcon: IconName;
-  commandItemShortcut?: string;
-}
-
-export interface CommandGroup {
-  commandGroupLabel: string;
-  commandItems: CommandItem[];
-}
-
-export interface CommandData {
-  commandInputPlaceholder: string;
-  commandEmptyText: string;
-  commandGroups?: CommandGroup[];
-  commandItems?: CommandItem[];
-}
+import { CommandData } from './command.models';
 
 @Component({
   selector: 'Command',
@@ -86,12 +69,12 @@ export interface CommandData {
         <!-- command empty -->
         <div *brnCmdEmpty hlmCmdEmpty>{{ commandData.commandEmptyText }}</div>
         <!-- command list -->
-        <!-- <brn-cmd-list hlm>
-          <!-- command groups --
+        <brn-cmd-list hlm>
+          <!-- command groups -->
           @if( commandData.commandGroups ) {
             @for (group of commandData.commandGroups; track group.commandGroupLabel; let last = $last) {
               <brn-cmd-group hlm [label]="group.commandGroupLabel" class="w-full">
-                <!-- command items --
+                <!-- command items -->
                 @for (item of group.commandItems; track item.commandItemLabel) {
                   <button brnCmdItem hlm class="w-full" (selected)="commandItemClicked(item?.commandItemSlug || item.commandItemLabel)" >
                     <hlm-icon [name]="item.commandItemIcon" hlmCmdIcon />
@@ -108,7 +91,7 @@ export interface CommandData {
 
             }
           }
-          <!-- command items --
+          <!-- command items -->
           @if( commandData.commandItems ) {
             <div class="p-1">
             @for (item of commandData.commandItems; track item.commandItemLabel) {
@@ -122,7 +105,7 @@ export interface CommandData {
             }
             </div>
           }
-        </brn-cmd-list> -->
+        </brn-cmd-list>
       </brn-cmd>
     }
   `,
