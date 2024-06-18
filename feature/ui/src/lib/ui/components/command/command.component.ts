@@ -1,5 +1,3 @@
-import { CommandGroupComponent } from './partials/command-group.component';
-
 import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { NgIf, NgFor } from '@angular/common';
 import {
@@ -7,32 +5,14 @@ import {
 } from '@spartan-ng/ui-command-brain';
 import { HlmCommandImports } from '@spartan-ng/ui-command-helm';
 
-// command dialog components and directives should
-// be imported dynamically in the future
-import {
-	BrnDialogCloseDirective,
-	BrnDialogComponent,
-	BrnDialogContentDirective,
-	BrnDialogOverlayComponent,
-	BrnDialogTriggerDirective,
-} from '@spartan-ng/ui-dialog-brain';
-import { HlmDialogOverlayDirective } from '@spartan-ng/ui-dialog-helm';
-// end of future dynamic imports
-
 import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
 import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
 import { IconComponent } from '../icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
-import { IconName, provideIcons } from '@ng-icons/core';
+import { provideIcons } from '@ng-icons/core';
 import {
   lucideSearch,
 } from '@ng-icons/lucide';
-
-import { CommandInputComponent } from './partials/command-input.component';
-import { CommandListComponent } from './partials/command-list.component';
-import { CommandItemComponent } from './partials/command-item.component';
-import { CommandSeparatorComponent } from './partials/command-separator.component';
-import { CommandEmptyComponent } from './partials/command-empty.component';
 
 import { CommandData } from './command.models';
 
@@ -46,12 +26,6 @@ import { CommandData } from './command.models';
     IconComponent,
     HlmButtonDirective,
     ButtonComponent,
-    CommandInputComponent,
-    CommandListComponent,
-    CommandGroupComponent,
-    CommandItemComponent,
-    CommandSeparatorComponent,
-    CommandEmptyComponent,
     NgIf,
     NgFor,
   ],

@@ -24,7 +24,7 @@ import {
   HoverCardComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
-import { provideIcons, IconName } from '@ng-icons/core';
+import { provideIcons } from '@ng-icons/core';
 import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 
 @Component({
