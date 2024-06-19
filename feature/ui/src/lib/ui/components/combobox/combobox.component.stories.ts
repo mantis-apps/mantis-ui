@@ -6,7 +6,7 @@ import { expect } from '@storybook/jest';
 
 const meta: Meta<ComboboxComponent> = {
   component: ComboboxComponent,
-  title: 'ComboboxComponent',
+  title: 'Components/Combobox',
 };
 export default meta;
 type Story = StoryObj<ComboboxComponent>;

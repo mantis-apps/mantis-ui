@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/angular';
 import { moduleMetadata } from '@storybook/angular';
-import { CommandComponent, CommandData } from './command.component';
+import { CommandComponent } from './command.component';
+import { CommandData } from './command.models'
 import { provideIcons } from '@ng-icons/core';
 import { lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 

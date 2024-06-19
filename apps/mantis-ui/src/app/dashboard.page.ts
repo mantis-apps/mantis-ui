@@ -20,10 +20,11 @@ import {
   CollapsibleComponent,
   CommandComponent,
   CommandDialogComponent,
-  CommandData
+  CommandData,
+  HoverCardComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
-import { provideIcons, IconName } from '@ng-icons/core';
+import { provideIcons } from '@ng-icons/core';
 import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 
 @Component({
@@ -49,6 +50,7 @@ import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, luci
     IconComponent,
     IconListComponent,
     CardModule,
+    AvatarComponent,
     AccordionComponent,
     HlmAspectRatioDirective,
     AlertComponent,
@@ -60,7 +62,8 @@ import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, luci
     CheckboxComponent,
     CollapsibleComponent,
     CommandComponent,
-    CommandDialogComponent
+    CommandDialogComponent,
+    HoverCardComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
