@@ -19,7 +19,18 @@ const meta: Meta<HoverCardComponent> = {
   render: (args: HoverCardComponent) => ({
     props: args,
     template: `
-    <HoverCard ${argsToTemplate(args)} class="justify-center w-full flex">
+    <h4 class="text-xl font-semibold mb-2">HoverCard with simple content</h4>
+    <HoverCard ${argsToTemplate(args)} class="w-full flex">
+      <Button hoverTrigger variant="link" class="px-2 ml-0">mantistech.io</Button>
+      <div hoverContent class="flex justify-between space-x-4">
+        <p>Zero to Angular full-stack and multi platform deployment</p>
+      </div>
+    </HoverCard>
+    <br />
+    <hr class="my-4">
+    <br />
+    <h4 class="text-xl font-semibold mb-2">HoverCard with extensive content</h4>
+    <HoverCard ${argsToTemplate(args)} class="w-full flex">
     <p hoverTrigger>best meta framework:<Button variant="outline" class="px-2 ml-0">&#64;analogjs</Button></p>
     <div hoverContent class="flex justify-between space-x-4">
       <Avatar variant="small" id="avatar-small"
