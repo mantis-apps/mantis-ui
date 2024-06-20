@@ -136,6 +136,29 @@
 
   <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
+    <!-- Vertical Bar Chart -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="max-w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Vertical Bar Chart
+          </CardTitle>
+          <CardDescription>
+            GDP per capita of a few European countries
+          </CardDescription>
+        </CardHeader>
+        <CardContent [contentClass]="'px-0'">
+          <VerticalBarChart (selected)="chartEvent($event)" [chartData]="barChartData()" />
+        </CardContent>
+
+      </Card>
+
+    </div>
     <!-- First row -->
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
@@ -157,6 +180,8 @@
         </Card>
       </div>
     </div>
+
+    
 
     <!-- Second row -->
     <div class="flex items-center justify-center [&>div]:w-full">

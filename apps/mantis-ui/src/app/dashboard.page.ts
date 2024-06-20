@@ -1,5 +1,5 @@
 /* eslint-disable @angular-eslint/component-class-suffix */
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header.component';
@@ -9,6 +9,7 @@ import {
   ButtonComponent,
   IconListComponent,
   CardModule,
+  ChartsModule,
   AlertDialogComponent,
   AlertComponent,
   AspectRatioComponent,
@@ -21,7 +22,8 @@ import {
   CommandComponent,
   CommandDialogComponent,
   CommandData,
-  HoverCardComponent
+  HoverCardComponent,
+  Single
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons } from '@ng-icons/core';
@@ -50,6 +52,7 @@ import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, luci
     IconComponent,
     IconListComponent,
     CardModule,
+    ChartsModule,
     AvatarComponent,
     AccordionComponent,
     HlmAspectRatioDirective,
@@ -135,12 +138,47 @@ export class DashboardPage {
     ]
   };
 
+  barChartData =  signal<Single[]>([
+    {
+      "name": "Germany",
+      "value": 40632,
+      "extra": {
+        "code": "de"
+      }
+    },
+    {
+      "name": "United States",
+      "value": 50000,
+      "extra": {
+        "code": "us"
+      }
+    },
+    {
+      "name": "France",
+      "value": 36745,
+      "extra": {
+        "code": "fr"
+      }
+    },
+    {
+      "name": "United Kingdom",
+      "value": 36240,
+      "extra": {
+        "code": "uk"
+      }
+    }
+  ]);
+
   showAlert(event: {value: string}) {
     alert(event.value);
   }
 
   setCommand(event: string) {
     alert(`Command selected: ${event}`);
+  }
+
+  chartEvent(event: any) {
+    console.log(event);
   }
 
 }
