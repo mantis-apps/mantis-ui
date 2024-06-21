@@ -1,5 +1,5 @@
 /* eslint-disable @angular-eslint/component-class-suffix */
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { HeaderComponent } from './header.component';
@@ -28,6 +28,7 @@ import {
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons } from '@ng-icons/core';
 import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
+import { faker } from '@faker-js/faker';
 
 @Component({
   selector: 'app-dashboard',
@@ -71,7 +72,7 @@ import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, luci
   templateUrl: './dashboard.page.html',
   styles: ``,
 })
-export class DashboardPage {
+export class DashboardPage implements OnInit, OnDestroy {
 
   protected accordionItems = [
     {
@@ -138,36 +139,132 @@ export class DashboardPage {
     ]
   };
 
-  barChartData =  signal<Single[]>([
-    {
-      "name": "Germany",
-      "value": 40632,
-      "extra": {
-        "code": "de"
+  // barChartData =  signal<Single[]>([
+  //   {
+  //     "name": "Germany",
+  //     "value": 40632,
+  //     "extra": {
+  //       "code": "de"
+  //     }
+  //   },
+  //   {
+  //     "name": "United States",
+  //     "value": 50000,
+  //     "extra": {
+  //       "code": "us"
+  //     }
+  //   },
+  //   {
+  //     "name": "France",
+  //     "value": 36745,
+  //     "extra": {
+  //       "code": "fr"
+  //     }
+  //   },
+  //   {
+  //     "name": "United Kingdom",
+  //     "value": 36240,
+  //     "extra": {
+  //       "code": "uk"
+  //     }
+  //   }
+  // ]);
+
+  // create a function using faker and creates a fake barchart data set that changes every 5 seconds
+  
+  barChartData = signal<Single[]>(this.createBarChartData());
+
+  randomData: any;
+  
+  createBarChartData(): Single[] { 
+    return [
+      {
+        "name": "Jan",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "jan"
+        }
+      },
+      {
+        "name": "Feb",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "feb"
+        }
+      },
+      {
+        "name": "Mar",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "mar"
+        }
+      },
+      {
+        "name": "Apr",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "apr"
+        },
+      },
+      {
+        "name": "May",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "may"
+        }
+      }, 
+      {
+        "name": "Jun",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "jun"
+        },
+      }, 
+      {
+        "name": "Jul",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "jul"
+        }
+      },
+      {
+        "name": "Aug",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "aug"
+        }
+      },
+      {
+        "name": "Sep",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "sep"
+        }
+      },
+      {
+        "name": "Oct",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "oct"
+        }
+      },
+      {
+        "name": "Nov",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "nov"
+        }
+      },
+      {
+        "name": "Dec",
+        "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
+        "extra": {
+          "code": "dec"
+        }
       }
-    },
-    {
-      "name": "United States",
-      "value": 50000,
-      "extra": {
-        "code": "us"
-      }
-    },
-    {
-      "name": "France",
-      "value": 36745,
-      "extra": {
-        "code": "fr"
-      }
-    },
-    {
-      "name": "United Kingdom",
-      "value": 36240,
-      "extra": {
-        "code": "uk"
-      }
-    }
-  ]);
+      
+    ]
+  }
 
   showAlert(event: {value: string}) {
     alert(event.value);
@@ -179,6 +276,16 @@ export class DashboardPage {
 
   chartEvent(event: any) {
     console.log(event);
+  }
+
+  ngOnInit() {
+    this.randomData = setInterval(() => {
+      this.barChartData.set(this.createBarChartData());
+    }, 3000);
+  }
+
+  ngOnDestroy() {
+    clearInterval(this.randomData);
   }
 
 }

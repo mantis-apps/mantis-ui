@@ -17,6 +17,7 @@ import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
       [yAxis]="chartOptions.showYAxis || O.showYAxis"
       [showXAxisLabel]="chartOptions.showXAxisLabel  || O.showXAxisLabel"
       [showYAxisLabel]="chartOptions.showYAxisLabel || O.showYAxisLabel"
+      [showGridLines]="chartOptions.showGridLines || O.showGridLines"
       [xAxisLabel]="chartOptions.xAxisLabel || O.xAxisLabel"
       [yAxisLabel]="chartOptions.yAxisLabel || O.yAxisLabel"
       [barPadding]="chartOptions.barPadding || O.barPadding"
@@ -26,7 +27,7 @@ import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
 })
 export class VerticalBarChartComponent implements OnInit {
 
-  @Input() chartOptions! : ChartOptions;
+  @Input() chartOptions!: any;
 
   O = DEFAULT_CHART_OPTIONS;
  
@@ -66,7 +67,9 @@ export class VerticalBarChartComponent implements OnInit {
   @Output() selected = new EventEmitter();
 
   ngOnInit() {
+    console.log(this.chartOptions);
     this.chartOptions = { ...DEFAULT_CHART_OPTIONS, ...this.chartOptions };
+    console.log(this.chartOptions);
   }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSelect(event: any) {

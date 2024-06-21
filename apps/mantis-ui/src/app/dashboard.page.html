@@ -153,7 +153,10 @@
           </CardDescription>
         </CardHeader>
         <CardContent [contentClass]="'px-0'">
-          <VerticalBarChart (selected)="chartEvent($event)" [chartData]="barChartData()" />
+          <VerticalBarChart 
+          (selected)="chartEvent($event)" 
+          [chartData]="barChartData()"
+        />
         </CardContent>
 
       </Card>

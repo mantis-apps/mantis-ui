@@ -68,5 +68,5 @@ export interface ChartOptions {
   legendOptions?: LegendOptions;
   dataLabelMaxHeight?: any;
   view: [number, number];
-  colorScheme: Color;
+  colorScheme: string | Color;
 }
