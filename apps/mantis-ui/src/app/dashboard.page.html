@@ -7,7 +7,7 @@
         class="items-start flex-1 px-0 py-4 sm:px-6 sm:py-0 md:px-0">
 
         <div
-  class="items-start justify-center hidden gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
+  class="items-start justify-center gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
   <!-- first column -->
   <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
@@ -140,7 +140,7 @@
     <div class="flex items-center justify-center [&>div]:w-full">
 
       <Card
-        class="max-w-full">
+        class="w-full">
         <!-- <ng-container CardBadge>
           <small>100k<sup>+</sup></small>
         </ng-container> -->
@@ -153,8 +153,8 @@
           </CardDescription>
         </CardHeader>
         <CardContent [contentClass]="'px-0'">
-          <VerticalBarChart 
-          (selected)="chartEvent($event)" 
+          <VerticalBarChart
+          (selected)="chartEvent($event)"
           [chartData]="barChartData()"
         />
         </CardContent>
@@ -184,7 +184,7 @@
       </div>
     </div>
 
-    
+
 
     <!-- Second row -->
     <div class="flex items-center justify-center [&>div]:w-full">
@@ -231,7 +231,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <HoverCard class="justify-center w-full flex">
+          <HoverCard class="flex justify-center w-full">
             <p hoverTrigger>best meta framework:<Button variant="link" class="px-1 ml-0">&#64;analogjs</Button></p>
             <div hoverContent class="flex justify-between space-x-4">
               <Avatar variant="small" id="avatar-small"

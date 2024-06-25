@@ -2146,6 +2146,137 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "VerticalBarChartComponent",
+            "id": "component-VerticalBarChartComponent-2b177316aec01e64b2056bc3755c7957af67c37916895784628193ab9cd8be1660a7993cf002e648aa3532776dad97628b193b22816eb0da53fc277eede5edd5",
+            "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "VerticalBarChart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ngx-charts-bar-vertical\n  [legend]=\"chartOptions.legend || O.legend\"\n  [scheme]=\"chartOptions.colorScheme || O.colorScheme\"\n  [view]=\"chartOptions.view || O.view\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions.gradient || O.gradient\"\n  [xAxis]=\"chartOptions.showXAxis || O.showXAxis\"\n  [yAxis]=\"chartOptions.showYAxis || O.showYAxis\"\n  [showXAxisLabel]=\"chartOptions.showXAxisLabel  || O.showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions.showYAxisLabel || O.showYAxisLabel\"\n  [showGridLines]=\"chartOptions.showGridLines || O.showGridLines\"\n  [xAxisLabel]=\"chartOptions.xAxisLabel || O.xAxisLabel\"\n  [yAxisLabel]=\"chartOptions.yAxisLabel || O.yAxisLabel\"\n  [barPadding]=\"chartOptions.barPadding || O.barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-vertical>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "chartOptions",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 30,
+                    "type": "any",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 67,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Single[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 65
+                },
+                {
+                    "name": "O",
+                    "defaultValue": "DEFAULT_CHART_OPTIONS",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                },
+                {
+                    "name": "single",
+                    "defaultValue": "signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 69,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 75,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Input, Output, EventEmitter, signal, OnInit } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from \"./models\";\n\n@Component({\n  selector: \"VerticalBarChart\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-vertical\n      [legend]=\"chartOptions.legend || O.legend\"\n      [scheme]=\"chartOptions.colorScheme || O.colorScheme\"\n      [view]=\"chartOptions.view || O.view\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions.gradient || O.gradient\"\n      [xAxis]=\"chartOptions.showXAxis || O.showXAxis\"\n      [yAxis]=\"chartOptions.showYAxis || O.showYAxis\"\n      [showXAxisLabel]=\"chartOptions.showXAxisLabel  || O.showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions.showYAxisLabel || O.showYAxisLabel\"\n      [showGridLines]=\"chartOptions.showGridLines || O.showGridLines\"\n      [xAxisLabel]=\"chartOptions.xAxisLabel || O.xAxisLabel\"\n      [yAxisLabel]=\"chartOptions.yAxisLabel || O.yAxisLabel\"\n      [barPadding]=\"chartOptions.barPadding || O.barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-vertical>\n  `,\n})\nexport class VerticalBarChartComponent implements OnInit {\n\n  @Input() chartOptions!: any;\n\n  O = DEFAULT_CHART_OPTIONS;\n \n  single = signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ]);\n\n  chartData = input<Single[]>();\n  \n  @Output() selected = new EventEmitter();\n\n  ngOnInit() {\n    console.log(this.chartOptions);\n    this.chartOptions = { ...DEFAULT_CHART_OPTIONS, ...this.chartOptions };\n    console.log(this.chartOptions);\n  }\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ]
         }
     ],
     "modules": [],
@@ -2425,21 +2556,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AspectRatioComponent>",
-                "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<AvatarComponent>",
                 "defaultValue": "{\n  component: AvatarComponent,\n  title: 'Components/Avatar/Avatar',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AspectRatioComponent>",
+                "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
             },
             {
                 "name": "meta",
@@ -2519,7 +2650,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HoverCardComponent>",
-                "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <HoverCard ${argsToTemplate(args)} class=\"justify-center w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
+                "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with simple content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n      <Button hoverTrigger variant=\"link\" class=\"px-2 ml-0\">mantistech.io</Button>\n      <div hoverContent class=\"flex justify-between space-x-4\">\n        <p>Zero to Angular full-stack and multi platform deployment</p>\n      </div>\n    </HoverCard>\n    <br />\n    <hr class=\"my-4\">\n    <br />\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with extensive content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
             },
             {
                 "name": "meta",
@@ -2835,8 +2966,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AspectRatioComponent>",
-                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+                "rawtype": "StoryObj<AvatarComponent>",
+                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -2846,8 +2977,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AvatarComponent>",
-                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                "rawtype": "StoryObj<AspectRatioComponent>",
+                "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3731,7 +3862,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HoverCardComponent>",
-                    "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <HoverCard ${argsToTemplate(args)} class=\"justify-center w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
+                    "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with simple content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n      <Button hoverTrigger variant=\"link\" class=\"px-2 ml-0\">mantistech.io</Button>\n      <div hoverContent class=\"flex justify-between space-x-4\">\n        <p>Zero to Angular full-stack and multi platform deployment</p>\n      </div>\n    </HoverCard>\n    <br />\n    <hr class=\"my-4\">\n    <br />\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with extensive content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
                 },
                 {
                     "name": "Primary",
@@ -3868,19 +3999,6 @@
                     "kind": 183
                 }
             ],
-            "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AspectRatioComponent>",
-                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts": [
                 {
                     "name": "Story",
@@ -3888,6 +4006,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AvatarComponent>",
                     "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AspectRatioComponent>",
+                    "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4183,7 +4314,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -4750,6 +4881,15 @@
                 "coveragePercent": 80,
                 "coverageCount": "4/5",
                 "status": "very-good"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VerticalBarChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
+                "status": "low"
             },
             {
                 "filePath": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",

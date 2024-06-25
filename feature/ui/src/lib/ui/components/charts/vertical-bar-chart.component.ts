@@ -8,29 +8,33 @@ import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
   imports: [NgxChartsModule],
   template: `
     <ngx-charts-bar-vertical
-      [legend]="chartOptions.legend || O.legend"
-      [scheme]="chartOptions.colorScheme || O.colorScheme"
-      [view]="chartOptions.view || O.view"
+      [legend]="chartOptions().legend"
+      [scheme]="chartOptions().colorScheme"
+      [view]="chartOptions().view "
       [results]="chartData()"
-      [gradient]="chartOptions.gradient || O.gradient"
-      [xAxis]="chartOptions.showXAxis || O.showXAxis"
-      [yAxis]="chartOptions.showYAxis || O.showYAxis"
-      [showXAxisLabel]="chartOptions.showXAxisLabel  || O.showXAxisLabel"
-      [showYAxisLabel]="chartOptions.showYAxisLabel || O.showYAxisLabel"
-      [showGridLines]="chartOptions.showGridLines || O.showGridLines"
-      [xAxisLabel]="chartOptions.xAxisLabel || O.xAxisLabel"
-      [yAxisLabel]="chartOptions.yAxisLabel || O.yAxisLabel"
-      [barPadding]="chartOptions.barPadding || O.barPadding"
+      [gradient]="chartOptions().gradient"
+      [xAxis]="chartOptions().showXAxis"
+      [yAxis]="chartOptions().showYAxis"
+      [showXAxisLabel]="chartOptions().showXAxisLabel"
+      [showYAxisLabel]="chartOptions().showYAxisLabel"
+      [showGridLines]="chartOptions().showGridLines"
+      [xAxisLabel]="chartOptions().xAxisLabel"
+      [yAxisLabel]="chartOptions().yAxisLabel"
+      [barPadding]="chartOptions().barPadding"
       (select)="onSelect($event)">
     </ngx-charts-bar-vertical>
   `,
 })
 export class VerticalBarChartComponent implements OnInit {
 
-  @Input() chartOptions!: any;
+  // @Input() chartOptions!: any;
 
-  O = DEFAULT_CHART_OPTIONS;
- 
+  // O = DEFAULT_CHART_OPTIONS;
+
+  chartOptions = input(DEFAULT_CHART_OPTIONS, {
+    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),
+  });
+
   single = signal<Single[]>([
     {
       "name": "Germany",
@@ -63,14 +67,12 @@ export class VerticalBarChartComponent implements OnInit {
   ]);
 
   chartData = input<Single[]>();
-  
+
   @Output() selected = new EventEmitter();
 
   ngOnInit() {
-    console.log(this.chartOptions);
-    this.chartOptions = { ...DEFAULT_CHART_OPTIONS, ...this.chartOptions };
-    console.log(this.chartOptions);
-  }
+    console.log(this.chartOptions());
+    }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSelect(event: any) {
     this.selected.emit(event);
