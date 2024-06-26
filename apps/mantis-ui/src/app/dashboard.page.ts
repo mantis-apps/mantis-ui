@@ -27,7 +27,8 @@ import {
   Single,
   VerticalBarChartComponent,
   VerticalBarChartGroupedComponent,
-  Multi
+  Multi,
+  VerticalBarChartStackedComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons } from '@ng-icons/core';
@@ -59,6 +60,7 @@ import { faker } from '@faker-js/faker';
     CardModule,
     VerticalBarChartComponent,
     VerticalBarChartGroupedComponent,
+    VerticalBarChartStackedComponent,
     AvatarComponent,
     AccordionComponent,
     HlmAspectRatioDirective,
