@@ -261,6 +261,32 @@
   </div>
   <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
+    <!-- Vertical Bar Chart -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Vertical Bar Chart Grouped
+          </CardTitle>
+          <CardDescription>
+            GDP per capita of a few European countries
+          </CardDescription>
+        </CardHeader>
+        <CardContent [contentClass]="'px-0'">
+          <VerticalBarChartGrouped
+          [chartData]="multiBarChartData()"
+          [chartOptions]="barChartOptions()"
+        />
+        </CardContent>
+
+      </Card>
+
+    </div>
     <!-- First row -->
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>

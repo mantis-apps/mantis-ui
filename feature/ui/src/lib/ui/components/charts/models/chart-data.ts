@@ -6,16 +6,22 @@ import { LegendOptions, LegendPosition, ScaleType, ViewDimensions, ColorHelper, 
 export interface Single {
   name: string;
   value: number;
-  extra: {
+  extra?: {
     code: string;
   };
   [key: string]: any;
 }
 
-export interface Multi {
-  name: string;
-  series: Single[];
+export interface Series {
+  name: string
+  value: number
 }
+
+export interface Multi {
+  name: string
+  series: Series[]
+}
+
 
 export interface ChartOptions {
   legend: boolean;

@@ -1,3 +1,4 @@
+import { create } from '@storybook/theming/create';
 /* eslint-disable @angular-eslint/component-class-suffix */
 import { Component, signal, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -24,7 +25,9 @@ import {
   CommandData,
   HoverCardComponent,
   Single,
-  VerticalBarChartComponent
+  VerticalBarChartComponent,
+  VerticalBarChartGroupedComponent,
+  Multi
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons } from '@ng-icons/core';
@@ -55,6 +58,7 @@ import { faker } from '@faker-js/faker';
     IconListComponent,
     CardModule,
     VerticalBarChartComponent,
+    VerticalBarChartGroupedComponent,
     AvatarComponent,
     AccordionComponent,
     HlmAspectRatioDirective,
@@ -175,6 +179,8 @@ export class DashboardPage implements OnInit, OnDestroy {
 
   barChartData = signal<Single[]>(this.createBarChartData());
 
+  multiBarChartData = signal<Multi[]>(this.createMultiBarChartData());
+
   barChartOptions = signal<Partial<ChartOptions>>({
     xAxisLabel: 'Months',
     yAxisLabel: 'Monthly Revenue'
@@ -270,6 +276,93 @@ export class DashboardPage implements OnInit, OnDestroy {
       }
 
     ]
+  }
+
+  createMultiBarChartData(): Multi[] {
+    return [
+      {
+        "name": "Germany",
+        "series": [
+          {
+            "name": "2010",
+            "value": 7300000
+          },
+          {
+            "name": "2011",
+            "value": 8940000
+          }
+        ]
+      },
+
+      {
+        "name": "USA",
+        "series": [
+          {
+            "name": "2010",
+            "value": 7870000
+          },
+          {
+            "name": "2011",
+            "value": 8270000
+          }
+        ]
+      },
+
+      {
+        "name": "France",
+        "series": [
+          {
+            "name": "2010",
+            "value": 5000002
+          },
+          {
+            "name": "2011",
+            "value": 5800000
+          }
+        ]
+      },
+
+        {
+          "name": "UK",
+          "series": [
+            {
+              "name": "2010",
+              "value": 5000002
+            },
+            {
+              "name": "2011",
+              "value": 5800000
+            }
+          ]
+        },
+        {
+          "name": "Italy",
+          "series": [
+            {
+              "name": "2010",
+              "value": 5000002
+            },
+            {
+              "name": "2011",
+              "value": 5800000
+            }
+          ]
+        },
+        {
+          "name": "Spain",
+          "series": [
+            {
+              "name": "2010",
+              "value": 5000002
+            },
+            {
+              "name": "2011",
+              "value": 5800000
+            }
+          ]
+        }
+    ];
+
   }
 
   showAlert(event: {value: string}) {
