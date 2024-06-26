@@ -31,6 +31,16 @@ const meta: Meta<VerticalBarChartComponent> = {
       ],
     }),
   ],
+  parameters: {
+    docs: {
+      source: {
+        transform: (src: string) => {
+          const wrapperStriped = src.replace(/<div[^>]*>\s*([\s\S]*?)\s*<\/div>/gi, '$1');
+          return wrapperStriped;
+        },
+      },
+    },
+  },
   render: (args: VerticalBarChartComponent) => ({
     props: args,
     template: `

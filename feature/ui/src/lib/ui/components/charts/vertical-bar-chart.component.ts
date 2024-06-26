@@ -1,5 +1,5 @@
-import { Component, input, Input, Output, EventEmitter, signal, OnInit } from "@angular/core";
-import { Color, NgxChartsModule } from "@swimlane/ngx-charts";
+import { Component, input, Output, EventEmitter, signal } from "@angular/core";
+import { NgxChartsModule } from "@swimlane/ngx-charts";
 import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
 
 @Component({
@@ -26,11 +26,7 @@ import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
   styleUrls: ["./charts.style.css"],
 
 })
-export class VerticalBarChartComponent implements OnInit {
-
-  // @Input() chartOptions!: any;
-
-  // O = DEFAULT_CHART_OPTIONS;
+export class VerticalBarChartComponent {
 
   chartOptions = input(DEFAULT_CHART_OPTIONS, {
     transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),
@@ -71,9 +67,6 @@ export class VerticalBarChartComponent implements OnInit {
 
   @Output() selected = new EventEmitter();
 
-  ngOnInit() {
-    console.log(this.chartOptions());
-    }
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   onSelect(event: any) {
     this.selected.emit(event);
