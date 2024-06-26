@@ -10,7 +10,6 @@ import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
     <ngx-charts-bar-vertical
       [legend]="chartOptions().legend"
       [scheme]="chartOptions().colorScheme"
-      [view]="chartOptions().view "
       [results]="chartData()"
       [gradient]="chartOptions().gradient"
       [xAxis]="chartOptions().showXAxis"
@@ -24,6 +23,8 @@ import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
       (select)="onSelect($event)">
     </ngx-charts-bar-vertical>
   `,
+  styleUrls: ["./charts.style.css"],
+
 })
 export class VerticalBarChartComponent implements OnInit {
 

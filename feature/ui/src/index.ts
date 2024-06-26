@@ -6,7 +6,8 @@ export * from './lib/ui/components/icon/icon-list/icon-list.component';
 export * from './card.module';
 
 // Charts Module
-export * from './lib/ui/components/charts/charts.module';
+export * from './lib/ui/components/charts';
+
 
 export * from './lib/ui/components/charts/models';
 

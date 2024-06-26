@@ -9,7 +9,7 @@ import {
   ButtonComponent,
   IconListComponent,
   CardModule,
-  ChartsModule,
+  ChartOptions,
   AlertDialogComponent,
   AlertComponent,
   AspectRatioComponent,
@@ -23,7 +23,8 @@ import {
   CommandDialogComponent,
   CommandData,
   HoverCardComponent,
-  Single
+  Single,
+  VerticalBarChartComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons } from '@ng-icons/core';
@@ -53,7 +54,7 @@ import { faker } from '@faker-js/faker';
     IconComponent,
     IconListComponent,
     CardModule,
-    ChartsModule,
+    VerticalBarChartComponent,
     AvatarComponent,
     AccordionComponent,
     HlmAspectRatioDirective,
@@ -171,12 +172,17 @@ export class DashboardPage implements OnInit, OnDestroy {
   // ]);
 
   // create a function using faker and creates a fake barchart data set that changes every 5 seconds
-  
+
   barChartData = signal<Single[]>(this.createBarChartData());
 
+  barChartOptions = signal<Partial<ChartOptions>>({
+    xAxisLabel: 'Months',
+    yAxisLabel: 'Monthly Revenue'
+  })
+
   randomData: any;
-  
-  createBarChartData(): Single[] { 
+
+  createBarChartData(): Single[] {
     return [
       {
         "name": "Jan",
@@ -212,14 +218,14 @@ export class DashboardPage implements OnInit, OnDestroy {
         "extra": {
           "code": "may"
         }
-      }, 
+      },
       {
         "name": "Jun",
         "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
         "extra": {
           "code": "jun"
         },
-      }, 
+      },
       {
         "name": "Jul",
         "value": parseFloat(faker.finance.amount({ min: 1000, max: 10000 })),
@@ -262,7 +268,7 @@ export class DashboardPage implements OnInit, OnDestroy {
           "code": "dec"
         }
       }
-      
+
     ]
   }
 
