@@ -4,6 +4,7 @@ export * from './models'
 export * from './vertical-bar-chart.component';
 export * from './vertical-bar-chart-2d.component';
 export * from './vertical-bar-chart-stacked.component';
+export * from './vertical-bar-chart-normalized.component';
 
 // horizontal bar charts components
 export * from './horizontal-bar-chart.component';
