@@ -1927,6 +1927,460 @@
             "extends": []
         },
         {
+            "name": "HorizontalBarChartComponent",
+            "id": "component-HorizontalBarChartComponent-978906edd563ced6277cd8f4694e4e0545247d0fef0f5fed3c4d6689b1c139e86b1f6fe5d46d8e37678e1ee601486033df45317abea980c60d1ac954406c09cf",
+            "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "HorizontalBarChart",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-bar-horizontal\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-horizontal>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 37,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Single[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 40,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter, signal } from \"@angular/core\";\nimport { NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from \"./models\";\n\n@Component({\n  selector: \"HorizontalBarChart\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-horizontal\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-horizontal>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class HorizontalBarChartComponent {\n\n  chartOptions = input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  });\n\n  chartData = input<Single[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HorizontalBarChartGroupedComponent",
+            "id": "component-HorizontalBarChartGroupedComponent-1c46c7d5c518149c40de207ef151ce6500ee5f15f0a9f432e5569305c51dfd780db62cfc0b08f57e167bf2dd6df425531ce15d1163c820de29e24fda5d908ad3",
+            "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "HorizontalBarChartGrouped",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-bar-horizontal-2d\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-horizontal-2d>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Multi[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "MULTI_OPTIONS",
+                    "defaultValue": "{ ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .75)'] } as Color}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChartOptions",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter, signal } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Multi, Single } from \"./models\";\n\n@Component({\n  selector: \"HorizontalBarChartGrouped\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-horizontal-2d\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-horizontal-2d>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class HorizontalBarChartGroupedComponent {\n\n  MULTI_OPTIONS: ChartOptions = { ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .75)'] } as Color};\n\n  chartOptions = input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  });\n\n  chartData = input<Multi[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HorizontalBarChartNormalizedComponent",
+            "id": "component-HorizontalBarChartNormalizedComponent-cf55844b91937703fc6ea54d3e5f532659bd731d7a558091177c1cccd0647afb88d26eafeedc739c75f189823187f54967b050c9e5e03ebc294d53efad0779a8",
+            "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "HorizontalBarChartNormalized",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-bar-horizontal-normalized\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-horizontal-normalized>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Multi[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "MULTI_OPTIONS",
+                    "defaultValue": "{ ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .85)', 'hsl(var(--primary) / .75)', 'hsl(var(--primary) / .65)', 'hsl(var(--primary) / .5)'] } as Color}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChartOptions",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Multi } from \"./models\";\n\n@Component({\n  selector: \"HorizontalBarChartNormalized\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-horizontal-normalized\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-horizontal-normalized>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class HorizontalBarChartNormalizedComponent {\n\n  MULTI_OPTIONS: ChartOptions = { ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .85)', 'hsl(var(--primary) / .75)', 'hsl(var(--primary) / .65)', 'hsl(var(--primary) / .5)'] } as Color};\n\n  chartOptions = input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  });\n\n  chartData = input<Multi[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "HorizontalBarChartStackedComponent",
+            "id": "component-HorizontalBarChartStackedComponent-5fe9d123a4e2d1b9177ba358d06e830931fdeeaca0871a30ccdda67a61b483f21d48ccad7b30cf438bca355b3fe5c69c658369da4b41190843aff68d1da43cb2",
+            "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "HorizontalBarChartStacked",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-bar-horizontal-stacked\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  [roundDomains]=\"chartOptions().roundDomains\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-horizontal-stacked>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Multi[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "MULTI_OPTIONS",
+                    "defaultValue": "{ ...DEFAULT_CHART_OPTIONS, roundDomains: true, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .65)'] } as Color}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChartOptions",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Multi } from \"./models\";\n\n@Component({\n  selector: \"HorizontalBarChartStacked\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-horizontal-stacked\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      [roundDomains]=\"chartOptions().roundDomains\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-horizontal-stacked>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class HorizontalBarChartStackedComponent {\n\n  MULTI_OPTIONS: ChartOptions = { ...DEFAULT_CHART_OPTIONS, roundDomains: true, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .65)'] } as Color};\n\n  chartOptions = input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  });\n\n  chartData = input<Multi[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "HoverCardComponent",
             "id": "component-HoverCardComponent-7de23dac103e8ea931a331cb26bf94cf3047586441b89373e441ee4066903154e01dcd7ea543bf5ca112e1c3798839267213e321e93d75528085b205bb71c455",
             "file": "feature/ui/src/lib/ui/components/hover-card/hover-card.component.ts",
@@ -2149,7 +2603,7 @@
         },
         {
             "name": "VerticalBarChartComponent",
-            "id": "component-VerticalBarChartComponent-e136c8537c24ffabf11d9e306ab3ffce5497356f22fc165086df9697b6a7c47cc601500004de023cf244e5490938ed4779b84f64613ed791333041bdf71fbd67",
+            "id": "component-VerticalBarChartComponent-fd4ee93efc2529b31f6953659cc6381d9817d14bee2bf028b5f5b0bb0c7778374cff480df7a863f164f97082c2fe88473145e4960c9df179cb4e707d8d6a9119",
             "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -2157,9 +2611,11 @@
             "outputs": [],
             "providers": [],
             "selector": "VerticalBarChart",
-            "styleUrls": [],
+            "styleUrls": [
+                "./charts.style.css"
+            ],
             "styles": [],
-            "template": "<ngx-charts-bar-vertical\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [view]=\"chartOptions().view \"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-vertical>\n",
+            "template": "<ngx-charts-bar-vertical\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-vertical>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -2170,7 +2626,7 @@
                     "defaultValue": "new EventEmitter()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 71,
+                    "line": 68,
                     "type": "EventEmitter"
                 }
             ],
@@ -2183,7 +2639,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 69
+                    "line": 66
                 },
                 {
                     "name": "chartOptions",
@@ -2193,7 +2649,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 34
+                    "line": 31
                 },
                 {
                     "name": "single",
@@ -2203,20 +2659,10 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 38
+                    "line": 35
                 }
             ],
             "methodsClass": [
-                {
-                    "name": "ngOnInit",
-                    "args": [],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 73,
-                    "deprecated": false,
-                    "deprecationMessage": ""
-                },
                 {
                     "name": "onSelect",
                     "args": [
@@ -2230,7 +2676,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 77,
+                    "line": 71,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -2260,14 +2706,364 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, input, Input, Output, EventEmitter, signal, OnInit } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from \"./models\";\n\n@Component({\n  selector: \"VerticalBarChart\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-vertical\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [view]=\"chartOptions().view \"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-vertical>\n  `,\n})\nexport class VerticalBarChartComponent implements OnInit {\n\n  // @Input() chartOptions!: any;\n\n  // O = DEFAULT_CHART_OPTIONS;\n\n  chartOptions = input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  });\n\n  single = signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ]);\n\n  chartData = input<Single[]>();\n\n  @Output() selected = new EventEmitter();\n\n  ngOnInit() {\n    console.log(this.chartOptions());\n    }\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "sourceCode": "import { Component, input, Output, EventEmitter, signal } from \"@angular/core\";\nimport { NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from \"./models\";\n\n@Component({\n  selector: \"VerticalBarChart\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-vertical\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-vertical>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class VerticalBarChartComponent {\n\n  chartOptions = input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  });\n\n  single = signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ]);\n\n  chartData = input<Single[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
             "assetsDirs": [],
-            "styleUrlsData": "",
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
             "stylesData": "",
-            "extends": [],
-            "implements": [
-                "OnInit"
-            ]
+            "extends": []
+        },
+        {
+            "name": "VerticalBarChartGroupedComponent",
+            "id": "component-VerticalBarChartGroupedComponent-afc6911dec9bbf093a846574ff5697963affe6e6a7d935de5dafaa789810b59022eb11d86e98bf6830fe9f2feee1b027e92e5e1ae0dbf759bc4fc7bb2d3a58b3",
+            "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "VerticalBarChartGrouped",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-bar-vertical-2d\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-vertical-2d>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Multi[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "MULTI_OPTIONS",
+                    "defaultValue": "{ ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .75)'] } as Color}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChartOptions",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter, signal } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Multi, Single } from \"./models\";\n\n@Component({\n  selector: \"VerticalBarChartGrouped\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-vertical-2d\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-vertical-2d>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class VerticalBarChartGroupedComponent {\n\n  MULTI_OPTIONS: ChartOptions = { ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .75)'] } as Color};\n\n  chartOptions = input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  });\n\n  chartData = input<Multi[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "VerticalBarChartNormalizedComponent",
+            "id": "component-VerticalBarChartNormalizedComponent-723f1f084af920579c32dc93e72ee3c41b5a9c14a4a983016c67bbaa576caf58209e42f1e9359c4ebd1be0bbd2347225af6ad1b08129c10170c2a03f6db6ab14",
+            "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "VerticalBarChartNormalized",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-bar-vertical-normalized\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-vertical-normalized>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 39,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Multi[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 37
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "MULTI_OPTIONS",
+                    "defaultValue": "{ ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .85)', 'hsl(var(--primary) / .75)', 'hsl(var(--primary) / .65)', 'hsl(var(--primary) / .5)'] } as Color}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChartOptions",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter, signal } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Multi, Single } from \"./models\";\n\n@Component({\n  selector: \"VerticalBarChartNormalized\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-vertical-normalized\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-vertical-normalized>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class VerticalBarChartNormalizedComponent {\n\n  MULTI_OPTIONS: ChartOptions = { ...DEFAULT_CHART_OPTIONS, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .85)', 'hsl(var(--primary) / .75)', 'hsl(var(--primary) / .65)', 'hsl(var(--primary) / .5)'] } as Color};\n\n  chartOptions = input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  });\n\n  chartData = input<Multi[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
+            "name": "VerticalBarChartStackedComponent",
+            "id": "component-VerticalBarChartStackedComponent-f9c49f802c8861e3ced2c1ccf28ee17d53d754342037d4749b6057186b9c60a4967d2c36fd345f9491c63f649ffebef1e9468d39c127b7281517cec1b3d35d14",
+            "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "VerticalBarChartStacked",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-bar-vertical-stacked\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  [roundDomains]=\"chartOptions().roundDomains\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-vertical-stacked>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 40,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Multi[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "MULTI_OPTIONS",
+                    "defaultValue": "{ ...DEFAULT_CHART_OPTIONS, roundDomains: true, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .65)'] } as Color}",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "ChartOptions",
+                    "optional": false,
+                    "description": "",
+                    "line": 32
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 43,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Multi } from \"./models\";\n\n@Component({\n  selector: \"VerticalBarChartStacked\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-vertical-stacked\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      [roundDomains]=\"chartOptions().roundDomains\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-vertical-stacked>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class VerticalBarChartStackedComponent {\n\n  MULTI_OPTIONS: ChartOptions = { ...DEFAULT_CHART_OPTIONS, roundDomains: true, colorScheme: { domain: ['hsl(var(--primary))', 'hsl(var(--primary) / .65)'] } as Color};\n\n  chartOptions = input(this.MULTI_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...this.MULTI_OPTIONS, ...options }),\n  });\n\n  chartData = input<Multi[]>();\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
         }
     ],
     "modules": [],
@@ -2607,11 +3403,81 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HorizontalBarChartGroupedComponent>",
+                "defaultValue": "{\n  component: HorizontalBarChartGroupedComponent,\n  title: 'Components/Charts/Horizontal/Grouped',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartGroupedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart Grouped\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChartGrouped ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HorizontalBarChartNormalizedComponent>",
+                "defaultValue": "{\n  component: HorizontalBarChartNormalizedComponent,\n  title: 'Components/Charts/Horizontal/Normalized',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartNormalizedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart Normalized\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChartNormalized ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HorizontalBarChartStackedComponent>",
+                "defaultValue": "{\n  component: HorizontalBarChartStackedComponent,\n  title: 'Components/Charts/Horizontal/Stacked',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartStackedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart Stacked\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChartStacked ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<HorizontalBarChartComponent>",
+                "defaultValue": "{\n  component: HorizontalBarChartComponent,\n  title: 'Components/Charts/Horizontal/Single',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChart ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<VerticalBarChartGroupedComponent>",
+                "defaultValue": "{\n  component: VerticalBarChartGroupedComponent,\n  title: 'Components/Charts/Vertical/Grouped',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartGroupedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart Grouped\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChartGrouped ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<VerticalBarChartNormalizedComponent>",
+                "defaultValue": "{\n  component: VerticalBarChartNormalizedComponent,\n  title: 'Components/Charts/Vertical/Normalized',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartNormalizedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart Normalized\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChartNormalized ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<VerticalBarChartStackedComponent>",
+                "defaultValue": "{\n  component: VerticalBarChartStackedComponent,\n  title: 'Components/Charts/ Vertical/Stacked',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartStackedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart Stacked\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChartStacked ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<VerticalBarChartComponent>",
-                "defaultValue": "{\n  component: VerticalBarChartComponent,\n  title: 'Components/ Charts /Vertical Bar Chart',\n  decorators: [\n    moduleMetadata({\n      imports: [NgxChartsModule, CardComponent],\n    }),\n  ],\n  render: (args: VerticalBarChartComponent) => ({\n    props: args,\n    template: `\n    <Card\n    [class]=\"'w-full p-8'\">\n    <!-- <ng-container CardBadge>\n      <small>100k<sup>+</sup></small>\n    </ng-container> -->\n    <CardHeader>\n      <CardTitle [class]=\"'text-3xl'\">\n        Vertical Bar Chart\n      </CardTitle>\n      <CardDescription>\n        GDP per capita of a few European countries\n      </CardDescription>\n    </CardHeader>\n    <CardContent [contentClass]=\"'px-0'\">\n      <VerticalBarChart ${argsToTemplate(args)}\n    />\n    </CardContent>\n\n  </Card>\n    `,\n  })\n}"
+                "defaultValue": "{\n  component: VerticalBarChartComponent,\n  title: 'Components/Charts/Vertical/Single',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChart ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
             },
             {
                 "name": "meta",
@@ -2817,11 +3683,81 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 73000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 89400000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 62000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 309000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 311000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 250000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 50000020\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 58000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 58000000\n          }\n        ]\n      },\n      {\n        \"name\": \"UK\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 62000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 57000000\n          }\n        ]\n      }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n\n      {\n        \"name\": \"Jan\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"Feb\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"Mar\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"Apr\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"May\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jun\",\n        \"value\": 36000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jul\",\n        \"value\": 40000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Aug\",\n        \"value\": 42000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Sep\",\n        \"value\": 45000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Oct\",\n        \"value\": 47000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Nov\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Dec\",\n        \"value\": 52000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 73000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 89400000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 62000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 309000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 311000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 250000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 50000020\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 58000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 58000000\n          }\n        ]\n      },\n      {\n        \"name\": \"UK\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 62000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 57000000\n          }\n        ]\n      }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
-                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"United States\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"France\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"United Kingdom\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Spain\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"es\"\n        }\n      },\n      {\n        \"name\": \"Italy\",\n        \"value\": 35800,\n        \"extra\": {\n          \"code\": \"it\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
+                "defaultValue": "{\n  args: {\n    chartData: [\n\n      {\n        \"name\": \"Jan\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"Feb\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"Mar\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"Apr\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"May\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jun\",\n        \"value\": 36000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jul\",\n        \"value\": 40000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Aug\",\n        \"value\": 42000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Sep\",\n        \"value\": 45000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Oct\",\n        \"value\": 47000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Nov\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Dec\",\n        \"value\": 52000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -3053,6 +3989,83 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CarouselComponent>",
                 "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HorizontalBarChartGroupedComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HorizontalBarChartNormalizedComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HorizontalBarChartStackedComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<HorizontalBarChartComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<VerticalBarChartGroupedComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<VerticalBarChartNormalizedComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<VerticalBarChartStackedComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3926,6 +4939,160 @@
                     "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: `Yes. It adheres to the WAI-ARIA design pattern.`,\n      },\n      {\n        triggerText: 'Is it styled?',\n        content: `Yes. It comes with default styles that match the other components' aesthetics.`,\n      },\n      {\n        triggerText: 'Is it animated?',\n        content: `Yes. It's animated by default, but you can disable it if you prefer.`,\n      },\n    ],\n  },\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HorizontalBarChartGroupedComponent>",
+                    "defaultValue": "{\n  component: HorizontalBarChartGroupedComponent,\n  title: 'Components/Charts/Horizontal/Grouped',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartGroupedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart Grouped\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChartGrouped ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HorizontalBarChartNormalizedComponent>",
+                    "defaultValue": "{\n  component: HorizontalBarChartNormalizedComponent,\n  title: 'Components/Charts/Horizontal/Normalized',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartNormalizedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart Normalized\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChartNormalized ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 73000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 89400000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 62000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 309000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 311000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 250000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 50000020\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 58000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 58000000\n          }\n        ]\n      },\n      {\n        \"name\": \"UK\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 62000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 57000000\n          }\n        ]\n      }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HorizontalBarChartStackedComponent>",
+                    "defaultValue": "{\n  component: HorizontalBarChartStackedComponent,\n  title: 'Components/Charts/Horizontal/Stacked',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartStackedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart Stacked\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChartStacked ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<HorizontalBarChartComponent>",
+                    "defaultValue": "{\n  component: HorizontalBarChartComponent,\n  title: 'Components/Charts/Horizontal/Single',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: HorizontalBarChartComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Horizontal Bar Chart\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <HorizontalBarChart ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n\n      {\n        \"name\": \"Jan\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"Feb\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"Mar\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"Apr\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"May\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jun\",\n        \"value\": 36000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jul\",\n        \"value\": 40000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Aug\",\n        \"value\": 42000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Sep\",\n        \"value\": 45000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Oct\",\n        \"value\": 47000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Nov\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Dec\",\n        \"value\": 52000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<VerticalBarChartGroupedComponent>",
+                    "defaultValue": "{\n  component: VerticalBarChartGroupedComponent,\n  title: 'Components/Charts/Vertical/Grouped',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartGroupedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart Grouped\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChartGrouped ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<VerticalBarChartNormalizedComponent>",
+                    "defaultValue": "{\n  component: VerticalBarChartNormalizedComponent,\n  title: 'Components/Charts/Vertical/Normalized',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartNormalizedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart Normalized\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChartNormalized ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 73000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 89400000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 62000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 309000000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 311000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 250000000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 50000020\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 58000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 58000000\n          }\n        ]\n      },\n      {\n        \"name\": \"UK\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 62000000\n          },\n          {\n            \"name\": \"1990\",\n            \"value\": 57000000\n          }\n        ]\n      }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<VerticalBarChartStackedComponent>",
+                    "defaultValue": "{\n  component: VerticalBarChartStackedComponent,\n  title: 'Components/Charts/ Vertical/Stacked',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartStackedComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart Stacked\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChartStacked ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7300000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8940000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"USA\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 7870000\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 8270000\n          }\n        ]\n      },\n\n      {\n        \"name\": \"France\",\n        \"series\": [\n          {\n            \"name\": \"2010\",\n            \"value\": 5000002\n          },\n          {\n            \"name\": \"2011\",\n            \"value\": 5800000\n          }\n        ]\n      },\n\n        {\n          \"name\": \"UK\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Italy\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        },\n        {\n          \"name\": \"Spain\",\n          \"series\": [\n            {\n              \"name\": \"2010\",\n              \"value\": 5000002\n            },\n            {\n              \"name\": \"2011\",\n              \"value\": 5800000\n            }\n          ]\n        }\n    ] as unknown as InputSignal<Multi[] | undefined>,\n  },\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts": [
                 {
                     "name": "meta",
@@ -3935,7 +5102,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<VerticalBarChartComponent>",
-                    "defaultValue": "{\n  component: VerticalBarChartComponent,\n  title: 'Components/ Charts /Vertical Bar Chart',\n  decorators: [\n    moduleMetadata({\n      imports: [NgxChartsModule, CardComponent],\n    }),\n  ],\n  render: (args: VerticalBarChartComponent) => ({\n    props: args,\n    template: `\n    <Card\n    [class]=\"'w-full p-8'\">\n    <!-- <ng-container CardBadge>\n      <small>100k<sup>+</sup></small>\n    </ng-container> -->\n    <CardHeader>\n      <CardTitle [class]=\"'text-3xl'\">\n        Vertical Bar Chart\n      </CardTitle>\n      <CardDescription>\n        GDP per capita of a few European countries\n      </CardDescription>\n    </CardHeader>\n    <CardContent [contentClass]=\"'px-0'\">\n      <VerticalBarChart ${argsToTemplate(args)}\n    />\n    </CardContent>\n\n  </Card>\n    `,\n  })\n}"
+                    "defaultValue": "{\n  component: VerticalBarChartComponent,\n  title: 'Components/Charts/Vertical/Single',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: VerticalBarChartComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Vertical Bar Chart\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <VerticalBarChart ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
                 },
                 {
                     "name": "Primary",
@@ -3945,7 +5112,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Story",
-                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"United States\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"France\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"United Kingdom\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Spain\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"es\"\n        }\n      },\n      {\n        \"name\": \"Italy\",\n        \"value\": 35800,\n        \"extra\": {\n          \"code\": \"it\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
+                    "defaultValue": "{\n  args: {\n    chartData: [\n\n      {\n        \"name\": \"Jan\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"Feb\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"Mar\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"Apr\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"May\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jun\",\n        \"value\": 36000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jul\",\n        \"value\": 40000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Aug\",\n        \"value\": 42000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Sep\",\n        \"value\": 45000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Oct\",\n        \"value\": 47000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Nov\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Dec\",\n        \"value\": 52000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts": [
@@ -4186,6 +5353,97 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CarouselComponent>",
                     "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HorizontalBarChartGroupedComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HorizontalBarChartNormalizedComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HorizontalBarChartStackedComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<HorizontalBarChartComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<VerticalBarChartGroupedComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<VerticalBarChartNormalizedComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<VerticalBarChartStackedComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4457,7 +5715,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 4,
+        "count": 3,
         "status": "low",
         "files": [
             {
@@ -5026,6 +6284,209 @@
                 "status": "very-good"
             },
             {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HorizontalBarChartGroupedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HorizontalBarChartNormalizedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HorizontalBarChartStackedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "HorizontalBarChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/5",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VerticalBarChartGroupedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VerticalBarChartNormalizedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VerticalBarChartStackedComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
                 "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -5051,7 +6512,7 @@
                 "linktype": "component",
                 "name": "VerticalBarChartComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/7",
+                "coverageCount": "0/6",
                 "status": "low"
             },
             {
