@@ -1,0 +1,93 @@
+import { Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { moduleMetadata } from '@storybook/angular';
+
+import { IconComponent } from '../icon/icon.component';
+import { AlertComponent } from './alert.component';
+import { lucideBell, lucideBox } from '@ng-icons/lucide';
+import { IconName, provideIcons } from '@ng-icons/core';
+
+<Meta
+  title="Components/Alert/Alert Component"
+  component={AlertComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [IconComponent],
+      providers: [provideIcons({ lucideBell, lucideBox })],
+    }),
+  ]}
+  parameters={{
+    docs: {
+      source: {
+        transform: (src) => {
+          const wrapperStriped = src.replace(/<div[^>]*>\s*([\s\S]*?)\s*<\/div>/gi, '$1');
+          return wrapperStriped
+        }
+      },
+    },
+  }}
+/>
+
+# Alert Component
+
+The `AlertComponent` is a reusable component that displays an alert.
+
+## Usage
+
+Here's an example of how you can use the `AlertComponent`:
+
+<Canvas>
+  <Story name="Default">
+    {{
+      template: `
+        <Alert [alertTitle]="'Using ShadCn in Angular'">
+          <p>
+            You can now add nice and sleek components to your UI in a cinch
+          </p>
+        </Alert>
+      `,
+    }}
+  </Story>
+
+</Canvas>
+
+<Canvas>
+  <Story name="Provided icon">
+    {{
+      template: `
+        <Alert
+          [alertTitle]="'Using ShadCn in Angular'"
+          [alertIconName]="'lucideBell'"
+        >
+          <p>
+            You can now add nice and sleek components to your UI in a cinch
+          </p>
+        </Alert>
+      `,
+    }}
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="Destructive">
+    {{
+      template: `
+        <Alert
+          [alertTitle]="'Using ShadCn in Angular'"
+          [variant]="'destructive'"
+        >
+          <p>
+            You can now add nice and sleek components to your UI in a cinch
+          </p>
+        </Alert>
+      `,
+      context: {
+        customIcon: lucideBox,
+      },
+    }}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={AlertComponent} />
+

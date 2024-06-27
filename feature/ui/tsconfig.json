@@ -12,7 +12,10 @@
   "paths": {
     "@spartan-ng/ui-icon-helm": [
       "feature/spartanui/ui-icon-helm/src/index.ts"
-    ]
+    ],
+    "@mantis-ui/ui-card": [
+      "feature/ui/src/lib/ui/components/card/index.ts"
+    ],
   },
   "files": [],
   "include": [],

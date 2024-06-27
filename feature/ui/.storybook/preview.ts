@@ -23,11 +23,21 @@ const preview: Preview = {
       defaultTheme: 'light',
       attributeName: 'data-mode',
     }),
-    componentWrapperDecorator((story) => {
-      return `<div class="bg-background m-4 p-8" style="margin: 0; padding: 2rem;">${story}</div>`
-    })
+    componentWrapperDecorator(
+      (story) => {
+        return `<div class="bg-background m-4 p-8" style="margin: 0; padding: 2rem;">${story}</div>`
+      },
+    )
   ],
   parameters: {
+    docs: {
+
+      story: {
+        inlineStories: false,
+        excludeDecorators: true,
+      },
+
+    },
     options: {
       storySort: {
         order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],

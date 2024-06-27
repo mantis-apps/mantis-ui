@@ -1,0 +1,81 @@
+import {  Meta, Story, Canvas, ArgsTable } from '@storybook/blocks';
+import { ButtonComponent } from '../button/button.component';
+import { CardComponent } from './partials/card.component';
+import { CardHeaderComponent } from './partials/card-header.component';
+import { CardTitleComponent } from './partials/card-title.component';
+import { CardDescriptionComponent } from './partials/card-description.component';
+import { CardContentComponent } from './partials/card-content.component';
+import { CardFooterComponent } from './partials/card-footer.component';
+import { moduleMetadata } from '@storybook/angular';
+
+
+<Meta
+  title="Components/Card/Card Component"
+  component={CardComponent}
+  decorators={[
+    moduleMetadata({
+      imports: [
+        ButtonComponent,
+        CardHeaderComponent,
+        CardTitleComponent,
+        CardDescriptionComponent,
+        CardContentComponent,
+        CardFooterComponent,
+      ],
+    }),
+  ]}
+  parameters={{
+    docs: {
+      source: {
+        transform: (src) => {
+          const wrapperStriped = src.replace(/<div[^>]*>\s*([\s\S]*?)\s*<\/div>/gi, '$1');
+          return wrapperStriped
+        }
+      },
+    },
+  }}
+/>
+
+# Card Component
+
+The `CardComponent` is a reusable component that displays a card.
+
+
+## Usage
+
+Here's an example of how you can use the `CardComponent`:
+
+<Canvas>
+  <Story name="Card Example">
+    {{
+      template: `
+        <Card [class]="'p-8 w-[400px]'">
+          <CardHeader>
+            <CardTitle [class]="'text-4xl'">Down the Rabbit Hole</CardTitle>
+            <CardDescription>
+              Alice in Wonderland
+              <small>— Lewis Carroll</small>
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <p>
+              Alice was beginning to get very tired of sitting by her sister on the bank,
+              and of having nothing to do: once or twice she had peeped into the book her
+              sister was reading, but it had no pictures or conversations in it, “and what
+              is the use of a book, ” thought Alice, “without pictures or conversations?”
+            </p>
+          </CardContent>
+          <CardFooter>
+            <Button size="lg">Add to bookmarks</Button>
+          </CardFooter>
+        </Card>
+      `
+    }}
+  </Story>
+</Canvas>
+
+## Props
+
+<ArgsTable of={CardComponent} />
+
+
