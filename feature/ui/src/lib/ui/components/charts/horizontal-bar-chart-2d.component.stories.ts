@@ -1,15 +1,15 @@
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import type { Meta, StoryObj } from '@storybook/angular';
-import { signal, InputSignal, importProvidersFrom} from '@angular/core';
+import { InputSignal, importProvidersFrom} from '@angular/core';
 import { moduleMetadata, argsToTemplate, applicationConfig } from '@storybook/angular';
-import { VerticalBarChartStackedComponent } from './vertical-bar-chart-stacked.component';
+import { HorizontalBarChartGroupedComponent } from './horizontal-bar-chart-2d.component';
 import { NgxChartsModule, } from "@swimlane/ngx-charts";
 import { Multi } from "./models";
 import {CardComponent, CardContentComponent, CardTitleComponent, CardDescriptionComponent, CardFooterComponent, CardHeaderComponent } from '../card'
 
-const meta: Meta<VerticalBarChartStackedComponent> = {
-  component: VerticalBarChartStackedComponent,
-  title: 'Components/Charts/ Vertical/Stacked',
+const meta: Meta<HorizontalBarChartGroupedComponent> = {
+  component: HorizontalBarChartGroupedComponent,
+  title: 'Components/Charts/Horizontal/Grouped',
   decorators: [
     applicationConfig({
       providers: [
@@ -37,27 +37,27 @@ const meta: Meta<VerticalBarChartStackedComponent> = {
       },
     },
   },
-  render: (args: VerticalBarChartStackedComponent) => ({
+  render: (args: HorizontalBarChartGroupedComponent) => ({
     props: args,
     template: `
       <Card [class]="'w-full p-8'">
         <CardHeader>
           <CardTitle [class]="'text-3xl'">
-            Vertical Bar Chart Stacked
+            Horizontal Bar Chart Grouped
           </CardTitle>
           <CardDescription>
             Monthly Sales
           </CardDescription>
         </CardHeader>
         <CardContent [contentClass]="'px-0'">
-          <VerticalBarChartStacked ${argsToTemplate(args)} />
+          <HorizontalBarChartGrouped ${argsToTemplate(args)} />
         </CardContent>
       </Card>
     `,
   })
 };
 export default meta;
-type Story = StoryObj<VerticalBarChartStackedComponent>;
+type Story = StoryObj<HorizontalBarChartGroupedComponent>;
 
 export const Primary: Story = {
   args: {
@@ -151,6 +151,6 @@ export const Primary: Story = {
 //   args: {},
 //   play: async ({ canvasElement }) => {
 //     const canvas = within(canvasElement);
-//     expect(canvas.getByText(/vertical-bar-chart works!/gi)).toBeTruthy();
+//     expect(canvas.getByText(/Horizontal-bar-chart works!/gi)).toBeTruthy();
 //   },
 // };

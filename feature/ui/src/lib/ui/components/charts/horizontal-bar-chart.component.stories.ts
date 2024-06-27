@@ -9,7 +9,7 @@ import {CardComponent, CardContentComponent, CardTitleComponent, CardDescription
 
 const meta: Meta<HorizontalBarChartComponent> = {
   component: HorizontalBarChartComponent,
-  title: 'Components/ Charts /Horizontal Bar Chart',
+  title: 'Components/Charts/Horizontal/Single',
   decorators: [
     applicationConfig({
       providers: [

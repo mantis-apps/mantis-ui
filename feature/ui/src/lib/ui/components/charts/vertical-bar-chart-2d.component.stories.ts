@@ -13,7 +13,7 @@ import { expect } from '@storybook/jest';
 
 const meta: Meta<VerticalBarChartGroupedComponent> = {
   component: VerticalBarChartGroupedComponent,
-  title: 'Components/ Charts /Grouped Vertical Bar Chart ',
+  title: 'Components/Charts/Vertical/Grouped',
   decorators: [
     applicationConfig({
       providers: [
