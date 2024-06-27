@@ -7,7 +7,7 @@
         class="items-start flex-1 px-0 py-4 sm:px-6 sm:py-0 md:px-0">
 
         <div
-  class="items-start justify-center hidden gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
+  class="items-start justify-center gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
   <!-- first column -->
   <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
@@ -136,6 +136,33 @@
 
   <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
+    <!-- Vertical Bar Chart -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Vertical Bar Chart
+          </CardTitle>
+          <CardDescription>
+            GDP per capita of a few European countries
+          </CardDescription>
+        </CardHeader>
+        <CardContent [contentClass]="'px-0'">
+          <HorizontalBarChart
+          (selected)="chartEvent($event)"
+          [chartData]="barChartData()"
+          [chartOptions]="barChartOptions()"
+        />
+        </CardContent>
+
+      </Card>
+
+    </div>
     <!-- First row -->
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>
@@ -157,6 +184,8 @@
         </Card>
       </div>
     </div>
+
+
 
     <!-- Second row -->
     <div class="flex items-center justify-center [&>div]:w-full">
@@ -203,7 +232,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent>
-          <HoverCard class="justify-center w-full flex">
+          <HoverCard class="flex justify-center w-full">
             <p hoverTrigger>best meta framework:<Button variant="link" class="px-1 ml-0">&#64;analogjs</Button></p>
             <div hoverContent class="flex justify-between space-x-4">
               <Avatar variant="small" id="avatar-small"
@@ -232,6 +261,32 @@
   </div>
   <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
     <!-- Cards rows container-->
+    <!-- Vertical Bar Chart -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Vertical Bar Chart Grouped
+          </CardTitle>
+          <CardDescription>
+            GDP per capita of a few European countries
+          </CardDescription>
+        </CardHeader>
+        <CardContent [contentClass]="'px-0'">
+          <VerticalBarChartStacked
+          [chartData]="multiBarChartData()"
+          [chartOptions]="barChartOptions()"
+        />
+        </CardContent>
+
+      </Card>
+
+    </div>
     <!-- First row -->
     <div class="flex items-center justify-center [&>div]:w-full">
       <div>

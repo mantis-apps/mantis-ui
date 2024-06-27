@@ -2146,6 +2146,128 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "VerticalBarChartComponent",
+            "id": "component-VerticalBarChartComponent-e136c8537c24ffabf11d9e306ab3ffce5497356f22fc165086df9697b6a7c47cc601500004de023cf244e5490938ed4779b84f64613ed791333041bdf71fbd67",
+            "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "VerticalBarChart",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<ngx-charts-bar-vertical\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [view]=\"chartOptions().view \"\n  [results]=\"chartData()\"\n  [gradient]=\"chartOptions().gradient\"\n  [xAxis]=\"chartOptions().showXAxis\"\n  [yAxis]=\"chartOptions().showYAxis\"\n  [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n  [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n  [showGridLines]=\"chartOptions().showGridLines\"\n  [xAxisLabel]=\"chartOptions().xAxisLabel\"\n  [yAxisLabel]=\"chartOptions().yAxisLabel\"\n  [barPadding]=\"chartOptions().barPadding\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-bar-vertical>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 71,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Single[]>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 69
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 34
+                },
+                {
+                    "name": "single",
+                    "defaultValue": "signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 38
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 73,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 77,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Input, Output, EventEmitter, signal, OnInit } from \"@angular/core\";\nimport { Color, NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from \"./models\";\n\n@Component({\n  selector: \"VerticalBarChart\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-bar-vertical\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [view]=\"chartOptions().view \"\n      [results]=\"chartData()\"\n      [gradient]=\"chartOptions().gradient\"\n      [xAxis]=\"chartOptions().showXAxis\"\n      [yAxis]=\"chartOptions().showYAxis\"\n      [showXAxisLabel]=\"chartOptions().showXAxisLabel\"\n      [showYAxisLabel]=\"chartOptions().showYAxisLabel\"\n      [showGridLines]=\"chartOptions().showGridLines\"\n      [xAxisLabel]=\"chartOptions().xAxisLabel\"\n      [yAxisLabel]=\"chartOptions().yAxisLabel\"\n      [barPadding]=\"chartOptions().barPadding\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-bar-vertical>\n  `,\n})\nexport class VerticalBarChartComponent implements OnInit {\n\n  // @Input() chartOptions!: any;\n\n  // O = DEFAULT_CHART_OPTIONS;\n\n  chartOptions = input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  });\n\n  single = signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ]);\n\n  chartData = input<Single[]>();\n\n  @Output() selected = new EventEmitter();\n\n  ngOnInit() {\n    console.log(this.chartOptions());\n    }\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "implements": [
+                "OnInit"
+            ]
         }
     ],
     "modules": [],
@@ -2362,6 +2484,16 @@
                 "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/combobox works!/gi)).toBeTruthy();\n  },\n}"
             },
             {
+                "name": "Heading",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/command-dialog works!/gi)).toBeTruthy();\n  },\n}"
+            },
+            {
                 "name": "Landscape",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -2475,6 +2607,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<VerticalBarChartComponent>",
+                "defaultValue": "{\n  component: VerticalBarChartComponent,\n  title: 'Components/ Charts /Vertical Bar Chart',\n  decorators: [\n    moduleMetadata({\n      imports: [NgxChartsModule, CardComponent],\n    }),\n  ],\n  render: (args: VerticalBarChartComponent) => ({\n    props: args,\n    template: `\n    <Card\n    [class]=\"'w-full p-8'\">\n    <!-- <ng-container CardBadge>\n      <small>100k<sup>+</sup></small>\n    </ng-container> -->\n    <CardHeader>\n      <CardTitle [class]=\"'text-3xl'\">\n        Vertical Bar Chart\n      </CardTitle>\n      <CardDescription>\n        GDP per capita of a few European countries\n      </CardDescription>\n    </CardHeader>\n    <CardContent [contentClass]=\"'px-0'\">\n      <VerticalBarChart ${argsToTemplate(args)}\n    />\n    </CardContent>\n\n  </Card>\n    `,\n  })\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2505,6 +2647,16 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<CommandDialogComponent>",
+                "defaultValue": "{\n  component: CommandDialogComponent,\n  title: 'CommandDialogComponent',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2519,7 +2671,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<HoverCardComponent>",
-                "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <HoverCard ${argsToTemplate(args)} class=\"justify-center w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
+                "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with simple content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n      <Button hoverTrigger variant=\"link\" class=\"px-2 ml-0\">mantistech.io</Button>\n      <div hoverContent class=\"flex justify-between space-x-4\">\n        <p>Zero to Angular full-stack and multi platform deployment</p>\n      </div>\n    </HoverCard>\n    <br />\n    <hr class=\"my-4\">\n    <br />\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with extensive content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
             },
             {
                 "name": "meta",
@@ -2665,6 +2817,16 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"United States\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"France\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"United Kingdom\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Spain\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"es\"\n        }\n      },\n      {\n        \"name\": \"Italy\",\n        \"value\": 35800,\n        \"extra\": {\n          \"code\": \"it\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -2686,6 +2848,16 @@
                 "ctype": "miscellaneous",
                 "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {},\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
@@ -2890,6 +3062,17 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
+                "rawtype": "StoryObj<VerticalBarChartComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
                 "rawtype": "StoryObj<CheckboxComponent>",
                 "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
                 "deprecated": false,
@@ -2914,6 +3097,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<ComboboxComponent>",
                 "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<CommandDialogComponent>",
+                "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3636,6 +3830,38 @@
                     "defaultValue": "{\n  args: {},\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts": [
+                {
+                    "name": "Heading",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/command-dialog works!/gi)).toBeTruthy();\n  },\n}"
+                },
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<CommandDialogComponent>",
+                    "defaultValue": "{\n  component: CommandDialogComponent,\n  title: 'CommandDialogComponent',\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {},\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts": [
                 {
                     "name": "Landscape",
@@ -3700,6 +3926,28 @@
                     "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: `Yes. It adheres to the WAI-ARIA design pattern.`,\n      },\n      {\n        triggerText: 'Is it styled?',\n        content: `Yes. It comes with default styles that match the other components' aesthetics.`,\n      },\n      {\n        triggerText: 'Is it animated?',\n        content: `Yes. It's animated by default, but you can disable it if you prefer.`,\n      },\n    ],\n  },\n}"
                 }
             ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<VerticalBarChartComponent>",
+                    "defaultValue": "{\n  component: VerticalBarChartComponent,\n  title: 'Components/ Charts /Vertical Bar Chart',\n  decorators: [\n    moduleMetadata({\n      imports: [NgxChartsModule, CardComponent],\n    }),\n  ],\n  render: (args: VerticalBarChartComponent) => ({\n    props: args,\n    template: `\n    <Card\n    [class]=\"'w-full p-8'\">\n    <!-- <ng-container CardBadge>\n      <small>100k<sup>+</sup></small>\n    </ng-container> -->\n    <CardHeader>\n      <CardTitle [class]=\"'text-3xl'\">\n        Vertical Bar Chart\n      </CardTitle>\n      <CardDescription>\n        GDP per capita of a few European countries\n      </CardDescription>\n    </CardHeader>\n    <CardContent [contentClass]=\"'px-0'\">\n      <VerticalBarChart ${argsToTemplate(args)}\n    />\n    </CardContent>\n\n  </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n      {\n        \"name\": \"Germany\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"United States\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"France\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"United Kingdom\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Spain\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"es\"\n        }\n      },\n      {\n        \"name\": \"Italy\",\n        \"value\": 35800,\n        \"extra\": {\n          \"code\": \"it\"\n        }\n      }\n    ] as unknown as InputSignal<Single[] | undefined>,\n  },\n}"
+                }
+            ],
             "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts": [
                 {
                     "name": "meta",
@@ -3731,7 +3979,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Meta<HoverCardComponent>",
-                    "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <HoverCard ${argsToTemplate(args)} class=\"justify-center w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
+                    "defaultValue": "{\n  component: HoverCardComponent,\n  title: 'Components/HoverCard',\n  decorators: [\n    moduleMetadata({\n      imports: [AvatarComponent, ButtonComponent, IconComponent],\n      providers: [provideIcons({ lucideCalendar })]\n    })\n  ],\n  render: (args: HoverCardComponent) => ({\n    props: args,\n    template: `\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with simple content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n      <Button hoverTrigger variant=\"link\" class=\"px-2 ml-0\">mantistech.io</Button>\n      <div hoverContent class=\"flex justify-between space-x-4\">\n        <p>Zero to Angular full-stack and multi platform deployment</p>\n      </div>\n    </HoverCard>\n    <br />\n    <hr class=\"my-4\">\n    <br />\n    <h4 class=\"text-xl font-semibold mb-2\">HoverCard with extensive content</h4>\n    <HoverCard ${argsToTemplate(args)} class=\"w-full flex\">\n    <p hoverTrigger>best meta framework:<Button variant=\"outline\" class=\"px-2 ml-0\">&#64;analogjs</Button></p>\n    <div hoverContent class=\"flex justify-between space-x-4\">\n      <Avatar variant=\"small\" id=\"avatar-small\"\n        imgSrc=\"https://analogjs.org/img/logos/analog-logo.svg\"\n        imgAltText=\"AnalogLogo\"\n        fallbackText=\"AN\"\n        fallbackBgColor=\"bg-red-600\"\n      />\n      <div class=\"space-y-1\">\n        <h4 class=\"text-sm font-semibold\">&#64;analogjs</h4>\n        <p class=\"text-sm\">The Angular meta-framework – build Angular applications faster.</p>\n        <div class=\"flex items-center pt-2\">\n          <Icon name=\"lucideCalendar\" class=\"w-4 h-4 mr-2 opacity-70\" />\n          <span class=\"text-xs text-muted-foreground\">Joined December 2021</span>\n        </div>\n      </div>\n    </div>\n  </HoverCard>\n    `\n  }),\n}"
                 },
                 {
                     "name": "Primary",
@@ -3944,6 +4192,19 @@
                     "kind": 183
                 }
             ],
+            "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<VerticalBarChartComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
             "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts": [
                 {
                     "name": "Story",
@@ -3977,6 +4238,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<ComboboxComponent>",
                     "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<CommandDialogComponent>",
+                    "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -4183,7 +4457,7 @@
     },
     "routes": [],
     "coverage": {
-        "count": 5,
+        "count": 4,
         "status": "low",
         "files": [
             {
@@ -4752,6 +5026,35 @@
                 "status": "very-good"
             },
             {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "VerticalBarChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/7",
+                "status": "low"
+            },
+            {
                 "filePath": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
@@ -4856,6 +5159,36 @@
                 "name": "ComboboxComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/6",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Heading",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {

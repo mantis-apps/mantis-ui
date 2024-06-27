@@ -5,6 +5,11 @@ export * from './lib/ui/components/icon/icon-list/icon-list.component';
 // Card Module
 export * from './card.module';
 
+// Charts Module
+export * from './lib/ui/components/charts';
+
+
+export * from './lib/ui/components/charts/models';
 
 export * from './lib/ui/components/alert/alert.component';
 
