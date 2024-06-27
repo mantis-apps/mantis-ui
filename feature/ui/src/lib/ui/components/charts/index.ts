@@ -10,5 +10,6 @@ export * from './vertical-bar-chart-normalized.component';
 export * from './horizontal-bar-chart.component';
 export * from './horizontal-bar-chart-2d.component';
 export * from './horizontal-bar-chart-stacked.component';
+export * from './horizontal-bar-chart-normalized.component';
 
 
