@@ -1,0 +1,122 @@
+<header
+  class="sticky top-0 z-30 flex items-center gap-4 px-4 border-b h-14 bg-background sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
+  <hlm-sheet side="left" closeDelay="100">
+    <button size="icon" id="menu-trigger" variant="ghost" brnSheetTrigger
+      hlmBtn>
+      <hlm-icon name="lucideMenu" size="sm" />
+      <span class="sr-only">Open menu</span>
+    </button>
+    <hlm-sheet-content class="pb-0 pr-0" *brnSheetContent="let ctx">
+      <button hlmSheetClose>
+        <span class="sr-only">Close</span>
+        <hlm-icon class="flex w-4 h-4" name="lucideX" />
+      </button>
+      <div class="flex items-center pb-2">
+        <a (click)="ctx.close()" hlmBtn variant="ghost" class="mr-4 p-1.5"
+          routerLink="/">
+          <!-- <spartan-logo class="w-12 text-primary" /> -->
+        </a>
+        <span>spartan/ui</span>
+      </div>
+      <div
+        class="overflow-y-auto h-[calc(100vh-8rem)] scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-gray-100">
+        <div class="flex flex-col p-2 pb-4 space-y-1">
+          <a (click)="ctx.close()"
+            class="px-2 py-1 text-foreground hover:underline"
+            routerLink="/documentation">
+            Documentation
+          </a>
+          <a (click)="ctx.close()"
+            class="px-2 py-1 text-foreground hover:underline"
+            routerLink="/stack">Stack</a>
+          <a (click)="ctx.close()"
+            class="px-2 py-1 text-foreground hover:underline"
+            routerLink="/components">
+            Components
+          </a>
+          <a (click)="ctx.close()"
+            class="px-2 py-1 text-foreground hover:underline"
+            routerLink="/examples">
+            Examples
+          </a>
+        </div>
+        <!-- <spartan-side-nav-content (linkClicked)="ctx.close()" /> -->
+      </div>
+    </hlm-sheet-content>
+  </hlm-sheet>
+  <div class="relative flex-1 ml-auto md:grow-0">
+    <hlm-icon name="lucideSearch" size="sm"
+      class="absolute left-2.5 top-3 h-4 w-4 text-muted-foreground" />
+    <input hlmInput type="search" placeholder="Search..."
+      class="w-full rounded-lg bg-background pl-8 md:w-[200px] lg:w-[336px]" />
+  </div>
+  <div>
+    <button hlmBtn variant="link" size="icon"
+      class="overflow-hidden border rounded-full bg-background hover:bg-gray-100 focus:bg-gray-100"
+      [brnMenuTriggerFor]="userMenu">
+      <!-- <img src="/placeholder-user.jpg" width={36} height={36} alt="Avatar"
+        class="overflow-hidden rounded-full" /> -->
+        <Avatar imgSrc="/assets/avatar.png"  />
+    </button>
+    <ng-template #userMenu>
+      <hlm-menu class="w-40 mt-2">
+        <hlm-menu-label>My Account</hlm-menu-label>
+        <hlm-menu-separator />
+        <hlm-menu-group>
+          <button hlmMenuItem>Settings</button>
+          <button hlmMenuItem>Support</button>
+        </hlm-menu-group>
+        <hlm-menu-separator />
+        <button hlmMenuItem>Logout</button>
+      </hlm-menu>
+    </ng-template>
+  </div>
+  <div class="flex items-center gap-1">
+    <button hlmBtn variant="ghost" size="icon"
+      [brnMenuTriggerFor]="themeMenu">
+      <hlm-icon name="lucidePalette" size="sm"></hlm-icon>
+    </button>
+    <button hlmBtn variant="ghost" size="icon"
+      [brnMenuTriggerFor]="modeMenu">
+      <hlm-icon [name]="mode() === 'dark' ? 'lucideMoon' : 'lucideSun'"
+        size="sm"></hlm-icon>
+    </button>
+  </div>
+  <ng-template #themeMenu>
+    <hlm-menu class="w-40 mt-2">
+      <hlm-menu-group>
+        <button hlmMenuItem (click)="setTheme('theme-default')">
+          zinc
+        </button>
+        <button hlmMenuItem (click)="setTheme('theme-red')">
+          red
+        </button>
+        <button hlmMenuItem (click)="setTheme('theme-green')">
+          green
+        </button>
+        <button hlmMenuItem (click)="setTheme('theme-orange')">
+          orange
+        </button>
+        <button hlmMenuItem (click)="setTheme('theme-blue')">
+          blue
+        </button>
+      </hlm-menu-group>
+    </hlm-menu>
+  </ng-template>
+
+  <ng-template #modeMenu>
+    <hlm-menu class="w-40 mt-2">
+      <hlm-menu-group>
+        <button hlmMenuItem (click)="setMode('system')">
+          system
+        </button>
+        <button hlmMenuItem (click)="setMode('light')">
+          light
+        </button>
+        <button hlmMenuItem (click)="setMode('dark')">
+          dark
+        </button>
+      </hlm-menu-group>
+    </hlm-menu>
+  </ng-template>
+</header>

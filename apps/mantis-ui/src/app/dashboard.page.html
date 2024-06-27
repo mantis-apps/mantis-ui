@@ -1,0 +1,394 @@
+<main class="w-full min-h-screen p-0 bg-background text-foreground">
+  <div class="flex flex-col w-full h-full min-h-screen bg-muted/40">
+    <!-- <app-dashboard-sidebar></app-dashboard-sidebar> -->
+    <div class="flex flex-col h-full min-h-screen sm:gap-4 sm:py-4 sm:pl-14">
+      <AppHeader />
+      <main
+        class="items-start flex-1 px-0 py-4 sm:px-6 sm:py-0 md:px-0">
+
+        <div
+  class="items-start justify-center gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
+  <!-- first column -->
+  <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
+    <!-- Cards rows container-->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Accordion
+          </CardTitle>
+          <CardDescription>
+            A vertically stacked set of interactive headings that each reveal a section of content.
+          </CardDescription>
+        </CardHeader>
+        <CardContent contentClass="px-4">
+          <Accordion
+            [items]="accordionItems"
+          />
+        </CardContent>
+        <CardFooter>
+          <Button variant="default" size="lg"
+            class="flex content-center justify-start">
+            <Icon [name]="'lucideMail'" size="sm"
+              class="flex mr-1" />
+            <p>Subscribe <span class="xs:hidden sm:inline">to
+                Newsletter</span></p>
+          </Button>
+        </CardFooter>
+      </Card>
+
+    </div>
+    <!-- First row -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Alert
+          </CardTitle>
+          <CardDescription>
+            Displays a callout for user attention.
+          </CardDescription>
+        </CardHeader>
+        <CardContent contentClass="px-4">
+          <Alert
+            alertTitle="Check memory levels"
+            class="flex-1 mb-4"
+          >
+            <p>
+              Your computer is consumming high levels of memory. Please shut any background running process that are not mission critical
+            </p>
+          </Alert>
+
+          <Alert
+            alertTitle="Check memory levels"
+            class="flex-1 mb-4"
+            variant="destructive"
+          >
+            <p>
+              Your computer is consumming high levels of memory. Please shut any background running process that are not mission critical
+            </p>
+          </Alert>
+
+          <Alert
+            alertTitle="Check memory levels"
+            class="flex-1"
+          >
+            <p>
+              Your computer is consumming high levels of memory. Please shut any background running process that are not mission critical
+            </p>
+          </Alert>
+        </CardContent>
+        <CardFooter>
+          <Button variant="default" size="lg"
+            class="flex content-center justify-start">
+            <Icon [name]="'lucideMail'" size="sm"
+              class="flex mr-1" />
+            <p>Subscribe <span class="xs:hidden sm:inline">to
+                Newsletter</span></p>
+          </Button>
+        </CardFooter>
+      </Card>
+
+    </div>
+
+    <!-- Second row -->
+
+    <div class="flex items-center justify-center [&>div]:w-full">
+      <div>
+        <Card
+          class="w-full">
+          <CardHeader>
+            <CardTitle [class]="'text-3xl'">
+              Badge
+            </CardTitle>
+            <CardDescription>
+              Makes a component look like a badge.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <div class="grid grid-cols-3 gap-1 gap-y-4">
+                <Badge badgeText="This is default" />
+                <Badge badgeText="This is secondary" badgeVariant="secondary" />
+                <Badge badgeText="This is outline" badgeVariant="outline" />
+                <Badge badgeText="This is destructive" badgeVariant="destructive" />
+                <Badge badgeText="This is a link to mantistech.io" badgeLinkUrl="https://mantistech.io/" class="col-span-2" />
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+
+
+    <!-- End rows container-->
+  </div>
+
+  <!-- second column -->
+
+  <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
+    <!-- Cards rows container-->
+    <!-- Vertical Bar Chart -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Vertical Bar Chart
+          </CardTitle>
+          <CardDescription>
+            GDP per capita of a few European countries
+          </CardDescription>
+        </CardHeader>
+        <CardContent [contentClass]="'px-0'">
+          <HorizontalBarChart
+          (selected)="chartEvent($event)"
+          [chartData]="barChartData()"
+          [chartOptions]="barChartOptions()"
+        />
+        </CardContent>
+
+      </Card>
+
+    </div>
+    <!-- First row -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+      <div>
+        <Card
+          class="w-full">
+          <CardHeader>
+            <CardTitle [class]="'text-3xl'">
+              Command
+            </CardTitle>
+            <CardDescription>
+              Fast, composable, command menu for Angular.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Command [commandData]="commandData" (commandSelected)="setCommand($event)"/>
+
+          </CardContent>
+
+        </Card>
+      </div>
+    </div>
+
+
+
+    <!-- Second row -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Carousel
+          </CardTitle>
+          <CardDescription>
+            A carousel with motion and swipe built using Embla.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Carousel
+            [carouselMaxWidthClass]="'max-w-xs'"
+            [items]="[1, 2, 3, 4, 5]"
+            [carouselContentClass]="'flex items-center justify-center p-6 aspect-square'"
+            [carouselItemClass]="'text-4xl font-semibold'"
+          ></Carousel>
+        </CardContent>
+
+      </Card>
+
+    </div>
+
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Hover Card
+          </CardTitle>
+          <CardDescription>
+            For sighted users to preview content available behind a link.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <HoverCard class="flex justify-center w-full">
+            <p hoverTrigger>best meta framework:<Button variant="link" class="px-1 ml-0">&#64;analogjs</Button></p>
+            <div hoverContent class="flex justify-between space-x-4">
+              <Avatar variant="small" id="avatar-small"
+                imgSrc="https://analogjs.org/img/logos/analog-logo.svg"
+                imgAltText="AnalogLogo"
+                fallbackText="AN"
+                fallbackBgColor="bg-red-600"
+              />
+              <div class="space-y-1">
+                <h4 class="text-sm font-semibold">&#64;analogjs</h4>
+                <p class="text-sm">The Angular meta-framework – build Angular applications faster.</p>
+                <div class="flex items-center pt-2">
+                  <Icon name="lucideCalendar" class="w-4 h-4 mr-2 opacity-70" />
+                  <span class="text-xs text-muted-foreground">Joined December 2021</span>
+                </div>
+              </div>
+            </div>
+          </HoverCard>
+        </CardContent>
+
+      </Card>
+
+    </div>
+
+    <!-- End rows container-->
+  </div>
+  <div class="grid items-start col-span-2 gap-6 lg:col-span-1">
+    <!-- Cards rows container-->
+    <!-- Vertical Bar Chart -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Vertical Bar Chart Grouped
+          </CardTitle>
+          <CardDescription>
+            GDP per capita of a few European countries
+          </CardDescription>
+        </CardHeader>
+        <CardContent [contentClass]="'px-0'">
+          <VerticalBarChartStacked
+          [chartData]="multiBarChartData()"
+          [chartOptions]="barChartOptions()"
+        />
+        </CardContent>
+
+      </Card>
+
+    </div>
+    <!-- First row -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+      <div>
+        <Card
+          class="w-full">
+          <CardHeader>
+            <CardTitle [class]="'text-3xl'">
+              Checkbox
+            </CardTitle>
+            <CardDescription>
+              A control that allows the user to toggle between checked and not checked.
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <Checkbox [checkboxLabel]="'Accept terms and conditions'"></Checkbox>
+            <div class="my-4">
+              <p>
+                You can also set a custom icom instead of the default checkbox. Be sure that the icon is provided. In the example
+                below we are adding the `lucideMoon` icon as the checkbox icon.
+              </p>
+            </div>
+            <Checkbox
+              [checkboxLabel]="'Accept terms and conditions'"
+              [iconName]="'lucideMoon'"
+            ></Checkbox>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+
+    <!-- Second row -->
+    <div class="flex items-center justify-center [&>div]:w-full">
+
+      <Card
+        class="w-full">
+        <!-- <ng-container CardBadge>
+          <small>100k<sup>+</sup></small>
+        </ng-container> -->
+        <CardHeader>
+          <CardTitle [class]="'text-3xl'">
+            Collapsible
+          </CardTitle>
+          <CardDescription>
+            An interactive component which expands/collapses a panel.
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <Collapsible
+          [collapsibleTitle]="'@peduarte starred 3 repositories'"
+          [collapsibleTriggerText]="'@radix-ui/primitives'"
+          [collapsibleContent]="[{text: '@radix-ui/colors'}, {text: '@stitches/react'}]"
+        ></Collapsible>
+        </CardContent>
+      </Card>
+
+    </div>
+
+    <div class="flex items-center justify-center [&>div]:w-full">
+      <div>
+        <Card
+          class="w-full">
+          <CardHeader>
+            <CardTitle [class]="'text-3xl'">
+              Thousands of Lucide Icons
+            </CardTitle>
+            <CardDescription>
+              There is a Lucide Icon for every occasion
+            </CardDescription>
+          </CardHeader>
+          <CardContent>
+            <IconList />
+          </CardContent>
+          <CardFooter>
+            <AlertDialog
+              cancelLabel="Cancel"
+              confirmLabel="Confirm"
+              title="Are you sure?"
+              (confirm)="showAlert($event)"
+              (cancel)="showAlert($event)"
+            >
+              This is an irreversible action. Press on the 'Confirm' button only if you are absolutely sure. Otherwise, press on the 'Cancel' button.
+            </AlertDialog>
+          </CardFooter>
+        </Card>
+      </div>
+    </div>
+
+
+    <!-- End rows container-->
+  </div>
+
+  <!-- third column -->
+
+
+</div>
+
+
+      </main>
+    </div>
+  </div>
+  </main>
+
+
+
+

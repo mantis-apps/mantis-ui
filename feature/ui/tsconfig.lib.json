@@ -15,5 +15,6 @@
     "**/*.stories.ts",
     "**/*.stories.js"
   ],
+  "files": ["src/lib/ui/components/card/index.ts"],
   "include": ["src/**/*.ts"]
 }
