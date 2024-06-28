@@ -45,15 +45,20 @@ import { BrnTooltipContentDirective } from '@spartan-ng/ui-tooltip-brain';
       <nav class="flex flex-col items-center gap-4 px-2 sm:py-5">
 
         <hlm-tooltip>
-          <a hlmTooltipTrigger routerLink="/" class="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8">
-            <hlm-icon name="lucideHome" size="sm"></hlm-icon>
+          <a
+            hlmTooltipTrigger
+            routerLink="/home"
+            [routerLinkActive]="'bg-primary text-primary-foreground font-semibold rounded-full group-hover:scale-110'"
+            class="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground md:h-8 md:w-8 group-hover:scale-110">
+            <hlm-icon name="lucideHome" size="sm" class="transition-all group-hover:scale-110"></hlm-icon>
             <span class="sr-only">Dashboard</span>
           </a>
           <span *brnTooltipContent>Dashboard</span>
         </hlm-tooltip>
         <hlm-tooltip>
         <a hlmTooltipTrigger
-          routerLink="/"
+          routerLink="/demo-dashboard"
+          [routerLinkActive]="'bg-primary text-primary-foreground font-semibold rounded-full group-hover:scale-110'"
           class="group flex h-9 w-9 shrink-0 items-center justify-center gap-2 text-lg  md:h-8 md:w-8 md:text-base"
         >
           <hlm-icon name="lucidePackage2" size="sm" class="transition-all group-hover:scale-110"></hlm-icon>
