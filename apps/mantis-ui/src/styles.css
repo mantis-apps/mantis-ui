@@ -16,6 +16,17 @@
   background-position: 50%;
   }
 
+  .cdk-overlay-backdrop {
+    position: absolute;
+    z-index: 1000;
+    pointer-events: auto;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    opacity: 0;
+    inset: 0px;
+    transition: opacity 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+}
+
+
 
 
   :root {

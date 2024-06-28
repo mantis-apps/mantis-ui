@@ -34,7 +34,8 @@ import { provideIcons } from '@ng-icons/core';
     }),
   ],
   template: `
-    <app-dashboard />
+    <router-outlet></router-outlet>
+    <!-- <app-dashboard /> -->
   `,
   styleUrl: './app.component.css',
 })
