@@ -3,7 +3,10 @@
   "version": "0.0.4",
   "peerDependencies": {
     "@angular/common": "^17.3.0",
-    "@angular/core": "^17.3.0"
+    "@angular/core": "^17.3.0",
+    "@spartan-ng/ui-core": "^0.0.1-alpha.344",
+    "@spartan-ng/ui-accordion-helm": "^0.0.1",
+    "@swimlane/ngx-charts": "^20.5.0"
   },
   "dependencies": {
     "tslib": "^2.3.0"
