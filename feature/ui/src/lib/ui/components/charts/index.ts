@@ -12,4 +12,7 @@ export * from './horizontal-bar-chart-2d.component';
 export * from './horizontal-bar-chart-stacked.component';
 export * from './horizontal-bar-chart-normalized.component';
 
+// gauge chart components
+export * from './gauge-chart.component';
+
 

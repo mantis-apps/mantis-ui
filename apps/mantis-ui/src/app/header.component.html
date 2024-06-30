@@ -1,6 +1,6 @@
 <header
   class="sticky top-0 z-30 flex items-center gap-4 px-4 border-b h-14 bg-background sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
-  <hlm-sheet side="left" closeDelay="100">
+  <hlm-sheet side="left" closeDelay="100" class="sm:block md:hidden">
     <button size="icon" id="menu-trigger" variant="ghost" brnSheetTrigger
       hlmBtn>
       <hlm-icon name="lucideMenu" size="sm" />
@@ -52,11 +52,11 @@
   </div>
   <div>
     <button hlmBtn variant="link" size="icon"
-      class="overflow-hidden border rounded-full bg-background hover:bg-gray-100 focus:bg-gray-100"
+      class="inline-flex items-center justify-center w-10 h-10 overflow-hidden text-sm font-medium transition-colors border rounded-full whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border-input bg-background hover:bg-accent hover:text-accent-foreground"
       [brnMenuTriggerFor]="userMenu">
       <!-- <img src="/placeholder-user.jpg" width={36} height={36} alt="Avatar"
         class="overflow-hidden rounded-full" /> -->
-        <Avatar imgSrc="/assets/avatar.png"  />
+        <Avatar variant="medium" imgSrc="https://gravatar.com/avatar/29ed97852e8b3a8a2f42c76be3e1dcc7?size=256&cache=1719534549046"  />
     </button>
     <ng-template #userMenu>
       <hlm-menu class="w-40 mt-2">

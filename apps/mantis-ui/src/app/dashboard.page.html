@@ -1,10 +1,4 @@
-<main class="w-full min-h-screen p-0 bg-background text-foreground">
-  <div class="flex flex-col w-full h-full min-h-screen bg-muted/40">
-    <!-- <app-dashboard-sidebar></app-dashboard-sidebar> -->
-    <div class="flex flex-col h-full min-h-screen sm:gap-4 sm:py-4 sm:pl-14">
-      <AppHeader />
-      <main
-        class="items-start flex-1 px-0 py-4 sm:px-6 sm:py-0 md:px-0">
+
 
         <div
   class="items-start justify-center gap-6 p-8 rounded-lg md:grid lg:grid-cols-2 xl:grid-cols-3 ">
@@ -153,7 +147,7 @@
           </CardDescription>
         </CardHeader>
         <CardContent [contentClass]="'px-0'">
-          <HorizontalBarChart
+          <VerticalBarChart
           (selected)="chartEvent($event)"
           [chartData]="barChartData()"
           [chartOptions]="barChartOptions()"
@@ -271,7 +265,7 @@
         </ng-container> -->
         <CardHeader>
           <CardTitle [class]="'text-3xl'">
-            Vertical Bar Chart Grouped
+            Vertical Bar Chart Stacked
           </CardTitle>
           <CardDescription>
             GDP per capita of a few European countries
@@ -383,11 +377,6 @@
 
 </div>
 
-
-      </main>
-    </div>
-  </div>
-  </main>
 
 
 

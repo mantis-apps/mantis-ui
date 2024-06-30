@@ -29,7 +29,8 @@ import {
   VerticalBarChartGroupedComponent,
   Multi,
   VerticalBarChartStackedComponent,
-  HorizontalBarChartComponent
+  HorizontalBarChartComponent,
+  GaugeChartComponent
 } from '@mantistech/ui';
 import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons } from '@ng-icons/core';
@@ -76,7 +77,8 @@ import { faker } from '@faker-js/faker';
     CollapsibleComponent,
     CommandComponent,
     CommandDialogComponent,
-    HoverCardComponent
+    HoverCardComponent,
+    GaugeChartComponent
   ],
   templateUrl: './dashboard.page.html',
   styles: ``,
