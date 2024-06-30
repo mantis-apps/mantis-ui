@@ -87,7 +87,11 @@ import { BrnTooltipContentDirective } from '@spartan-ng/ui-tooltip-brain';
           <span *brnTooltipContent>Customers</span>
         </hlm-tooltip>
         <hlm-tooltip>
-          <a hlmTooltipTrigger routerLink="/" class="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8">
+          <a hlmTooltipTrigger
+             routerLink="/"
+             routerLink="/demo-charts"
+             [routerLinkActive]="'bg-primary text-primary-foreground font-semibold rounded-full group-hover:scale-110'"
+             class="flex h-9 w-9 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground md:h-8 md:w-8">
             <hlm-icon name="lucideLineChart" size="sm"></hlm-icon>
             <span class="sr-only">Analytics</span>
           </a>
