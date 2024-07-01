@@ -21,11 +21,8 @@
       "@mantis-ui/utils": [
         "utils/src/index.ts"
       ],
-      "@mantistech": [
-        "maui/src/index.ts"
-      ],
       "@mantistech/ui": [
-        "feature/ui/src/index.ts"
+        "maui/src/index.ts"
       ],
       "@spartan-ng/ui-accordion-helm": [
         "maui/spartanui/ui-accordion-helm/src/index.ts"
