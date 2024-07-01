@@ -1,0 +1,36 @@
+{
+  "name": "maui",
+  "$schema": "../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "maui/src",
+  "prefix": "lib",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:package",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "maui/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "maui/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "maui/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "maui/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}

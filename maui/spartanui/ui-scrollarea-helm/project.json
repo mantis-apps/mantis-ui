@@ -1,0 +1,40 @@
+{
+  "name": "maui-spartanui-ui-scrollarea-helm",
+  "$schema": "../../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "maui/spartanui/ui-scrollarea-helm/src",
+  "prefix": "hlm",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": [
+        "{workspaceRoot}/dist/{projectRoot}"
+      ],
+      "options": {
+        "project": "maui/spartanui/ui-scrollarea-helm/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "maui/spartanui/ui-scrollarea-helm/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "maui/spartanui/ui-scrollarea-helm/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": [
+        "{workspaceRoot}/coverage/{projectRoot}"
+      ],
+      "options": {
+        "jestConfig": "maui/spartanui/ui-scrollarea-helm/jest.config.ts"
+      }
+    },
+    "lint": {
+      "executor": "@nx/eslint:lint"
+    }
+  }
+}
