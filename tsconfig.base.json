@@ -22,10 +22,7 @@
         "utils/src/index.ts"
       ],
       "@mantistech/ui": [
-        "maui/src/index.ts"
-      ],
-      "@spartan-ng/ui-accordion-helm": [
-        "maui/spartanui/ui-accordion-helm/src/index.ts"
+        "feature/ui/src/index.ts"
       ],
       "@spartan-ng/ui-alert-helm": [
         "maui/spartanui/ui-alert-helm/src/index.ts"
@@ -53,9 +50,6 @@
       ],
       "@spartan-ng/ui-dialog-helm": [
         "maui/spartanui/ui-dialog-helm/src/index.ts"
-      ],
-      "@spartan-ng/ui-icon-helm": [
-        "maui/spartanui/ui-icon-helm/src/index.ts"
       ],
       "@spartan-ng/ui-input-helm": [
         "maui/spartanui/ui-input-helm/src/index.ts"
@@ -128,6 +122,12 @@
       ],
       "@spartan-ng/ui-helm-helm": [
         "maui/spartanui/ui-helm-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-accordion-helm": [
+        "feature/spartanui/ui-accordion-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-icon-helm": [
+        "feature/spartanui/ui-icon-helm/src/index.ts"
       ]
     }
   },
