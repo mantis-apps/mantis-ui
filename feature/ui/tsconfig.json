@@ -9,14 +9,6 @@
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
   },
-  "paths": {
-    "@spartan-ng/ui-icon-helm": [
-      "ui/spartanui/ui-icon-helm/src/index.ts"
-    ],
-    "@mantis-ui/ui-card": [
-      "feature/ui/src/lib/ui/components/card/index.ts"
-    ],
-  },
   "files": [],
   "include": [],
   "references": [
