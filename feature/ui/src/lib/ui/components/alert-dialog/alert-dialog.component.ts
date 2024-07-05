@@ -14,8 +14,8 @@ import {
   HlmAlertDialogHeaderComponent,
   HlmAlertDialogOverlayDirective,
   HlmAlertDialogTitleDirective,
-} from '@spartan-ng/ui-alertdialog-helm';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+} from '@mantistech/spartanui-pack/ui-alertdialog-helm';
+import { HlmButtonDirective } from '@mantistech/spartanui-pack/ui-button-helm';
 
 @Component({
   selector: 'AlertDialog',

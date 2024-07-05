@@ -5,7 +5,7 @@ import {
   HlmAlertDirective,
   HlmAlertIconDirective,
   HlmAlertTitleDirective,
-} from '@spartan-ng/ui-alert-helm';
+} from '@mantistech/spartanui-pack/ui-alert-helm';
 import { IconComponent } from "../icon/icon.component";
 import { IconName, provideIcons } from '@ng-icons/core';
 import { lucideAlertTriangle } from '@ng-icons/lucide';

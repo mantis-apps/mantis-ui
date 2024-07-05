@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HlmBadgeDirective } from '@spartan-ng/ui-badge-helm';
+import { HlmBadgeDirective } from '@mantistech/spartanui-pack/ui-badge-helm';
 import { NgIf } from '@angular/common';
 import { RouterLink } from '@angular/router';
 

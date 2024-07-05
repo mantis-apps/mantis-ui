@@ -1,6 +1,6 @@
 
 import { Component, Input } from '@angular/core';
-import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
+import { HlmAspectRatioDirective } from '@mantistech/spartanui-pack/ui-aspectratio-helm';
 
 export type square = "1 / 1";
 export type portrait = "9 / 16";
