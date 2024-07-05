@@ -4,7 +4,9 @@
   "license": "MIT",
   "scripts": {
     "build:spartanui-pack": "node build-spartanui-pack.mjs",
-    "build:spartanui-pack:clean": "node build-spartanui-pack.mjs --clean"
+    "build:spartanui-pack:clean": "node build-spartanui-pack.mjs --clean",
+    "build:spartanui-pack:verbose": "node build-spartanui-pack.mjs --verbose",
+    "build:spartanui-pack:clean:verbose": "node build-spartanui-pack.mjs --clean --verbose"
   },
   "private": true,
   "dependencies": {
