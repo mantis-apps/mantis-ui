@@ -12,6 +12,31 @@ const distDir = path.join(rootDir, 'dist', 'spartanui-pack');
 const cleanBuild = process.argv.includes('--clean');
 const verbose = process.argv.includes('--verbose');
 
+const externalPackages = [
+  '@spartan-ng/ui-accordion-brain',
+  '@spartan-ng/ui-alertdialog-brain',
+  '@spartan-ng/ui-avatar-brain',
+  '@spartan-ng/ui-checkbox-brain',
+  '@spartan-ng/ui-collapsible-brain',
+  '@spartan-ng/ui-command-brain',
+  '@spartan-ng/ui-core',
+  '@spartan-ng/ui-dialog-brain',
+  '@spartan-ng/ui-hovercard-brain',
+  '@spartan-ng/ui-label-brain',
+  '@spartan-ng/ui-menu-brain',
+  '@spartan-ng/ui-popover-brain',
+  '@spartan-ng/ui-progress-brain',
+  '@spartan-ng/ui-radiogroup-brain',
+  '@spartan-ng/ui-select-brain',
+  '@spartan-ng/ui-separator-brain',
+  '@spartan-ng/ui-sheet-brain',
+  '@spartan-ng/ui-switch-brain',
+  '@spartan-ng/ui-table-brain',
+  '@spartan-ng/ui-tabs-brain',
+  '@spartan-ng/ui-toggle-brain',
+  '@spartan-ng/ui-tooltip-brain',
+];
+
 function log(...args) {
   if (verbose) {
     console.log(...args);
@@ -61,11 +86,28 @@ try {
     }
   });
 
+  // function updateImportsInFile(filePath) {
+  //   let content = fs.readFileSync(filePath, 'utf8');
+  //   const updatedContent = content.replace(
+  //     /@spartan-ng\/([^'"\s]+)/g,
+  //     '@mantistech/spartanui-pack/$1'
+  //   );
+  //   if (content !== updatedContent) {
+  //     fs.writeFileSync(filePath, updatedContent);
+  //     log(`Updated imports in ${filePath}`);
+  //   }
+  // }
+
   function updateImportsInFile(filePath) {
     let content = fs.readFileSync(filePath, 'utf8');
     const updatedContent = content.replace(
       /@spartan-ng\/([^'"\s]+)/g,
-      '@mantistech/spartanui-pack/$1'
+      (match) => {
+        if (externalPackages.includes(match)) {
+          return match; // Don't replace external packages
+        }
+        return `@mantistech/spartanui-pack/${match.split('/')[1]}`;
+      }
     );
     if (content !== updatedContent) {
       fs.writeFileSync(filePath, updatedContent);
