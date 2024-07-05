@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HlmCardDirective } from '@spartan-ng/ui-card-helm';
+import { HlmCardDirective } from '@mantistech/spartanui-pack/ui-card-helm';
 
 @Component({
   selector: 'Card',

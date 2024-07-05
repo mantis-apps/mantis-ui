@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { NgIf } from '@angular/common';
 import { IconName } from '@ng-icons/core';
 import { HlmCheckboxComponent } from '@spartan-ng/ui-checkbox-helm';
-import { HlmLabelDirective } from '@spartan-ng/ui-label-helm';
+import { HlmLabelDirective } from '@mantistech/spartanui-pack/ui-label-helm';
 @Component({
 	selector: 'Checkbox',
 	standalone: true,

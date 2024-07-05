@@ -7,7 +7,7 @@ import {
   HlmCarouselItemComponent,
   HlmCarouselNextComponent,
   HlmCarouselPreviousComponent
-} from '@spartan-ng/ui-carousel-helm';
+} from '@mantistech/spartanui-pack/ui-carousel-helm';
 import { CardComponent } from '../card/partials/card.component';
 import { CardContentComponent } from '../card/partials/card-content.component';
 
@@ -21,7 +21,8 @@ import { CardContentComponent } from '../card/partials/card-content.component';
     HlmCarouselNextComponent,
     HlmCarouselPreviousComponent,
     CardComponent,
-    CardContentComponent
+    CardContentComponent,
+    NgFor
   ],
   template: `
   <div class="flex items-center justify-center w-full p-4">

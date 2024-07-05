@@ -3,10 +3,10 @@ import { NgIf, NgFor } from '@angular/common';
 import {
   BrnCommandImports
 } from '@spartan-ng/ui-command-brain';
-import { HlmCommandImports } from '@spartan-ng/ui-command-helm';
+import { HlmCommandImports } from '@mantistech/spartanui-pack/ui-command-helm';
 
-import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmIconComponent } from '@mantistech/spartanui-pack/ui-icon-helm';
+import { HlmButtonDirective } from '@mantistech/spartanui-pack/ui-button-helm';
 import { IconComponent } from '../icon/icon.component';
 import { ButtonComponent } from '../button/button.component';
 import { provideIcons } from '@ng-icons/core';

@@ -1,6 +1,6 @@
 
 import { Component, Input } from '@angular/core';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmButtonDirective } from '@mantistech/spartanui-pack/ui-button-helm';
 
 @Component({
   selector: 'Button',

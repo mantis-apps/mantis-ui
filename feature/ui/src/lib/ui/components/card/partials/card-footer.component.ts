@@ -1,5 +1,5 @@
 import { Component, Input } from '@angular/core';
-import { HlmCardFooterDirective } from '@spartan-ng/ui-card-helm';
+import { HlmCardFooterDirective } from '@mantistech/spartanui-pack/ui-card-helm';
 
 @Component({
   selector: 'CardFooter',
