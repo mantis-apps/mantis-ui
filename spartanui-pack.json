@@ -1,0 +1,8 @@
+{
+  "name": "@mantistech/spartanui-pack",
+  "version": "1.0.0",
+  "exports": {
+    "./ui-avatar-helm": "./ui-avatar-helm/index.js",
+    "./ui-button-helm": "./ui-button-helm/index.js"
+  }
+}

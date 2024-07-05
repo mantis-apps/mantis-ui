@@ -1,6 +1,10 @@
 
 import { Component, Input } from '@angular/core';
-import { HlmAvatarComponent, HlmAvatarFallbackDirective, HlmAvatarImageDirective } from '@spartan-ng/ui-avatar-helm';
+import {
+  HlmAvatarComponent,
+  HlmAvatarFallbackDirective,
+  HlmAvatarImageDirective
+} from '@mantistech/spartanui-pack/ui-avatar-helm'
 
 @Component({
   selector: 'Avatar',

@@ -2,7 +2,10 @@
   "name": "@mantis-ui/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build:spartanui-pack": "node build-spartanui-pack.mjs",
+    "build:spartanui-pack:clean": "node build-spartanui-pack.mjs --clean"
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~17.3.0",
@@ -14,6 +17,7 @@
     "@angular/platform-browser": "~17.3.0",
     "@angular/platform-browser-dynamic": "~17.3.0",
     "@angular/router": "~17.3.0",
+    "@mantistech/spartanui-pack": "file:dist/spartanui-pack",
     "@ng-icons/core": "^25.6.1",
     "@ng-icons/lucide": "^26.5.0",
     "@ngneat/overview": "^6.0.0",
