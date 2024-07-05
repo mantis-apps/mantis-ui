@@ -32,7 +32,6 @@ import {
   HorizontalBarChartComponent,
   GaugeChartComponent
 } from '@mantistech/ui';
-import { HlmAspectRatioDirective } from '@spartan-ng/ui-aspectratio-helm';
 import { provideIcons } from '@ng-icons/core';
 import { lucideMail, lucideMoon, lucideSearch, lucideCalendar, lucideSmile, lucidePlus, lucideUser, lucideWallet, lucideCog } from '@ng-icons/lucide';
 import { faker } from '@faker-js/faker';
@@ -66,7 +65,6 @@ import { faker } from '@faker-js/faker';
     VerticalBarChartStackedComponent,
     AvatarComponent,
     AccordionComponent,
-    HlmAspectRatioDirective,
     AlertComponent,
     AlertDialogComponent,
     AspectRatioComponent,

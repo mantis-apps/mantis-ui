@@ -1,7 +1,7 @@
 
 import { Component, ElementRef, Input, signal} from '@angular/core';
 import { NgFor } from '@angular/common';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmButtonDirective } from '@mantistech/spartanui-pack/ui-button-helm';
 import {
   BrnCollapsibleComponent,
   BrnCollapsibleContentComponent,

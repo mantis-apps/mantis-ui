@@ -1,15 +1,15 @@
 
 import { Component, signal } from '@angular/core';
 import { BrnCommandComponent, BrnCommandEmptyDirective, BrnCommandGroupComponent, BrnCommandInputDirective, BrnCommandItemDirective, BrnCommandListComponent, BrnCommandLoaderDirective, BrnCommandSeparatorComponent } from '@spartan-ng/ui-command-brain';
-import { HlmCommandImports } from '@spartan-ng/ui-command-helm';
-import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmCommandImports } from '@mantistech/spartanui-pack/ui-command-helm';
+import { HlmIconComponent } from '@mantistech/spartanui-pack/ui-icon-helm';
+import { HlmButtonDirective } from '@mantistech/spartanui-pack/ui-button-helm';
 import {
   BrnPopoverComponent,
   BrnPopoverContentDirective,
   BrnPopoverTriggerDirective,
 } from '@spartan-ng/ui-popover-brain';
-import { HlmPopoverContentDirective } from '@spartan-ng/ui-popover-helm';
+import { HlmPopoverContentDirective } from '@mantistech/spartanui-pack/ui-popover-helm';
 import { NgFor} from '@angular/common';
 import { provideIcons } from '@ng-icons/core';
 import { lucideChevronsUpDown, lucideCheck, lucideSearch } from '@ng-icons/lucide';

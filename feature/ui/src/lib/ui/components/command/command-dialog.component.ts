@@ -10,9 +10,9 @@ import {
 	lucideUser,
 	lucideX,
 } from '@ng-icons/lucide';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
+import { HlmButtonDirective } from '@mantistech/spartanui-pack/ui-button-helm';
 import { BrnCommandImports } from '@spartan-ng/ui-command-brain';
-import { HlmCommandImports } from '@spartan-ng/ui-command-helm';
+import { HlmCommandImports } from '@mantistech/spartanui-pack/ui-command-helm';
 import {
 	BrnDialogCloseDirective,
 	BrnDialogComponent,
@@ -20,9 +20,9 @@ import {
 	BrnDialogOverlayComponent,
 	BrnDialogTriggerDirective,
 } from '@spartan-ng/ui-dialog-brain';
-import { HlmDialogOverlayDirective } from '@spartan-ng/ui-dialog-helm';
-import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
-import { HlmCodeDirective } from '@spartan-ng/ui-typography-helm';
+import { HlmDialogOverlayDirective } from '@mantistech/spartanui-pack/ui-dialog-helm';
+import { HlmIconComponent } from '@mantistech/spartanui-pack/ui-icon-helm';
+import { HlmCodeDirective } from '@mantistech/spartanui-pack/ui-typography-helm';
 
 @Component({
 	selector: 'CommandDialog',

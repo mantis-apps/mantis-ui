@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { provideIcons } from '@ng-icons/core';
-import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
+import { HlmIconComponent } from '@mantistech/spartanui-pack/ui-icon-helm';
 import {
   lucideHome,
   lucideShoppingCart,
@@ -13,7 +13,7 @@ import {
   lucideBot,
   lucideMessageSquare
 } from '@ng-icons/lucide';
-import { HlmTooltipComponent, HlmTooltipTriggerDirective } from '@spartan-ng/ui-tooltip-helm';
+import { HlmTooltipComponent, HlmTooltipTriggerDirective } from '@mantistech/spartanui-pack/ui-tooltip-helm';
 import { BrnTooltipContentDirective } from '@spartan-ng/ui-tooltip-brain';
 
 @Component({

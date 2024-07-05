@@ -1,6 +1,6 @@
 
 import { Component, Input, signal } from '@angular/core';
-import { HlmIconComponent, IconSize } from '@spartan-ng/ui-icon-helm';
+import { HlmIconComponent, IconSize } from '@mantistech/spartanui-pack/ui-icon-helm';
 import { provideIcons, IconName } from '@ng-icons/core';
 import { lucideShieldQuestion } from '@ng-icons/lucide';
 

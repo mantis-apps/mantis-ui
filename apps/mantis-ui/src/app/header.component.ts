@@ -15,21 +15,21 @@ import {
   lucidePalette
 } from '@ng-icons/lucide';
 import { provideIcons } from '@ng-icons/core';
-import { HlmButtonDirective } from '@spartan-ng/ui-button-helm';
-import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
+import { HlmButtonDirective } from '@mantistech/spartanui-pack/ui-button-helm';
+import { HlmIconComponent } from '@mantistech/spartanui-pack/ui-icon-helm';
 import {
   HlmSheetComponent,
   HlmSheetContentComponent
-} from '@spartan-ng/ui-sheet-helm';
+} from '@mantistech/spartanui-pack/ui-sheet-helm';
 import { BrnSheetContentDirective, BrnSheetTriggerDirective } from '@spartan-ng/ui-sheet-brain';
-import { HlmInputDirective } from '@spartan-ng/ui-input-helm';
+import { HlmInputDirective } from '@mantistech/spartanui-pack/ui-input-helm';
 import {
   HlmMenuComponent,
   HlmMenuGroupComponent,
   HlmMenuItemDirective,
   HlmMenuLabelComponent,
   HlmMenuSeparatorComponent,
-} from '@spartan-ng/ui-menu-helm';
+} from '@mantistech/spartanui-pack/ui-menu-helm';
 
 import { BrnMenuTriggerDirective } from '@spartan-ng/ui-menu-brain';
 
