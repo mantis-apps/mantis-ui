@@ -47,8 +47,9 @@ import { BrnTooltipContentDirective } from '@spartan-ng/ui-tooltip-brain';
         <hlm-tooltip>
           <a
             hlmTooltipTrigger
-            routerLink="/home"
+            routerLink="/"
             [routerLinkActive]="'bg-primary text-primary-foreground font-semibold rounded-full group-hover:scale-110'"
+            [routerLinkActiveOptions]="{exact:true}"
             class="flex h-9 w-9 items-center justify-center rounded-full text-muted-foreground md:h-8 md:w-8 group-hover:scale-110">
             <hlm-icon name="lucideHome" size="sm" class="transition-all group-hover:scale-110"></hlm-icon>
             <span class="sr-only">Dashboard</span>

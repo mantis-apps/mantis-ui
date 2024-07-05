@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 import { ShellComponent } from './shell.component';
+import { DashboardPage } from './dashboard.page';
 
 export const appRoutes: Route[] = [
   {
@@ -7,9 +8,8 @@ export const appRoutes: Route[] = [
     component: ShellComponent,
     children: [
       {
-        path: 'home',
-        loadComponent: () => import('./dashboard.page').then((m) =>
-          m.DashboardPage),
+        path: '',
+        component: DashboardPage
       },
       {
         path: '',
