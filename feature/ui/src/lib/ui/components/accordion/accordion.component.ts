@@ -7,8 +7,8 @@ import {
   HlmAccordionIconDirective,
   HlmAccordionItemDirective,
   HlmAccordionTriggerDirective,
-} from '@spartan-ng/ui-accordion-helm';
-import { HlmIconComponent } from '@spartan-ng/ui-icon-helm';
+} from '@mantistech/spartanui-pack/ui-accordion-helm';
+import { HlmIconComponent } from '@mantistech/spartanui-pack/ui-icon-helm';
 
 export interface AccordionItem {
   triggerText: string;

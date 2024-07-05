@@ -7,7 +7,6 @@
   "tags": [],
   "targets": {
     "build": {
-      "dependsOn": ["feature-spartanui-ui-accordion-helm:build"],
       "executor": "@nx/angular:package",
       "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
       "options": {
@@ -32,11 +31,6 @@
     },
     "lint": {
       "executor": "@nx/eslint:lint"
-    }
-  },
-  "targetDefaults": {
-    "build": {
-      "dependsOn": ["^build"]
     }
   }
 }

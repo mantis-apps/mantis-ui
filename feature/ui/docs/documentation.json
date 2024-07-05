@@ -477,7 +477,7 @@
         },
         {
             "name": "AvatarComponent",
-            "id": "component-AvatarComponent-6072fa9cc9e53b4653814c75923be1b4e8048c3924a415cc5cc954d7095e7fd10bd39f021890202601c466cf4eb58487df6c4a23bd84d709827772ce9f034d89",
+            "id": "component-AvatarComponent-97ed7f27ac3004e50af28bf7676f0738e8562b1190cf92342449d02c51bf927bd9d5073d81c0e9d86861dae243dd948d6f186fd9a78732e83ce925956c8af4f2",
             "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -497,7 +497,7 @@
                     "defaultValue": "'#FD005B'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 21,
+                    "line": 25,
                     "type": "string",
                     "decorators": []
                 },
@@ -506,7 +506,7 @@
                     "defaultValue": "'MU'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 20,
+                    "line": 24,
                     "type": "string",
                     "decorators": []
                 },
@@ -515,7 +515,7 @@
                     "defaultValue": "'avatar image description'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 19,
+                    "line": 23,
                     "type": "string",
                     "decorators": []
                 },
@@ -526,7 +526,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "optional": false,
-                    "line": 18,
+                    "line": 22,
                     "type": "string",
                     "decorators": []
                 },
@@ -535,7 +535,7 @@
                     "defaultValue": "'small'",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 17,
+                    "line": 21,
                     "type": "\"small\" | \"medium\" | \"large\"",
                     "decorators": []
                 }
@@ -565,7 +565,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from '@angular/core';\nimport { HlmAvatarComponent, HlmAvatarFallbackDirective, HlmAvatarImageDirective } from '@spartan-ng/ui-avatar-helm';\n\n@Component({\n  selector: 'Avatar',\n  standalone: true,\n  imports: [HlmAvatarImageDirective, HlmAvatarComponent, HlmAvatarFallbackDirective],\n  template: `\n    <hlm-avatar [variant]=\"variant\">\n      <img src=\"{{imgSrc}}\" alt=\"{{imgAltText}}\" hlmAvatarImage />\n      <span class=\"bg-[{{fallbackBgColor}}] text-white\" hlmAvatarFallback>{{fallbackText}}</span>\n    </hlm-avatar>\n  `,\n})\nexport class AvatarComponent {\n  @Input() variant: 'small' | 'medium' | 'large' = 'small';\n  @Input({required: true}) imgSrc = '';\n  @Input() imgAltText = 'avatar image description'\n  @Input() fallbackText = 'MU';\n  @Input() fallbackBgColor = '#FD005B';\n}\n\n",
+            "sourceCode": "import { Component, Input } from '@angular/core';\nimport {\n  HlmAvatarComponent,\n  HlmAvatarFallbackDirective,\n  HlmAvatarImageDirective\n} from '@mantistech/spartanui-pack/ui-avatar-helm'\n\n@Component({\n  selector: 'Avatar',\n  standalone: true,\n  imports: [HlmAvatarImageDirective, HlmAvatarComponent, HlmAvatarFallbackDirective],\n  template: `\n    <hlm-avatar [variant]=\"variant\">\n      <img src=\"{{imgSrc}}\" alt=\"{{imgAltText}}\" hlmAvatarImage />\n      <span class=\"bg-[{{fallbackBgColor}}] text-white\" hlmAvatarFallback>{{fallbackText}}</span>\n    </hlm-avatar>\n  `,\n})\nexport class AvatarComponent {\n  @Input() variant: 'small' | 'medium' | 'large' = 'small';\n  @Input({required: true}) imgSrc = '';\n  @Input() imgAltText = 'avatar image description'\n  @Input() fallbackText = 'MU';\n  @Input() fallbackBgColor = '#FD005B';\n}\n\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -1927,6 +1927,122 @@
             "extends": []
         },
         {
+            "name": "GaugeChartComponent",
+            "id": "component-GaugeChartComponent-d2ea0212014ba6cbf0f63e4cb0c8ccb24928c6b39486fa8f4d9df7d3bb29b860bf097aab5de53d76e2f0a5ff5858e5ec3cf84764a0498da9c88be8d8481cf976",
+            "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "GaugeChart",
+            "styleUrls": [
+                "./charts.style.css"
+            ],
+            "styles": [],
+            "template": "<ngx-charts-gauge\n  [legend]=\"chartOptions().legend\"\n  [scheme]=\"chartOptions().colorScheme\"\n  [results]=\"chartData()\"\n  (select)=\"onSelect($event)\">\n</ngx-charts-gauge>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [
+                {
+                    "name": "selected",
+                    "defaultValue": "new EventEmitter()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 59,
+                    "type": "EventEmitter"
+                }
+            ],
+            "propertiesClass": [
+                {
+                    "name": "chartData",
+                    "defaultValue": "input<Single[]>([])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 57
+                },
+                {
+                    "name": "chartOptions",
+                    "defaultValue": "input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  })",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 22
+                },
+                {
+                    "name": "single",
+                    "defaultValue": "signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ])",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 26
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "onSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 62,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "NgxChartsModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, input, Output, EventEmitter, signal } from \"@angular/core\";\nimport { NgxChartsModule } from \"@swimlane/ngx-charts\";\nimport { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from \"./models\";\n\n@Component({\n  selector: \"GaugeChart\",\n  standalone: true,\n  imports: [NgxChartsModule],\n  template: `\n    <ngx-charts-gauge\n      [legend]=\"chartOptions().legend\"\n      [scheme]=\"chartOptions().colorScheme\"\n      [results]=\"chartData()\"\n      (select)=\"onSelect($event)\">\n    </ngx-charts-gauge>\n  `,\n  styleUrls: [\"./charts.style.css\"],\n\n})\nexport class GaugeChartComponent {\n\n  chartOptions = input(DEFAULT_CHART_OPTIONS, {\n    transform: (options: Partial<ChartOptions>) => ({ ...DEFAULT_CHART_OPTIONS, ...options }),\n  });\n\n  single = signal<Single[]>([\n    {\n      \"name\": \"Germany\",\n      \"value\": 40632,\n      \"extra\": {\n        \"code\": \"de\"\n      }\n    },\n    {\n      \"name\": \"United States\",\n      \"value\": 50000,\n      \"extra\": {\n        \"code\": \"us\"\n      }\n    },\n    {\n      \"name\": \"France\",\n      \"value\": 36745,\n      \"extra\": {\n        \"code\": \"fr\"\n      }\n    },\n    {\n      \"name\": \"United Kingdom\",\n      \"value\": 36240,\n      \"extra\": {\n        \"code\": \"uk\"\n      }\n    }\n  ]);\n\n  chartData = input<Single[]>([]);\n\n  @Output() selected = new EventEmitter();\n\n  // eslint-disable-next-line @typescript-eslint/no-explicit-any\n  onSelect(event: any) {\n    this.selected.emit(event);\n  }\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": [
+                {
+                    "data": "::ng-deep .ngx-charts  text {\n  fill: hsl(var(--muted-foreground)) !important;\n}\n",
+                    "styleUrl": "./charts.style.css"
+                }
+            ],
+            "stylesData": "",
+            "extends": []
+        },
+        {
             "name": "HorizontalBarChartComponent",
             "id": "component-HorizontalBarChartComponent-978906edd563ced6277cd8f4694e4e0545247d0fef0f5fed3c4d6689b1c139e86b1f6fe5d46d8e37678e1ee601486033df45317abea980c60d1ac954406c09cf",
             "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.ts",
@@ -3253,16 +3369,6 @@
                 "name": "Heading",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/avatar works!/gi)).toBeTruthy();\n  },\n}"
-            },
-            {
-                "name": "Heading",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
@@ -3323,21 +3429,21 @@
                 "name": "meta",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AccordionComponent>",
-                "defaultValue": "{\n  component: AccordionComponent,\n  title: 'Components/Accordion/Accordion',\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Meta<StoryArgs>",
                 "defaultValue": "{\n  tags: ['autodocs'],\n  component: AlertComponent,\n  title: 'Components/Alert/Alert',\n\n  argTypes: {\n    variant: { control: { type: 'select' }, name: 'Alert Variant', options: ['default', 'destructive'] },\n    alertTitle: { control: { type: 'text' }, name: 'Alert Title', placeholder: 'add alert title' },\n  },\n\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped\n        }\n      }\n    }\n  },\n  render: (args: StoryArgs) => ({\n    props: args,\n    template: `\n    <Alert ${argsToTemplate(args)}>\n        <p>You can now add nice and sleek components to your UI in a cinch</p>\n    </Alert>\n    `\n  }),\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<AccordionComponent>",
+                "defaultValue": "{\n  component: AccordionComponent,\n  title: 'Components/Accordion/Accordion',\n}"
             },
             {
                 "name": "meta",
@@ -3358,16 +3464,6 @@
                 "deprecationMessage": "",
                 "type": "Meta<AspectRatioComponent>",
                 "defaultValue": "{\n  component: AspectRatioComponent,\n  title: 'Components/AspectRatio/AspectRatio',\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: AspectRatioComponent) => ({\n    props: {\n      ...args,\n      src: \"/1.jpg\",\n      alt: \"aspect-ratio works!\",\n    },\n    template: `\n    <div class=\"w-full h-full\">\n      <AspectRatio ${argsToTemplate(args)}>\n        <img src=\"{{src}}\" alt=\"{{alt}}\" />\n      </AspectRatio>\n    </div>\n    `\n  })\n}"
-            },
-            {
-                "name": "meta",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Meta<AvatarComponent>",
-                "defaultValue": "{\n  component: AvatarComponent,\n  title: 'Components/Avatar/Avatar',\n}"
             },
             {
                 "name": "meta",
@@ -3398,6 +3494,16 @@
                 "deprecationMessage": "",
                 "type": "Meta<CarouselComponent>",
                 "defaultValue": "{\n  component: CarouselComponent,\n  title: 'Components/Carousel',\n}"
+            },
+            {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<GaugeChartComponent>",
+                "defaultValue": "{\n  component: GaugeChartComponent,\n  title: 'Components/Charts/Gauge Chart',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: GaugeChartComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Gauge Chart\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <GaugeChart ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
             },
             {
                 "name": "meta",
@@ -3663,21 +3769,21 @@
                 "name": "Primary",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "Story",
-                "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n}"
-            },
-            {
-                "name": "Primary",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
                 "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n  args: {\n    carouselMaxWidthClass: 'max-w-xs',\n    items: Array.from({ length: 5 }, (_, i) => i + 1),\n    carouselContentClass: 'flex items-center justify-center p-6 aspect-square',\n    carouselItemClass: 'text-4xl font-semibold',\n  },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\n  args: {\n    chartData: [\n\n      {\n        \"name\": \"Jan\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"Feb\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"Mar\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"Apr\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"May\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jun\",\n        \"value\": 36000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jul\",\n        \"value\": 40000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Aug\",\n        \"value\": 42000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Sep\",\n        \"value\": 45000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Oct\",\n        \"value\": 47000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Nov\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Dec\",\n        \"value\": 52000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      }\n    ] as unknown as InputSignal<Single[]>,\n  },\n}"
             },
             {
                 "name": "Primary",
@@ -3910,8 +4016,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<AccordionComponent>",
-                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+                "rawtype": "StoryObj<StoryArgs>",
+                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3921,8 +4027,8 @@
                 "name": "Story",
                 "ctype": "miscellaneous",
                 "subtype": "typealias",
-                "rawtype": "StoryObj<StoryArgs>",
-                "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                "rawtype": "StoryObj<AccordionComponent>",
+                "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3945,17 +4051,6 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<AspectRatioComponent>",
                 "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "description": "",
-                "kind": 183
-            },
-            {
-                "name": "Story",
-                "ctype": "miscellaneous",
-                "subtype": "typealias",
-                "rawtype": "StoryObj<AvatarComponent>",
-                "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -3989,6 +4084,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<CarouselComponent>",
                 "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<GaugeChartComponent>",
+                "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -4747,38 +4853,6 @@
                     "defaultValue": "{\n  decorators: [\n    withThemeByClassName({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n    }),\n    withThemeByDataAttribute({\n      themes: {\n        light: 'light',\n        dark: 'dark',\n      },\n      defaultTheme: 'light',\n      attributeName: 'data-mode',\n    }),\n    componentWrapperDecorator(\n      (story) => {\n        return `<div class=\"bg-background m-4 p-8\" style=\"margin: 0; padding: 2rem;\">${story}</div>`\n      },\n    )\n  ],\n  parameters: {\n    docs: {\n\n      story: {\n        inlineStories: false,\n        excludeDecorators: true,\n      },\n\n    },\n    options: {\n      storySort: {\n        order: ['Atoms', ['Primitives', '*'], 'Molecules', 'Organisms', 'Pages', 'Others', '*'],\n      },\n    },\n    layout: 'fullscreen',\n  },\n}"
                 }
             ],
-            "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts": [
-                {
-                    "name": "Heading",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n  play: async ({ canvasElement }) => {\n    const canvas = within(canvasElement);\n    expect(canvas.getByText(/avatar works!/gi)).toBeTruthy();\n  },\n}"
-                },
-                {
-                    "name": "meta",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Meta<AvatarComponent>",
-                    "defaultValue": "{\n  component: AvatarComponent,\n  title: 'Components/Avatar/Avatar',\n}"
-                },
-                {
-                    "name": "Primary",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "Story",
-                    "defaultValue": "{\n  args: {\n    variant: 'small',\n    imgSrc: '/avatar.png',\n    imgAltText: 'avatar image description',\n    fallbackText: 'MU',\n    fallbackBgColor: '#FD005B',\n  },\n}"
-                }
-            ],
             "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts": [
                 {
                     "name": "Heading",
@@ -4937,6 +5011,28 @@
                     "deprecationMessage": "",
                     "type": "Story",
                     "defaultValue": "{\n  args: {\n    class: '',\n    items: [\n      {\n        triggerText: 'Is it accessible?',\n        content: `Yes. It adheres to the WAI-ARIA design pattern.`,\n      },\n      {\n        triggerText: 'Is it styled?',\n        content: `Yes. It comes with default styles that match the other components' aesthetics.`,\n      },\n      {\n        triggerText: 'Is it animated?',\n        content: `Yes. It's animated by default, but you can disable it if you prefer.`,\n      },\n    ],\n  },\n}"
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<GaugeChartComponent>",
+                    "defaultValue": "{\n  component: GaugeChartComponent,\n  title: 'Components/Charts/Gauge Chart',\n  decorators: [\n    applicationConfig({\n      providers: [\n        importProvidersFrom([BrowserAnimationsModule]),\n    ]}),\n    moduleMetadata({\n      imports: [\n        NgxChartsModule,\n        CardComponent,\n        CardContentComponent,\n        CardTitleComponent,\n        CardDescriptionComponent,\n        CardHeaderComponent,\n        CardFooterComponent,\n      ],\n    }),\n  ],\n  parameters: {\n    docs: {\n      source: {\n        transform: (src: string) => {\n          const wrapperStriped = src.replace(/<div[^>]*>\\s*([\\s\\S]*?)\\s*<\\/div>/gi, '$1');\n          return wrapperStriped;\n        },\n      },\n    },\n  },\n  render: (args: GaugeChartComponent) => ({\n    props: args,\n    template: `\n      <Card [class]=\"'w-full p-8'\">\n        <CardHeader>\n          <CardTitle [class]=\"'text-3xl'\">\n            Gauge Chart\n          </CardTitle>\n          <CardDescription>\n            Monthly Sales\n          </CardDescription>\n        </CardHeader>\n        <CardContent [contentClass]=\"'px-0'\">\n          <GaugeChart ${argsToTemplate(args)} />\n        </CardContent>\n      </Card>\n    `,\n  })\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\n  args: {\n    chartData: [\n\n      {\n        \"name\": \"Jan\",\n        \"value\": 40632,\n        \"extra\": {\n          \"code\": \"de\"\n        }\n      },\n      {\n        \"name\": \"Feb\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"us\"\n        }\n      },\n      {\n        \"name\": \"Mar\",\n        \"value\": 36745,\n        \"extra\": {\n          \"code\": \"fr\"\n        }\n      },\n      {\n        \"name\": \"Apr\",\n        \"value\": 36240,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"May\",\n        \"value\": 33000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jun\",\n        \"value\": 36000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Jul\",\n        \"value\": 40000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Aug\",\n        \"value\": 42000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Sep\",\n        \"value\": 45000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Oct\",\n        \"value\": 47000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Nov\",\n        \"value\": 50000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      },\n      {\n        \"name\": \"Dec\",\n        \"value\": 52000,\n        \"extra\": {\n          \"code\": \"uk\"\n        }\n      }\n    ] as unknown as InputSignal<Single[]>,\n  },\n}"
                 }
             ],
             "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts": [
@@ -5233,19 +5329,6 @@
                     "kind": 201
                 }
             ],
-            "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AccordionComponent>",
-                    "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
             "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts": [
                 {
                     "name": "Story",
@@ -5264,6 +5347,19 @@
                     "subtype": "typealias",
                     "rawtype": "AlertComponent",
                     "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<AccordionComponent>",
+                    "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5290,19 +5386,6 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<AspectRatioComponent>",
                     "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "description": "",
-                    "kind": 183
-                }
-            ],
-            "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts": [
-                {
-                    "name": "Story",
-                    "ctype": "miscellaneous",
-                    "subtype": "typealias",
-                    "rawtype": "StoryObj<AvatarComponent>",
-                    "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5353,6 +5436,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<CarouselComponent>",
                     "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<GaugeChartComponent>",
+                    "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -5904,36 +6000,6 @@
                 "status": "low"
             },
             {
-                "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Heading",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "meta",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "Primary",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "feature/ui/src/lib/ui/components/avatar/avatar.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -6282,6 +6348,35 @@
                 "coveragePercent": 80,
                 "coverageCount": "4/5",
                 "status": "very-good"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "GaugeChartComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/6",
+                "status": "low"
             },
             {
                 "filePath": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
