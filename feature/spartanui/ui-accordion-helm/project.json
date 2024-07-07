@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-accordion-helm",
+  "name": "ui-accordion-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-accordion-helm/src",
   "prefix": "hlm",

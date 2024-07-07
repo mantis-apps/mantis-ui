@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'feature-spartanui-ui-icon-helm',
+  displayName: 'ui-icon-helm',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../../coverage/feature/spartanui/ui-icon-helm',

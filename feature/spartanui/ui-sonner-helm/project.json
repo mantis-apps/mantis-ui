@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-sonner-helm",
+  "name": "ui-sonner-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-sonner-helm/src",
   "prefix": "hlm",

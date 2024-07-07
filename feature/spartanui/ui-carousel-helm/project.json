@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-carousel-helm",
+  "name": "ui-carousel-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-carousel-helm/src",
   "prefix": "hlm",

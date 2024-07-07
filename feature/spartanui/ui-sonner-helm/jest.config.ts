@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'feature-spartanui-ui-sonner-helm',
+  displayName: 'ui-sonner-helm',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../../coverage/feature/spartanui/ui-sonner-helm',

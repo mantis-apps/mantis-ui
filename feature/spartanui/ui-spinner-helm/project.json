@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-spinner-helm",
+  "name": "ui-spinner-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-spinner-helm/src",
   "prefix": "hlm",

@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-toggle-helm",
+  "name": "ui-toggle-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-toggle-helm/src",
   "prefix": "hlm",

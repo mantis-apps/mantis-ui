@@ -1,9 +1,9 @@
-# feature-spartanui-ui-progress-helm
+# ui-progress-helm
 
 This library was generated with [Nx](https://nx.dev).
 
 
 ## Running unit tests
 
-Run `nx test feature-spartanui-ui-progress-helm` to execute the unit tests.
+Run `nx test ui-progress-helm` to execute the unit tests.
 

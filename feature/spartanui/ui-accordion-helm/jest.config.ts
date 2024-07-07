@@ -1,6 +1,6 @@
 /* eslint-disable */
 export default {
-  displayName: 'feature-spartanui-ui-accordion-helm',
+  displayName: 'ui-accordion-helm',
   preset: '../../../jest.preset.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   coverageDirectory: '../../../coverage/feature/spartanui/ui-accordion-helm',

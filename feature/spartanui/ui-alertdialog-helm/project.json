@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-alertdialog-helm",
+  "name": "ui-alertdialog-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-alertdialog-helm/src",
   "prefix": "hlm",

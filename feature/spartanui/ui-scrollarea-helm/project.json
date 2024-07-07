@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-scrollarea-helm",
+  "name": "ui-scrollarea-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-scrollarea-helm/src",
   "prefix": "hlm",

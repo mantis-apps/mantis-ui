@@ -10,13 +10,20 @@
     "importHelpers": true,
     "target": "es2015",
     "module": "esnext",
-    "lib": ["es2020", "dom"],
+    "lib": [
+      "es2020",
+      "dom"
+    ],
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@mantis-ui/utils": ["utils/src/index.ts"],
-      "@mantistech/ui": ["feature/ui/src/index.ts"],
+      "@mantis-ui/utils": [
+        "utils/src/index.ts"
+      ],
+      "@mantistech/ui": [
+        "feature/ui/src/index.ts"
+      ],
       "@spartan-ng/ui-accordion-helm": [
         "feature/spartanui/ui-accordion-helm/src/index.ts"
       ],
@@ -41,23 +48,11 @@
       "@spartan-ng/ui-card-helm": [
         "feature/spartanui/ui-card-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-carousel-helm": [
-        "feature/spartanui/ui-carousel-helm/src/index.ts"
-      ],
-      "@spartan-ng/ui-checkbox-helm": [
-        "feature/spartanui/ui-checkbox-helm/src/index.ts"
-      ],
       "@spartan-ng/ui-command-helm": [
         "feature/spartanui/ui-command-helm/src/index.ts"
       ],
       "@spartan-ng/ui-dialog-helm": [
         "feature/spartanui/ui-dialog-helm/src/index.ts"
-      ],
-      "@spartan-ng/ui-helm-helm": [
-        "feature/spartanui/ui-helm-helm/src/index.ts"
-      ],
-      "@spartan-ng/ui-hovercard-helm": [
-        "feature/spartanui/ui-hovercard-helm/src/index.ts"
       ],
       "@spartan-ng/ui-icon-helm": [
         "feature/spartanui/ui-icon-helm/src/index.ts"
@@ -71,9 +66,6 @@
       "@spartan-ng/ui-menu-helm": [
         "feature/spartanui/ui-menu-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-pagination-helm": [
-        "feature/spartanui/ui-pagination-helm/src/index.ts"
-      ],
       "@spartan-ng/ui-popover-helm": [
         "feature/spartanui/ui-popover-helm/src/index.ts"
       ],
@@ -86,9 +78,6 @@
       "@spartan-ng/ui-scrollarea-helm": [
         "feature/spartanui/ui-scrollarea-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-select-helm": [
-        "feature/spartanui/ui-select-helm/src/index.ts"
-      ],
       "@spartan-ng/ui-separator-helm": [
         "feature/spartanui/ui-separator-helm/src/index.ts"
       ],
@@ -98,17 +87,11 @@
       "@spartan-ng/ui-skeleton-helm": [
         "feature/spartanui/ui-skeleton-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-sonner-helm": [
-        "feature/spartanui/ui-sonner-helm/src/index.ts"
-      ],
       "@spartan-ng/ui-spinner-helm": [
         "feature/spartanui/ui-spinner-helm/src/index.ts"
       ],
       "@spartan-ng/ui-switch-helm": [
         "feature/spartanui/ui-switch-helm/src/index.ts"
-      ],
-      "@spartan-ng/ui-table-helm": [
-        "feature/spartanui/ui-table-helm/src/index.ts"
       ],
       "@spartan-ng/ui-tabs-helm": [
         "feature/spartanui/ui-tabs-helm/src/index.ts"
@@ -116,13 +99,40 @@
       "@spartan-ng/ui-toggle-helm": [
         "feature/spartanui/ui-toggle-helm/src/index.ts"
       ],
+      "@spartan-ng/ui-typography-helm": [
+        "feature/spartanui/ui-typography-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-table-helm": [
+        "feature/spartanui/ui-table-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-hovercard-helm": [
+        "feature/spartanui/ui-hovercard-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-checkbox-helm": [
+        "feature/spartanui/ui-checkbox-helm/src/index.ts"
+      ],
       "@spartan-ng/ui-tooltip-helm": [
         "feature/spartanui/ui-tooltip-helm/src/index.ts"
       ],
-      "@spartan-ng/ui-typography-helm": [
-        "feature/spartanui/ui-typography-helm/src/index.ts"
+      "@spartan-ng/ui-pagination-helm": [
+        "feature/spartanui/ui-pagination-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-carousel-helm": [
+        "feature/spartanui/ui-carousel-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-select-helm": [
+        "feature/spartanui/ui-select-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-sonner-helm": [
+        "feature/spartanui/ui-sonner-helm/src/index.ts"
+      ],
+      "@spartan-ng/ui-helm-helm": [
+        "feature/spartanui/ui-helm-helm/src/index.ts"
       ]
     }
   },
-  "exclude": ["node_modules", "tmp"]
+  "exclude": [
+    "node_modules",
+    "tmp"
+  ]
 }

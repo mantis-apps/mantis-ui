@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-sheet-helm",
+  "name": "ui-sheet-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-sheet-helm/src",
   "prefix": "hlm",

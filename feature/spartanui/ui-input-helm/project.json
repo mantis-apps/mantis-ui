@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-input-helm",
+  "name": "ui-input-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-input-helm/src",
   "prefix": "hlm",

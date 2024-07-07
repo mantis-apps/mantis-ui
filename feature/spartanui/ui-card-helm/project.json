@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-card-helm",
+  "name": "ui-card-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-card-helm/src",
   "prefix": "hlm",

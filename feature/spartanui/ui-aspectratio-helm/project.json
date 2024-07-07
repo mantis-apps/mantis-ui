@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-aspectratio-helm",
+  "name": "ui-aspectratio-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-aspectratio-helm/src",
   "prefix": "hlm",

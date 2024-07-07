@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-select-helm",
+  "name": "ui-select-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-select-helm/src",
   "prefix": "hlm",

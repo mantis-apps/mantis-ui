@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-typography-helm",
+  "name": "ui-typography-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-typography-helm/src",
   "prefix": "hlm",

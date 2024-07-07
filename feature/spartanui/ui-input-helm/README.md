@@ -1,9 +1,9 @@
-# feature-spartanui-ui-input-helm
+# ui-input-helm
 
 This library was generated with [Nx](https://nx.dev).
 
 
 ## Running unit tests
 
-Run `nx test feature-spartanui-ui-input-helm` to execute the unit tests.
+Run `nx test ui-input-helm` to execute the unit tests.
 

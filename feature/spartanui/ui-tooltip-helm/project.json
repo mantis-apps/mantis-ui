@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-tooltip-helm",
+  "name": "ui-tooltip-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-tooltip-helm/src",
   "prefix": "hlm",

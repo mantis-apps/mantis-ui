@@ -1,5 +1,5 @@
 {
-  "name": "feature-spartanui-ui-pagination-helm",
+  "name": "ui-pagination-helm",
   "$schema": "../../../node_modules/nx/schemas/project-schema.json",
   "sourceRoot": "feature/spartanui/ui-pagination-helm/src",
   "prefix": "hlm",
