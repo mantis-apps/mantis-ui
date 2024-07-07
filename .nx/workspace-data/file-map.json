@@ -1,0 +1,4727 @@
+{
+  "version": "6.0",
+  "nxVersion": "19.4.1",
+  "deps": {
+    "@angular/animations": "~17.3.0",
+    "@angular/cdk": "^17.3.10",
+    "@angular/common": "~17.3.0",
+    "@angular/compiler": "~17.3.0",
+    "@angular/core": "~17.3.0",
+    "@angular/forms": "~17.3.0",
+    "@angular/platform-browser": "~17.3.0",
+    "@angular/platform-browser-dynamic": "~17.3.0",
+    "@angular/router": "~17.3.0",
+    "@ng-icons/core": "^25.6.1",
+    "@ng-icons/lucide": "^26.5.0",
+    "@ngneat/overview": "^6.0.0",
+    "@ngneat/until-destroy": "^10.0.0",
+    "@ngxpert/cmdk": "^2.0.0",
+    "@nx/angular": "18.2.4",
+    "@spartan-ng/ui-accordion-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-alertdialog-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-avatar-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-checkbox-brain": "0.0.1-alpha.343",
+    "@spartan-ng/ui-collapsible-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-command-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-core": "^0.0.1-alpha.344",
+    "@spartan-ng/ui-dialog-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-hovercard-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-label-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-menu-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-popover-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-progress-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-radiogroup-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-select-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-separator-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-sheet-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-switch-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-table-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-tabs-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-toggle-brain": "0.0.1-alpha.344",
+    "@spartan-ng/ui-tooltip-brain": "0.0.1-alpha.343",
+    "@swimlane/ngx-charts": "^20.5.0",
+    "class-variance-authority": "^0.6.0",
+    "clsx": "^1.2.1",
+    "embla-carousel-angular": "^14.0.0",
+    "ngx-scrollbar": "^13.0.1",
+    "ngx-sonner": "^0.3.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zone.js": "~0.14.3",
+    "@angular-devkit/build-angular": "~17.3.0",
+    "@angular-devkit/core": "~17.3.0",
+    "@angular-devkit/schematics": "~17.3.0",
+    "@angular-eslint/eslint-plugin": "~17.3.0",
+    "@angular-eslint/eslint-plugin-template": "~17.3.0",
+    "@angular-eslint/template-parser": "~17.3.0",
+    "@angular/cli": "~17.3.0",
+    "@angular/compiler-cli": "~17.3.0",
+    "@angular/language-service": "~17.3.0",
+    "@compodoc/compodoc": "^1.1.23",
+    "@faker-js/faker": "^8.4.1",
+    "@nx/cypress": "18.2.4",
+    "@nx/eslint": "18.2.4",
+    "@nx/eslint-plugin": "18.2.4",
+    "@nx/jest": "18.2.4",
+    "@nx/js": "18.2.4",
+    "@nx/storybook": "^18.2.4",
+    "@nx/web": "18.2.4",
+    "@nx/workspace": "18.2.4",
+    "@schematics/angular": "~17.3.0",
+    "@spartan-ng/cli": "^0.0.1-alpha.346",
+    "@storybook/addon-essentials": "7.6.17",
+    "@storybook/addon-interactions": "^7.5.3",
+    "@storybook/addon-themes": "^8.0.8",
+    "@storybook/angular": "7.6.17",
+    "@storybook/core-server": "7.6.17",
+    "@storybook/icons": "^1.2.9",
+    "@storybook/jest": "^0.2.3",
+    "@storybook/test-runner": "^0.13.0",
+    "@storybook/testing-library": "^0.2.2",
+    "@swc-node/register": "~1.8.0",
+    "@swc/core": "~1.3.85",
+    "@swc/helpers": "~0.5.2",
+    "@types/jest": "^29.4.0",
+    "@types/node": "18.16.9",
+    "@typescript-eslint/eslint-plugin": "^7.3.0",
+    "@typescript-eslint/parser": "^7.3.0",
+    "autoprefixer": "^10.4.0",
+    "chromatic": "^11.3.0",
+    "cypress": "^13.6.6",
+    "eslint": "~8.57.0",
+    "eslint-config-prettier": "^9.0.0",
+    "eslint-plugin-cypress": "^2.13.4",
+    "jest": "^29.4.1",
+    "jest-environment-jsdom": "^29.4.1",
+    "jest-preset-angular": "~14.0.3",
+    "jsonc-eslint-parser": "^2.1.0",
+    "msw-storybook-addon": "^1.10.0",
+    "ng-packagr": "~17.3.0",
+    "nx": "18.2.4",
+    "postcss": "^8.4.5",
+    "postcss-url": "~10.1.3",
+    "prettier": "^2.6.2",
+    "storybook": "7.6.17",
+    "storybook-addon-data-theme-switcher": "^0.4.2",
+    "storybook-dark-mode": "^4.0.1",
+    "tailwind-merge": "^2.2.0",
+    "tailwindcss": "^3.0.2",
+    "tailwindcss-animate": "^1.0.6",
+    "ts-jest": "^29.1.0",
+    "ts-node": "10.9.1",
+    "typescript": "~5.4.2"
+  },
+  "pathMappings": {
+    "@mantis-ui/utils": [
+      "utils/src/index.ts"
+    ],
+    "@mantistech/ui": [
+      "feature/ui/src/index.ts"
+    ],
+    "@spartan-ng/ui-accordion-helm": [
+      "feature/spartanui/ui-accordion-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-alert-helm": [
+      "feature/spartanui/ui-alert-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-alertdialog-helm": [
+      "feature/spartanui/ui-alertdialog-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-aspectratio-helm": [
+      "feature/spartanui/ui-aspectratio-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-avatar-helm": [
+      "feature/spartanui/ui-avatar-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-badge-helm": [
+      "feature/spartanui/ui-badge-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-button-helm": [
+      "feature/spartanui/ui-button-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-card-helm": [
+      "feature/spartanui/ui-card-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-carousel-helm": [
+      "feature/spartanui/ui-carousel-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-checkbox-helm": [
+      "feature/spartanui/ui-checkbox-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-command-helm": [
+      "feature/spartanui/ui-command-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-dialog-helm": [
+      "feature/spartanui/ui-dialog-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-helm-helm": [
+      "feature/spartanui/ui-helm-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-hovercard-helm": [
+      "feature/spartanui/ui-hovercard-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-icon-helm": [
+      "feature/spartanui/ui-icon-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-input-helm": [
+      "feature/spartanui/ui-input-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-label-helm": [
+      "feature/spartanui/ui-label-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-menu-helm": [
+      "feature/spartanui/ui-menu-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-pagination-helm": [
+      "feature/spartanui/ui-pagination-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-popover-helm": [
+      "feature/spartanui/ui-popover-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-progress-helm": [
+      "feature/spartanui/ui-progress-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-radiogroup-helm": [
+      "feature/spartanui/ui-radiogroup-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-scrollarea-helm": [
+      "feature/spartanui/ui-scrollarea-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-select-helm": [
+      "feature/spartanui/ui-select-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-separator-helm": [
+      "feature/spartanui/ui-separator-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-sheet-helm": [
+      "feature/spartanui/ui-sheet-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-skeleton-helm": [
+      "feature/spartanui/ui-skeleton-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-sonner-helm": [
+      "feature/spartanui/ui-sonner-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-spinner-helm": [
+      "feature/spartanui/ui-spinner-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-switch-helm": [
+      "feature/spartanui/ui-switch-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-table-helm": [
+      "feature/spartanui/ui-table-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-tabs-helm": [
+      "feature/spartanui/ui-tabs-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-toggle-helm": [
+      "feature/spartanui/ui-toggle-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-tooltip-helm": [
+      "feature/spartanui/ui-tooltip-helm/src/index.ts"
+    ],
+    "@spartan-ng/ui-typography-helm": [
+      "feature/spartanui/ui-typography-helm/src/index.ts"
+    ]
+  },
+  "nxJsonPlugins": [
+    {
+      "name": "@nx/cypress/plugin",
+      "options": {
+        "targetName": "e2e",
+        "componentTestingTargetName": "component-test",
+        "ciTargetName": "e2e-ci",
+        "openTargetName": "open-cypress"
+      }
+    },
+    {
+      "name": "@nx/eslint/plugin",
+      "options": {
+        "targetName": "lint"
+      }
+    },
+    {
+      "name": "@nx/storybook/plugin",
+      "options": {
+        "buildStorybookTargetName": "build-storybook",
+        "serveStorybookTargetName": "storybook",
+        "testStorybookTargetName": "test-storybook",
+        "staticStorybookTargetName": "static-storybook"
+      }
+    }
+  ],
+  "fileMap": {
+    "nonProjectFiles": [
+      {
+        "file": ".editorconfig",
+        "hash": "5443105041930014821"
+      },
+      {
+        "file": ".eslintignore",
+        "hash": "7663861978715868291"
+      },
+      {
+        "file": ".eslintrc.json",
+        "hash": "18315524891129148814"
+      },
+      {
+        "file": ".gitignore",
+        "hash": "11932737887136478997"
+      },
+      {
+        "file": ".prettierignore",
+        "hash": "3395189204293871444"
+      },
+      {
+        "file": ".prettierrc",
+        "hash": "16267754514737964994"
+      },
+      {
+        "file": ".vscode/extensions.json",
+        "hash": "4934098906304722861"
+      },
+      {
+        "file": "README.md",
+        "hash": "6048881366643960590"
+      },
+      {
+        "file": "documentation/components/ButtonComponent.html",
+        "hash": "15074135597482586501"
+      },
+      {
+        "file": "documentation/components/IconComponent.html",
+        "hash": "1413524393620050567"
+      },
+      {
+        "file": "documentation/components/IconListComponent.html",
+        "hash": "10602019227496605979"
+      },
+      {
+        "file": "documentation/components/InfoCardComponent.html",
+        "hash": "7992734220206107172"
+      },
+      {
+        "file": "documentation/coverage.html",
+        "hash": "14933441702238061489"
+      },
+      {
+        "file": "documentation/dependencies.html",
+        "hash": "4057473445472392917"
+      },
+      {
+        "file": "documentation/fonts/ionicons.eot",
+        "hash": "11954292315687035285"
+      },
+      {
+        "file": "documentation/fonts/ionicons.svg",
+        "hash": "3340431163026388236"
+      },
+      {
+        "file": "documentation/fonts/ionicons.ttf",
+        "hash": "9482225794616543832"
+      },
+      {
+        "file": "documentation/fonts/ionicons.woff",
+        "hash": "10215852456567241679"
+      },
+      {
+        "file": "documentation/fonts/ionicons.woff2",
+        "hash": "11311683446494265812"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-300.eot",
+        "hash": "16970012345764992539"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-300.svg",
+        "hash": "16621530187070219625"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-300.ttf",
+        "hash": "6723283691141535943"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-300.woff",
+        "hash": "5551725997763169280"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-300.woff2",
+        "hash": "14268032398072346110"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-700.eot",
+        "hash": "16058052300924999321"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-700.svg",
+        "hash": "11747120382012311933"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-700.ttf",
+        "hash": "5352514732871671459"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-700.woff",
+        "hash": "5844094029798307855"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-700.woff2",
+        "hash": "1410963700615895184"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-italic.eot",
+        "hash": "15098770303203122150"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-italic.svg",
+        "hash": "12774300922482266867"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-italic.ttf",
+        "hash": "4417700308891305617"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-italic.woff",
+        "hash": "5050951999862935083"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-italic.woff2",
+        "hash": "6682708430513662803"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-regular.eot",
+        "hash": "4556119219014855615"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-regular.svg",
+        "hash": "661617242628878322"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-regular.ttf",
+        "hash": "6355862180977459781"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-regular.woff",
+        "hash": "1398560205593287051"
+      },
+      {
+        "file": "documentation/fonts/roboto-v15-latin-regular.woff2",
+        "hash": "6009251489912774712"
+      },
+      {
+        "file": "documentation/graph/dependencies.svg",
+        "hash": "17277114676488850317"
+      },
+      {
+        "file": "documentation/images/compodoc-vectorise-inverted.png",
+        "hash": "5020586271611239710"
+      },
+      {
+        "file": "documentation/images/compodoc-vectorise-inverted.svg",
+        "hash": "9691278676200660925"
+      },
+      {
+        "file": "documentation/images/compodoc-vectorise.png",
+        "hash": "6670940543257439260"
+      },
+      {
+        "file": "documentation/images/compodoc-vectorise.svg",
+        "hash": "3594014934509636990"
+      },
+      {
+        "file": "documentation/images/coverage-badge-documentation.svg",
+        "hash": "5291836764592823527"
+      },
+      {
+        "file": "documentation/images/favicon.ico",
+        "hash": "8237334056690247575"
+      },
+      {
+        "file": "documentation/index.html",
+        "hash": "6487615840257583744"
+      },
+      {
+        "file": "documentation/js/compodoc.js",
+        "hash": "10684543567999230723"
+      },
+      {
+        "file": "documentation/js/lazy-load-graphs.js",
+        "hash": "18104119365023483720"
+      },
+      {
+        "file": "documentation/js/libs/EventDispatcher.js",
+        "hash": "341132572343249511"
+      },
+      {
+        "file": "documentation/js/libs/bootstrap-native.js",
+        "hash": "4742517330424662150"
+      },
+      {
+        "file": "documentation/js/libs/clipboard.min.js",
+        "hash": "341809361052209031"
+      },
+      {
+        "file": "documentation/js/libs/custom-elements-es5-adapter.js",
+        "hash": "3080178796027856086"
+      },
+      {
+        "file": "documentation/js/libs/custom-elements.min.js",
+        "hash": "1008185804685308610"
+      },
+      {
+        "file": "documentation/js/libs/d3.v3.min.js",
+        "hash": "3067344638421829603"
+      },
+      {
+        "file": "documentation/js/libs/deep-iterator.js",
+        "hash": "17034728201294668941"
+      },
+      {
+        "file": "documentation/js/libs/es6-shim.min.js",
+        "hash": "14466809616348507839"
+      },
+      {
+        "file": "documentation/js/libs/htmlparser.js",
+        "hash": "12898806473533619279"
+      },
+      {
+        "file": "documentation/js/libs/innersvg.js",
+        "hash": "14049310177573401809"
+      },
+      {
+        "file": "documentation/js/libs/lit-html.js",
+        "hash": "6258091497474886715"
+      },
+      {
+        "file": "documentation/js/libs/prism.js",
+        "hash": "16252263252489834593"
+      },
+      {
+        "file": "documentation/js/libs/promise.min.js",
+        "hash": "9671625068078925510"
+      },
+      {
+        "file": "documentation/js/libs/svg-pan-zoom.min.js",
+        "hash": "7581361919641813320"
+      },
+      {
+        "file": "documentation/js/libs/tablesort.min.js",
+        "hash": "14721979311067848234"
+      },
+      {
+        "file": "documentation/js/libs/tablesort.number.min.js",
+        "hash": "3202589431264698402"
+      },
+      {
+        "file": "documentation/js/libs/vis.min.js",
+        "hash": "690286842441916556"
+      },
+      {
+        "file": "documentation/js/libs/zepto.min.js",
+        "hash": "14779589039182381899"
+      },
+      {
+        "file": "documentation/js/menu-wc.js",
+        "hash": "15905326094382481545"
+      },
+      {
+        "file": "documentation/js/menu-wc_es5.js",
+        "hash": "9731772110755385815"
+      },
+      {
+        "file": "documentation/js/menu.js",
+        "hash": "10421674651287702357"
+      },
+      {
+        "file": "documentation/js/routes.js",
+        "hash": "5571022418870747754"
+      },
+      {
+        "file": "documentation/js/search/lunr.min.js",
+        "hash": "12108969974796811302"
+      },
+      {
+        "file": "documentation/js/search/search-lunr.js",
+        "hash": "15719610168440482435"
+      },
+      {
+        "file": "documentation/js/search/search.js",
+        "hash": "11978150645261218124"
+      },
+      {
+        "file": "documentation/js/search/search_index.js",
+        "hash": "18222536479400562594"
+      },
+      {
+        "file": "documentation/js/sourceCode.js",
+        "hash": "11920356499394899358"
+      },
+      {
+        "file": "documentation/js/svg-pan-zoom.controls.js",
+        "hash": "7242360966241421800"
+      },
+      {
+        "file": "documentation/js/tabs.js",
+        "hash": "5129870167565559261"
+      },
+      {
+        "file": "documentation/js/tree.js",
+        "hash": "13847996334257071471"
+      },
+      {
+        "file": "documentation/miscellaneous/typealiases.html",
+        "hash": "14377533972509897807"
+      },
+      {
+        "file": "documentation/miscellaneous/variables.html",
+        "hash": "2790158567206413703"
+      },
+      {
+        "file": "documentation/modules.html",
+        "hash": "5127747249827327980"
+      },
+      {
+        "file": "documentation/overview.html",
+        "hash": "13005191525517193914"
+      },
+      {
+        "file": "documentation/properties.html",
+        "hash": "6353456435767931413"
+      },
+      {
+        "file": "documentation/styles/bootstrap-card.css",
+        "hash": "8425753481203753724"
+      },
+      {
+        "file": "documentation/styles/bootstrap.min.css",
+        "hash": "1773960718099424813"
+      },
+      {
+        "file": "documentation/styles/compodoc.css",
+        "hash": "3980872439539265738"
+      },
+      {
+        "file": "documentation/styles/dark.css",
+        "hash": "5273445974341221538"
+      },
+      {
+        "file": "documentation/styles/ionicons.min.css",
+        "hash": "2220568294046488706"
+      },
+      {
+        "file": "documentation/styles/laravel.css",
+        "hash": "15113996174915406928"
+      },
+      {
+        "file": "documentation/styles/material.css",
+        "hash": "15807253854462718523"
+      },
+      {
+        "file": "documentation/styles/original.css",
+        "hash": "1881841684982186916"
+      },
+      {
+        "file": "documentation/styles/postmark.css",
+        "hash": "12743018665122170840"
+      },
+      {
+        "file": "documentation/styles/prism.css",
+        "hash": "15012979331926537787"
+      },
+      {
+        "file": "documentation/styles/readthedocs.css",
+        "hash": "4324259331469061412"
+      },
+      {
+        "file": "documentation/styles/reset.css",
+        "hash": "9398766951126602820"
+      },
+      {
+        "file": "documentation/styles/stripe.css",
+        "hash": "11195358147291901967"
+      },
+      {
+        "file": "documentation/styles/style.css",
+        "hash": "73213024445309292"
+      },
+      {
+        "file": "documentation/styles/tablesort.css",
+        "hash": "5331184185500011181"
+      },
+      {
+        "file": "documentation/styles/vagrant.css",
+        "hash": "5511005555385148674"
+      },
+      {
+        "file": "jest.config.ts",
+        "hash": "3494843969422251966"
+      },
+      {
+        "file": "jest.preset.js",
+        "hash": "9430166341120122740"
+      },
+      {
+        "file": "nx.json",
+        "hash": "14870553115514471833"
+      },
+      {
+        "file": "package.json",
+        "hash": "2487876514251781627"
+      },
+      {
+        "file": "tsconfig.base.json",
+        "hash": "5481660362796334666"
+      },
+      {
+        "file": "yarn.lock",
+        "hash": "5840579790294928823"
+      }
+    ],
+    "projectFileMap": {
+      "feature-spartanui-ui-separator-helm": [
+        {
+          "file": "feature/spartanui/ui-separator-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/README.md",
+          "hash": "17692093662243409457"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/jest.config.ts",
+          "hash": "11939661692707768629"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/ng-package.json",
+          "hash": "10697351475948659244"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/package.json",
+          "hash": "7660283270735950957",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/project.json",
+          "hash": "17368708051146634835"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/src/index.ts",
+          "hash": "11009445571986260606"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/src/lib/hlm-separator.directive.ts",
+          "hash": "8165612137985436819",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-separator-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "mantis-ui-e2e": [
+        {
+          "file": "apps/mantis-ui-e2e/.eslintrc.json",
+          "hash": "14060216369337943343"
+        },
+        {
+          "file": "apps/mantis-ui-e2e/cypress.config.ts",
+          "hash": "9747428251744569923",
+          "deps": [
+            "npm:cypress"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui-e2e/project.json",
+          "hash": "8146919543012012170"
+        },
+        {
+          "file": "apps/mantis-ui-e2e/src/e2e/app.cy.ts",
+          "hash": "13502736686369191247"
+        },
+        {
+          "file": "apps/mantis-ui-e2e/src/fixtures/example.json",
+          "hash": "11785586596216172004"
+        },
+        {
+          "file": "apps/mantis-ui-e2e/src/support/app.po.ts",
+          "hash": "11157016311132186162"
+        },
+        {
+          "file": "apps/mantis-ui-e2e/src/support/commands.ts",
+          "hash": "5397443931564808659"
+        },
+        {
+          "file": "apps/mantis-ui-e2e/src/support/e2e.ts",
+          "hash": "1054106023200826784"
+        },
+        {
+          "file": "apps/mantis-ui-e2e/tsconfig.json",
+          "hash": "4332380883180617610"
+        }
+      ],
+      "feature-spartanui-ui-accordion-helm": [
+        {
+          "file": "feature/spartanui/ui-accordion-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/README.md",
+          "hash": "11127782958350910119"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/jest.config.ts",
+          "hash": "11896504172691505152"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/ng-package.json",
+          "hash": "16559396912563547940"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/package.json",
+          "hash": "15290476348984957504",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/project.json",
+          "hash": "17064645431342121157"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/src/index.ts",
+          "hash": "6903111936815807769"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/src/lib/hlm-accordion-content.directive.ts",
+          "hash": "14050601527277039922",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/src/lib/hlm-accordion-icon.directive.ts",
+          "hash": "3207866445007071014",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/src/lib/hlm-accordion-item.directive.ts",
+          "hash": "12151249423193684360",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/src/lib/hlm-accordion-trigger.directive.ts",
+          "hash": "6813127769998780946",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/src/lib/hlm-accordion.directive.ts",
+          "hash": "15231705825480622790",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-accordion-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-pagination-helm": [
+        {
+          "file": "feature/spartanui/ui-pagination-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/README.md",
+          "hash": "16943242714091957790"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/jest.config.ts",
+          "hash": "13206403787433769949"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/ng-package.json",
+          "hash": "17521779435785989172"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/package.json",
+          "hash": "16040779436273923794",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/project.json",
+          "hash": "1311995298561192272"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/index.ts",
+          "hash": "17379870941391887608"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/lib/hlm-pagination-content.directive.ts",
+          "hash": "1709499902971332464",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/lib/hlm-pagination-ellipsis.componet.ts",
+          "hash": "13186148126740236063",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/lib/hlm-pagination-item.directive.ts",
+          "hash": "3475314125739606403",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/lib/hlm-pagination-link.directive.ts",
+          "hash": "16750430901473669957",
+          "deps": [
+            "feature-spartanui-ui-button-helm",
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/lib/hlm-pagination-next.componet.ts",
+          "hash": "5893286313127041745",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/lib/hlm-pagination-previous.componet.ts",
+          "hash": "9210320555815465949",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/lib/hlm-pagination.directive.ts",
+          "hash": "10244824134416032194",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-pagination-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-sheet-helm": [
+        {
+          "file": "feature/spartanui/ui-sheet-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/README.md",
+          "hash": "17219632297787682242"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/jest.config.ts",
+          "hash": "503492979679551392"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/ng-package.json",
+          "hash": "4550042806322254634"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/package.json",
+          "hash": "1201796572093040596",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/project.json",
+          "hash": "6297354613163934436"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/index.ts",
+          "hash": "2450176343920516083"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet-close.directive.ts",
+          "hash": "6214059090768319199",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet-content.component.ts",
+          "hash": "12975020873248072034",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet-description.directive.ts",
+          "hash": "17482847210439689343",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet-footer.component.ts",
+          "hash": "18204570582362162353",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet-header.component.ts",
+          "hash": "9234276294831502559",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet-overlay.directive.ts",
+          "hash": "3313916377199756110",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet-title.directive.ts",
+          "hash": "7307831167764101704",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/lib/hlm-sheet.component.ts",
+          "hash": "5015684993484143925"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-sheet-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-typography-helm": [
+        {
+          "file": "feature/spartanui/ui-typography-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/README.md",
+          "hash": "15103284917191063115"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/jest.config.ts",
+          "hash": "5897901299691670484"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/ng-package.json",
+          "hash": "3266242382869428846"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/package.json",
+          "hash": "12818907115918162211",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/project.json",
+          "hash": "15230202941442042095"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/index.ts",
+          "hash": "16224056619972450008"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-blockquote.directive.ts",
+          "hash": "18101603071914655031",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-code.directive.ts",
+          "hash": "6756479996723474401",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-h1.directive.ts",
+          "hash": "6057125571650734305",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-h2.directive.ts",
+          "hash": "8602229289442484159",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-h3.directive.ts",
+          "hash": "16259105724369722003",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-h4.directive.ts",
+          "hash": "14054635826608100055",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-large.directive.ts",
+          "hash": "5297896975554037762",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-lead.directive.ts",
+          "hash": "12162962430825503024",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-muted.directive.ts",
+          "hash": "15377758843733547797",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-p.directive.ts",
+          "hash": "3076068402034391546",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-small.directive.ts",
+          "hash": "4271465961457157378",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/lib/hlm-ul.directive.ts",
+          "hash": "14428414060004043189",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-typography-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-checkbox-helm": [
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/README.md",
+          "hash": "9707427768757658260"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/jest.config.ts",
+          "hash": "17237354758343049148"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/ng-package.json",
+          "hash": "17038591440621879646"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/package.json",
+          "hash": "13585743678884943448",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/project.json",
+          "hash": "11162822471668886254"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/src/index.ts",
+          "hash": "17713349125185817560"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/src/lib/hlm-checkbox-checkicon.component.ts",
+          "hash": "14296552974539527335",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/src/lib/hlm-checkbox.component.ts",
+          "hash": "15273341733623659105",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-checkbox-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "ui": [
+        {
+          "file": "feature/ui/.eslintrc.json",
+          "hash": "11706391917421931006"
+        },
+        {
+          "file": "feature/ui/.storybook/main.ts",
+          "hash": "9719123576133251353",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/.storybook/manager.ts",
+          "hash": "4621485137322600463",
+          "deps": [
+            "npm:@storybook/manager-api"
+          ]
+        },
+        {
+          "file": "feature/ui/.storybook/preview.ts",
+          "hash": "14122868537494939427",
+          "deps": [
+            "npm:storybook-addon-data-theme-switcher",
+            "npm:@storybook/addon-docs",
+            "npm:@storybook/angular",
+            "npm:@storybook/addon-themes"
+          ]
+        },
+        {
+          "file": "feature/ui/.storybook/theme.ts",
+          "hash": "9510874487495068836",
+          "deps": [
+            "npm:@storybook/theming"
+          ]
+        },
+        {
+          "file": "feature/ui/.storybook/tsconfig.json",
+          "hash": "9299278537582181036"
+        },
+        {
+          "file": "feature/ui/README.md",
+          "hash": "3098996868279451883"
+        },
+        {
+          "file": "feature/ui/docs/documentation.json",
+          "hash": "1947862450145389822"
+        },
+        {
+          "file": "feature/ui/jest.config.ts",
+          "hash": "10050399284674276350"
+        },
+        {
+          "file": "feature/ui/ng-package.json",
+          "hash": "11765379150875584170"
+        },
+        {
+          "file": "feature/ui/package-lock.json",
+          "hash": "2521050344780610746"
+        },
+        {
+          "file": "feature/ui/package.json",
+          "hash": "3177813842492091685",
+          "deps": [
+            "npm:tslib@2.6.2"
+          ]
+        },
+        {
+          "file": "feature/ui/project.json",
+          "hash": "7779730591309701998"
+        },
+        {
+          "file": "feature/ui/src/assets/1.jpg",
+          "hash": "3792897263403060378"
+        },
+        {
+          "file": "feature/ui/src/assets/avatar.png",
+          "hash": "12661994480092364545"
+        },
+        {
+          "file": "feature/ui/src/card.module.ts",
+          "hash": "5873704277684785704"
+        },
+        {
+          "file": "feature/ui/src/index.ts",
+          "hash": "9395317774678939265"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.stories.ts",
+          "hash": "12717719132470092433",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/accordion/accordion.component.ts",
+          "hash": "14379057392902181650",
+          "deps": [
+            "feature-spartanui-ui-accordion-helm",
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.stories.ts",
+          "hash": "12676184220556089654",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/alert-dialog/alert-dialog.component.ts",
+          "hash": "16151984402371842434",
+          "deps": [
+            "feature-spartanui-ui-alertdialog-helm",
+            "feature-spartanui-ui-button-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.mdx",
+          "hash": "17108274006933734747"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/alert/alert.component.stories.ts",
+          "hash": "10329217654390693987",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/alert/alert.component.ts",
+          "hash": "8740231574990384460",
+          "deps": [
+            "feature-spartanui-ui-alert-helm",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.stories.ts",
+          "hash": "11663553427827915717",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/aspect-ratio/aspect-ratio.component.ts",
+          "hash": "9394868088307392734",
+          "deps": [
+            "feature-spartanui-ui-aspectratio-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.stories.ts",
+          "hash": "220405535421576511",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/avatar/avatar.component.ts",
+          "hash": "12417415159115105359",
+          "deps": [
+            "feature-spartanui-ui-avatar-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/badge/badge.component.stories.ts",
+          "hash": "14673581598514642712",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/badge/badge.component.ts",
+          "hash": "8263784845589864138",
+          "deps": [
+            "feature-spartanui-ui-badge-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/button/button.component.spec.ts",
+          "hash": "12467420886376854441"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/button/button.component.stories.ts",
+          "hash": "15596126470409492625",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/button/button.component.ts",
+          "hash": "2309502281047009881",
+          "deps": [
+            "feature-spartanui-ui-button-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/card.component.stories.mdx",
+          "hash": "3076818013462508582"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/index.ts",
+          "hash": "467669064177674212"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-content.component.stories.ts",
+          "hash": "7910067377324680218",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-content.component.ts",
+          "hash": "17736956156690637595",
+          "deps": [
+            "feature-spartanui-ui-card-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-description.component.stories.ts",
+          "hash": "15767573948347154405",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-description.component.ts",
+          "hash": "4267743806895630775",
+          "deps": [
+            "feature-spartanui-ui-card-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-footer.component.stories.ts",
+          "hash": "9366974385572154460",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-footer.component.ts",
+          "hash": "16664885867280794669",
+          "deps": [
+            "feature-spartanui-ui-card-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-header.component.stories.ts",
+          "hash": "16820315850760512218",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-header.component.ts",
+          "hash": "16027209566937569810",
+          "deps": [
+            "feature-spartanui-ui-card-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-title.component.stories.ts",
+          "hash": "5133302510627396969",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card-title.component.ts",
+          "hash": "3611374289728468580",
+          "deps": [
+            "feature-spartanui-ui-card-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card.component.stories.ts",
+          "hash": "11479719175262305144",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/card/partials/card.component.ts",
+          "hash": "9972226306586541264",
+          "deps": [
+            "feature-spartanui-ui-card-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.stories.ts",
+          "hash": "13534068896395547501",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/carousel/carousel.component.ts",
+          "hash": "9457591521978953204",
+          "deps": [
+            "feature-spartanui-ui-carousel-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/charts.style.css",
+          "hash": "4831320330244814082"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.stories.ts",
+          "hash": "10976802998560679397",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/gauge-chart.component.ts",
+          "hash": "17547360116022046949",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.stories.ts",
+          "hash": "186878128839783182",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-2d.component.ts",
+          "hash": "16649613559493054562",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.stories.ts",
+          "hash": "8905124730521309663",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-normalized.component.ts",
+          "hash": "12547489511821765315",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.stories.ts",
+          "hash": "17398927674782603482",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart-stacked.component.ts",
+          "hash": "9276459612426429938",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.stories.ts",
+          "hash": "7153563552263720257",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/horizontal-bar-chart.component.ts",
+          "hash": "14852012670081902739",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/index.ts",
+          "hash": "2128595036391372"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/models/chart-data.ts",
+          "hash": "9145888029109511024",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/models/default-chart-options.ts",
+          "hash": "13330362125491581881",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/models/index.ts",
+          "hash": "15972676191825791317"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.stories.ts",
+          "hash": "4871631912818200751",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-2d.component.ts",
+          "hash": "7208944591752107593",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.stories.ts",
+          "hash": "12879023521959104151",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-normalized.component.ts",
+          "hash": "5463206610843701752",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.stories.ts",
+          "hash": "6576626195977497857",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart-stacked.component.ts",
+          "hash": "2235103615184861981",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.stories.ts",
+          "hash": "4934678019398264171",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@swimlane/ngx-charts",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/charts/vertical-bar-chart.component.ts",
+          "hash": "1906370975678225656",
+          "deps": [
+            "npm:@swimlane/ngx-charts"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.stories.ts",
+          "hash": "5939453477450615310",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/checkbox/checkbox.component.ts",
+          "hash": "12268396883570257619",
+          "deps": [
+            "npm:@ng-icons/core",
+            "feature-spartanui-ui-checkbox-helm",
+            "feature-spartanui-ui-label-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.stories.ts",
+          "hash": "823923535475087782",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/collapsible/collapsible.component.ts",
+          "hash": "10965725418702025521",
+          "deps": [
+            "feature-spartanui-ui-button-helm",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.stories.ts",
+          "hash": "11439803538216393695",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/combobox/combobox.component.ts",
+          "hash": "15836448090707250427",
+          "deps": [
+            "feature-spartanui-ui-command-helm",
+            "feature-spartanui-ui-icon-helm",
+            "feature-spartanui-ui-button-helm",
+            "feature-spartanui-ui-popover-helm",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.stories.ts",
+          "hash": "14577545447754282887",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/command/command-dialog.component.ts",
+          "hash": "15263848505509550837",
+          "deps": [
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide",
+            "feature-spartanui-ui-button-helm",
+            "feature-spartanui-ui-command-helm",
+            "feature-spartanui-ui-dialog-helm",
+            "feature-spartanui-ui-icon-helm",
+            "feature-spartanui-ui-typography-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/command/command.component.stories.ts",
+          "hash": "3529363247055760389",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/command/command.component.ts",
+          "hash": "1916212175532586410",
+          "deps": [
+            "feature-spartanui-ui-command-helm",
+            "feature-spartanui-ui-icon-helm",
+            "feature-spartanui-ui-button-helm",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/command/command.models.ts",
+          "hash": "7231872756316230106",
+          "deps": [
+            "npm:@ng-icons/core"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/hover-card/hover-card.component.stories.ts",
+          "hash": "17910297808205955797",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@ng-icons/lucide",
+            "npm:@ng-icons/core"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/hover-card/hover-card.component.ts",
+          "hash": "2431439276044999538",
+          "deps": [
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide",
+            "feature-spartanui-ui-avatar-helm",
+            "feature-spartanui-ui-button-helm",
+            "feature-spartanui-ui-hovercard-helm",
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.spec.ts",
+          "hash": "14921832757231195874"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.stories.ts",
+          "hash": "11869636385068371415",
+          "deps": [
+            "npm:@storybook/angular"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon-list/icon-list.component.ts",
+          "hash": "16875119041826809598",
+          "deps": [
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon.component.spec.ts",
+          "hash": "11371658119577234393"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.mdx",
+          "hash": "8635159404317325481"
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon.component.stories.ts",
+          "hash": "16541557281136893001",
+          "deps": [
+            "npm:@storybook/angular",
+            "npm:@ng-icons/lucide",
+            "npm:@ng-icons/core",
+            "npm:@storybook/testing-library",
+            "npm:@storybook/jest"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon.component.ts",
+          "hash": "8919981672822807685",
+          "deps": [
+            "feature-spartanui-ui-icon-helm",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/ui/src/lib/ui/components/icon/icon.token.ts",
+          "hash": "7732625113024592159",
+          "deps": [
+            "npm:@ng-icons/core"
+          ]
+        },
+        {
+          "file": "feature/ui/src/styles.css",
+          "hash": "14295146847886851837"
+        },
+        {
+          "file": "feature/ui/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "feature/ui/tailwind.config.js",
+          "hash": "3768283308524318004",
+          "deps": [
+            "npm:@spartan-ng/ui-core"
+          ]
+        },
+        {
+          "file": "feature/ui/tsconfig.json",
+          "hash": "3858127637514423861"
+        },
+        {
+          "file": "feature/ui/tsconfig.lib.json",
+          "hash": "13773327403679899747"
+        },
+        {
+          "file": "feature/ui/tsconfig.lib.prod.json",
+          "hash": "174503844014784742"
+        },
+        {
+          "file": "feature/ui/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "feature-spartanui-ui-table-helm": [
+        {
+          "file": "feature/spartanui/ui-table-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/README.md",
+          "hash": "8597413839154041772"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/jest.config.ts",
+          "hash": "4192509658742922106"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/ng-package.json",
+          "hash": "16295520015888428818"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/package.json",
+          "hash": "8667647916874684760",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/project.json",
+          "hash": "2264424980688353836"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/index.ts",
+          "hash": "10469680382427192649"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/lib/hlm-caption.component.ts",
+          "hash": "14668460635116705322",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/lib/hlm-table.component.ts",
+          "hash": "15417088749686687520",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/lib/hlm-table.directive.ts",
+          "hash": "11306128400321269706",
+          "deps": [
+            "npm:@spartan-ng/ui-core"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/lib/hlm-td.component.ts",
+          "hash": "13520969682435877948",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/lib/hlm-th.component.ts",
+          "hash": "6672361606305615780",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/lib/hlm-trow.component.ts",
+          "hash": "6641093741390180001",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-table-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-select-helm": [
+        {
+          "file": "feature/spartanui/ui-select-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/README.md",
+          "hash": "10626159079576555384"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/jest.config.ts",
+          "hash": "9217384026529471686"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/ng-package.json",
+          "hash": "15985662055356533210"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/package.json",
+          "hash": "4880863894596528111",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/project.json",
+          "hash": "12371650780289610861"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/index.ts",
+          "hash": "14018309011524926443"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-content.directive.ts",
+          "hash": "16071720362354102590",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-group.directive.ts",
+          "hash": "13737167582541707293",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-label.directive.ts",
+          "hash": "5061257205102794288",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-option.component.ts",
+          "hash": "15476922212559616573",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-scroll-down.component.ts",
+          "hash": "11295596341856372592",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-scroll-up.component.ts",
+          "hash": "17717394611683218799",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-trigger.component.ts",
+          "hash": "3014127679394911319",
+          "deps": [
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select-value.directive.ts",
+          "hash": "3373939699763482275",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/lib/hlm-select.directive.ts",
+          "hash": "6010241875048050596",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-select-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-dialog-helm": [
+        {
+          "file": "feature/spartanui/ui-dialog-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/README.md",
+          "hash": "5126863134963621865"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/jest.config.ts",
+          "hash": "8060229691926626008"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/ng-package.json",
+          "hash": "16514983417632984916"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/package.json",
+          "hash": "12719725472407041630",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/project.json",
+          "hash": "16614278079908757869"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/index.ts",
+          "hash": "933315377037635710"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog-close.directive.ts",
+          "hash": "11811384777025161334",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog-content.component.ts",
+          "hash": "16778908303823127550",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog-description.directive.ts",
+          "hash": "2957762298794395477",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog-footer.component.ts",
+          "hash": "15967303839633299690",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog-header.component.ts",
+          "hash": "7126111594870886590",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog-overlay.directive.ts",
+          "hash": "18247851112216939698",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog-title.directive.ts",
+          "hash": "3472880880270013044",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog.component.ts",
+          "hash": "10844505028348601106"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/lib/hlm-dialog.service.ts",
+          "hash": "14225648517283193129",
+          "deps": [
+            "npm:@angular/cdk"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-dialog-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-hovercard-helm": [
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/README.md",
+          "hash": "145583797280580519"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/jest.config.ts",
+          "hash": "5499591290378626629"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/ng-package.json",
+          "hash": "17615535576700399749"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/package.json",
+          "hash": "7453658787709406255",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/project.json",
+          "hash": "3620808131166474193"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/src/index.ts",
+          "hash": "8060148645644534703"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/src/lib/hlm-hover-card-content.component.ts",
+          "hash": "9091172866836268625",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-hovercard-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-avatar-helm": [
+        {
+          "file": "feature/spartanui/ui-avatar-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/README.md",
+          "hash": "14031769081755813731"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/jest.config.ts",
+          "hash": "7456791588336627136"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/ng-package.json",
+          "hash": "12921268974562582907"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/package.json",
+          "hash": "11031889708086005251",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/project.json",
+          "hash": "1302833201489775854"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/index.ts",
+          "hash": "16111783170664857174"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/fallback/hlm-avatar-fallback.directive.spec.ts",
+          "hash": "7336560775445027093"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/fallback/hlm-avatar-fallback.directive.ts",
+          "hash": "10086965305556023585",
+          "deps": [
+            "npm:@spartan-ng/ui-core"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/fallback/index.ts",
+          "hash": "4095308081400682735"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/hlm-avatar.component.spec.ts",
+          "hash": "5837007326789937999"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/hlm-avatar.component.ts",
+          "hash": "6338296278791383333",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/image/hlm-avatar-image.directive.spec.ts",
+          "hash": "12430997093755197010"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/image/hlm-avatar-image.directive.ts",
+          "hash": "12662384030421158666",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/lib/image/index.ts",
+          "hash": "725402389627633520"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-avatar-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-carousel-helm": [
+        {
+          "file": "feature/spartanui/ui-carousel-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/README.md",
+          "hash": "11349710619164252948"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/jest.config.ts",
+          "hash": "10361552121085835281"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/ng-package.json",
+          "hash": "10964270540829759534"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/package.json",
+          "hash": "1050960109470896984",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/project.json",
+          "hash": "8865486994336333485"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/src/index.ts",
+          "hash": "8539351647881514618"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/src/lib/hlm-carousel-content.component.ts",
+          "hash": "1930153674934349357",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/src/lib/hlm-carousel-item.component.ts",
+          "hash": "4367734002180068886",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/src/lib/hlm-carousel-next.component.ts",
+          "hash": "13032986165047990023",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "feature-spartanui-ui-button-helm",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/src/lib/hlm-carousel-previous.component.ts",
+          "hash": "3184935024046653628",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "feature-spartanui-ui-button-helm",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/src/lib/hlm-carousel.component.ts",
+          "hash": "12553796803995689533",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx",
+            "npm:embla-carousel-angular"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-carousel-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-skeleton-helm": [
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/README.md",
+          "hash": "9900097897673140063"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/jest.config.ts",
+          "hash": "14314441605994697925"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/ng-package.json",
+          "hash": "10076247695855864991"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/package.json",
+          "hash": "13808632241262831597",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/project.json",
+          "hash": "3138602330113645406"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/src/index.ts",
+          "hash": "6658956960379025064"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/src/lib/hlm-skeleton.component.ts",
+          "hash": "12246705474592339452",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-skeleton-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-scrollarea-helm": [
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/README.md",
+          "hash": "13414718518146487265"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/jest.config.ts",
+          "hash": "12468118216230983400"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/ng-package.json",
+          "hash": "17897694065624206673"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/package.json",
+          "hash": "18084637958767015357",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/project.json",
+          "hash": "7770665679681480681"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/src/index.ts",
+          "hash": "12349259645201853689"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/src/lib/hlm-scroll-area.component.ts",
+          "hash": "5620166727306962253",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx",
+            "npm:ngx-scrollbar"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-scrollarea-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-icon-helm": [
+        {
+          "file": "feature/spartanui/ui-icon-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/README.md",
+          "hash": "6517113373138992720"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/jest.config.ts",
+          "hash": "10580051055359182831"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/ng-package.json",
+          "hash": "12709132333512025814"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/package.json",
+          "hash": "13037469765794595359",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/project.json",
+          "hash": "17026880164087839854"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/src/index.ts",
+          "hash": "15313191911740362975",
+          "deps": [
+            "npm:@ng-icons/core"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/src/lib/hlm-icon.component.spec.ts",
+          "hash": "119607381021539369",
+          "deps": [
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/src/lib/hlm-icon.component.ts",
+          "hash": "5575634337234491166",
+          "deps": [
+            "npm:@ng-icons/core",
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-icon-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-card-helm": [
+        {
+          "file": "feature/spartanui/ui-card-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/README.md",
+          "hash": "9464413205402097419"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/jest.config.ts",
+          "hash": "14049550666241944354"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/ng-package.json",
+          "hash": "1725525607871572683"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/package.json",
+          "hash": "13312878520063736739",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/project.json",
+          "hash": "7743735640042316287"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/index.ts",
+          "hash": "16562238750490677596"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/lib/hlm-card-content.directive.ts",
+          "hash": "5978099850854811163",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/lib/hlm-card-description.directive.ts",
+          "hash": "5765249943757662897",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/lib/hlm-card-footer.directive.ts",
+          "hash": "2230158128765515588",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/lib/hlm-card-header.directive.ts",
+          "hash": "12135044729694948465",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/lib/hlm-card-title.directive.ts",
+          "hash": "4516502328082196821",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/lib/hlm-card.directive.ts",
+          "hash": "14130748997812445701",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-card-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-command-helm": [
+        {
+          "file": "feature/spartanui/ui-command-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/README.md",
+          "hash": "16265999860293663516"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/jest.config.ts",
+          "hash": "11575531151622375950"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/ng-package.json",
+          "hash": "14272594016355669974"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/package.json",
+          "hash": "2161174587543792269",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/project.json",
+          "hash": "3590571343801161178"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/index.ts",
+          "hash": "7045983414673670874"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-dialog-close-button.directive.ts",
+          "hash": "7193912138498667369",
+          "deps": [
+            "feature-spartanui-ui-button-helm",
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-dialog.directive.ts",
+          "hash": "5242718712960019972",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-empty.directive.ts",
+          "hash": "3145190271734359623",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-group.directive.ts",
+          "hash": "7933809876067937914",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-input-wrapper.component.ts",
+          "hash": "712206496197186251",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-input.directive.ts",
+          "hash": "15568685363308838676",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-item-icon.directive.ts",
+          "hash": "16499468429693276071",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-item.directive.ts",
+          "hash": "18311697651848253322",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-list.directive.ts",
+          "hash": "2575065321913853299",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-loader.directive.ts",
+          "hash": "17212549425089586186"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-separator.directive.ts",
+          "hash": "4167634394050871198"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command-shortcut.component.ts",
+          "hash": "3626004444504294352",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/lib/hlm-command.directive.ts",
+          "hash": "12473720295334901384",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-command-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-switch-helm": [
+        {
+          "file": "feature/spartanui/ui-switch-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/README.md",
+          "hash": "13118858986835653022"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/jest.config.ts",
+          "hash": "7095909775311295944"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/ng-package.json",
+          "hash": "11314822222624812506"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/package.json",
+          "hash": "1726126892921417214",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/project.json",
+          "hash": "7725802191979375529"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/src/index.ts",
+          "hash": "4397783043409069349"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/src/lib/hlm-switch-ng-model.component.ignore.spec.ts",
+          "hash": "4003753255727316842"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/src/lib/hlm-switch-thumb.directive.ts",
+          "hash": "14721538207872266340",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/src/lib/hlm-switch.component.ts",
+          "hash": "13949660536685835411",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-switch-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-tooltip-helm": [
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/README.md",
+          "hash": "18217210417198913523"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/jest.config.ts",
+          "hash": "15883975869346833353"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/ng-package.json",
+          "hash": "8207760444604534432"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/package.json",
+          "hash": "11535178227475110131",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/project.json",
+          "hash": "6892630807650326931"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/src/index.ts",
+          "hash": "2474707846373977238"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/src/lib/hlm-tooltip-trigger.directive.ts",
+          "hash": "6817428667507292159"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/src/lib/hlm-tooltip.component.ts",
+          "hash": "1281042056449742057"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-tooltip-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-alertdialog-helm": [
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/README.md",
+          "hash": "12491970366761898824"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/jest.config.ts",
+          "hash": "8350612827138715127"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/ng-package.json",
+          "hash": "5075531410586117714"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/package.json",
+          "hash": "6768773371446073520",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/project.json",
+          "hash": "7662102404641045164"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/index.ts",
+          "hash": "8146933523089635701"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-action-button.directive.ts",
+          "hash": "1422241331487409646",
+          "deps": [
+            "feature-spartanui-ui-button-helm"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-cancel-button.directive.ts",
+          "hash": "1413779248172420270",
+          "deps": [
+            "feature-spartanui-ui-button-helm",
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-content.component.ts",
+          "hash": "6326970448217566572",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-description.directive.ts",
+          "hash": "3843927636861268226",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-footer.component.ts",
+          "hash": "14490443472507063919",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-header.component.ts",
+          "hash": "9724801072872592467",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-overlay.directive.ts",
+          "hash": "11294094936795982786",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog-title.directive.ts",
+          "hash": "9391390692630523177",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/lib/hlm-alert-dialog.component.ts",
+          "hash": "7120774401530554100"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-alertdialog-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-progress-helm": [
+        {
+          "file": "feature/spartanui/ui-progress-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/README.md",
+          "hash": "7058961197412655223"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/jest.config.ts",
+          "hash": "17010296910881989140"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/ng-package.json",
+          "hash": "16634230516460664465"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/package.json",
+          "hash": "5060143220993105795",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/project.json",
+          "hash": "3593725096619621001"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/src/index.ts",
+          "hash": "7577513507944540644"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/src/lib/hlm-progress-indicator.directive.ts",
+          "hash": "10073311855224912287",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/src/lib/hlm-progress.directive.ts",
+          "hash": "15717466662587272193",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-progress-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-spinner-helm": [
+        {
+          "file": "feature/spartanui/ui-spinner-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/README.md",
+          "hash": "17355477882515462795"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/jest.config.ts",
+          "hash": "13374009295786941322"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/ng-package.json",
+          "hash": "2387001788434757740"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/package.json",
+          "hash": "88590248936145162",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/project.json",
+          "hash": "8756287668153666815"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/src/index.ts",
+          "hash": "9931764571277820309"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/src/lib/hlm-spinner.component.ts",
+          "hash": "9791074842206750840",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-spinner-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-toggle-helm": [
+        {
+          "file": "feature/spartanui/ui-toggle-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/README.md",
+          "hash": "9005681378689177293"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/jest.config.ts",
+          "hash": "12959319568453692368"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/ng-package.json",
+          "hash": "7403118102872361043"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/package.json",
+          "hash": "14766210244469749992",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/project.json",
+          "hash": "5740061047020955870"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/src/index.ts",
+          "hash": "6966680365662428912"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/src/lib/hlm-toggle-group.directive.ts",
+          "hash": "9475359296910330255",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/src/lib/hlm-toggle.directive.ts",
+          "hash": "5559206933941443906",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-toggle-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-alert-helm": [
+        {
+          "file": "feature/spartanui/ui-alert-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/README.md",
+          "hash": "18139704320237125985"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/jest.config.ts",
+          "hash": "1458793537845081388"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/ng-package.json",
+          "hash": "11507022940584075318"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/package.json",
+          "hash": "15809857214407161598",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/project.json",
+          "hash": "2513089592873958871"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/src/index.ts",
+          "hash": "3791802788218093072"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/src/lib/hlm-alert-description.directive.ts",
+          "hash": "6364935088250283644",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/src/lib/hlm-alert-icon.directive.ts",
+          "hash": "17270518157051393012",
+          "deps": [
+            "feature-spartanui-ui-icon-helm"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/src/lib/hlm-alert-title.directive.ts",
+          "hash": "15988855413119404430",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/src/lib/hlm-alert.directive.ts",
+          "hash": "17501310092769935456",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-alert-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-label-helm": [
+        {
+          "file": "feature/spartanui/ui-label-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/README.md",
+          "hash": "11776403002626149010"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/jest.config.ts",
+          "hash": "2119950389790742854"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/ng-package.json",
+          "hash": "7636098016234082525"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/package.json",
+          "hash": "9400343904896275857",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/project.json",
+          "hash": "17688688047258133417"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/src/index.ts",
+          "hash": "11520514252818889827"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/src/lib/hlm-label.directive.ts",
+          "hash": "15715562627093901107",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-label-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-button-helm": [
+        {
+          "file": "feature/spartanui/ui-button-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/README.md",
+          "hash": "14273870295765057558"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/jest.config.ts",
+          "hash": "473921224743001438"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/ng-package.json",
+          "hash": "4048333681794564833"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/package.json",
+          "hash": "8647957615037132064",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/project.json",
+          "hash": "10354608594531515302"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/src/index.ts",
+          "hash": "8982221364966377158"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/src/lib/hlm-button.directive.ts",
+          "hash": "18194657337117708081",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-button-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "utils": [
+        {
+          "file": "utils/.eslintrc.json",
+          "hash": "13179335397355282534"
+        },
+        {
+          "file": "utils/README.md",
+          "hash": "7928633615893668067"
+        },
+        {
+          "file": "utils/jest.config.ts",
+          "hash": "2425068502806455360"
+        },
+        {
+          "file": "utils/project.json",
+          "hash": "17297376478933484664"
+        },
+        {
+          "file": "utils/src/index.ts",
+          "hash": "12178202437846675905"
+        },
+        {
+          "file": "utils/src/lib/mode.service.spec.ts",
+          "hash": "13172643531273184740"
+        },
+        {
+          "file": "utils/src/lib/mode.service.ts",
+          "hash": "11815274311102177325",
+          "deps": [
+            "npm:@angular/cdk",
+            "npm:rxjs"
+          ]
+        },
+        {
+          "file": "utils/src/lib/theme.service.spec.ts",
+          "hash": "12659729553284747897"
+        },
+        {
+          "file": "utils/src/lib/theme.service.ts",
+          "hash": "5829973643757490137"
+        },
+        {
+          "file": "utils/src/lib/utils.component.spec.ts",
+          "hash": "17395155124991727529"
+        },
+        {
+          "file": "utils/src/lib/utils.component.ts",
+          "hash": "13348903397176588731"
+        },
+        {
+          "file": "utils/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "utils/tsconfig.json",
+          "hash": "4881022640630122902"
+        },
+        {
+          "file": "utils/tsconfig.lib.json",
+          "hash": "4766185256741444917"
+        },
+        {
+          "file": "utils/tsconfig.spec.json",
+          "hash": "2129196202529263968"
+        }
+      ],
+      "feature-spartanui-ui-menu-helm": [
+        {
+          "file": "feature/spartanui/ui-menu-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/README.md",
+          "hash": "14048282571223066779"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/jest.config.ts",
+          "hash": "7510490893156841188"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/ng-package.json",
+          "hash": "1182376082830858329"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/package.json",
+          "hash": "8450826313654841337",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/project.json",
+          "hash": "15803053755641856491"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/index.ts",
+          "hash": "13241682308641820299"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-bar-item.directive.ts",
+          "hash": "4656994310370879257",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-bar.component.ts",
+          "hash": "5817777481927764577",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-group.component.ts",
+          "hash": "2390418594404509437"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-item-check.component.ts",
+          "hash": "264357367425480366",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-item-checkbox.directive.ts",
+          "hash": "9282303962983028181",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-item-icon.directive.ts",
+          "hash": "3790408529390263103",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-item-radio.component.ts",
+          "hash": "5781782463454892128",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-item-radio.directive.ts",
+          "hash": "15743172437102862138",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-item-sub-indicator.component.ts",
+          "hash": "6160781670290845806",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@spartan-ng/ui-core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-item.directive.ts",
+          "hash": "8377144040517093781",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-label.component.ts",
+          "hash": "4738764588271765844",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-separator.component.ts",
+          "hash": "5327195315832059582",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu-shortcut.component.ts",
+          "hash": "8066779984302681857",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-menu.component.ts",
+          "hash": "3915891399203625772",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/lib/hlm-sub-menu.component.ts",
+          "hash": "14407512092804347301",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-menu-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-aspectratio-helm": [
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/README.md",
+          "hash": "16924744339826955174"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/jest.config.ts",
+          "hash": "17082607852907961094"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/ng-package.json",
+          "hash": "12910197357297035212"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/package.json",
+          "hash": "10094572512556819255",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/project.json",
+          "hash": "9930738101790185966"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/src/index.ts",
+          "hash": "6600508035470287061"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/src/lib/helm-aspect-ratio.directive.spec.ts",
+          "hash": "6745431216872415224"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/src/lib/helm-aspect-ratio.directive.ts",
+          "hash": "16761220658851035443",
+          "deps": [
+            "npm:@angular/cdk",
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-aspectratio-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-popover-helm": [
+        {
+          "file": "feature/spartanui/ui-popover-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/README.md",
+          "hash": "11157737550145852093"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/jest.config.ts",
+          "hash": "8167252287593254947"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/ng-package.json",
+          "hash": "5342360973123239027"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/package.json",
+          "hash": "9226587617485641658",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/project.json",
+          "hash": "15124342014135420814"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/src/index.ts",
+          "hash": "14206434168979323056"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/src/lib/hlm-popover-close.directive.ts",
+          "hash": "607659891569933582",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/src/lib/hlm-popover-content.directive.ts",
+          "hash": "645163158181851662",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-popover-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-sonner-helm": [
+        {
+          "file": "feature/spartanui/ui-sonner-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/README.md",
+          "hash": "2808332113288870374"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/jest.config.ts",
+          "hash": "17646885627485400410"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/ng-package.json",
+          "hash": "4108853990090745168"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/package.json",
+          "hash": "9206950618262105483",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/project.json",
+          "hash": "13412757735895797436"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/src/index.ts",
+          "hash": "2983469189356423803"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/src/lib/hlm-toaster.component.ts",
+          "hash": "4617776657832011291",
+          "deps": [
+            "npm:ngx-sonner"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-sonner-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-input-helm": [
+        {
+          "file": "feature/spartanui/ui-input-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/README.md",
+          "hash": "6794706981273905604"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/jest.config.ts",
+          "hash": "10854377798431011147"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/ng-package.json",
+          "hash": "2884616959941396784"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/package.json",
+          "hash": "16728860360305900335",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/project.json",
+          "hash": "4484908676813709884"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/src/index.ts",
+          "hash": "487913567356772959"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/src/lib/hlm-input-error.directive.ts",
+          "hash": "12173704521925563733",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/src/lib/hlm-input.directive.ts",
+          "hash": "9548743680087799484",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-input-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-badge-helm": [
+        {
+          "file": "feature/spartanui/ui-badge-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/README.md",
+          "hash": "15483066657343719648"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/jest.config.ts",
+          "hash": "9303259040733228964"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/ng-package.json",
+          "hash": "13377138397929457890"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/package.json",
+          "hash": "8479205951226039861",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/project.json",
+          "hash": "3985382185601572836"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/src/index.ts",
+          "hash": "6405281052730795437"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/src/lib/hlm-badge.directive.ts",
+          "hash": "11864847400655805365",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-badge-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-helm-helm": [
+        {
+          "file": "feature/spartanui/ui-helm-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/README.md",
+          "hash": "6084863943116913748"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/jest.config.ts",
+          "hash": "13208378623836214190"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/ng-package.json",
+          "hash": "9963858327882175699"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/package.json",
+          "hash": "1433646377370263226",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/project.json",
+          "hash": "5273213493997808010"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/src/index.ts",
+          "hash": "12741011570336314701"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/src/lib/hlm-toaster.component.ts",
+          "hash": "4617776657832011291",
+          "deps": [
+            "npm:ngx-sonner"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-helm-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "mantis-ui": [
+        {
+          "file": "apps/mantis-ui/.eslintrc.json",
+          "hash": "3322449398258820698"
+        },
+        {
+          "file": "apps/mantis-ui/jest.config.ts",
+          "hash": "6923589925659440714"
+        },
+        {
+          "file": "apps/mantis-ui/project.json",
+          "hash": "11972952173792885900"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/app.component.css",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/app.component.html",
+          "hash": "5654460193981998828"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/app.component.spec.ts",
+          "hash": "11548546125981628468"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/app.component.ts",
+          "hash": "14706067996862766479",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "ui",
+            "npm:@ng-icons/core"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui/src/app/app.config.ts",
+          "hash": "16014636654390597081"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/app.routes.ts",
+          "hash": "461473924856616197"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/dashboard.page.html",
+          "hash": "4477178016789572829"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/dashboard.page.spec.ts",
+          "hash": "1984742667554304414"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/dashboard.page.ts",
+          "hash": "16313494985915071508",
+          "deps": [
+            "npm:@storybook/theming",
+            "ui",
+            "feature-spartanui-ui-aspectratio-helm",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide",
+            "npm:@faker-js/faker"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui/src/app/demo-charts.page.ts",
+          "hash": "11967657592033670407",
+          "deps": [
+            "npm:@faker-js/faker",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui/src/app/demo-dashboard.page.html",
+          "hash": "14663416063725579222"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/demo-dashboard.page.ts",
+          "hash": "8678919306375648663",
+          "deps": [
+            "npm:@faker-js/faker",
+            "npm:@ng-icons/core",
+            "npm:@ng-icons/lucide",
+            "ui"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui/src/app/header.component.html",
+          "hash": "17066015770255477867"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/header.component.ts",
+          "hash": "789567595940457825",
+          "deps": [
+            "npm:@ng-icons/lucide",
+            "npm:@ng-icons/core",
+            "feature-spartanui-ui-button-helm",
+            "feature-spartanui-ui-icon-helm",
+            "feature-spartanui-ui-sheet-helm",
+            "feature-spartanui-ui-input-helm",
+            "feature-spartanui-ui-menu-helm",
+            "ui",
+            "utils"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui/src/app/nx-welcome.component.ts",
+          "hash": "300873996868234766"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/shell.component.ts",
+          "hash": "282184197187169769"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/sidebar.component.html",
+          "hash": "17513807748888276567"
+        },
+        {
+          "file": "apps/mantis-ui/src/app/sidebar.component.ts",
+          "hash": "2152079128523713866",
+          "deps": [
+            "npm:@ng-icons/core",
+            "feature-spartanui-ui-icon-helm",
+            "npm:@ng-icons/lucide",
+            "feature-spartanui-ui-tooltip-helm"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui/src/assets/.gitkeep",
+          "hash": "3244421341483603138"
+        },
+        {
+          "file": "apps/mantis-ui/src/assets/avatar.png",
+          "hash": "12661994480092364545"
+        },
+        {
+          "file": "apps/mantis-ui/src/favicon.ico",
+          "hash": "406246377656345509"
+        },
+        {
+          "file": "apps/mantis-ui/src/index.html",
+          "hash": "13974697546841170535"
+        },
+        {
+          "file": "apps/mantis-ui/src/main.ts",
+          "hash": "16635586463787978962"
+        },
+        {
+          "file": "apps/mantis-ui/src/styles.css",
+          "hash": "13009221899104130658"
+        },
+        {
+          "file": "apps/mantis-ui/src/test-setup.ts",
+          "hash": "12935735732682149507"
+        },
+        {
+          "file": "apps/mantis-ui/tailwind.config.js",
+          "hash": "11557090498227485185",
+          "deps": [
+            "npm:@spartan-ng/ui-core"
+          ]
+        },
+        {
+          "file": "apps/mantis-ui/tsconfig.app.json",
+          "hash": "8365644956319658761"
+        },
+        {
+          "file": "apps/mantis-ui/tsconfig.editor.json",
+          "hash": "1055794200401717100"
+        },
+        {
+          "file": "apps/mantis-ui/tsconfig.json",
+          "hash": "10165753922017812673"
+        },
+        {
+          "file": "apps/mantis-ui/tsconfig.spec.json",
+          "hash": "2927375835638640771"
+        }
+      ],
+      "feature-spartanui-ui-tabs-helm": [
+        {
+          "file": "feature/spartanui/ui-tabs-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/README.md",
+          "hash": "10948471995879275763"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/jest.config.ts",
+          "hash": "137366202223414715"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/ng-package.json",
+          "hash": "3839624253226950667"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/package.json",
+          "hash": "12527598825889408329",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/project.json",
+          "hash": "16868833274580479100"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/src/index.ts",
+          "hash": "15883075276501241948"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/src/lib/hlm-tabs-content.directive.ts",
+          "hash": "4808504031080977762",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/src/lib/hlm-tabs-list.component.ts",
+          "hash": "16615708518129021856",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:class-variance-authority",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/src/lib/hlm-tabs-trigger.directive.ts",
+          "hash": "3469018492263442292",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/src/lib/hlm-tabs.component.ts",
+          "hash": "3024063090868362435"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-tabs-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ],
+      "feature-spartanui-ui-radiogroup-helm": [
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/.eslintrc.json",
+          "hash": "18228874338675828158"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/README.md",
+          "hash": "13903953870433351644"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/jest.config.ts",
+          "hash": "884575789520569509"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/ng-package.json",
+          "hash": "17987927859171133749"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/package.json",
+          "hash": "14520335052056967427",
+          "deps": [
+            "npm:tslib"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/project.json",
+          "hash": "16034498216439440764"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/src/index.ts",
+          "hash": "17133621116152372016"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/src/lib/hlm-radio-group.directive.ts",
+          "hash": "1287319438309038449",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/src/lib/hlm-radio-indicator.component.ts",
+          "hash": "15341186206844307846",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/src/lib/hlm-radio.directive.ts",
+          "hash": "14781720989584926020",
+          "deps": [
+            "npm:@spartan-ng/ui-core",
+            "npm:clsx"
+          ]
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/src/test-setup.ts",
+          "hash": "17711435995618823417"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/tsconfig.json",
+          "hash": "4477682170649870006"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/tsconfig.lib.json",
+          "hash": "4533240314544279514"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/tsconfig.lib.prod.json",
+          "hash": "10809217796916261822"
+        },
+        {
+          "file": "feature/spartanui/ui-radiogroup-helm/tsconfig.spec.json",
+          "hash": "8574249004436160025"
+        }
+      ]
+    }
+  }
+}
