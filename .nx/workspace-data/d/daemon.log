@@ -1039,3 +1039,15 @@
 [NX Daemon Server] - 2024-07-07T01:37:05.971Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-07-07T01:37:08.221Z - [WATCHER]: Processing file changes in outputs
 [NX Daemon Server] - 2024-07-07T01:37:14.549Z - [WATCHER]: Processing file changes in outputs
+[NX Daemon Server] - 2024-07-07T04:00:18.843Z - Started listening on: /var/folders/97/clsb7vf11w90x_r2bm66_vrc0000gn/T/64b2e2c0687c619d37ae/d.sock
+[NX Daemon Server] - 2024-07-07T04:00:18.847Z - [WATCHER]: Subscribed to changes within: /Users/zero2hero/Code/mantis-projects/mantis-ui (native)
+[NX Daemon Server] - 2024-07-07T04:00:18.849Z - Established a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-07-07T04:00:18.851Z - Established a connection. Number of open connections: 2
+[NX Daemon Server] - 2024-07-07T04:00:18.853Z - Closed a connection. Number of open connections: 1
+[NX Daemon Server] - 2024-07-07T04:00:18.856Z - [REQUEST]: Responding to the client. handleGlob
+[NX Daemon Server] - 2024-07-07T04:00:18.857Z - Done responding to the client handleGlob
+[NX Daemon Server] - 2024-07-07T04:00:18.857Z - Handled GLOB. Handling time: 3. Response time: 1.
+[NX Daemon Server] - 2024-07-07T04:00:18.864Z - [REQUEST]: Responding to the client. handleGlob
+[NX Daemon Server] - 2024-07-07T04:00:18.864Z - Done responding to the client handleGlob
+[NX Daemon Server] - 2024-07-07T04:00:18.864Z - Handled GLOB. Handling time: 6. Response time: 0.
+[NX Daemon Server] - 2024-07-07T04:00:18.939Z - Closed a connection. Number of open connections: 0
