@@ -26,7 +26,7 @@ export interface Multi {
 export interface ChartOptions {
   legend: boolean;
   legendTitle: string;
-  legendPosition?: LegendPosition;
+  legendPosition: LegendPosition;
   xAxis: any;
   yAxis: any;
   showXAxis: boolean;

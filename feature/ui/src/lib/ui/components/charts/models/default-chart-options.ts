@@ -1,9 +1,10 @@
 import { ChartOptions } from "./chart-data";
-import { Color } from '@swimlane/ngx-charts';
+import { Color, LegendPosition } from '@swimlane/ngx-charts';
 
 export const DEFAULT_CHART_OPTIONS: ChartOptions = {
   legend: false,
   legendTitle: "Chart",
+  legendPosition: "below" as LegendPosition,
   xAxis: {},
   yAxis: {},
   showXAxis: true,

@@ -1,3 +1,4 @@
+import { LegendPosition } from '@swimlane/ngx-charts';
 import { Component, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { faker } from '@faker-js/faker';
@@ -38,7 +39,7 @@ import {
   template: `
     <div class="flex-1 space-y-8 p-8">
       <!-- stats cards -->
-      <div class="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-3">
+      <div class="grid gap-4 sm:grid-cols-1 lg:grid-cols-2">
       <Card
         class="w-full">
         <!-- <ng-container CardBadge>
@@ -188,7 +189,7 @@ import {
           <GaugeChart
           (selected)="chartEvent($event)"
           [chartData]="barChartData()"
-          [chartOptions]="barChartOptions()"
+          [chartOptions]="gaugeChartOptions()"
         />
         </CardContent>
 
@@ -207,6 +208,11 @@ export class DemoChartsPageComponent {
     xAxisLabel: 'Months',
     yAxisLabel: 'Monthly Revenue',
     barPadding: 8
+  })
+
+  gaugeChartOptions = signal<Partial<ChartOptions>>({
+    ...this.barChartOptions(),
+    legend: false
   })
 
   createBarChartData(): Single[] {

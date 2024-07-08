@@ -9,6 +9,7 @@ import { ChartOptions, DEFAULT_CHART_OPTIONS, Single } from "./models";
   template: `
     <ngx-charts-gauge
       [legend]="chartOptions().legend"
+      [legendPosition]="chartOptions().legendPosition"
       [scheme]="chartOptions().colorScheme"
       [results]="chartData()"
       (select)="onSelect($event)">

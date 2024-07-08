@@ -7,7 +7,8 @@ const config: StorybookConfig = {
     '@storybook/addon-interactions',
     '@storybook/addon-themes',
     'storybook-dark-mode',
-    'storybook-addon-data-theme-switcher'
+    'storybook-addon-data-theme-switcher',
+    'storybook-addon-docs',
   ],
   framework: {
     name: '@storybook/angular',
